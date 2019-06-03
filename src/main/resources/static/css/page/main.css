@@ -1,0 +1,172 @@
+/*
+ * Developed by JAEYOUNG BAE on 19. 4. 29 오전 10:56.
+ * Last modified 19. 4. 29 오전 10:54.
+ * Copyright (c) 2019. All rights reserved.
+ */
+
+body {
+    overflow-x : hidden;
+    overflow-y : hidden;
+}
+
+.wrap-main {
+    width  : 100%;
+    height : 100%;
+}
+
+.wrap-logo {
+    background       : url(../../image/main/top_back_image_1.png) no-repeat;
+    background-color : #2D3140;
+    margin           : 0px;
+    height           : 42px;
+    min-width        : 870px;
+    width            : 100%;
+    border-bottom    : 1px solid #dddddd;
+}
+
+.wrap-logo .banner {
+    float : left;
+}
+
+.wrap-logo .banner a img {
+    height      : 28px;
+    margin-top  : 7px;
+    margin-left : 10px;
+}
+
+.wrap-logo .login-info {
+    font-size     : 12px;
+    /*font-family   : "Arial", "Gulim", "Dotum";*/
+    float         : right;
+    color         : #d0d0d0;
+    padding-right : 20px;
+    height        : 45px;
+    line-height   : 45px;
+}
+
+.wrap-logo .login-info u {
+    color        : #33B457;
+    display      : inline-block;
+    margin-right : 10px;
+}
+
+.wrap-logo .login-info .btn-logout {
+    display : inline-block;
+}
+
+.wrap-logo .login-info .btn-logout:hover {
+    background-color : #4169E1;
+    color            : white;
+}
+
+#gnb {
+    height           : 42px;
+    min-width        : 820px;
+    width            : 100%;
+    background-image : linear-gradient(#ffffff 40%, #E4E4E4);
+    margin-bottom    : 1px;
+}
+
+.sm-clean {
+    border-radius: 0px;
+}
+
+#tabs {
+    position : relative;
+    width    : 100%;
+    height   : 100%;
+}
+
+
+element.style {
+    height : 27px;
+}
+
+iframe {
+    overflow : hidden;
+}
+
+/*.wrap-mdi .easyui-tabs {*/
+/*    width: -moz-calc(100% - 0px) !important;       !* Firefox *!*/
+/*    width: -webkit-calc(100% - 0px) !important;    !* Chrome, Safari *!*/
+/*    width: calc(100% - 0px) !important;            !* IE9+ and future browsers *!*/
+/*}*/
+
+/*.wrap-mdi .tabs {*/
+/*    padding: 0px;*/
+/*    margin-left: 2px;*/
+/*}*/
+
+/*.wrap-mdi .tabs li {*/
+/*    margin-right: 2px;*/
+/*}*/
+
+/*.wrap-mdi .tabs li a.tabs-close {*/
+/*    display: none;*/
+/*}*/
+
+/*.wrap-mdi .tabs-header {*/
+/*    !*width: 100% !important;*!*/
+/*    width: -moz-calc(100% - 0px) !important;      !* Firefox *!*/
+/*    width: -webkit-calc(100% - 0px) !important;   !* Chrome, Safari *!*/
+/*    width: calc(100% - 0px) !important;           !* IE9+ and future browsers *!*/
+/*    !*border: none;*!*/
+/*}*/
+
+/*.wrap-mdi .tabs-header .tabs-wrap {*/
+/*    width: 100% !important;*/
+/*}*/
+
+/*.wrap-mdi .tabs-header, .tabs-tool {*/
+/*    background: none;*/
+/*}*/
+
+/*.wrap-mdi .tabs li a.tabs-inner {*/
+/*    !*background: none;*!*/
+/*}*/
+
+/*.wrap-mdi .tabs-panels {*/
+/*    !*margin-left: 2px;*!*/
+/*    width: 100% !important;*/
+/*    width: -moz-calc(100% - 2px) !important;      !* Firefox *!*/
+/*    width: -webkit-calc(100% - 2px) !important;   !* Chrome, Safari *!*/
+/*    width: calc(100% - 2px) !important;           !* IE9+ and future browsers *!*/
+/*}*/
+
+/*.wrap-mdi .tabs-panels .panel {*/
+/*    width: 100% !important;*/
+/*    height: 100%;*/
+/*}*/
+
+.wrap-mdi .tabs-panels .panel .panel-body {
+    /*height: 100%;*/
+    /*padding: 10px;*/
+    /*width: -moz-calc(100% - 20px) !important;      !* Firefox *!*/
+    /*width: -webkit-calc(100% - 20px) !important;   !* Chrome, Safari *!*/
+    /*width: calc(100% - 20px) !important;           !* IE9+ and future browsers *!*/
+    /*height: -moz-calc(100% - 20px) !important;      !* Firefox *!*/
+    /*height: -webkit-calc(100% - 20px) !important;   !* Chrome, Safari *!*/
+    /*height: calc(100% - 20px) !important;           !* IE9+ and future browsers *!*/
+    /*overflow: auto;*/
+    /*box-sizing: border-box;*/
+}
+
+/*.wrap-mdi .panel-body {*/
+/*    overflow: hidden;*/
+/*}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

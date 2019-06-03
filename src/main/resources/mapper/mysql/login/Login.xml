@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Developed by JAEYOUNG BAE on 19. 5. 28 오후 4:43.
+  ~ Last modified 19. 4. 26 오전 11:16.
+  ~ Copyright (c) 2019. All rights reserved.
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="NS_Login">
+
+    <!--  -->
+    <select id="selLogin" parameterType="map" resultType="camelMap">
+        /* NS_Login.selLogin */
+        SELECT A.MNGR_ID
+             , A.MNGR_PWD
+             , B.ATHR_CD
+          FROM TB_MNGR A
+               LEFT OUTER JOIN TB_ATHR_MNGR B
+                            ON B.MNGR_ID = A.MNGR_ID
+         WHERE A.MNGR_ID = #{mngrId}
+    </select>
+
+    <!--  -->
+    <select id="selSessionInfo" parameterType="map" resultType="camelMap">
+
+        /* NS_Login.selSessionInfo */
+        SELECT A.MNGR_ID                  /* 관리자아이디 */
+             , A.MNGR_NM                  /* 관리자명 */
+             , A.EMAIL                    /* 관리자이메일 */
+             , A.HP_NO                    /* 휴대폰번호 */
+             , B.ATHR_CD
+          FROM TB_MNGR A
+               LEFT OUTER JOIN TB_ATHR_MNGR B
+                            ON B.MNGR_ID = A.MNGR_ID
+         WHERE A.MNGR_ID = #{mngrId}
+    </select>
+
+    <!-- Insert loginHis List -->
+    <insert id="insLoginHis" parameterType="Map">
+        /* NS_Login.insLoginHis */
+        INSERT INTO TB_HIS_LOGIN (     /* 로그인이력 */
+              MNGR_ID                  /* 관리자아이디 */
+            , SESSION_ID               /* 세션아이디 */
+            , LOGIN_DTTM               /* 로그인일시 */
+            , CONN_IP                  /* 연결아이피 */
+            , LOGIN_ST                 /* 로그인상태[S:성공,F:실패] */
+            , LOGIN_FAIL_MSG           /* 로그인실패사유 */
+        ) VALUES (
+              #{mngrId}                /* 관리자아이디 */
+            , #{sessionId}             /* 세션아이디 */
+            , DATE_FORMAT(now(),'%Y%m%d%H%i%s')
+            , #{connIp}                /* 연결아이피 */
+            , #{loginSt}               /* 로그인상태[S:성공,F:실패] */
+            , #{loginFailMsg}         /* 로그인실패사유 */
+        )
+    </insert>
+
+    <!-- Insert logoutHis List -->
+    <update id="insLogoutHis" parameterType="Map">
+        /* NS_Login.insLogoutHis */
+        UPDATE TB_HIS_LOGIN
+           SET LOGOUT_DTTM = DATE_FORMAT(now(),'%Y%m%d%H%i%s')
+         WHERE MNGR_ID = #{mngrId}
+           AND SESSION_ID = #{sessionId}
+    </update>
+
+
+    <select id="selInitPwdUserOne" parameterType="map" resultType="camelMap">
+        /* NS_Login.selInitPwdUserOne */
+        SELECT EMAIL
+             , PWD_INIT_YN
+             , PW_DT
+          FROM TB_MNGR
+         WHERE MNGR_ID = #{mngrId}
+    </select>
+
+    <update id="updInitPwd" parameterType="Map">
+        /* NS_Login.updInitPwd */
+        UPDATE TB_MNGR
+           SET MNGR_PWD = #{mngrPwd}
+             , PWD_INIT_YN = 'N'        /* 비밀번호 초기화 여부[Y:초기화,N:초기화해제] */
+             , CHG_DTTM = DATE_FORMAT(now(),'%Y%m%d%H%i%s')
+             , CHG_ID = #{mngrId}
+         WHERE MNGR_ID = #{mngrId}
+           AND EMAIL = #{email}
+    </update>
+
+
+    <!-- Insert EMAIL SEND -->
+    <insert id="insEmailInitPwd" parameterType="Map">
+        /* NS_Login.insEmailInitPwd */
+
+    </insert>
+
+</mapper>

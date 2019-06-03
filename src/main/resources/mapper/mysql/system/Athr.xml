@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Developed by JAEYOUNG BAE on 19. 5. 13 오후 3:30.
+  ~ Last modified 19. 5. 3 오전 9:42.
+  ~ Copyright (c) 2019. All rights reserved.
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="NS_Athr">
+
+    <!-- select athr list -->
+    <select id="selAthrList" parameterType="Map" resultType="CamelMap">
+        /* NS_Athr.selAthrList */
+        SELECT A.ATHR_CD                  /* 권한코드 */
+             , A.ATHR_NM                  /* 권한명 */
+             , A.SORT_SN                  /* 정렬순번 */
+             , A.USE_YN                   /* 사용여부 */
+             , A.RM                       /* 비고 */
+             , A.REG_ID                   /* 등록자 */
+             , A.REG_DTTM                 /* 등록일시 */
+             , A.CHG_ID                   /* 최종수정자 */
+             , A.CHG_DTTM                 /* 최종수정일시 */
+             , C1.CD_NM AS USE_YN_NM      /* 사용여부 */
+          FROM TB_ATHR  A                 /* 권한 */
+               LEFT OUTER JOIN TB_CD C1
+                         ON C1.GRP_CD = 'USE_YN'
+                        AND C1.CD = A.USE_YN
+      ORDER BY A.SORT_SN
+             , A.ATHR_CD
+    </select>
+
+    <!-- select athr -->
+    <select id="selAthr" parameterType="Map" resultType="CamelMap">
+        /* NS_Athr.selAthrList */
+        SELECT A.ATHR_CD                  /* 권한코드 */
+             , A.ATHR_NM                  /* 권한명 */
+             , A.SORT_SN                  /* 정렬순번 */
+             , A.USE_YN                   /* 사용여부 */
+             , A.RM                       /* 비고 */
+             , A.REG_ID                   /* 등록자 */
+             , A.REG_DTTM                 /* 등록일시 */
+             , A.CHG_ID                   /* 최종수정자 */
+             , A.CHG_DTTM                 /* 최종수정일시 */
+             , C1.CD_NM AS USE_YN_NM      /* 사용여부 */
+          FROM TB_ATHR  A                 /* 권한 */
+               LEFT OUTER JOIN TB_CD C1
+                         ON C1.GRP_CD = 'USE_YN'
+                        AND C1.CD = A.USE_YN
+         WHERE ATHR_CD = #{athrCd}
+    </select>
+
+    <!-- Insert Athr -->
+    <insert id="insAthr" parameterType="Map">
+        /* NS_Athr.insAthr */
+        INSERT INTO TB_ATHR (                  /* T권한 */
+              ATHR_CD                  /* 권한코드 */
+            , ATHR_NM                  /* 권한명 */
+            , SORT_SN                  /* 정렬순번 */
+            , USE_YN                   /* 사용여부[Y:사용, N:미사용] */
+            , RM                       /* 비고 */
+            , REG_DTTM                 /* 등록일시 */
+            , REG_ID                   /* 등록자 */
+            , CHG_DTTM                 /* 수정일시 */
+            , CHG_ID                   /* 수정자 */
+        ) VALUES (
+              #{athrCd}                /* 권한코드 */
+            , #{athrNm}                /* 권한명 */
+            , #{sortSn}                /* 정렬순번 */
+            , #{useYn}                 /* 사용여부[Y:사용, N:미사용] */
+            , #{rm}                    /* 비고 */
+            , #{regDttm}               /* 등록일시 */
+            , #{regId}                 /* 등록자 */
+            , #{chgDttm}               /* 수정일시 */
+            , #{chgId}                 /* 수정자 */
+        )
+    </insert>
+
+    <!-- Update Athr -->
+    <update id="updAthr" parameterType="Map">
+        /* NS_Athr.updAthr */
+        UPDATE TB_ATHR                  /* T권한 */
+           SET ATHR_NM                = #{athrNm}                  /* 권한명 */
+             , SORT_SN                = #{sortSn}                  /* 정렬순번 */
+             , USE_YN                 = #{useYn}                   /* 사용여부[Y:사용, N:미사용] */
+             , RM                     = #{rm}                      /* 비고 */
+             , CHG_DTTM               = #{chgDttm}                 /* 수정일시 */
+             , CHG_ID                 = #{chgId}                   /* 수정자 */
+         WHERE ATHR_CD = #{athrCd}
+    </update>
+
+    <!-- Delete Athr -->
+    <delete id="delAthr" parameterType="Map">
+        /* NS_Athr.delAthr */
+        DELETE FROM TB_ATHR            /* 권한 */
+         WHERE ATHR_CD = #{athrCd}
+    </delete>
+
+    <!-- Select mngr by author list -->
+    <select id="selAthrMngrList" parameterType="Map" resultType="CamelMap">
+        /* NS_Athr.selAthrMngrList */
+        SELECT A.ATHR_CD                  /* 권한코드 */
+             , A.MNGR_ID                  /* 관리자아이디 */
+             , B.MNGR_NM                  /* 관리자명 */
+             , B.EMAIL                    /* 관리자이메일 */
+             , B.HP_NO                    /* 휴대폰번호 */
+             , B.MNGR_PWD                 /* 관리자비밀번호 */
+             , B.RM                       /* 비고 */
+          FROM TB_ATHR_MNGR A             /* 권한_사용자 */
+               INNER JOIN TB_MNGR B
+                       ON B.MNGR_ID = A.MNGR_ID
+         WHERE A.ATHR_CD = #{athrCd}
+      ORDER BY A.ATHR_CD
+             , B.MNGR_NM
+    </select>
+
+    <!-- Select mngr by author popup list -->
+    <select id="selAthrMngrPopupList" parameterType="Map" resultType="CamelMap">
+        /* NS_Athr.selAthrMngrPopupList */
+        SELECT A.MNGR_ID                  /* 관리자아이디 */
+             , A.MNGR_NM                  /* 관리자명 */
+             , A.EMAIL                    /* 관리자이메일 */
+             , A.HP_NO                    /* 휴대폰번호 */
+             , A.MNGR_PWD                 /* 관리자비밀번호 */
+             , A.RM                       /* 비고 */
+          FROM TB_MNGR A                  /* 사용자 */
+               LEFT OUTER JOIN (
+                                    SELECT MNGR_ID
+                                      FROM TB_ATHR_MNGR
+                               ) B
+                            ON B.MNGR_ID = A.MNGR_ID
+         WHERE B.MNGR_ID IS NULL
+           AND A.MNGR_ID NOT IN('system')
+      ORDER BY A.MNGR_NM
+    </select>
+
+    <!-- Select mngr by author popup list -->
+    <select id="selAthrMngrPopupList2" parameterType="Map" resultType="CamelMap">
+        /* NS_Athr.selAthrMngrPopupList2 */
+        SELECT A.MNGR_ID                  /* 관리자아이디 */
+             , A.MNGR_NM                  /* 관리자명 */
+             , A.EMAIL                    /* 관리자이메일 */
+             , A.HP_NO                    /* 휴대폰번호 */
+             , A.MNGR_PWD                 /* 관리자비밀번호 */
+             , A.RM                       /* 비고 */
+          FROM TB_MNGR A                  /* 사용자 */
+               LEFT OUTER JOIN (
+                                    SELECT MNGR_ID
+                                      FROM TB_ATHR_MNGR
+                                     WHERE ATHR_CD = #{athrCd}
+                               ) B
+                            ON B.MNGR_ID = A.MNGR_ID
+         WHERE B.MNGR_ID IS NULL
+      ORDER BY A.MNGR_NM
+    </select>
+
+    <!-- Insert athr mngr -->
+    <insert id="insAthrMngrList" parameterType="Map">
+        /* NS_Athr.insAthrMngrList */
+        INSERT INTO TB_ATHR_MNGR (     /* 권한_사용자 */
+              ATHR_CD                  /* 권한코드 */
+            , MNGR_ID                  /* 사용자아이디 */
+            , REG_ID                   /* 등록자 */
+            , REG_DTTM                 /* 등록일시 */
+        ) VALUES (
+              #{athrCd}                /* 권한코드 */
+            , #{mngrId}                /* 사용자아이디 */
+            , #{regId}                 /* 등록자 */
+            , #{regDttm}              /* 등록일시 */
+        )
+    </insert>
+
+    <!-- Delete athr mngr -->
+    <delete id="delAthrMngrList" parameterType="Map">
+        /* NS_Athr.delAthrMngrList */
+        DELETE FROM TB_ATHR_MNGR            /* 권한 */
+         WHERE ATHR_CD = #{athrCd}
+           AND MNGR_ID = #{mngrId}
+    </delete>
+
+    <!-- Select athr menu list -->
+    <select id="selAthrMenuList" parameterType="Map" resultType="CamelMap">
+        /* NS_Athr.selAthrMenuList */
+        SELECT A.ATHR_CD                  /* 권한코드 */
+             , A.MENU_ID                  /* 메뉴아이디 */
+             , A.PS_MENU_ID               /* 소속메뉴아이디 */
+             , A.MENU_NM                  /* 메뉴명 */
+             , A.MENU_TP                  /* 메뉴유형[M:메뉴,S:구분선] */
+             , A.EXEC_CMD                 /* 실행명령 */
+             , A.MENU_LV                  /* 메뉴레벨 */
+             , A.SORT_SN                  /* 정렬순번 */
+             , A.AUTH_R                   /* 읽기권한 */
+             , A.AUTH_W                   /* 변경권한 */
+             , A.AUTH_D                   /* 삭제원한 */
+             , A.AUTH_P                   /* 인쇄권한 */
+             , A.USE_YN                   /* 사용여부 */
+             , A.REG_ID                   /* 등록자 */
+             , A.REG_DTTM                 /* 등록일시 */
+             , A.CHG_ID                   /* 최종수정자 */
+             , A.CHG_DTTM                 /* 최종수정일시 */
+          FROM VW_ATHR_MENU A
+         WHERE A.ATHR_CD = #{athrCd}
+      ORDER BY A.PS_SORT_SN
+             , A.MENU_LV
+             , A.SORT_SN
+    </select>
+
+    <!-- Select popup menu by author list -->
+    <select id="selAthrMenuPopupList" parameterType="Map" resultType="CamelMap">
+        /* NS_Athr.selAthrMenuPopupList */
+        SELECT A.MENU_ID                  /* 메뉴아이디 */
+             , A.PS_MENU_ID               /* 소속메뉴아이디 */
+             , A.PS_MENU_NM               /* 소속메뉴명 */
+             , A.MENU_NM                  /* 메뉴명 */
+             , A.MENU_TP                  /* 메뉴유형[M:메뉴,S:구분선] */
+             , A.EXEC_CMD                 /* 실행명령 */
+             , A.MENU_LV                  /* 메뉴레벨 */
+             , A.SORT_SN                  /* 정렬순번 */
+             , C1.CD_NM AS MENU_TP_NM     /* 메뉴유형[M:메뉴,S:구분선] */
+          FROM VW_MENU A                  /* 메뉴 */
+               LEFT OUTER JOIN (
+                                    SELECT MENU_ID
+                                      FROM TB_ATHR_MENU
+                                     WHERE ATHR_CD = #{athrCd}
+                               ) B ON B.MENU_ID = A.MENU_ID
+               LEFT OUTER JOIN TB_CD C1
+                         ON C1.GRP_CD = 'USE_YN'
+                        AND C1.CD = A.USE_YN
+
+         WHERE A.USE_YN = 'Y'
+           AND B.MENU_ID IS NULL
+      ORDER BY A.PS_SORT_SN
+             , A.MENU_LV
+             , A.SORT_SN
+    </select>
+
+    <!-- Insert Athr menu -->
+    <insert id="insAthrMenuList" parameterType="Map">
+        /* NS_Athr.insAthr */
+        INSERT INTO TB_ATHR_MENU (     /* 권한_메뉴 */
+              ATHR_CD                  /* 권한코드 */
+            , MENU_ID                  /* 메뉴아이디 */
+            , PS_MENU_ID               /* 소속메뉴아이디 */
+            , MENU_NM                  /* 메뉴명 */
+            , MENU_TP                  /* 메뉴유형[M:메뉴,S:구분선] */
+            , EXEC_CMD                 /* 실행명령 */
+            , MENU_LV                  /* 메뉴레벨 */
+            , SORT_SN                  /* 정렬순번 */
+            , AUTH_R                   /* 읽기권한 */
+            , AUTH_W                   /* 변경권한 */
+            , AUTH_D                   /* 삭제원한 */
+            , AUTH_P                   /* 인쇄권한 */
+            , USE_YN                   /* 사용여부 */
+            , REG_ID                   /* 등록자 */
+            , REG_DTTM                 /* 등록일시 */
+            , CHG_ID                   /* 최종수정자 */
+            , CHG_DTTM                 /* 최종수정일시 */
+        )
+        SELECT
+              #{athrCd}                /* 권한코드 */
+            , #{menuId}                /* 메뉴아이디 */
+            , PS_MENU_ID               /* 소속메뉴아이디 */
+            , MENU_NM                  /* 메뉴명 */
+            , MENU_TP                  /* 메뉴유형[M:메뉴,S:구분선] */
+            , EXEC_CMD                 /* 실행명령 */
+            , MENU_LV                  /* 메뉴레벨 */
+            , SORT_SN                  /* 정렬순번 */
+            , 'Y'                      /* 읽기권한 */
+            , 'Y'                      /* 변경권한 */
+            , 'Y'                      /* 삭제원한 */
+            , 'Y'                      /* 인쇄권한 */
+            , 'Y'                      /* 사용여부 */
+            , #{regId}                 /* 등록자 */
+            , #{regDttm}               /* 등록일시 */
+            , #{chgId}                 /* 최종수정자 */
+            , #{chgDttm}              /* 최종수정일시 */
+       FROM TB_MENU
+      WHERE MENU_ID = #{menuId}
+    </insert>
+
+    <!-- Delete Athr menu -->
+    <delete id="delAthrMenuList" parameterType="Map">
+        /* NS_Athr.delAthr */
+        DELETE FROM TB_ATHR_MENU        /* 권한-메뉴 */
+         WHERE ATHR_CD = #{athrCd}
+           AND MENU_ID = #{menuId}
+    </delete>
+
+    <!-- Update updAthrMenuList -->
+    <update id="updAthrMenuList" parameterType="Map">
+        /* NS_Athr.updAthrMenuList */
+        UPDATE TB_ATHR_MENU             /* 권한_메뉴 */
+           SET PS_MENU_ID             = #{psMenuId}                /* 소속메뉴아이디 */
+             , MENU_NM                = #{menuNm}                  /* 메뉴명 */
+             , MENU_TP                = #{menuTp}                  /* 메뉴유형[M:메뉴,S:구분선] */
+             , EXEC_CMD               = #{execCmd}                 /* 실행명령 */
+             , MENU_LV                = #{menuLv}                  /* 메뉴레벨 */
+             , SORT_SN                = #{sortSn}                  /* 정렬순번 */
+             , AUTH_R                 = #{authR}                   /* 읽기권한 */
+             , AUTH_W                 = #{authW}                   /* 변경권한 */
+             , AUTH_D                 = #{authD}                   /* 삭제원한 */
+             , AUTH_P                 = #{authP}                   /* 인쇄권한 */
+             , USE_YN                 = #{useYn}                   /* 사용여부 */
+             , CHG_ID                 = #{chgId}                   /* 최종수정자 */
+             , CHG_DTTM               = #{chgDttm}                /* 최종수정일시 */
+         WHERE ATHR_CD = #{athrCd}
+           AND MENU_ID = #{menuId}
+    </update>
+
+</mapper>

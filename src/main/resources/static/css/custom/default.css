@@ -1,0 +1,218 @@
+*, *::before, *::after {
+    box-sizing : border-box;
+    margin     : 0;
+    padding    : 0;
+}
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    font-family    : 'Noto Sans KR', sans-serif;
+    border         : 0;
+    outline        : 0;
+    font-size      : 12px;
+    font-weight    : 300;
+    vertical-align : baseline;
+    background     : transparent;
+}
+
+html, body {
+    height : 100%;
+    color  : #555;
+}
+
+body {
+    line-height : 1;
+    font-family : 'Noto Sans KR', sans-serif;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display : block;
+}
+
+ol, ul {
+    list-style : none;
+}
+
+blockquote, q {
+    quotes : none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content : '';
+    content : none;
+}
+
+a {
+    margin         : 0;
+    padding        : 0;
+    font-size      : 100%;
+    vertical-align : baseline;
+    background     : transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color : #ff9;
+    color            : #000;
+    text-decoration  : none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color : #ff9;
+    color            : #000;
+    font-style       : italic;
+    font-weight      : 500;
+}
+
+del {
+    text-decoration : line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom : 1px dotted;
+    cursor        : help;
+}
+
+table {
+    border-spacing : 0;
+    table-layout   : fixed;
+}
+
+/* 이미지 및 필드셋에서 보더 표시 초기화 */
+fieldset, img {
+    border : 0;
+}
+
+img {
+    vertical-align : middle;
+}
+
+/* 캡션 텍스트 정렬 초기화 */
+caption {
+    text-align : left;
+}
+
+/* 폼태그의 초기화 */
+select, input, textarea {
+    font-size : 12px;
+    /*font-family : Arial, '맑은 고딕', 'Malgun Gothic', '돋움', 'Dotum', 'verdana';*/
+    color       : #444;
+}
+
+select {
+    vertical-align : middle;
+}
+
+textarea {
+    line-height : 140%;
+}
+
+input[type=text]::-ms-clear {
+    display : none;
+}
+
+input[type="radio"] {
+    vertical-align : middle;
+}
+
+a:link {
+    color           : #444;
+    text-decoration : none;
+}
+
+a:active {
+    color           : #444;
+    text-decoration : none;
+}
+
+a:visited {
+    color           : #444;
+    text-decoration : none;
+}
+
+a:hover {
+    color           : #444;
+    text-decoration : none;
+}
+
+/* hidden 처리 */
+hr, caption {
+    width       : 0;
+    height      : 0;
+    font-size   : 0;
+    line-height : 0;
+    overflow    : hidden;
+    visibility  : hidden;
+}
+
+.hide {
+    position    : absolute;
+    top         : -9999px;
+    width       : 0;
+    height      : 0;
+    font-size   : 0;
+    line-height : 0;
+    overflow    : hidden;
+    visibility  : hidden;
+}
+
+.bold {
+    font-weight : 700;
+}
+
+.ellipsis {
+    overflow      : hidden;
+    white-space   : nowrap;
+    text-overflow : ellipsis;
+}
+
+/* float 을 주게되면 두가지 현상이 일어난다. float을 준 부모의 높이가 사라진다. float을 준 그다음 요소가 자동으로 float이 먹혀서 옆에 붙게된다. */
+/* 부모의 높이를 다시 살리는 방법이다. */
+.clear {
+    zoom: 1;
+    clear: both;
+}
+.clear:after {
+    content: '';
+    display : block;
+    clear : both;
+}
+
+/*
+접근성 본문 바로가기
+<body> 바로아래 <a href="#" class="skip">본문 바로가기</a>
+*/
+.skip {
+    position : absolute;
+    left : 0;
+    top : -100px;
+    z-index : 1000;
+    width : 100%;
+    height : 60px;
+    line-height : 60px;
+    text-align : center;
+    font-size : 20px;
+    color : #fff;
+    background : #666;
+    transition: all 0.5s;
+}
+.skip:focus {
+    top : 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight : 700;
+}

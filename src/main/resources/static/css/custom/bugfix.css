@@ -1,0 +1,257 @@
+/*
+ * Developed by JAEYOUNG BAE on 19. 4. 17 오후 1:28.
+ * Last modified 19. 4. 17 오후 1:28.
+ * Copyright (c) 2019. All rights reserved.
+ */
+
+/* jquery 다이얼로그 닫기 버튼 없애기 */
+.ui-dialog-titlebar-close {
+    visibility : hidden;
+}
+
+.dialog .button-bar {
+    margin: 0 0 7px;
+    text-align : right;
+}
+
+/* jquery datepicker css 변경 */
+.ui-datepicker select.ui-datepicker-year {
+    width : 60px;
+}
+
+.ui-datepicker select.ui-datepicker-month {
+    width : 55px;
+}
+
+.ui-datepicker {
+    /*font-size : 12px;*/
+    width     : 200px;
+}
+
+img.ui-datepicker-trigger {
+    margin-left    : 5px;
+    vertical-align : middle;
+    cursor         : default;
+}
+
+/**
+ * --------------------------------------------------
+ * ui.jqgrid.css
+ * --------------------------------------------------
+ */
+body .ui-jqgrid {
+    width : -moz-calc(100% - 1px) !important; /* Firefox */
+    width : -webkit-calc(100% - 1px) !important; /* Chrome, Safari */
+    width : calc(100% - 1px) !important; /* IE9+ and future browsers */
+}
+
+body .ui-jqgrid .ui-jqgrid-view {
+    width : 100% !important;
+}
+
+body .ui-jqgrid .ui-jqgrid-hdiv {
+    width : 100% !important;
+}
+
+body .ui-jqgrid .ui-jqgrid-bdiv {
+    width : 100% !important;
+}
+
+body .ui-jqgrid .ui-jqgrid-htable th div {
+    height      : 20px;
+    line-height : 18px;
+    /*font-size   : 14px;*/
+    /*font-weight : 500;*/
+}
+
+div[role=dialog]{
+    border: 2px solid black;
+    box-shadow: 6px 6px 10px rgba(0,0,0,0.8);
+}
+
+.ui-dialog .ui-dialog-content {
+    padding: 7px;
+}
+.ui-jqgrid-pager {
+    width : 100%;
+}
+
+body .ui-jqgrid .ui-jqgrid-bdiv div div {
+    display:none;
+}
+
+table.ui-jqgrid-btable {
+    height: 1px;
+}
+
+body .ui-jqgrid .ui-jqgrid-labels th {
+    padding-top    : 2px;
+    padding-bottom : 2px;
+}
+
+body .ui-widget-content.jqgrow.ui-row-ltr.ui-state-highlight.ui-state-hover td {
+    background : #5590d3;
+    color      : #ffffff;
+}
+
+body .ui-widget-content.jqgrow.ui-row-ltr.ui-state-hover {
+    background : #f6f7f7;
+    /*border     : 0;*/
+}
+
+body .ui-widget-content.jqgrow.ui-row-ltr.ui-state-highlight td {
+    background : #4f81bd;
+    color      : #ffffff;
+    /*border     : 0;*/
+}
+
+body .ui-widget-content.jqgrow.ui-row-ltr.ui-state-highlight.ui-state-hover {
+    background : #4f81bd;
+    /*border     : 0;*/
+}
+
+body .ui-jqgrid tr.jqgrow td {
+    cursor              : default;
+    font-weight         : 300;
+    overflow            : hidden;
+    white-space         : pre;
+    height              : 22px;
+    padding             : 2px 4px 2px 4px;
+    line-height         : 18px;
+    /*border-left-width: 1px;*/
+    /*border-left-color: #cdcdcd;*/
+    /*border-left-style: solid;*/
+    border-right-width  : 1px;
+    border-right-color  : #cdcdcd;
+    border-right-style  : solid;
+    border-bottom-width : 1px;
+    border-bottom-color : #cdcdcd;
+    border-bottom-style : solid;
+}
+
+body .ui-jqgrid tr.jqgrow td:first-child {
+    border-left-width : 0px;
+}
+
+body .ui-jqgrid tr.jqgrow td.jqgrid-rownum {
+    border-left : 0px;
+}
+
+body .footrow {
+    background : #ffe48d;
+}
+
+body .ui-jqgrid tr.footrow-ltr td {
+    text-align         : left;
+    border-right-width : 1px;
+    border-right-color : #C5C5C5;
+    border-right-style : solid;
+}
+
+body .ui-jqgrid tr.footrow td {
+    font-weight         : 400;
+    overflow            : hidden;
+    white-space         : nowrap;
+    height              : 21px;
+    padding             : 0 2px 0 2px;
+    border-bottom-width : 1px;
+    border-bottom-color : #C5C5C5;
+    border-bottom-style : solid;
+    border-top-width    : 0px;
+    border-top-color    : #C5C5C5;
+    border-top-style    : solid;
+}
+
+body .ui-jqgrid tr.jqgfirstrow td {
+    border-color : #fff;
+}
+
+body .jqgrid-alt-class {
+    background-color : #e5e5e5;
+}
+
+body .ui-jqgrid .ui-pg-input {
+    height: 15px;
+}
+
+/**
+ * --------------------------------------------------
+ * select2.min.css
+ * --------------------------------------------------
+ */
+
+body .select2-container {
+    box-sizing     : border-box;
+    display        : inline-block;
+    margin         : 0;
+    position       : relative;
+    vertical-align : middle;
+    font-size      : 12px;
+    /*border: 1px solid #aaa;
+    border-radius: 4px;*/
+}
+
+body .select2-container .select2-selection--single {
+    height : 24px;
+}
+
+body .select2-container--default .select2-selection--single {
+    background-color : #fff;
+    /*border: none;*/
+    height           : 22px;
+    border           : 1px solid #aaa;
+    border-radius    : 4px;
+    background-image : -webkit-gradient(linear, left bottom, left top, color-stop(0, #eee), color-stop(0.5, #fff));
+}
+
+body .select2-container--default .select2-selection--single .select2-selection__rendered {
+    color       : #444;
+    line-height : 22px;
+    /*font-family : Helvetica, Arial, sans-serif;*/
+}
+
+body .select2-container--default .select2-selection--single .select2-selection__arrow {
+    display          : inline-block;
+    width            : 18px;
+    height           : 22px;
+    position         : absolute;
+    top              : 0px;
+    right            : 0px;
+    border           : 1px solid #aaa;
+    border-radius    : 0 4px 4px 0;
+    background-clip  : padding-box;
+    background       : #ccc;
+    background-image : -webkit-gradient(linear, left bottom, left top, color-stop(0, #ccc), color-stop(0.6, #eee));
+    background-image : -webkit-linear-gradient(to top, #ccc 0%, #eee 60%);
+    background-image : -moz-linear-gradient(to top, #ccc 0%, #eee 60%);
+    filter           : progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc', GradientType=0);
+    background-image : linear-gradient(to top, #ccc 0%, #eee 60%);
+}
+
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content {
+    overflow : hidden;
+}
+
+.jconfirm-content {
+    font-size : 16px;
+    line-height: 20px;
+}
+
+.button.small {
+    padding: 2px 5px;
+    min-width: 65px !important;
+}
+
+/* 빈 그리드에 h scrill 보이게 처리 */
+table.ui-jqgrid-btable { height: 1px; }
+
+.ui-jqgrid .ui-jqgrid-view input {
+    font-size: 12px;
+}
+
+button[auth] {
+    /*display: none;*/
+}
+
+

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Developed by JAEYOUNG BAE on 19. 5. 3 오전 9:43.
+  ~ Last modified 19. 4. 1 오후 1:21.
+  ~ Copyright (c) 2019. All rights reserved.
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="NS_GrpCd">
+
+    <!-- Select TB_CD_GRP List -->
+    <select id="selGrpCdList" parameterType="Map" resultType="CamelMap">
+        /* NS_Cd.selGrpCdList */
+        SELECT A.GRP_CD                   /* 그룹코드 */
+             , A.GRP_CD_TP                /* 그룹코드유형[W:웹,S:시스템] */
+             , A.GRP_CD_NM                /* 그룹코드명 */
+             , A.SORT_SN                  /* 정렬순번 */
+             , A.RM                       /* 비고 */
+             , A.USE_YN                   /* 사용여부 */
+             , A.REG_ID                   /* 등록자 */
+             , A.REG_DTTM                 /* 등록일시 */
+             , A.CHG_ID                   /* 최종수정자 */
+             , A.CHG_DTTM                 /* 최종수정일시 */
+             , C1.CD_NM AS GRP_CD_TP_NM   /* 그룹코드유형[W:웹,S:시스템] */
+             , C2.CD_NM AS USE_YN_NM      /* 사용여부 */
+             , Y.MNGR_NM AS REG_NM        /* 등록자 */
+             , Z.MNGR_NM AS CHG_NM        /* 변경자 */
+          FROM TB_CD_GRP A                /* 코드그룹 */
+               LEFT OUTER JOIN TB_CD C1
+                         ON C1.GRP_CD = 'GRP_CD_TP'
+                        AND C1.CD = A.GRP_CD_TP
+               LEFT OUTER JOIN TB_CD C2
+                         ON C2.GRP_CD = 'USE_YN'
+                        AND C2.CD = A.USE_YN
+               LEFT OUTER JOIN TB_MNGR Y
+                            ON Y.MNGR_ID = A.REG_ID
+               LEFT OUTER JOIN TB_MNGR Z
+                            ON Z.MNGR_ID = A.CHG_ID
+         WHERE A.GRP_CD    LIKE CONCAT(CONCAT('%', IFNULL(#{grpCdNm}, '')), '%')
+            OR A.GRP_CD_NM    LIKE CONCAT(CONCAT('%', IFNULL(#{grpCdNm}, '')), '%')
+      ORDER BY A.GRP_CD ASC
+    </select>
+
+    <!-- Select GrpCd -->
+    <select id="selGrpCd" parameterType="Map" resultType="CamelMap">
+        /* NS_Cd.selGrpCd */
+        SELECT A.GRP_CD                   /* 그룹코드 */
+             , A.GRP_CD_TP                /* 그룹코드유형[W:웹,S:시스템] */
+             , A.GRP_CD_NM                /* 그룹코드명 */
+             , A.SORT_SN                  /* 정렬순번 */
+             , A.RM                       /* 비고 */
+             , A.USE_YN                   /* 사용여부 */
+             , A.REG_ID                   /* 등록자 */
+             , A.REG_DTTM                 /* 등록일시 */
+             , A.CHG_ID                   /* 최종수정자 */
+             , A.CHG_DTTM                 /* 최종수정일시 */
+             , C1.CD_NM AS GRP_CD_TP_NM   /* 그룹코드유형[W:웹,S:시스템] */
+             , C2.CD_NM AS USE_YN_NM     /* 사용여부 */
+          FROM TB_CD_GRP  A              /* 코드그룹 */
+               LEFT OUTER JOIN TB_CD C1
+                         ON C1.GRP_CD = 'GRP_CD_TP'
+                        AND C1.CD = A.GRP_CD_TP
+               LEFT OUTER JOIN TB_CD C2
+                         ON C2.GRP_CD = 'USE_YN'
+                        AND C2.CD = A.USE_YN
+         WHERE A.GRP_CD = #{grpCd}
+    </select>
+
+    <!-- Insert GrpCd -->
+    <insert id="insGrpCd" parameterType="Map">
+        /* NS_GrpCd.insGrpCd */
+        INSERT INTO TB_CD_GRP (                /* 코드그룹 */
+              GRP_CD                   /* 그룹코드 */
+            , GRP_CD_TP                /* 그룹코드유형[W:웹,S:시스템] */
+            , GRP_CD_NM                /* 그룹코드명 */
+            , RM                       /* 비고 */
+            , USE_YN                   /* 사용여부 */
+            , REG_ID                   /* 등록자 */
+            , REG_DTTM                 /* 등록일시 */
+            , CHG_ID                   /* 최종수정자 */
+            , CHG_DTTM                 /* 최종수정일시 */
+        ) VALUES (
+              #{grpCd}                 /* 그룹코드 */
+            , #{grpCdTp}               /* 그룹코드유형[W:웹,S:시스템] */
+            , #{grpCdNm}               /* 그룹코드명 */
+            , #{rm}                    /* 비고 */
+            , #{useYn}                 /* 사용여부 */
+            , #{regId}                 /* 등록자 */
+            , #{regDttm}               /* 등록일시 */
+            , #{chgId}                 /* 최종수정자 */
+            , #{chgDttm}               /* 최종수정일시 */
+        )
+    </insert>
+
+    <!-- Update GrpCd -->
+    <update id="updGrpCd" parameterType="Map">
+        /* NS_GrpCd.updGrpCd */
+        UPDATE TB_CD_GRP                /* 코드그룹 */
+           SET GRP_CD_TP              = #{grpCdTp}                 /* 그룹코드유형[W:웹,S:시스템] */
+             , GRP_CD_NM              = #{grpCdNm}                 /* 그룹코드명 */
+             , RM                     = #{rm}                      /* 비고 */
+             , USE_YN                 = #{useYn}                   /* 사용여부 */
+             , CHG_ID                 = #{chgId}                   /* 최종수정자 */
+             , CHG_DTTM               = #{chgDttm}                   /* 최종수정일시 */
+         WHERE GRP_CD                 = #{grpCd}                   /* 그룹코드 */
+    </update>
+
+    <!-- Delete GrpCd -->
+    <delete id="delGrpCd" parameterType="Map">
+        /* NS_GrpCd.delGrpCd */
+        DELETE FROM TB_CD_GRP                /* 코드그룹 */
+         WHERE GRP_CD                 = #{grpCd}                   /* 그룹코드 */
+    </delete>
+
+    <!-- Delete GrpCd -->
+    <delete id="delCdInGrpCd" parameterType="Map">
+        /* NS_GrpCd.delGrpCd */
+        DELETE FROM TB_CD             /* 코드 */
+         WHERE GRP_CD                 = #{grpCd}                   /* 그룹코드 */
+    </delete>
+
+    <select id="selComboList" parameterType="Map" resultType="CamelMap">
+        /* NS_Cd.selComboList */
+        SELECT B.CD
+             , B.CD_NM
+          FROM TB_CD_GRP A
+               INNER JOIN TB_CD B
+                       ON B.GRP_CD = A.GRP_CD
+                      AND B.USE_YN = 'Y'
+         WHERE A.GRP_CD = #{grpCd}
+           AND A.USE_YN = 'Y'
+        ORDER BY B.SORT_SN
+    </select>
+
+</mapper>

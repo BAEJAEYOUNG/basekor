@@ -1,0 +1,135 @@
+/*.gnb-bar {*/
+/*    background: hotpink;*/
+/*    display: inline-block;*/
+/*    width: 100%;*/
+/*}*/
+.gnb {
+    margin  : 0;
+    padding : 0;
+}
+
+.gnb {
+    margin : 0;
+}
+
+.gnb > li {
+    position    : relative;
+    display     : inline-block;
+    width: 120px;
+    margin      : 0;
+    padding     : 0 20px;
+    height      : 35px;
+    line-height : 35px;
+}
+
+.gnb > li > a {
+    font-size   : 18px;
+    font-weight : bold;
+    color       : #000000;
+    cursor      : pointer;
+}
+
+.gnb > li:hover {
+    cursor: pointer;
+}
+
+.gnb > li:hover > a {
+    color : #1A73E8;
+
+
+}
+
+.gnb ul.sub-menu {
+    position: absolute;
+    border  : 1px solid #E4E4E4;
+    background-color : #e7e7e7;
+    border-radius: 5px;
+    box-shadow         : 1px 1px 3px #ddd;
+    width: 120px;
+    top: 99%;
+    left: 20px;
+    display : none;
+    z-index    : 2147483647;
+}
+.gnb ul.sub-menu li {
+    height: 25px;
+    vertical-align: middle;
+}
+.gnb ul.sub-menu li:hover a {
+    color: #00bbee;
+    background-color : #ffffcc;
+}
+.gnb ul.sub-menu li a {
+    display : block;
+    line-height : 25px;
+    font-size : 14px;
+    color : #444;
+    font-weight : bold;
+    padding:0 3px;
+}
+
+/*.gnb ul.sub-menu li {*/
+/*    position : relative;*/
+/*}*/
+
+
+/*
+.gnb li {
+    float      : left;
+    list-style : none;
+    position   : relative;
+    font-size  : 15px;
+    height     : 25px;
+}
+
+.gnb li:hover {
+}
+
+.gnb li:hover > a {
+    color : #5D8BC2;
+}
+
+.gnb > li > a {
+    color           : #222;
+    display         : block;
+    padding         : 10px 20px;
+    text-decoration : none;
+    font-weight     : bold;
+    margin-left     : 10px;
+}
+
+.gnb ul.sub-menu {
+    background : #eee;
+    border     : 1px solid silver;
+    display    : none;
+    padding    : 0;
+    position   : absolute;
+    left       : 20px;
+    top        : 35px;
+    width      : 120px;
+    z-index    : 2147483647;
+}
+
+.gnb ul.sub-menu li {
+    float : none;
+}
+
+.gnb ul li.sub-menu:hover a {
+    color : black;
+}
+
+.gnb ul ul {
+    left : 100%;
+    top  : 0;
+}
+
+.gnb ul ul li {
+    float        : left;
+    margin-right : 10px;
+
+}
+
+.gnb ul ul li a {
+    padding: 5px 10px;
+}
+*/

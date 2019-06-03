@@ -1,0 +1,1 @@
+웹 static resource 저장장소

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Developed by JAEYOUNG BAE on 19. 4. 29 오후 3:49.
+  ~ Last modified 19. 4. 26 오전 11:16.
+  ~ Copyright (c) 2019. All rights reserved.
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="NS_Main">
+
+    <!-- NS_Main.selMainMenuList -->
+    <select id="selMainMenuList" parameterType="map" resultType="camelMap">
+        /* NS_Main.selMainMenuList */
+        SELECT B.MENU_ID                  /* 메뉴아이디 */
+             , B.MENU_NM                  /* 메뉴명 */
+             , B.MENU_TP                  /* 메뉴유형[M:메뉴,S:구분선] */
+             , B.EXEC_CMD                 /* 실행명령 */
+             , B.MENU_LV                  /* 메뉴레벨 */
+             , B.SORT_SN                  /* 정렬순서 */
+             , B.PS_MENU_ID               /* 소속메뉴아이디 */
+             , B.AUTH_R                   /* 읽기권한 */
+             , B.AUTH_W                   /* 변경권한 */
+             , B.AUTH_D                   /* 삭제원한 */
+             , B.AUTH_P                   /* 인쇄권한 */
+        FROM TB_ATHR_MNGR A
+                 INNER JOIN VW_ATHR_MENU B
+                            ON B.ATHR_CD = A.ATHR_CD
+        WHERE A.MNGR_ID = #{mngrId}
+            AND B.USE_YN = 'Y'
+        ORDER BY B.PS_SORT_SN
+                , B.MENU_LV
+                , B.SORT_SN
+    </select>
+
+</mapper>
