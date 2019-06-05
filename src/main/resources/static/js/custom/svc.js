@@ -7,11 +7,6 @@
 
 var svc = {};
 
-// locale 세팅(초기값은 KOREA) - jsp 페이지에서 서버 locale 에 따라 재설정 된다.
-svc.locale = "ko_KR";
-svc.language = "ko";
-svc.country = "KR";
-
 svc.contextPath = "";
 
 svc.dialog = null;      // 공통팝업 dialog

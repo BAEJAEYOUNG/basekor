@@ -38,16 +38,16 @@
 
             // grid1 - Athr Grid
             var colModel1 = [];
-            colModel1.push( { label: '<spring:message code="common.regId"/>', name: 'regId', hidden: true } );
-            colModel1.push( { label: '<spring:message code="common.regDttm"/>', name: 'regDttm', hidden: true } );
-            colModel1.push( { label: '<spring:message code="common.chgId"/>', name: 'chgId', hidden: true } );
-            colModel1.push( { label: '<spring:message code="common.chgDttm"/>', name: 'chgDttm', hidden: true } );
-            colModel1.push( { label: '<spring:message code="common.useYn"/>', name: 'useYn', hidden: true } );
-            colModel1.push( { label: '<spring:message code="athr.content.athrCd"/>', name: 'athrCd' } );
-            colModel1.push( { label: '<spring:message code="athr.content.athrNm"/>', name: 'athrNm' } );
-            colModel1.push( { label: '<spring:message code="common.sortSn"/>', name: 'sortSn', format: 'number' } );
-            colModel1.push( { label: '<spring:message code="common.useYn"/>', name: 'useYnNm' } );
-            colModel1.push( { label: '<spring:message code="common.rm"/>', name: 'rm', width: 200 } );
+            colModel1.push({ label: '사용여부' , name: 'useYn'   , hidden: true });
+            colModel1.push({ label: '등록자'   , name: 'regId'   , hidden: true });
+            colModel1.push({ label: '수정자'   , name: 'chgId'   , hidden: true });
+            colModel1.push({ label: '등록일시' , name: 'regDttm' , hidden: true });
+            colModel1.push({ label: '수정일시' , name: 'chgDttm' , hidden: true });
+            colModel1.push({ label: '권한코드' , name: 'athrCd'   });
+            colModel1.push({ label: '권한명'   , name: 'athrNm'   });
+            colModel1.push({ label: '정렬순번' , name: 'sortSn'  , format: 'number', align: 'right' });
+            colModel1.push({ label: '사용여부' , name: 'useYnNm'    });
+            colModel1.push({ label: '비고'     , name: 'rm'      , width: 200 });
 
             args.grid.prop.colModel = svc.util.clone( colModel1 );
 
@@ -56,11 +56,11 @@
 
             // grid2 - 권한-관리자
             var colModel2 = [];
-            colModel2.push( { label: '<spring:message code="athr.content.athrCd"/>', name: 'athrCd', hidden: true } );
-            colModel2.push( { label: '<spring:message code="mngr.content.mngrId"/>', name: 'mngrId', width: 150 } );
-            colModel2.push( { label: '<spring:message code="mngr.content.mngrNm"/>', name: 'mngrNm', width: 200 } );
-            colModel2.push( { label: '<spring:message code="common.email"/>', name: 'email', width: 250 } );
-            colModel2.push( { label: '<spring:message code="common.hpNo"/>', name: 'hpNo', format: 'tel_no', width: 150 } );
+            colModel2.push({ label: '권한코드'     , name: 'athrCd'  , hidden: true });
+            colModel2.push({ label: '관리자아이디' , name: 'mngrId'  , width: 150 });
+            colModel2.push({ label: '관리자명'     , name: 'mngrNm'  , width: 200 });
+            colModel2.push({ label: '이메일'       , name: 'email'   , width: 250 });
+            colModel2.push({ label: '휴대폰번호'   , name: 'hpNo'    , width: 150    , format: 'tel_no' });
 
             var gridProp2 = {};
             gridProp2.colModel = colModel2;
@@ -89,20 +89,20 @@
 
             //권한-메뉴 그리드 생성
             var colModel3 = [];
-            colModel3.push( { label: '<spring:message code="athr.content.athrCd"/>', name: 'athrCd', hidden: true } );
-            colModel3.push( { label: '<spring:message code="menu.content.psMenuId"/>', name: 'psMenuId', width: 100, editable: true, edittype: 'text', editrules: { required: true } } );
-            colModel3.push( { label: '<spring:message code="menu.content.psMenuNm"/>', name: 'psMenuNm', format: 'string', width: 120 } );
-            colModel3.push( { label: '<spring:message code="menu.content.menuId"/>', name: 'menuId', width: 80 } );
-            colModel3.push( { label: '<spring:message code="menu.content.menuNm"/>', name: 'menuNm', format: 'string', width: 100, editable: true, edittype: 'text', editrules: { required: true } } );
-            colModel3.push( { label: '<spring:message code="menu.content.menuTp"/>', name: 'menuTp', width: 80, editable: true, editrules: { required: true }, edittype: "select", formatter: "select", editoptions: { value: menuType } } );
-            colModel3.push( { label: '<spring:message code="menu.content.execCmd"/>', name: 'execCmd', format: 'string', width: 300, editable: true, edittype: 'text' } );
-            colModel3.push( { label: '<spring:message code="athr.content.authR"/>', name: 'authR', width: 40, editable: true, edittype: 'checkbox', editoptions: { value: 'Y:N' }, align: 'center' } );
-            colModel3.push( { label: '<spring:message code="athr.content.authW"/>', name: 'authW', width: 40, editable: true, edittype: 'checkbox', editoptions: { value: 'Y:N' }, align: 'center' } );
-            colModel3.push( { label: '<spring:message code="athr.content.authD"/>', name: 'authD', width: 40, editable: true, edittype: 'checkbox', editoptions: { value: 'Y:N' }, align: 'center' } );
-            colModel3.push( { label: '<spring:message code="athr.content.authP"/>', name: 'authP', width: 40, editable: true, edittype: 'checkbox', editoptions: { value: 'Y:N' }, align: 'center' } );
-            colModel3.push( { label: '<spring:message code="menu.content.menuLv"/>', name: 'menuLv', format: 'number', width: 60, editable: true, editrules: { number: true, required: true } } );
-            colModel3.push( { label: '<spring:message code="common.sortSn"/>', name: 'sortSn', format: 'number', width: 60, editable: true, editrules: { number: true, required: true } } );
-            colModel3.push( { label: '<spring:message code="common.useYn"/>', name: 'useYn', width: 60, editable: true, edittype: 'checkbox', editoptions: { value: 'Y:N' }, align: 'center' } );
+            colModel3.push( { label: '권한코드'        , name: 'athrCd'    , hidden: true } );
+            colModel3.push( { label: '소속메뉴아이디'  , name: 'psMenuId'  , width: 100  , editable: true, edittype: 'text', editrules: { required: true } } );
+            colModel3.push( { label: '소속메뉴명'      , name: 'psMenuNm'  , width: 120  , format: 'string' } );
+            colModel3.push( { label: '메뉴아이디'      , name: 'menuId'    , width: 80    } );
+            colModel3.push( { label: '메뉴명'          , name: 'menuNm'    , width: 100  , editable: true , edittype: 'text'     , format: 'string', editrules: { required: true } } );
+            colModel3.push( { label: '메뉴유형'        , name: 'menuTp'    , width: 80   , editable: true , edittype: "select"   , editrules: { required: true }, formatter: "select", editoptions: { value: menuType } } );
+            colModel3.push( { label: '실행명령'        , name: 'execCmd'   , width: 300  , editable: true , edittype: 'text'     , format: 'string' } );
+            colModel3.push( { label: '읽기권한'        , name: 'authR'     , width: 40   , editable: true , edittype: 'checkbox' , editoptions: { value: 'Y:N' }, align: 'center' } );
+            colModel3.push( { label: '변경권한'        , name: 'authW'     , width: 40   , editable: true , edittype: 'checkbox' , editoptions: { value: 'Y:N' }, align: 'center' } );
+            colModel3.push( { label: '삭제권한'        , name: 'authD'     , width: 40   , editable: true , edittype: 'checkbox' , editoptions: { value: 'Y:N' }, align: 'center' } );
+            colModel3.push( { label: '인쇄권한'        , name: 'authP'     , width: 40   , editable: true , edittype: 'checkbox' , editoptions: { value: 'Y:N' }, align: 'center' } );
+            colModel3.push( { label: '메뉴레벨'        , name: 'menuLv'    , width: 60   , editable: true , format: 'number', editrules: { number: true, required: true } } );
+            colModel3.push( { label: '정렬순번'        , name: 'sortSn'    , width: 60   , editable: true , format: 'number', editrules: { number: true, required: true } } );
+            colModel3.push( { label: '사용여부'        , name: 'useYn'     , width: 60   , editable: true , edittype: 'checkbox', editoptions: { value: 'Y:N' }, align: 'center' } );
 
             var gridProp3 = {};
             gridProp3.colModel = colModel3;
@@ -117,10 +117,10 @@
 
             //권한-관리자 팝업 그리드 생성
             var colModel4 = [];
-            colModel4.push( { label: '<spring:message code="mngr.content.mngrId"/>', name: 'mngrId', width: 100 } );
-            colModel4.push( { label: '<spring:message code="mngr.content.mngrNm"/>', name: 'mngrNm', width: 120 } );
-            colModel4.push( { label: '<spring:message code="common.email"/>', name: 'email', width: 200 } );
-            colModel4.push( { label: '<spring:message code="common.hpNo"/>', name: 'hpNo', format: 'tel_no', width: 200 } );
+            colModel4.push({ label: '관리자아이디'       , name: 'mngrId'      , width: 100 });
+            colModel4.push({ label: '관리자명'           , name: 'mngrNm'      , width: 120 });
+            colModel4.push({ label: '이메일'             , name: 'email'       , width: 200 });
+            colModel4.push({ label: '휴대폰번호'         , name: 'hpNo'        , width: 200 , format: 'tel_no' });
 
             var gridProp4 = {};
             gridProp4.colModel = colModel4;
@@ -131,18 +131,19 @@
             grid4 = new svc.grid( "grid4", gridProp4 );
             grid4.loadGrid();
 
-            //권한-관리자 팝업 그리드 생성
+            //권한-메뉴 팝업 그리드 생성
             var colModel5 = [];
-            colModel5.push( { label: '<spring:message code="menu.content.menuTp"/>', name: 'menuTp', hidden: true } );
-            colModel5.push( { label: '<spring:message code="common.useYn"/>', name: 'useYn', hidden: true } );
-            colModel5.push( { label: '<spring:message code="menu.content.psMenuId"/>', name: 'psMenuId', hidden: true } );
-            colModel5.push( { label: '<spring:message code="menu.content.menuId"/>', name: 'menuId' } );
-            colModel5.push( { label: '<spring:message code="menu.content.psMenuNm"/>', name: 'psMenuNm' } );
-            colModel5.push( { label: '<spring:message code="menu.content.menuNm"/>', name: 'menuNm' } );
-            colModel5.push( { label: '<spring:message code="menu.content.menuTp"/>', name: 'menuTpNm' } );
-            colModel5.push( { label: '<spring:message code="menu.content.execCmd"/>', name: 'execCmd' } );
-            colModel5.push( { label: '<spring:message code="menu.content.menuLv"/>', name: 'menuLv', format: 'number' } );
-            colModel5.push( { label: '<spring:message code="common.sortSn"/>', name: 'sortSn', format: 'number' } );
+            colModel5.push({ label: '메뉴유형'       , name: 'menuTp'   , hidden: true });
+            colModel5.push({ label: '사용여부'       , name: 'useYn'    , hidden: true });
+            colModel5.push({ label: '소속메뉴아이디' , name: 'psMenuId' , hidden: true });
+            colModel5.push({ label: '메뉴아이디'     , name: 'menuId'    });
+            colModel5.push({ label: '소속메뉴명'     , name: 'psMenuNm'  } );
+            colModel5.push({ label: '메뉴명'         , name: 'menuNm'    });
+            colModel5.push({ label: '메뉴유형'       , name: 'menuTpNm'  });
+            colModel5.push({ label: '실행명령'       , name: 'execCmd'   });
+            colModel5.push({ label: '메뉴레벨'       , name: 'menuLv'   , format: 'number', align: 'right' });
+            colModel5.push({ label: '정렬순번'       , name: 'sortSn'   , format: 'number', align: 'right' });
+
 
             var gridProp5 = {};
             gridProp5.colModel = colModel5;
@@ -219,12 +220,12 @@
         // 권한-관리자 등록 팝업 오픈
         function doNew2() {
             if( crud.grid.obj.clickedRowData == null ) {
-                svc.ui.alert( '<spring:message code="athr.msg.doNew2.1"/>' );
+                svc.ui.alert( '관리자를 등록하시려면 먼저 왼쪽 권한목록에서 권한을 선택하세요.' );
                 return;
             }
             var dialogProp = $.extend( true, {}, svc.ui.dialogProp );
             $.extend( true, dialogProp, {
-                title : '<spring:message code="athr.msg.doNew2.2"/>',
+                title : '권한-관리자 등록',
                 width : dialog1W,
                 height: dialog1H,
                 open  : function() {
@@ -246,7 +247,7 @@
         function doSaveDialog1() {
             var selectedIds = $( "#grid4" ).getGridParam( "selarrrow" );
             if( selectedIds.length == 0 ) {
-                svc.ui.alert( '<spring:message code="athr.msg.doSaveDialog1.1"/>' );
+                svc.ui.alert( '선택한 관리자가 없습니다. 권한에 등록할 관리자를 선택하세요' );
                 return;
             }
 
@@ -260,7 +261,7 @@
                 athrMngrList.push( paramMap );
             }
 
-            svc.ui.confirm( '<spring:message code="athr.msg.doSaveDialog1.2"/>'.replaceAll( "{0}", crud.grid.obj.clickedRowData.athrNm ), function() {
+            svc.ui.confirm( '선택하신 관리자를 권한[{0}]에 등록하시겠습니까?'.replaceAll( "{0}", crud.grid.obj.clickedRowData.athrNm ), function() {
                 svc.net.ajaxList( "/system/athr/insAthrMngrList", athrMngrList, function( result ) {
                     if( result.resultCd == "00" ) {
                         doSearch2();
@@ -276,7 +277,7 @@
         function doDelete2() {
             var selectedIds = $( "#grid2" ).getGridParam( "selarrrow" );
             if( selectedIds.length == 0 ) {
-                svc.ui.alert( '<spring:message code="athr.msg.doDelete2.1"/>' );
+                svc.ui.alert( '선택한 관리자가 없습니다. 권한에 삭제할 관리자를 선택하세요' );
                 return;
             }
             var athrMngrList = [];
@@ -287,7 +288,7 @@
                 paramMap.mngrId = selectedData.mngrId;
                 athrMngrList.push( paramMap );
             }
-            svc.ui.confirm( '<spring:message code="athr.msg.doDelete2.2"/>'.replaceAll( "{0}", crud.grid.obj.clickedRowData.athrNm ), function() {
+            svc.ui.confirm( '선택하신 관리자를 권한[{0}]에서 삭제하시겠습니까?'.replaceAll( "{0}", crud.grid.obj.clickedRowData.athrNm ), function() {
                 svc.net.ajaxList( "/system/athr/delAthrMngrList", athrMngrList, function( result ) {
                     if( result.resultCd == "00" ) {
                         doSearch2();
@@ -307,12 +308,12 @@
         // 권한-메뉴 등록 팝업 open
         function doNew3() {
             if( crud.grid.obj.clickedRowData == null ) {
-                svc.ui.alert( '<spring:message code="athr.msg.doNew3.1"/>' );
+                svc.ui.alert( '메뉴를 등록하시려면 먼저 왼쪽 권한조회에서 권한을 선택하세요.' );
                 return;
             }
             var dialogProp = $.extend( true, {}, svc.ui.dialogProp );
             $.extend( true, dialogProp, {
-                title : '<spring:message code="athr.msg.doNew3.2"/>',
+                title : '권한-메뉴 등록',
                 width : dialog2W,
                 height: dialog2H,
                 open  : function() {
@@ -326,7 +327,7 @@
         function doSave3() {
             var selectedIds = $("#grid3").getGridParam('selarrrow');
             if (selectedIds.length == "0") {
-                svc.ui.alert('<spring:message code="athr.msg.doSave3.1"/>');
+                svc.ui.alert('저장할 데이타를 먼저 추가해주세요.');
                 return;
             }
             //에디트 0,0으로 grid를 속인다.
@@ -343,7 +344,7 @@
                 var selectedData = $("#grid3").getRowData(selectedIds[i]);
                 athrMenuList.push(selectedData);
             }
-            svc.ui.confirm('<spring:message code="athr.msg.doSave3.2"/>', function() {
+            svc.ui.confirm('해당 메뉴를 저장하시겠습니까?', function() {
                 svc.net.ajaxList("/system/athr/updAthrMenuList", athrMenuList, function(result) {
                     if (result.resultCd == "00") {
                         doSearch3();
@@ -355,7 +356,7 @@
         function doDelete3() {
             var selectedIds = $("#grid3").getGridParam("selarrrow");
             if (selectedIds.length == 0) {
-                svc.ui.alert('<spring:message code="athr.msg.doDelete3.1"/>');
+                svc.ui.alert('선택한 메뉴가 없습니다. 권한에 삭제할 메뉴를 선택하세요');
                 return;
             }
             var athrMenuList = [];
@@ -366,7 +367,7 @@
                 paramMap.menuId = selectedData.menuId;
                 athrMenuList.push(paramMap);
             }
-            svc.ui.confirm('<spring:message code="athr.msg.doDelete3.2"/>'.replaceAll("{0}",crud.grid.obj.clickedRowData.athrNm), function() {
+            svc.ui.confirm('선택하신 메뉴를 권한[{0}]에서 삭제하시겠습니까?'.replaceAll("{0}",crud.grid.obj.clickedRowData.athrNm), function() {
                 svc.net.ajaxList("/system/athr/delAthrMenuList", athrMenuList, function(result) {
                     if (result.resultCd == "00") {
                         doSearch3();
@@ -396,7 +397,7 @@
 
             if (selectedIds.length == 0) {
 
-                svc.ui.alert('<spring:message code="athr.msg.doSaveDialog2.1"/>');
+                svc.ui.alert('선택한 메뉴가 없습니다. 권한에 등록할 메뉴를 선택하세요');
                 return;
 
             }
@@ -416,7 +417,7 @@
 
             }
 
-            svc.ui.confirm('<spring:message code="athr.msg.doSaveDialog2.2"/>'.replaceAll("{0}", crud.grid.obj.clickedRowData.athrNm), function() {
+            svc.ui.confirm('선택하신 메뉴를 권한[{0}]에 등록하시겠습니까?'.replaceAll("{0}", crud.grid.obj.clickedRowData.athrNm), function() {
                 svc.net.ajaxList("/system/athr/insAthrMenuList", athrMenuList, function(result) {
                     if (result.resultCd == "00") {
                         doSearch3();
@@ -435,56 +436,52 @@
 <div class="contents-wrap">
 
     <div class="location-wrap">
-        <p class="location"><span class="btn_home"></span>&nbsp;> <span name="menu"><spring:message code="athr.nav.top"/></span> > <span name="menu"><spring:message code="athr.nav.title"/></span></p>
+        <p class="location"><span class="btn_home"></span>&nbsp;> <span name="menu">시스템</span> > <span name="menu">권한</span></p>
     </div>
     <%--  // location-wrap  --%>
 
     <div class="wrap-21-tp02">
 
         <div class="title-panel">
-            <h3 class="style-title"><spring:message code="athr.content.edit-panel-title"/></h3>
+            <h3 class="style-title">권한 정보</h3>
             <div class="button-bar">
-                <button type="button" class="small button" data-auth="R" onclick="doSearch()"><spring:message code="button.search"/></button>
-                <button type="button" class="small button green" data-auth="W" onclick="doNew()"><spring:message code="button.new"/></button>
-                <button type="button" class="small button blue" data-auth="W" onclick="doSave()"><spring:message code="button.save"/></button>
-                <button type="button" class="small button red" data-auth="D" onclick="doDelete()"><spring:message code="button.delete"/></button>
+                <button type="button" class="small button" data-auth="R" onclick="doSearch()">조회</button>
+                <button type="button" class="small button green" data-auth="W" onclick="doNew()">신규</button>
+                <button type="button" class="small button blue" data-auth="W" onclick="doSave()">저장</button>
+                <button type="button" class="small button red" data-auth="D" onclick="doDelete()">삭제</button>
             </div>
         </div>
         <%--  // title-panel  --%>
 
         <div id="edit-panel" class="edit-panel">
             <input type="hidden" name="mode" value="I"/>
-            <table>
-                <colgroup>
-                    <col width="100"/>
-                    <col width="150"/>
-                    <col width="100"/>
-                    <col width="150"/>
-                </colgroup>
-                <tbody>
-                <tr>
-                    <th><spring:message code="athr.content.athrCd"/></th>
-                    <td><input type="text" name="athrCd" data-title='<spring:message code="athr.content.athrCd"/>' class="form-input-text width120" data-mode-style="enable" data-command="doSave()" data-required/></td>
-                    <th><spring:message code="athr.content.athrNm"/></th>
-                    <td><input type="text" name="athrNm" data-title='<spring:message code="athr.content.athrNm"/>' class="form-input-text width120" data-command="doSave()" data-required/></td>
-                </tr>
-                <tr>
-                    <th><spring:message code="common.sortSn"/></th>
-                    <td><input type="text" name="sortSn" data-title='<spring:message code="common.sortSn"/>' class="form-input-text width120" value="10" data-format="number" data-command="doSave()" data-required/></td>
-                    <th><spring:message code="common.useYn"/></th>
-                    <td><select name="useYn" data-title='<spring:message code="common.useYn"/>' class="width120" data-grpcd="USE_YN" data-required></select></td>
-                </tr>
-                <tr>
-                    <th><spring:message code="common.rm"/></th>
-                    <td colspan="3"><input type="text" name="rm" data-title='<spring:message code="common.rm"/>' class="form-input-text width380" data-command="doSave()"/></td>
-                </tr>
-                </tbody>
-            </table>
+            <div>
+                <dl>
+                    <dt>권한코드</dt>
+                    <dd><input type="text" name="athrCd" data-title='권한코드' class="form-input-text width120" data-mode-style="enable" data-command="doSave()" data-required/></dd>
+                    <dt>권한명</dt>
+                    <dd><input type="text" name="athrNm" data-title='권한명' class="form-input-text width120" data-command="doSave()" data-required/></dd>
+                </dl>
+                <dl>
+                    <dt>정렬순번</dt>
+                    <dd><input type="text" name="sortSn" data-title='정렬순번' class="form-input-text width120" value="10" data-format="number" data-command="doSave()" data-required/></dd>
+                    <dt>사용여부</dt>
+                    <dd><select name="useYn" data-title='사용여부' class="width120" data-grpcd="USE_YN" data-required></select></dd>
+                </dl>
+                <dl>
+                    <dt>비고</dt>
+                    <dd>
+                        <div data-colspan="2-4">
+                            <input type="text" name="rm" data-title='비고' class="form-input-text width380" data-command="doSave()"/>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
         </div>
         <%--  // edit-panel  --%>
 
         <div class="title-panel">
-            <h3 class="style-title"><span name="title"><spring:message code="athr.content.grid1-title"/></span></h3>
+            <h3 class="style-title"><span name="title">권한 목록</span></h3>
         </div>
         <%--  // grpCd grid title-panel  --%>
 
@@ -498,10 +495,10 @@
     <div class="wrap-22-tp02">
 
         <div class="title-panel">
-            <h3 class="style-title"><spring:message code="athr.content.grid2-title"/></h3>
+            <h3 class="style-title">권한-관리자 목록</h3>
             <div class="button-bar">
-                <button type="button" class="small button green" data-auth="W" onclick="doNew2()"><spring:message code="button.add"/></button>
-                <button type="button" class="small button red" data-auth="D" onclick="doDelete2()"><spring:message code="button.delete"/></button>
+                <button type="button" class="small button green" data-auth="W" onclick="doNew2()">등록</button>
+                <button type="button" class="small button red" data-auth="D" onclick="doDelete2()">삭제ㄴ</button>
             </div>
         </div>
         <!-- //title-panel -->
@@ -513,11 +510,11 @@
         <%-- // 권한-관리자 그리드 --%>
 
         <div class="title-panel">
-            <h3 class="style-title"><spring:message code="athr.content.grid3-title"/></h3>
+            <h3 class="style-title">권한-메뉴 목록</h3>
             <div class="button-bar">
-                <button type="button" class="small button green" data-auth="W" onclick="doNew3()"><spring:message code="button.add"/></button>
-                <button type="button" class="small button blue" onclick="doSave3()"><spring:message code="button.saveSelected"/></button>
-                <button type="button" class="small button red" onclick="doDelete3()"><spring:message code="button.delete"/></button>
+                <button type="button" class="small button green" data-auth="W" onclick="doNew3()">등록</button>
+                <button type="button" class="small button blue" onclick="doSave3()">선택항목저장</button>
+                <button type="button" class="small button red" onclick="doDelete3()">삭제</button>
             </div>
         </div>
         <!-- //title-panel -->
@@ -536,9 +533,9 @@
 
     <!-- 버튼 시작 -->
     <div class="button-bar">
-        <button type="button" class="small button" onclick="doQueryDialog1()" class="style-btn"><spring:message code="button.search"/></button>
-        <button type="button" class="small button blue" onclick="doSaveDialog1()" class="style-btn"><spring:message code="button.save"/></button>
-        <button type="button" class="small button red" onclick="$('#dialogAthrMngr').dialog('close')" class="style-btn"><spring:message code="button.close"/></button>
+        <button type="button" class="small button" onclick="doQueryDialog1()" class="style-btn">조회</button>
+        <button type="button" class="small button blue" onclick="doSaveDialog1()" class="style-btn">저장</button>
+        <button type="button" class="small button red" onclick="$('#dialogAthrMngr').dialog('close')" class="style-btn">닫기</button>
     </div>
     <!-- 버튼 끝 -->
 
@@ -554,9 +551,9 @@
 
     <!-- 버튼 시작 -->
     <div class="button-bar">
-        <button type="button" class="small button" onclick="doQueryDialog2()" class="style-btn"><spring:message code="button.search"/></button>
-        <button type="button" class="small button blue" onclick="doSaveDialog2()" class="style-btn"><spring:message code="button.save"/></button>
-        <button type="button" class="small button red" onclick="$('#dialogAthrMenu').dialog('close')" class="style-btn"><spring:message code="button.close"/></button>
+        <button type="button" class="small button" onclick="doQueryDialog2()" class="style-btn">조회</button>
+        <button type="button" class="small button blue" onclick="doSaveDialog2()" class="style-btn">저장</button>
+        <button type="button" class="small button red" onclick="$('#dialogAthrMenu').dialog('close')" class="style-btn">닫기</button>
     </div>
     <!-- 버튼 끝 -->
 

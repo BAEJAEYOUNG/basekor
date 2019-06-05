@@ -58,7 +58,7 @@ svc.gnb.prototype.load = function(loadUrl) {
                 _ref.makeMainNenu();
             }, 1000);
         } else {    // 실패
-            svc.ui.alert(localeMsg['main.menu.error']);
+            svc.ui.alert('메뉴를 가져오는중 오류가 발생했습니다.');
         }
     });
 };

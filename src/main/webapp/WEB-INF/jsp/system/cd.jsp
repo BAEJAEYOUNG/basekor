@@ -32,17 +32,18 @@
 
             // grid1 - Group Code Grid
             var colModel1 = [];
-            colModel1.push( { label: '<spring:message code="common.regId"/>', name: 'regId', hidden: true } );
-            colModel1.push( { label: '<spring:message code="common.regDttm"/>', name: 'regDttm', hidden: true } );
-            colModel1.push( { label: '<spring:message code="common.chgId"/>', name: 'chgId', hidden: true } );
-            colModel1.push( { label: '<spring:message code="common.chgDttm"/>', name: 'chgDttm', hidden: true } );
-            colModel1.push( { label: '<spring:message code="cd.content.grpCdTp"/>', name: 'grpCdTp', hidden: true } );
-            colModel1.push( { label: '<spring:message code="common.useYn"/>', name: 'useYn', hidden: true } );
-            colModel1.push( { label: '<spring:message code="cd.content.grpCd"/>', name: 'grpCd', width: 150 } );
-            colModel1.push( { label: '<spring:message code="cd.content.grpCdNm"/>', name: 'grpCdNm', width: 150 } );
-            colModel1.push( { label: '<spring:message code="cd.content.grpCdTp"/>', name: 'grpCdTpNm' } );
-            colModel1.push( { label: '<spring:message code="common.useYn"/>', name: 'useYnNm', width: 70 } );
-            colModel1.push( { label: '<spring:message code="common.rm"/>', name: 'rm', width: 200 } );
+            colModel1.push({ label: '그룹코드유형' , name: 'grpCdTp'   , hidden: true });
+            colModel1.push({ label: '사용여부'     , name: 'useYn'     , hidden: true });
+            colModel1.push({ label: '등록자'       , name: 'regId'     , hidden: true });
+            colModel1.push({ label: '수정자'       , name: 'chgId'     , hidden: true });
+            colModel1.push({ label: '등록일시'     , name: 'regDttm'   , hidden: true });
+            colModel1.push({ label: '수정일시'     , name: 'chgDttm'   , hidden: true });
+            colModel1.push({ label: '그룹코드'     , name: 'grpCd'     , width: 150 });
+            colModel1.push({ label: '그룹코드명'   , name: 'grpCdNm'   , width: 150 });
+            colModel1.push({ label: '그룹코드유형' , name: 'grpCdTpNm'  });
+            colModel1.push({ label: '사용여부'     , name: 'useYnNm'   , width: 70 });
+            colModel1.push({ label: '비고'         , name: 'rm'        , width: 200 });
+
             args.grid.prop.colModel = svc.util.clone( colModel1 );
 
             crud.init( args );
@@ -60,19 +61,19 @@
             args2.grid.prop.pager = '#pager2';
 
             var colModel2 = [];
-            colModel2.push( { label: '<spring:message code="cd.content.grpCd"/>', name: 'grpCd', hidden: true } );
-            colModel2.push( { label: '<spring:message code="common.regId"/>', name: 'regId', hidden: true } );
-            colModel2.push( { label: '<spring:message code="common.regDttm"/>', name: 'regDttm', hidden: true } );
-            colModel2.push( { label: '<spring:message code="common.chgId"/>', name: 'chgId', hidden: true } );
-            colModel2.push( { label: '<spring:message code="common.chgDttm"/>', name: 'chgDttm', hidden: true } );
-            colModel2.push( { label: '<spring:message code="cd.content.cdTp"/>', name: 'cdTp', hidden: true } );
-            colModel2.push( { label: '<spring:message code="common.useYn"/>', name: 'useYn', hidden: true } );
-            colModel2.push( { label: '<spring:message code="cd.content.cd"/>', name: 'cd', width: 150 } );
-            colModel2.push( { label: '<spring:message code="cd.content.cdNm"/>', name: 'cdNm', width: 150 } );
-            colModel2.push( { label: '<spring:message code="cd.content.cdTp"/>', name: 'cdTpNm' } );
-            colModel2.push( { label: '<spring:message code="common.sortSn"/>', name: 'sortSn', format: 'number' } );
-            colModel2.push( { label: '<spring:message code="common.useYn"/>', name: 'useYnNm', width: 70 } );
-            colModel2.push( { label: '<spring:message code="common.rm"/>', name: 'rm', width: 200 } );
+            colModel2.push({ label: '그룹코드' , name: 'grpCd'   , hidden: true });
+            colModel2.push({ label: '코드유형' , name: 'cdTp'    , hidden: true });
+            colModel2.push({ label: '사용여부' , name: 'useYn'   , hidden: true });
+            colModel2.push({ label: '등록자'   , name: 'regId'   , hidden: true });
+            colModel2.push({ label: '수정자'   , name: 'chgId'   , hidden: true });
+            colModel2.push({ label: '등록일시' , name: 'regDttm' , hidden: true });
+            colModel2.push({ label: '수정일시' , name: 'chgDttm' , hidden: true });
+            colModel2.push({ label: '코드'     , name: 'cd'      , width: 150 });
+            colModel2.push({ label: '코드명'   , name: 'cdNm'    , width: 150 });
+            colModel2.push({ label: '코드유형' , name: 'cdTpNm'   });
+            colModel2.push({ label: '정렬순번' , name: 'sortSn'  , format: 'number' });
+            colModel2.push({ label: '사용여부' , name: 'useYnNm' , width: 70 });
+            colModel2.push({ label: '비고'     , name: 'rm'      , width: 200 });
             args2.grid.prop.colModel = svc.util.clone( colModel2 );
 
             crud2.init( args2 );
@@ -161,7 +162,7 @@
 <div class="contents-wrap">
 
     <div class="location-wrap">
-        <p class="location"><span class="btn_home"></span>&nbsp;> <span name="menu"><spring:message code="cd.nav.top"/></span> > <span name="menu"><spring:message code="cd.nav.title"/></span></p>
+        <p class="location"><span class="btn_home"></span>&nbsp;> <span name="menu">시스템</span> > <span name="menu">공통코드</span></p>
     </div>
     <%--  // location-wrap  --%>
 
@@ -173,13 +174,13 @@
             </colgroup>
             <tbody>
             <tr>
-                <th><spring:message code="cd.search-panel.grpCd"/></th>
+                <th>그룹코드ID/명</th>
                 <td><input type="text" name="grpCd" class="form-input-text width150" autofocus data-command="doSearch()"></td>
             </tr>
             </tbody>
         </table>
         <div class="button-bar">
-            <button type="button" class="small button" data-auth="R" onclick="doSearch()"><spring:message code="button.search"/></button>
+            <button type="button" class="small button" data-auth="R" onclick="doSearch()">조회</button>
         </div>
     </div>
     <%--  // search-panel  --%>
@@ -187,50 +188,52 @@
     <div class="wrap-21-tp01">
 
         <div class="title-panel">
-            <h3 class="style-title"><spring:message code="cd.content.grp-edit-panel-title"/></h3>
+            <h3 class="style-title">그룹코드 정보</h3>
             <div class="button-bar">
-                <button type="button" class="small button green" data-auth="W" onclick="doNew()"><spring:message code="button.new"/></button>
-                <button type="button" class="small button blue" data-auth="W" onclick="doSave()"><spring:message code="button.save"/></button>
-                <button type="button" class="small button red" data-auth="D" onclick="doDelete()"><spring:message code="button.delete"/></button>
+                <button type="button" class="small button green" data-auth="W" onclick="doNew()">신규</button>
+                <button type="button" class="small button blue" data-auth="W" onclick="doSave()">저장</button>
+                <button type="button" class="small button red" data-auth="D" onclick="doDelete()">삭제</button>
             </div>
         </div>
         <%--  // title-panel  --%>
 
         <div id="grp-edit-panel" class="edit-panel">
             <input type="hidden" name="mode" value="I"/>
-            <table>
-                <colgroup>
-                    <col width="100"/>
-                    <col width="150"/>
-                    <col width="100"/>
-                    <col width="150"/>
-                </colgroup>
-                <tbody>
-                <tr>
-                    <th><spring:message code="cd.content.grpCd"/></th>
-                    <td colspan="3"><input type="text" name="grpCd" data-title='<spring:message code="cd.content.grpCd"/>' class="form-input-text width120" data-mode-style="enable" data-command="doSave()" data-required/></td>
-                </tr>
-                <tr>
-                    <th><spring:message code="cd.content.grpCdNm"/></th>
-                    <td><input type="text" name="grpCdNm" data-title='<spring:message code="cd.content.grpCdNm"/>' class="form-input-text width120" data-command="doSave()" data-required/></td>
-                    <th><spring:message code="cd.content.grpCdTp"/></th>
-                    <td><select name="grpCdTp" data-title='<spring:message code="cd.content.grpCdTp"/>' class="width120" data-grpcd="GRP_CD_TP"  data-selected-value="N"  data-required></select></td>
-                </tr>
-                <tr>
-                    <th><spring:message code="common.useYn"/></th>
-                    <td colspan="3"><select name="useYn" data-title='<spring:message code="common.useYn"/>' class="width120" data-grpcd="USE_YN" data-required></select></td>
-                </tr>
-                <tr>
-                    <th><spring:message code="common.rm"/></th>
-                    <td colspan="3"><input type="text" name="rm" data-title='<spring:message code="common.rm"/>' class="form-input-text width380" data-command="doSave()"/></td>
-                </tr>
-                </tbody>
-            </table>
+            <div>
+                <dl>
+                    <dt>그룹코드</dt>
+                    <dd><input type="text" name="grpCd" data-title='그룹코드' class="form-input-text width120" data-mode-style="enable" data-command="doSave()" data-required/></dd>
+                    <dd></dd>
+                    <dd></dd>
+                </dl>
+                <dl>
+                    <dt>그룹코드명</dt>
+                    <dd><input type="text" name="grpCdNm" data-title='그룹코드명' class="form-input-text width120" data-command="doSave()" data-required/></dd>
+                    <dt>그룹코드유형</dt>
+                    <dd><select name="grpCdTp" data-title='그룹코드유형' class="width120" data-grpcd="GRP_CD_TP"  data-selected-value="N"  data-required></select></dd>
+                </dl>
+                <dl>
+                    <dt>사용여부</dt>
+                    <dd><select name="useYn" data-title='사용여부' class="width120" data-grpcd="USE_YN" data-required></select></dd>
+                    <dd></dd>
+                    <dd></dd>
+                </dl>
+                <dl>
+                    <dt>비고</dt>
+                    <dd>
+                        <div data-colspan="2-4">
+                            <input type="text" name="rm" data-title='비고' class="form-input-text width390" data-command="doSave()"/>
+                        </div>
+                    </dd>
+                    <dd></dd>
+                    <dd></dd>
+                </dl>
+            </div>
         </div>
         <%--  // edit-panel  --%>
 
         <div class="title-panel">
-            <h3 class="style-title"><span name="title"><spring:message code="cd.content.grp-grid-title"/></span></h3>
+            <h3 class="style-title"><span name="title">그룹코드 목록</span></h3>
         </div>
         <%--  // grpCd grid title-panel  --%>
 
@@ -244,54 +247,52 @@
     <div class="wrap-22-tp01">
 
         <div class="title-panel">
-            <h3 class="style-title"><spring:message code="cd.content.cd-edit-panel-title"/></h3>
+            <h3 class="style-title">코드 정보</h3>
             <div class="button-bar">
-                <button type="button" class="small button green" data-auth="W" data-auth onclick="doNew2()"><spring:message code="button.new"/></button>
-                <button type="button" class="small button blue" data-auth="W" onclick="doSave2()"><spring:message code="button.save"/></button>
-                <button type="button" class="small button red" data-auth="D" onclick="doDelete2()"><spring:message code="button.delete"/></button>
+                <button type="button" class="small button green" data-auth="W" data-auth onclick="doNew2()">신규</button>
+                <button type="button" class="small button blue" data-auth="W" onclick="doSave2()">저장</button>
+                <button type="button" class="small button red" data-auth="D" onclick="doDelete2()">삭제</button>
             </div>
         </div>
         <%--  // title-panel  --%>
 
         <div id="cd-edit-panel" class="edit-panel">
             <input type="hidden" name="mode" value="I"/>
-            <table>
-                <colgroup>
-                    <col width="100"/>
-                    <col width="150"/>
-                    <col width="100"/>
-                    <col width="150"/>
-                </colgroup>
-                <tbody>
-                <tr>
-                    <th><spring:message code="cd.content.grpCd"/></th>
-                    <td><input type="text" name="grpCd" data-title='<spring:message code="cd.content.grpCd"/>' class="form-input-text width120" disabled data-required/></td>
-                    <th><spring:message code="cd.content.cd"/></th>
-                    <td><input type="text" name="cd" data-title='<spring:message code="cd.content.cd"/>' class="form-input-text width120" data-mode-style="enable" data-command="doSave2()" data-required/></td>
-                </tr>
-                <tr>
-                    <th><spring:message code="cd.content.cdNm"/></th>
-                    <td><input type="text" name="cdNm" data-title='<spring:message code="cd.content.cdNm"/>' class="form-input-text width120" data-command="doSave2()" data-required/></td>
-                    <th><spring:message code="cd.content.cdTp"/></th>
-                    <td><select name="grpCdTp" data-title='<spring:message code="cd.content.cdTp"/>' class="width120" data-grpcd="CD_TP" data-selected-value="N" data-required></select></td>
-                </tr>
-                <tr>
-                    <th><spring:message code="common.sortSn"/></th>
-                    <td><input type="text" name="sortSn" data-title='<spring:message code="common.sortSn"/>' class="form-input-text width120" value="10" data-format="number" data-command="doSave2()" data-required/></td>
-                    <th><spring:message code="common.useYn"/></th>
-                    <td><select name="useYn" data-title='<spring:message code="common.useYn"/>' class="width120" data-grpcd="USE_YN" data-required></select></td>
-                </tr>
-                <tr>
-                    <th><spring:message code="common.rm"/></th>
-                    <td colspan="3"><input type="text" name="rm" data-title='<spring:message code="common.rm"/>' class="form-input-text width380" data-command="doSave2()"/></td>
-                </tr>
-                </tbody>
-            </table>
+            <div>
+                <dl>
+                    <dt>그룹코드</dt>
+                    <dd><input type="text" name="grpCd" data-title='그룹코드' class="form-input-text width120" disabled data-required/></dd>
+                    <dt>코드</dt>
+                    <dd><input type="text" name="cd" data-title='코드' class="form-input-text width120" data-mode-style="enable" data-command="doSave2()" data-required/></dd>
+                </dl>
+                <dl>
+                    <dt>코드명</dt>
+                    <dd><input type="text" name="cdNm" data-title='코드명' class="form-input-text width120" data-command="doSave2()" data-required/></dd>
+                    <dt>코드유형</dt>
+                    <dd><select name="grpCdTp" data-title='코드유형' class="width120" data-grpcd="CD_TP" data-selected-value="N" data-required></select></dd>
+                </dl>
+                <dl>
+                    <dt>정렬순번</dt>
+                    <dd><input type="text" name="sortSn" data-title='정렬순번' class="form-input-text width120" value="10" data-format="number" data-command="doSave2()" data-required/></dd>
+                    <dt>사용여부</dt>
+                    <dd><select name="useYn" data-title='사용여부' class="width120" data-grpcd="USE_YN" data-required></select></dd>
+                </dl>
+                <dl>
+                    <dt>비고</dt>
+                    <dd>
+                        <div data-colspan="2-4">
+                            <input type="text" name="rm" data-title='비고' class="form-input-text width390" data-command="doSave2()"/>
+                        </div>
+                    </dd>
+                    <dd></dd>
+                    <dd></dd>
+                </dl>
+            </div>
         </div>
         <%--  // edit-panel  --%>
 
         <div class="title-panel">
-            <h3 class="style-title"><span name="title"><spring:message code="cd.content.cd-grid-title"/></span></h3>
+            <h3 class="style-title"><span name="title">코드 목록</span></h3>
         </div>
         <%--  // cd grid title-panel  --%>
 

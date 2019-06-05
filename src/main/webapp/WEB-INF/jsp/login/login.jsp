@@ -135,19 +135,19 @@
 <div id="logo"><img src="../../image/login/ksid.png" alt="ksid로고"></div>
 <div id="formLogin">
     <div id="cardLogin" class="wrap-login">
-        <h2><spring:message code="login..form-card.title"/></h2>
+        <h2>지문 스마트 카드 로그인</h2>
         <div class="smartcard">
             <div id="smartcardMsg">
-                <spring:message code="login..form-card.info1"/>
+                1. 지문 스마트카드 전원을 키고 지문인증을 합니다 .
                 <br>
-                <spring:message code="login..form-card.info2"/>
+                2. 지문 스마트카드를 리더기에 장착합니다 .
                 <br>
-                <spring:message code="login..form-card.info3"/>
+                3. 화면에 보이는 스마트카드를 클릭하여 로그인 합니다.
             </div>
         </div>
     </div>
     <div id="idLogin" class="wrap-login">
-        <h2><spring:message code="login.form-id,title"/></h2>
+        <h2>아이디/비밀번호 로그인</h2>
         <div id="idLoginBg"></div>
         <div id="idpw-login-panel">
 
@@ -163,20 +163,18 @@
                     </colgroup>
                     <tbody>
                     <tr>
-                        <th><label for="loginMngrId"><spring:message code="login.form-id.id"/></label></th>
-                        <td><input type="text" id="loginMngrId" name="mngrId" data-title="<spring:message code="login.form-id.id"/>" class="form-login-text form-input-text" autofocus data-required></td>
+                        <th><label for="loginMngrId">사용자ID</label></th>
+                        <td><input type="text" id="loginMngrId" name="mngrId" data-title="사용자ID" class="form-login-text form-input-text" autofocus data-required></td>
                     </tr>
                     <tr>
-                        <th><label for="loginMngrPwd"><spring:message code="login.form-id.pwd"/></label></th>
-                        <td><input type="password" id="loginMngrPwd" name="mngrPwd" data-title="<spring:message code="login.form-id.pwd"/>" class="form-login-text form-input-text" data-required></td>
+                        <th><label for="loginMngrPwd">비밀번호</label></th>
+                        <td><input type="password" id="loginMngrPwd" name="mngrPwd" data-title="비밀번호" class="form-login-text form-input-text" data-required></td>
                     </tr>
                     </tbody>
                 </table>
 
                 <div class="button-panel">
-                    <button type="submit" class="large green button" title='<spring:message code="login.form-id.button-text"/>'>
-                        <spring:message code="login.form-id.button-text"/>
-                    </button>
+                    <button type="submit" class="large green button" title='로그인'>로그인</button>
                 </div>
 
             </form>

@@ -49,17 +49,15 @@ svc.ui.alertJQ = function( msg, callbackFunc ) {
         draggable        : true,
         keyboardEnabled  : true,
         backgroundDismiss: false,
-        title            : localeMsg['msgbox.title.alert'],
+        title            : '확인',
         content          : msg,
         boxWidth         : '400px',
         useBootstrap     : false,
         buttons          : {
             specialKey: {
-                text  : localeMsg['msgbox.button.ok'],
-                keys  : [ 'enter' ],
+                text  : '확인',
+                keys  : ['enter'],
                 action: function() {
-                    console.log( "button ok click ~!!!!!!!!!!!!!!" );
-                    console.log( 'typeof(callbackFunc)', typeof ( callbackFunc ) );
                     if( typeof ( callbackFunc ) == "function" ) {
                         callbackFunc();
                     }
@@ -85,7 +83,7 @@ svc.ui.confirmDefault = function( msg, callbackFunc, cancelFunc ) {
 };
 svc.ui.confirmJQ = function( msg, callbackFunc, cancelFunc ) {
     return $.confirm( {
-        title            : localeMsg['msgbox.title.confirm'],
+        title            : '확인',
         type             : 'dark',
         draggable        : true,
         keyboardEnabled  : true,
@@ -93,12 +91,11 @@ svc.ui.confirmJQ = function( msg, callbackFunc, cancelFunc ) {
         content          : msg,
         boxWidth         : '400px',
         useBootstrap     : false,
-        // escapeKey: localeMsg['msgbox.button.cancel'],
         escapeKey        : 'cancel',
         buttons          : {
             specialKey: {
-                text  : localeMsg['msgbox.button.ok'],
-                keys  : [ 'enter' ],
+                text  : '확인',
+                keys  : ['enter'],
                 action: function() {
                     if( typeof ( callbackFunc ) == "function" ) {
                         callbackFunc();
@@ -106,7 +103,7 @@ svc.ui.confirmJQ = function( msg, callbackFunc, cancelFunc ) {
                 }
             },
             cancel    : {
-                text  : localeMsg['msgbox.button.cancel'],
+                text  : '취소',
                 action: function() {
                     if( typeof ( cancelFunc ) == "function" ) {
                         cancelFunc();
@@ -382,9 +379,9 @@ svc.datetime = function( oDate ) {
     this.dayKor = "";
     this.dayEng = "";
     this.dayCnt = 0;
-    this.arrDayCnt = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
-    this.arrDayKor = [ "일", "월", "화", "수", "목", "금", "토" ];
-    this.arrDayEng = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ];
+    this.arrDayCnt = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    this.arrDayKor = ["일", "월", "화", "수", "목", "금", "토"];
+    this.arrDayEng = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
     if( oDate ) {
         if( typeof ( oDate ) == 'date' ) {
@@ -673,7 +670,7 @@ svc.form.applyElementFormat = function( panelId, refElem, sFormat ) {
                     buttonText : 'Open Month Chooser',
                     jumpYears  : 'Jump Years',
                     backTo     : 'Back to',
-                    months     : [ 'Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'June', 'July', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.' ]
+                    months     : ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'June', 'July', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.']
                 };
             } else if( svc.language == 'ko' ) {
                 options.i18n = {
@@ -687,7 +684,7 @@ svc.form.applyElementFormat = function( panelId, refElem, sFormat ) {
                     buttonText : '월 선택창 열기',
                     jumpYears  : '년도 이동',
                     backTo     : '뒤로 가기',
-                    months     : [ '1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월' ]
+                    months     : ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
                 };
             } else if( svc.language == 'vi' ) {
                 options.i18n = {
@@ -701,7 +698,7 @@ svc.form.applyElementFormat = function( panelId, refElem, sFormat ) {
                     buttonText : 'Open Month Chooser',
                     jumpYears  : 'Jump Years',
                     backTo     : 'Back to',
-                    months     : [ 'Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'June', 'July', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.' ]
+                    months     : ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'June', 'July', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.']
                 };
             }
             options.MonthFormat = svc.dateFormat.pickerMonth;
@@ -920,7 +917,7 @@ svc.net.ajaxJqGrid = function( jqGrid, url, params, callback ) {
             }
 
         } else {
-            svc.ui.alert( localeMsg["error.msg.search-error"] + '<br/>' + result.resultMsg );
+            svc.ui.alert( '조회 중 오류가 발생했습니다.<br/>' + result.resultMsg );
         }
 
     } );
@@ -952,7 +949,7 @@ svc.net.getExcelGroupHeader = function( oGrid ) {
         for( var i = 0; i < groupHeadersOptions.groupHeaders.length; i++ ) {
             for( var j = 0; j < arrGridModel.length; j++ ) {
                 if( groupHeadersOptions.groupHeaders[i].startColumnName == arrGridModel[j].name ) {
-                    excelGroupHeader.push( [ 0, 0, j, j + groupHeadersOptions.groupHeaders[i].numberOfColumns - 1, groupHeadersOptions.groupHeaders[i].titleText ] );
+                    excelGroupHeader.push( [0, 0, j, j + groupHeadersOptions.groupHeaders[i].numberOfColumns - 1, groupHeadersOptions.groupHeaders[i].titleText] );
                 }
             }
         }
@@ -977,12 +974,12 @@ svc.net.ajaxExcel = function( url, fileNm, params, oGrid ) {
         excelParams.groupHeader = JSON.stringify( excelGroupHeader );
     }
 
-    svc.ui.confirm( jsLocaleStrings['msg.exceldown'].replaceAll( '(0)', fileNm ), function() {
+    svc.ui.confirm( '(0) 파일을 다운로드 하시겠습니까?'.replaceAll( '(0)', fileNm ), function() {
         $( "#form_excel" ).attr( "action", url );
         $( "#form_excel input[name=params]" ).val( encodeURIComponent( JSON.stringify( excelParams ) ) );
         $( "#form_excel" ).submit();
     }, function() {
-        svc.ui.alert( jsLocaleStrings['msg.canceled'] );
+        svc.ui.alert( '취소되었습니다.' );
     } );
 
 };
@@ -1032,14 +1029,14 @@ svc.net.ajaxExcelGrid = function( url, fileNm, oGrid ) {
         excelParams.groupHeader = JSON.stringify( excelGroupHeader );
     }
 
-    svc.ui.confirm( localeMsg['msg.exceldown'].replaceAll( '(0)', fileNm ), function() {
+    svc.ui.confirm( '(0) 파일을 다운로드 하시겠습니까?'.replaceAll( '(0)', fileNm ), function() {
 
         $( "#form_excel" ).attr( "action", url );
         $( "#form_excel input[name=params]" ).val( encodeURIComponent( JSON.stringify( excelParams ) ) );
         $( "#form_excel" ).submit();
 
     }, function() {
-        svc.ui.alert( localeMsg['msg.canceled'] );
+        svc.ui.alert( '취소되었습니다.' );
     } );
 
 };
@@ -1109,8 +1106,8 @@ Number.prototype.read = function() {
     if( this == 0 ) {
         return '영';
     }
-    var phonemic = [ '', '일', '이', '삼', '사', '오', '육', '칠', '팔', '구' ];
-    var unit = [ '', '', '십', '백', '천', '만', '십만', '백만', '천만', '억', '십억', '백억', '천억', '조', '십조', '백조' ];
+    var phonemic = ['', '일', '이', '삼', '사', '오', '육', '칠', '팔', '구'];
+    var unit = ['', '', '십', '백', '천', '만', '십만', '백만', '천만', '억', '십억', '백억', '천억', '조', '십조', '백조'];
 
     var ret = '';
     var part = [];
@@ -1892,26 +1889,25 @@ Date.prototype.before = function( years, months, dates, hours, minutes, seconds,
 };
 
 
-
 /*######################################
     Jquery Function Extention
 ######################################*/
 
 ( function( $ ) {
 
-    $.fn.svcDialog = function(prop) {
-        $(this).dialog(prop);
-        $(this).parent('.ui-dialog').css({
-            'border': '2px solid #444',
+    $.fn.svcDialog = function( prop ) {
+        $( this ).dialog( prop );
+        $( this ).parent( '.ui-dialog' ).css( {
+            'border'    : '2px solid #444',
             'box-shadow': '6px 6px 10px rgba(0,0,0,0.8)'
-        });
+        } );
     };
 
-    $.fn.timeFocus = function(ms) {
+    $.fn.timeFocus = function( ms ) {
         var _ref = this;
-        setTimeout(function(){
-            $(_ref).focus();
-        }, ms);
+        setTimeout( function() {
+            $( _ref ).focus();
+        }, ms );
     };
 
     // -- panel data flush --
@@ -2276,12 +2272,28 @@ Date.prototype.before = function( years, months, dates, hours, minutes, seconds,
 
         var panelId = $( this ).attr( 'id' );
 
+        $( '#' + panelId + ' input,select,textarea' ).each( function() {
+            if( typeof ( $( this ).attr( "id" ) ) != "undefined" && typeof ( $( this ).parent( 'dd' ).prev().html() ) != "undefined" ) {
+                if( $( this ).parent( 'dd' ).prev().children( 'label' ).length < 1 ) {
+                    $( this ).parent( 'dd' ).prev().html( '<label for="' + $( this ).attr( "id" ) + '">' + $( this ).parent( 'dd' ).prev().html() + '</label>' );
+                }
+                // if( $(this).prop('tagName').toLowerCase() == 'input' && $(this).attr('type').toLowerCase() == 'text' ) {
+                //     if(!$(this).hasClass('form-input-text')) {
+                //         $(this).addClass('form-input-text');
+                //     }
+                // }
+            }
+        } );
+
+        $( '#' + panelId + ' dt' ).each( function() {
+            if( $( this ).children( 'label' ).length < 1 ) {
+                $( this ).html( '<label>' + $( this ).html() + '</label>' );
+            }
+        } );
+
         $( '#' + panelId + ' *[data-required]' ).each( function() {
-            // // console.log("==============  data-required start =============");
-            // // console.log($(this).attr("name"));
-            // // console.log($(this).parent('td').prev());
-            $( this ).parent( 'td' ).prev().addClass( "title_on" );
-            // // console.log("==============  data-required start =============");
+            // $( this ).parent( 'td' ).prev().addClass( "title_on" );
+            $( this ).parent( 'dd' ).prev().addClass( "title_on" );
         } );
 
         $( '#' + panelId + ' input[type=text]' ).focusin( function() {
@@ -2295,6 +2307,30 @@ Date.prototype.before = function( years, months, dates, hours, minutes, seconds,
             if( $( this ).attr( "data-format" ) ) {
                 svc.form.applyElementFormat( panelId, $( this ), $( this ).attr( "data-format" ) );
             }
+        } );
+
+        $( '#' + panelId + ' [data-colspan]' ).each( function() {
+            $(this).parent().addClass("relative");
+            var arrColSpan = [];
+            arrColSpan.push( Number( $( this ).attr( "data-colspan" ).split( "-" )[0] ) - 1 );
+            arrColSpan.push( Number( $( this ).attr( "data-colspan" ).split( "-" )[1] ) - 1 );
+            var arrWidth = [];
+            var wColSpan = 0;
+            $( '#' + panelId + ' dl:first-child>dt,#' + panelId + ' dl:first-child>dd' ).each( function() {
+                arrWidth.push( $( this ).width() );
+            } );
+            for( var i = arrColSpan[0]; i <= arrColSpan[1]; i++ ) {
+                wColSpan += arrWidth[i];
+                console.log('wColSpan, arrWidth[' + i + ']', wColSpan, arrWidth[i]);
+            }
+            console.log( panelId + ' - arrWidth, arrColSpan', arrWidth, arrColSpan );
+            $( this ).css( {
+                "position" : "absolute",
+                "top"   : "0",
+                "left" : "3px",
+                "width"  : wColSpan + "px"
+
+            } );
         } );
 
         /**
@@ -2439,7 +2475,7 @@ Date.prototype.before = function( years, months, dates, hours, minutes, seconds,
 
         if( bValidate == false ) {
             //$.ksid.ui.alert("<strong>[ " + titleList + " ]</strong><br />" + "위 항목은 필수항목 입니다. <br />확인해 주시기 바랍니다.");
-            svc.ui.alert( "<strong>[ " + titleList + " ]</strong><br />" + localeMsg["error.validation.form"] );
+            svc.ui.alert( "<strong>[ " + titleList + " ]</strong><br />" + '위 항목은 필수항목 입니다. <br />확인해 주시기 바랍니다.' );
         }
 
         return bValidate;

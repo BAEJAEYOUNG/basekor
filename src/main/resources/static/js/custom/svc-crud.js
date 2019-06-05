@@ -93,12 +93,12 @@ svc.crud = function() {
                     if( result.resultCd == "00" ) {
                         // console.log( 'result.resultCd == "00" > typeof ( callbackFunction )', typeof ( callbackFunction ) );
                         if( typeof ( callbackFunction ) == 'function' ) {
-                            svc.ui.alert( localeMsg["msg.save.success"], callbackFunction);
+                            svc.ui.alert( '저장되었습니다.', callbackFunction);
                         } else {
-                            svc.ui.alert( localeMsg["msg.save.success"] );
+                            svc.ui.alert( '저장되었습니다.' );
                         }
                     } else {
-                        svc.ui.alert( localeMsg["msg.save.fail"] );
+                        svc.ui.alert( '저장에 실패하였습니다.' );
                     }
                 } );
             }
@@ -113,12 +113,12 @@ svc.crud = function() {
                     if( result.resultCd == "00" ) {
                         // console.log( 'result.resultCd == "00" > typeof ( callbackFunction )', typeof ( callbackFunction ) );
                         if( typeof ( callbackFunction ) == 'function' ) {
-                            svc.ui.alert( localeMsg["msg.del.success"], callbackFunction );
+                            svc.ui.alert( '삭제되었습니다.', callbackFunction );
                         } else {
-                            svc.ui.alert( localeMsg["msg.del.success"] );
+                            svc.ui.alert( '삭제되었습니다.' );
                         }
                     } else {
-                        svc.ui.alert( localeMsg["msg.del.fail"] );
+                        svc.ui.alert( '삭제에 실패하였습니다.' );
                     }
                 } );
             }
@@ -233,7 +233,7 @@ svc.crud.prototype.save = function( callbackFunction ) {
     var _ref = this;
     if( this.panel.edit.exist && this.cmd.save.exist ) {
         if( this.cmd.save.$panel.validateForm() ) {
-            svc.ui.confirm( localeMsg["msg.save.req"], function() {
+            svc.ui.confirm( '저장하시겠습니까?', function() {
                 var params = _ref.cmd.save.$panel.flushPanel();
                 // console.log( 'params', params );
                 if( params.mode == "I" ) {
@@ -252,12 +252,12 @@ svc.crud.prototype.delete = function( callbackFunction ) {
     var _ref = this;
     // console.log('crud>delete - this.grid.obj.clickedRowData', this.grid.obj.clickedRowData);
     if(this.grid.obj.clickedRowData == null) {
-        svc.ui.alert(localeMsg["msg.del.not-select"]);
+        svc.ui.alert('삭제할 행을 선택하세요');
         return;
     }
     // console.log('this.cmd.delete.exist', this.cmd.delete.exist);
     if( this.cmd.delete.exist ) {
-        svc.ui.confirm( localeMsg["msg.del.req"], function() {
+        svc.ui.confirm( '삭제하시겠습니까?', function() {
             _ref.cmd.delete.params = _ref.grid.obj.clickedRowData;
             // console.log( '_ref.cmd.delete.params', _ref.cmd.delete.params );
             _ref.cmd.delete.exec( callbackFunction );

@@ -13,7 +13,5 @@
 </head>
 <body>
     Hello Spring Boot - JSP ~~~ ^^
-    <br/>
-    <spring:message code="alert.loginId"/>
 </body>
 </html>

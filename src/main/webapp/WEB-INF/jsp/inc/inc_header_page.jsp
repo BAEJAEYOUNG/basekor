@@ -11,7 +11,6 @@
 <link rel="stylesheet" href="${contextPath}/webjars/jquery-ui/jquery-ui.min.css">
 <link rel="stylesheet" href="${contextPath}/webjars/select2/4.0.5/css/select2.min.css">
 <link rel="stylesheet" href="${contextPath}/webjars/jqgrid/css/ui.jqgrid.css">
-<%--<link rel="stylesheet" href="${contextPath}/css/jquery/ui.jqgrid.css">--%>
 <link rel="stylesheet" href="${contextPath}/css/jquery/jquery-confirm.min.css">
 <link rel="stylesheet" href="${contextPath}/css/jquery/MonthPicker.css">
 
@@ -20,8 +19,6 @@
 <link rel="stylesheet" href="${contextPath}/css/custom/button.css">
 <link rel="stylesheet" href="${contextPath}/css/custom/bugfix.css">
 <link rel="stylesheet" href="${contextPath}/css/custom/font.css">
-
-<%@ include file="/WEB-INF/jsp/inc/inc_locale_js_msg.jsp" %>
 
 <c:set var="lang" value="${pageContext.response.locale.language}"/>
 <c:set var="lang2" value="${pageContext.response.locale.language}"/>

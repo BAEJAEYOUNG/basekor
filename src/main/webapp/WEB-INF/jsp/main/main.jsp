@@ -15,9 +15,7 @@
 
     <%@ include file="/WEB-INF/jsp/inc/inc_header_main.jsp" %>
 
-<%--    <link rel="stylesheet" href="/webjars/jquery-easyui/css/easyui.css">--%>
     <link rel="stylesheet" href="${contextPath}/css/custom/easyui-theme-material.css">
-<%--    <link rel="stylesheet" href="${contextPath}/css/custom/gnb.css">--%>
     <link rel="stylesheet" href="${contextPath}/css/custom/button.css">
     <link rel="stylesheet" href="${contextPath}/css/jquery/sm-core-css.css">
 <%--    <link rel="stylesheet" href="${contextPath}/css/jquery/sm-blue/sm-blue.css">--%>
@@ -69,7 +67,7 @@
 
             // 사용자 메뉴정보를 가져오는 중입니다. block 메시지 표시
             $.blockUI({
-                message: '<spring:message code="main.menu.load"/>'
+                message: '사용자 메뉴정보를 가져오는 중입니다.<br />잠시만 기다려 주세요...'
                 , css: { "font-weight": "700", "height": "80px", "color": "#000", "opacity": "1", "font-size": "10pt", "line-height": "1.8", "padding-top": "8px"}
             });
 
@@ -121,10 +119,10 @@
     <header id="main-header" class="wrap-logo" role="banner">
         <div class="banner"><a href="javascript:goMain()"><img src="${contextPath}/image/main/logo01.png"></a></div>
         <div class="login-info">
-            <span class="welcome"><spring:message code="main.welcome"/></span>
+            <span class="welcome">환영합니다.</span>
             &nbsp;
             <u>${sessionScope.sessionUser.mngrNm}</u>
-            <button class="small button" onclick="doLogout()"><spring:message code="main.logout"/></button>
+            <button class="small button" onclick="doLogout()">로그아웃</button>
         </div>
     </header>
 <%--    <nav id="gnb" class="wrap-menu" role="navigation">--%>
