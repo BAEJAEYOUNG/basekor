@@ -134,6 +134,10 @@
         }
 
         function doNew2() {
+            if(crud.grid.obj.clickedRowData == null) {
+                svc.ui.alert("코드정보를 등록하려면 먼저 왼쪽 그룹코드를 선택하세요");
+                return;
+            }
             crud2.grid.obj.reload();
             var params = {
                 grpCd : crud.grid.obj.clickedRowData.grpCd,
