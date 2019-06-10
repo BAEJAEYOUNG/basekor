@@ -73,7 +73,7 @@
                 , css: { "font-weight": "700", "height": "80px", "color": "#000", "opacity": "1", "font-size": "10pt", "line-height": "1.8", "padding-top": "8px"}
             });
 
-            console.log('svc', svc);
+            // console.log('svc', svc);
             menu.load("/main/mainMenuList");
 
             // 사용자 메뉴정보를 가져오는 중입니다. block 메시지 감춤
@@ -83,7 +83,7 @@
 
         function fnGnbClick(menuId, bRefresh) {
             var menuObj = menu.selMenu(menuId);
-            console.log('menuObj', menuObj);
+            // console.log('menuObj', menuObj);
             if( menuObj.execCmd.trim() != "" ) {
                 if(bRefresh) {
                     $('#tabFrm' + menuId).attr('src', menuObj.execCmd);

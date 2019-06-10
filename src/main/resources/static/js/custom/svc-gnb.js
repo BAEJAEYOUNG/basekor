@@ -89,7 +89,7 @@ svc.gnb.prototype.makeMainNenu = function() {
     _ref.showMenu();
 };
 svc.gnb.prototype.makeSubMenu = function( childMenu, refGnbId) {
-    console.log("makeSubMenu > sessionId", svc.sessionId);
+    // console.log("makeSubMenu > sessionId", svc.sessionId);
     var _ref = this;
     $('#'+this.id+ ' li[data-id='+refGnbId+']').append('<ul></ul>');
     var childMenuList = childMenu.list;
