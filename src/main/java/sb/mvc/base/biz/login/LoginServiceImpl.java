@@ -29,7 +29,10 @@ public class LoginServiceImpl extends BizBaseServiceImpl<Map<String, Object>> im
 
     protected static final Logger logger = LoggerFactory.getLogger(LoginServiceImpl.class);
 
-    @Autowired
+    public LoginServiceImpl(LoginDao loginDao) {
+        this.loginDao = loginDao;
+    }
+    
     private LoginDao loginDao;
 
     @Override

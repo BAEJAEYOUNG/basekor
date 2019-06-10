@@ -9,6 +9,10 @@ body {
     overflow-y : hidden;
 }
 
+span.welcome {
+    color: #fff;
+}
+
 .wrap-main {
     width  : 100%;
     height : 100%;

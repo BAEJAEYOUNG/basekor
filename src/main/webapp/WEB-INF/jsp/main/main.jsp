@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.HashMap" %><%--
   ~ Developed by JAEYOUNG BAE on 19. 4. 23 오후 4:14.
   ~ Last modified 19. 4. 23 오후 4:14.
   ~ Copyright (c) 2019. All rights reserved. 
@@ -30,6 +30,8 @@
     <script type="text/javascript" src="${contextPath}/js/custom/svc-gnb.js"></script>
 
     <script type="text/javascript">
+
+        svc.sessionId = "${sessionUser.mngrId}";
 
         var page = new svc.page();
         page.menuArray = [];
@@ -71,6 +73,7 @@
                 , css: { "font-weight": "700", "height": "80px", "color": "#000", "opacity": "1", "font-size": "10pt", "line-height": "1.8", "padding-top": "8px"}
             });
 
+            console.log('svc', svc);
             menu.load("/main/mainMenuList");
 
             // 사용자 메뉴정보를 가져오는 중입니다. block 메시지 감춤
@@ -80,7 +83,7 @@
 
         function fnGnbClick(menuId, bRefresh) {
             var menuObj = menu.selMenu(menuId);
-
+            console.log('menuObj', menuObj);
             if( menuObj.execCmd.trim() != "" ) {
                 if(bRefresh) {
                     $('#tabFrm' + menuId).attr('src', menuObj.execCmd);
@@ -92,7 +95,7 @@
                         }
                     } else {
                         // menuObj.execCmd = "/html/blank.html"
-                        var content = '<iframe id="tabFrm' + menuObj.menuId + '" class="frameBox" frameborder="1" src="'+menuObj.execCmd+'" style="width:100%;height:100%;"></iframe>';
+                        var content = '<iframe id="tabFrm' + menuObj.menuId + '" class="frameBox" src="'+menuObj.execCmd+'" style="width:100%;height:100%;"></iframe>';
                         $('#tabs').tabs('add',{
                             title: menuObj.menuNm,
                             content:content,
@@ -117,7 +120,7 @@
 <body>
 <div class="wrap-main">
     <header id="main-header" class="wrap-logo" role="banner">
-        <div class="banner"><a href="javascript:goMain()"><img src="${contextPath}/image/main/logo01.png"></a></div>
+        <div class="banner"><a href="javascript:goMain()"><img src="${contextPath}/image/main/logo01.png" alt="logo"></a></div>
         <div class="login-info">
             <span class="welcome">환영합니다.</span>
             &nbsp;

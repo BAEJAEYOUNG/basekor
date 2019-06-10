@@ -7,7 +7,7 @@
 svc.gnb = function (aLevel, gnbId) {
     this.level = aLevel;
     this.list = [];
-    this.dbList = null;
+    this["dbList"] = null;
     this.id = "gnb";
     if(gnbId) this.id = gnbId;
 };
@@ -24,12 +24,22 @@ svc.gnb.prototype.selMenu = function(menuId) {
     }
     return rtnObj;
 };
+svc.gnb.prototype.selMenuLocation = function(loc) {
+    var rtnObj = null;
+    for (var i = 0; i < this.dbList.length; i++) {
+        if(this.dbList[i].execCmd == loc) {
+            rtnObj = $.extend(true, {}, this.dbList[i]);
+            break;
+        }
+    }
+    return rtnObj;
+};
 svc.gnb.prototype.selMenuList = function() {
     return this.list;
 };
 svc.gnb.prototype.load = function(loadUrl) {
     var _ref = this;
-    svc.net.sjaxCall("/main/mainMenuList", {}, function(result) {
+    svc.net.sjaxCall(loadUrl, {}, function(result) {
         if(result.resultCd == '00') {   // 성공
             _ref.dbList = $.merge([], result.resultData);
             for ( var i = 0; i < _ref.dbList.length; i++) {
@@ -72,22 +82,25 @@ svc.gnb.prototype.makeMainNenu = function() {
         $("#"+this.id+" > ul").append('<li data-id="'+gnbLiId+'"><a href="javascript:fnGnbClick(\''+menuList[i].menuId+'\');">'+menuList[i].menuNm+'</a></li>');
         if(menuList[i].hasOwnProperty("childMenu")) {
             if(menuList[i]["childMenu"].list.length > 0) {
-                _ref.makeSubNenu(menuList[i]["childMenu"], gnbLiId);
+                _ref.makeSubMenu(menuList[i]["childMenu"], gnbLiId);
             }
         }
     }
     _ref.showMenu();
 };
-svc.gnb.prototype.makeSubNenu = function(childMenu, refGnbId) {
+svc.gnb.prototype.makeSubMenu = function( childMenu, refGnbId) {
+    console.log("makeSubMenu > sessionId", svc.sessionId);
     var _ref = this;
     $('#'+this.id+ ' li[data-id='+refGnbId+']').append('<ul></ul>');
     var childMenuList = childMenu.list;
     for (var i = 0; i < childMenuList.length; i++) {
         var gnbLiId = 'gnbLi_' + childMenuList[i].menuId;
-        $("#"+this.id+ ' li[data-id='+refGnbId+'] > ul').append('<li data-id="'+gnbLiId+'"><a href="javascript:fnGnbClick(\''+childMenuList[i].menuId+'\');">'+childMenuList[i].menuNm+'</a></li>');
+        $("#"+this.id+ ' li[data-id='+refGnbId+'] > ul').append('<li data-id="'+gnbLiId+'"><a href="javascript:fnGnbClick(\''+childMenuList[i].menuId+'\');" ' +
+            ( (svc.sessionId == 'admin') ? 'title="'+childMenuList[i].execCmd+'" class="easyui-tooltip"' : '' ) +
+            '>'+childMenuList[i].menuNm+'</a></li>');
         if(childMenuList[i].hasOwnProperty("childMenu")) {
             if(childMenuList[i]["childMenu"].length > 0) {
-                _ref.makeSubNenu(childMenuList[i]["childMenu"], gnbLiId);
+                _ref.makeSubMenu(childMenuList[i]["childMenu"], gnbLiId);
             }
         }
     }

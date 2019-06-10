@@ -2311,26 +2311,30 @@ Date.prototype.before = function( years, months, dates, hours, minutes, seconds,
 
         $( '#' + panelId + ' [data-colspan]' ).each( function() {
             $(this).parent().addClass("relative");
+            $(this).hide();
             var arrColSpan = [];
             arrColSpan.push( Number( $( this ).attr( "data-colspan" ).split( "-" )[0] ) - 1 );
             arrColSpan.push( Number( $( this ).attr( "data-colspan" ).split( "-" )[1] ) - 1 );
             var arrWidth = [];
             var wColSpan = 0;
-            $( '#' + panelId + ' dl:first-child>dt,#' + panelId + ' dl:first-child>dd' ).each( function() {
-                arrWidth.push( $( this ).width() );
+            $( '#' + panelId + ' div dl:first-child>dt,#' + panelId + ' div dl:first-child>dd' ).each( function() {
+                // console.log($(this).prop('tagName'), $(this).outerHTML(), $( this ).outerWidth());
+                arrWidth.push( $( this ).outerWidth() );
             } );
+            // console.log(panelId + ' - arrWidth', arrWidth);
             for( var i = arrColSpan[0]; i <= arrColSpan[1]; i++ ) {
                 wColSpan += arrWidth[i];
-                console.log('wColSpan, arrWidth[' + i + ']', wColSpan, arrWidth[i]);
+                // console.log('wColSpan', wColSpan, arrWidth[i]);
             }
-            console.log( panelId + ' - arrWidth, arrColSpan', arrWidth, arrColSpan );
+            var nSpanOffset = ( arrColSpan[1] - arrColSpan[0] + 1 - 2 ) * 10;
+            // console.log('nSpanOffset', nSpanOffset);
             $( this ).css( {
                 "position" : "absolute",
                 "top"   : "0",
                 "left" : "3px",
-                "width"  : wColSpan + "px"
-
-            } );
+                "width"  : wColSpan + "px",
+                "transition" : "all 0.5s"
+            } ).show().children('input[type=text]').css("width", "calc(100% - " + nSpanOffset + "px)");
         } );
 
         /**
@@ -2444,6 +2448,10 @@ Date.prototype.before = function( years, months, dates, hours, minutes, seconds,
         } );
 
         return this;
+    };
+
+    $.fn.outerHTML = function() {
+        return jQuery('<div />').append(this.eq(0).clone()).html();
     };
 
     $.fn.validateForm = function() {

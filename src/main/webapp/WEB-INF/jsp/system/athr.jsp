@@ -161,7 +161,7 @@
         }
 
         function localResize() {
-            var height1 = $( window ).height() - 290;
+            var height1 = $( window ).height() - 277;
             $( "#grid1" ).jqGrid( "setGridHeight", height1 );
 
             var height3 = $( window ).height() - 393;
@@ -435,9 +435,7 @@
 
 <div class="contents-wrap">
 
-    <div class="location-wrap">
-        <p class="location"><span class="btn_home"></span>&nbsp;> <span name="menu">시스템</span> > <span name="menu">권한</span></p>
-    </div>
+    <div class="location-wrap"></div>
     <%--  // location-wrap  --%>
 
     <div class="wrap-21-tp02">
@@ -472,7 +470,7 @@
                     <dt>비고</dt>
                     <dd>
                         <div data-colspan="2-4">
-                            <input type="text" name="rm" data-title='비고' class="form-input-text width380" data-command="doSave()"/>
+                            <input type="text" name="rm" data-title='비고' class="form-input-text" data-command="doSave()"/>
                         </div>
                     </dd>
                 </dl>

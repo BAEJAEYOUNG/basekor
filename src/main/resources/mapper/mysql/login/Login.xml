@@ -21,6 +21,15 @@
          WHERE A.MNGR_ID = #{mngrId}
     </select>
 
+    <select id="selLoginCnt" parameterType="map" resultType="int">
+        /* NS_Login.selLogin */
+        SELECT COUNT(1)
+          FROM TB_MNGR
+         WHERE MNGR_ID = #{mngrId}
+           AND MNGR_PWD = #{mngrPwd}
+
+    </select>
+
     <!--  -->
     <select id="selSessionInfo" parameterType="map" resultType="camelMap">
 

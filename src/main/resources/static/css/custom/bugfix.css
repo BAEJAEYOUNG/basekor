@@ -250,6 +250,15 @@ table.ui-jqgrid-btable { height: 1px; }
     font-size: 12px;
 }
 
+ul.tabs li.tabs-selected a:first-child {
+    border-color: #999;
+    border-bottom: 1px solid transparent;
+}
+ul.tabs li.tabs-selected a:first-child span:first-child {
+    color: #222;
+    font-weight: 500;
+}
+
 button[auth] {
     /*display: none;*/
 }

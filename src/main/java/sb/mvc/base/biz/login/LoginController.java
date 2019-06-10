@@ -31,7 +31,10 @@ public class LoginController extends BizBaseController {
 
     protected static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
-    @Autowired
+    public LoginController(LoginService loginService) {
+        this.loginService = loginService;
+    }
+
     private LoginService loginService;
 
     @RequestMapping(value= {""})
@@ -41,7 +44,7 @@ public class LoginController extends BizBaseController {
         logger.debug("LoginController.view param [{}]", param);
 
         String ajaxHeader = request.getHeader("X-Requested-With");
-        boolean isAjaxCall = new Boolean(request.getHeader("ajax"));
+        boolean isAjaxCall = Boolean.valueOf(request.getHeader("ajax"));
 
         logger.debug("=====> LoginController.view ajaxHeader [{}]", ajaxHeader);
         logger.debug("=====> LoginController.view isAjaxCall [{}]", isAjaxCall);
@@ -56,6 +59,34 @@ public class LoginController extends BizBaseController {
         } else {
             return "login/login";
         }
+    }
+
+    //    selLoginCnt
+    @RequestMapping(value= {"selLoginCnt"})
+    public String selLoginCnt(@RequestParam Map<String, Object> param, Model model) {
+
+        param.put("mngrPwd", "{noop}" + param.get("mngrPwd"));
+
+        logger.debug("LoginController.selLoginCnt param [{}]", param);
+
+        try {
+
+            int resultData = (int)this.loginService.selValue("selLoginCnt", param);
+
+            logger.debug("LoginController.selLoginCnt resultData {}", resultData);
+
+            model.addAttribute("resultCd", "00");
+            model.addAttribute("resultData", resultData);
+
+        } catch (Exception e) {
+
+            model.addAttribute("resultCd", "99");
+            model.addAttribute("resultData", e.getMessage());
+
+        }
+
+
+        return "json";
     }
 
     @RequestMapping(value= {"success"})

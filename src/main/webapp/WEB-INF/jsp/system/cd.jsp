@@ -91,7 +91,7 @@
         }
 
         function localResize() {
-            var height = $( window ).height() - 370;
+            var height = $( window ).height() - 360;
             $( "#grid1" ).jqGrid( "setGridHeight", height );
             $( "#grid2" ).jqGrid( "setGridHeight", height );
         }
@@ -161,24 +161,16 @@
 
 <div class="contents-wrap">
 
-    <div class="location-wrap">
-        <p class="location"><span class="btn_home"></span>&nbsp;> <span name="menu">시스템</span> > <span name="menu">공통코드</span></p>
-    </div>
+    <div class="location-wrap"></div>
     <%--  // location-wrap  --%>
 
     <div id="search-panel" class="search-panel">
-        <table>
-            <colgroup>
-                <col width="100"/>
-                <col width="150"/>
-            </colgroup>
-            <tbody>
-            <tr>
-                <th>그룹코드ID/명</th>
-                <td><input type="text" name="grpCd" class="form-input-text width150" autofocus data-command="doSearch()"></td>
-            </tr>
-            </tbody>
-        </table>
+        <div>
+            <dl>
+                <dt>그룹코드ID/명</dt>
+                <dd><input type="text" name="grpCd" class="form-input-text width150" autofocus data-command="doSearch()"></dd>
+            </dl>
+        </div>
         <div class="button-bar">
             <button type="button" class="small button" data-auth="R" onclick="doSearch()">조회</button>
         </div>
@@ -222,7 +214,7 @@
                     <dt>비고</dt>
                     <dd>
                         <div data-colspan="2-4">
-                            <input type="text" name="rm" data-title='비고' class="form-input-text width390" data-command="doSave()"/>
+                            <input type="text" name="rm" data-title='비고' class="form-input-text" data-command="doSave()"/>
                         </div>
                     </dd>
                     <dd></dd>
@@ -281,7 +273,7 @@
                     <dt>비고</dt>
                     <dd>
                         <div data-colspan="2-4">
-                            <input type="text" name="rm" data-title='비고' class="form-input-text width390" data-command="doSave2()"/>
+                            <input type="text" name="rm" data-title='비고' class="form-input-text" data-command="doSave2()"/>
                         </div>
                     </dd>
                     <dd></dd>

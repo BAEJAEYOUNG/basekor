@@ -54,7 +54,23 @@
 
         function doSubmit() {
             var bReturn = false;
-            if( $( "#login-panel" ).validateForm() ) bReturn = true;
+            if( $( "#login-panel" ).validateForm() ) {
+                var params = $('#login-panel').flushPanel();
+                console.log('params', params);
+                svc.net.sjaxCall('/login/selLoginCnt', params, function(result) {
+                    console.log('result', result);
+                    console.log("(result.resultCd == '00')", (result.resultCd == '00'));
+                    console.log('(result.resultData > 0)', (result.resultData > 0));
+                    if(result.resultCd == '00') {
+                        if(result.resultData > 0) {
+                            bReturn = true;
+                        }
+                    }
+                } );
+            }
+            if(!bReturn) {
+                svc.ui.alert('아이디 또는 비밀번호가 일치하지 않습니다.');
+            }
             return bReturn;
         }
 

@@ -38,12 +38,18 @@ public class MainController extends BizBaseController {
     @RequestMapping(value={""})
     public String root(@RequestParam Map<String, Object> param, Model model) {
         logger.debug("###### MainController.root param [{}]", param);
+        Map<String, Object> sessionUser = (Map<String, Object>) this.session.getAttribute("sessionUser");
+        logger.info("sessionUser, {}", sessionUser);
+        model.addAttribute("sessionUser", sessionUser);
         return "main/main";
     }
 
     @RequestMapping(value = {"main"})
     public String view(@RequestParam Map<String, Object> param, Model model) {
         logger.debug("##### MainController.main param [{}]", param);
+        Map<String, Object> sessionUser = (Map<String, Object>) this.session.getAttribute("sessionUser");
+        model.addAttribute("sessionUser", sessionUser);
+        logger.info("sessionUser, {}", sessionUser);
         return "main/main";
     }
 

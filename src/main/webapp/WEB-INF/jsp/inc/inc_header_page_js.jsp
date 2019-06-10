@@ -8,9 +8,12 @@
 
 <script type="text/javascript">
 
-    $(document).ready(function () {
+    $(function () {
 
         // console.log( "================  inc_header_page_js" );
+
+        var menuPage = parent.menu.selMenuLocation(location.pathname);
+        $(".location-wrap").html('<p class="location"><span class="btn_home"></span>&nbsp;> <span>'+menuPage.psMenuNm+'</span> > <span>'+menuPage.menuNm+'</span></p>');
 
         $(":text, :password, textarea").each(function() {
             $(this).attr("autocomplete", "off").attr("spellcheck", false);

@@ -169,6 +169,10 @@ hr, caption {
     visibility  : hidden;
 }
 
+.none {
+    display: none;
+}
+
 .bold {
     font-weight : 700;
 }

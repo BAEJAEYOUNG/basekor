@@ -9,7 +9,6 @@
  */
 package sb.mvc.base.biz.login;
 
-import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.stereotype.Repository;
 import sb.mvc.base.biz.base.BizBaseDao;
 

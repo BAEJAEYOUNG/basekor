@@ -63,7 +63,7 @@
         }
 
         function localResize() {
-            var height = $( window ).height() - 370;
+            var height = $( window ).height() - 330;
             $( "#grid1" ).jqGrid( "setGridHeight", height );
         }
 
@@ -115,9 +115,7 @@
 
 <div class="contents-wrap">
 
-    <div class="location-wrap">
-        <p class="location"><span class="btn_home"></span>&nbsp;> <span name="mngr">시스템</span> > <span name="mngr">관리자</span></p>
-    </div>
+    <div class="location-wrap"></div>
     <%--  // location-wrap  --%>
 
     <div id="search-panel" class="search-panel">
@@ -156,7 +154,9 @@
             </dl>
             <dl>
                 <dt>휴대폰번호</dt>
-                <dd colspan="3"><input type="text" id="epEmail" name="email" data-title='이메일' class="width160" data-format="email" data-command="doSave()"/></dd>
+                <dd><input type="text" id="epHpNo" name="hpNo" data-title='휴대폰번호' class="width120" data-format="tel_no" data-command="doSave()"/></dd>
+                <dt>이메일</dt>
+                <dd><input type="text" id="epEmail" name="email" data-title='이메일' class="width160" data-command="doSave()"/></dd>
             </dl>
             <dl>
                 <dt>비밀번호초기화여부</dt>

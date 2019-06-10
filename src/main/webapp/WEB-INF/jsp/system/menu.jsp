@@ -121,9 +121,7 @@
 
 <div class="contents-wrap">
 
-    <div class="location-wrap">
-        <p class="location"><span class="btn_home"></span>&nbsp;> <span name="menu">시스템</span> > <span name="menu">메뉴</span></p>
-    </div>
+    <div class="location-wrap"></div>
     <%--  // location-wrap  --%>
 
     <div id="search-panel" class="search-panel">
@@ -163,7 +161,7 @@
             <dl>
                 <dt>실행명령</dt>
                 <dd>
-                    <div data-colspan="2-4"><input type="text" name="execCmd" data-title='실행명령' class="form-input-text" style="width: 347px;" data-command="doSave()"/></div>
+                    <div data-colspan="2-4"><input type="text" name="execCmd" data-title='실행명령' class="form-input-text" data-command="doSave()"/></div>
                 </dd>
                 <dd></dd>
                 <dd></dd>

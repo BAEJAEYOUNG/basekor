@@ -23,6 +23,7 @@
              , B.AUTH_W                   /* 변경권한 */
              , B.AUTH_D                   /* 삭제원한 */
              , B.AUTH_P                   /* 인쇄권한 */
+             , B.PS_MENU_NM               /* 상위메뉴명 */
         FROM TB_ATHR_MNGR A
                  INNER JOIN VW_ATHR_MENU B
                             ON B.ATHR_CD = A.ATHR_CD
