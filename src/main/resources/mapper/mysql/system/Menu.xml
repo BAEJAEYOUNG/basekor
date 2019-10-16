@@ -5,7 +5,7 @@
 
     <select id="selKey" parameterType="Map" resultType="String">
         /* NS_Menu.selKey */
-        SELECT LPAD(CAST(MAX(MENU_ID) AS INT) + 1, 4, '0')
+        SELECT LPAD(CAST(MAX(MENU_ID) AS UNSIGNED) + 1, 4, '0')
           FROM TB_MENU
     </select>
 
