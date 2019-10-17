@@ -6,6 +6,7 @@
 
 package sb.mvc.base.biz.system.grpcd;
 
+import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -14,14 +15,9 @@ import sb.mvc.base.biz.base.BizBaseServiceImpl;
 
 import java.util.Map;
 
+@AllArgsConstructor
 @Service("grpCdService")
 public class GrpCdServiceImpl extends BizBaseServiceImpl<Map<String, Object>> implements GrpCdService {
-
-    protected final Logger logger = LoggerFactory.getLogger(GrpCdServiceImpl.class);
-
-    public GrpCdServiceImpl(GrpCdDao grpCdDao) {
-        this.grpCdDao = grpCdDao;
-    }
 
     private GrpCdDao grpCdDao;
 

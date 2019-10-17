@@ -9,15 +9,13 @@
  */
 package sb.mvc.base.biz.system.athr;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import sb.mvc.base.biz.base.BizBaseController;
-
 import java.util.List;
 import java.util.Map;
 
@@ -27,9 +25,8 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("system/athr")
+@Slf4j
 public class AthrController extends BizBaseController {
-
-    protected final Logger logger = LoggerFactory.getLogger(AthrController.class);
 
     public AthrController(AthrService athrService) {
         this.athrService = athrService;
@@ -40,7 +37,7 @@ public class AthrController extends BizBaseController {
     @RequestMapping(value= {""})
     public String view(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("AthrController.view param [{}]", param);
+        log.debug("AthrController.view param [{}]", param);
 
         return "system/athr";
     }
@@ -48,13 +45,13 @@ public class AthrController extends BizBaseController {
     @RequestMapping(value= {"list"})
     public String list(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("AthrController.list param [{}]", param);
+        log.debug("AthrController.list param [{}]", param);
 
         try {
 
             List<Map<String, Object>> resultData = this.athrService.selDataList(param);
 
-            logger.debug("AthrController.list resultData [{}]", resultData);
+            log.debug("AthrController.list resultData [{}]", resultData);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", resultData);
@@ -73,13 +70,13 @@ public class AthrController extends BizBaseController {
     @RequestMapping(value= {"sel"})
     public String sel(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("AthrController.sel param [{}]", param);
+        log.debug("AthrController.sel param [{}]", param);
 
         try {
 
             Map<String, Object> resultData = this.athrService.selData(param);
 
-            logger.debug("AthrController.sel resultData {}", resultData);
+            log.debug("AthrController.sel resultData {}", resultData);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", resultData);
@@ -98,13 +95,13 @@ public class AthrController extends BizBaseController {
     @RequestMapping(value= {"ins"})
     public String ins(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("AthrController.ins param [{}]", param);
+        log.debug("AthrController.ins param [{}]", param);
 
         try {
 
             int cntGrp = this.athrService.insData(param);
 
-            logger.debug("AthrController.ins [{}]", cntGrp);
+            log.debug("AthrController.ins [{}]", cntGrp);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", cntGrp);
@@ -122,13 +119,13 @@ public class AthrController extends BizBaseController {
     @RequestMapping(value= {"upd"})
     public String upd(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("AthrController.upd param [{}]", param);
+        log.debug("AthrController.upd param [{}]", param);
 
         try {
 
             int cntGrp = this.athrService.updData(param);
 
-            logger.debug("AthrController.upd [{}]", cntGrp);
+            log.debug("AthrController.upd [{}]", cntGrp);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", cntGrp);
@@ -146,13 +143,13 @@ public class AthrController extends BizBaseController {
     @RequestMapping(value= {"del"})
     public String del(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("AthrController.del param [{}]", param);
+        log.debug("AthrController.del param [{}]", param);
 
         try {
 
             int cntMenu = this.athrService.delData(param);
 
-            logger.debug("AthrController.del [{}]", cntMenu);
+            log.debug("AthrController.del [{}]", cntMenu);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", cntMenu);
@@ -170,13 +167,13 @@ public class AthrController extends BizBaseController {
     @RequestMapping(value= {"selAthrMngrList"})
     public String selAthrMngrList(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("AthrController.selAthrMngrList param [{}]", param);
+        log.debug("AthrController.selAthrMngrList param [{}]", param);
 
         try {
 
             List<Map<String, Object>> resultData = this.athrService.selDataList("selAthrMngrList", param);
 
-            logger.debug("AthrController.selAthrMngrList resultData [{}]", resultData);
+            log.debug("AthrController.selAthrMngrList resultData [{}]", resultData);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", resultData);
@@ -195,13 +192,13 @@ public class AthrController extends BizBaseController {
     @RequestMapping(value= {"selAthrMngrPopupList"})
     public String selAthrMngrPopupList(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("AthrController.selAthrMngrPopupList param [{}]", param);
+        log.debug("AthrController.selAthrMngrPopupList param [{}]", param);
 
         try {
 
             List<Map<String, Object>> resultData = this.athrService.selDataList("selAthrMngrPopupList", param);
 
-            logger.debug("AthrController.selAthrMngrPopupList resultData [{}]", resultData);
+            log.debug("AthrController.selAthrMngrPopupList resultData [{}]", resultData);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", resultData);
@@ -220,13 +217,13 @@ public class AthrController extends BizBaseController {
     @RequestMapping(value= {"insAthrMngrList"})
     public String insAthrMngrList(@RequestBody List<Map<String, Object>> param, Model model) {
 
-        logger.debug("AthrController.insAthrMngrList param [{}]", param);
+        log.debug("AthrController.insAthrMngrList param [{}]", param);
 
         try {
 
             int resultData = this.athrService.insDataList("insAthrMngrList", param);
 
-            logger.debug("AthrController.insAthrMngrList [{}]", resultData);
+            log.debug("AthrController.insAthrMngrList [{}]", resultData);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", resultData);
@@ -244,13 +241,13 @@ public class AthrController extends BizBaseController {
     @RequestMapping(value= {"delAthrMngrList"})
     public String delAthrMngrList(@RequestBody List<Map<String, Object>> param, Model model) {
 
-        logger.debug("AthrController.delAthrMngrList param [{}]", param);
+        log.debug("AthrController.delAthrMngrList param [{}]", param);
 
         try {
 
             int resultData = this.athrService.insDataList("delAthrMngrList", param);
 
-            logger.debug("AthrController.delAthrMngrList [{}]", resultData);
+            log.debug("AthrController.delAthrMngrList [{}]", resultData);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", resultData);
@@ -268,13 +265,13 @@ public class AthrController extends BizBaseController {
     @RequestMapping(value= {"selAthrMenuList"})
     public String selAthrMenuList(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("AthrController.selAthrMenuList param [{}]", param);
+        log.debug("AthrController.selAthrMenuList param [{}]", param);
 
         try {
 
             List<Map<String, Object>> resultData = this.athrService.selDataList("selAthrMenuList", param);
 
-            logger.debug("AthrController.selAthrMenuList resultData [{}]", resultData);
+            log.debug("AthrController.selAthrMenuList resultData [{}]", resultData);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", resultData);
@@ -293,13 +290,13 @@ public class AthrController extends BizBaseController {
     @RequestMapping(value= {"selAthrMenuPopupList"})
     public String selAthrMenuPopupList(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("AthrController.selAthrMenuPopupList param [{}]", param);
+        log.debug("AthrController.selAthrMenuPopupList param [{}]", param);
 
         try {
 
             List<Map<String, Object>> resultData = this.athrService.selDataList("selAthrMenuPopupList", param);
 
-            logger.debug("AthrController.selAthrMenuPopupList resultData [{}]", resultData);
+            log.debug("AthrController.selAthrMenuPopupList resultData [{}]", resultData);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", resultData);
@@ -318,13 +315,13 @@ public class AthrController extends BizBaseController {
     @RequestMapping(value= {"insAthrMenuList"})
     public String insAthrMenuList(@RequestBody List<Map<String, Object>> param, Model model) {
 
-        logger.debug("AthrController.insAthrMenuList param [{}]", param);
+        log.debug("AthrController.insAthrMenuList param [{}]", param);
 
         try {
 
             int resultData = this.athrService.insDataList("insAthrMenuList", param);
 
-            logger.debug("AthrController.insAthrMenuList [{}]", resultData);
+            log.debug("AthrController.insAthrMenuList [{}]", resultData);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", resultData);
@@ -342,13 +339,13 @@ public class AthrController extends BizBaseController {
     @RequestMapping(value= {"delAthrMenuList"})
     public String delAthrMenuList(@RequestBody List<Map<String, Object>> param, Model model) {
 
-        logger.debug("AthrController.delAthrMenuList param [{}]", param);
+        log.debug("AthrController.delAthrMenuList param [{}]", param);
 
         try {
 
             int resultData = this.athrService.insDataList("delAthrMenuList", param);
 
-            logger.debug("AthrController.delAthrMenuList [{}]", resultData);
+            log.debug("AthrController.delAthrMenuList [{}]", resultData);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", resultData);
@@ -366,13 +363,13 @@ public class AthrController extends BizBaseController {
     @RequestMapping(value= {"updAthrMenuList"})
     public String updAthrMenuList(@RequestBody List<Map<String, Object>> param, Model model) {
 
-        logger.debug("AthrController.updAthrMenuList param [{}]", param);
+        log.debug("AthrController.updAthrMenuList param [{}]", param);
 
         try {
 
             int resultData = this.athrService.updDataList("updAthrMenuList", param);
 
-            logger.debug("AthrController.updAthrMenuList [{}]", resultData);
+            log.debug("AthrController.updAthrMenuList [{}]", resultData);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", resultData);

@@ -15,6 +15,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -66,6 +67,11 @@ public class LocMariaDBSqlSessionConfig {
     public SqlSessionTemplate sqlSessionTemplate() throws Exception {
         System.out.println("=========================> sqlSessionTemplate()");
         return new SqlSessionTemplate(sqlSessionFactory());
+    }
+
+    @Bean
+    public DataSourceTransactionManager transactionManager() throws SQLException {
+        return new DataSourceTransactionManager(dataSource());
     }
 
 }

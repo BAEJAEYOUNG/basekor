@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
-import sb.mvc.base.biz.support.intercept.ViewAttributesInterceptor;
+import sb.mvc.base.biz.support.intercept.ViewInterceptor;
 import sb.mvc.base.biz.support.resolver.view.CCSXlsView;
 import sb.mvc.base.biz.support.resolver.view.CCSXlsxView;
 
@@ -35,13 +35,13 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
     @Bean
-    ViewAttributesInterceptor viewAttributesInterceptor() {
-        return new ViewAttributesInterceptor();
+    ViewInterceptor viewAInterceptor() {
+        return new ViewInterceptor();
     }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(viewAttributesInterceptor());
+        registry.addInterceptor(viewAInterceptor());
     }
 
     @Override

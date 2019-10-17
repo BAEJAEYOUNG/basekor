@@ -6,6 +6,7 @@
 
 package sb.mvc.base.biz.system.menu;
 
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -16,11 +17,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 import java.util.Map;
 
+@Slf4j
 @Controller
 @RequestMapping(value = {"/system/menu"})
 public class MenuController {
-
-    protected static final Logger logger = LoggerFactory.getLogger(MenuController.class);
 
     public MenuController(MenuService menuService) {
         this.menuService = menuService;
@@ -36,13 +36,13 @@ public class MenuController {
     @RequestMapping(value = {"selKey"})
     public String sel(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("MenuController.sel param [{}]", param);
+        log.debug("MenuController.sel param [{}]", param);
 
         try {
 
             String resultData = (String) this.menuService.selValue("selKey", param);
 
-            logger.debug("MenuController.sel resultData {}", resultData);
+            log.debug("MenuController.sel resultData {}", resultData);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", resultData);
@@ -61,13 +61,13 @@ public class MenuController {
     @RequestMapping(value = {"list"})
     public String list(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("MenuController.list param [{}]", param);
+        log.debug("MenuController.list param [{}]", param);
 
         try {
 
             List<Map<String, Object>> resultData = this.menuService.selDataList(param);
 
-            logger.debug("MenuController.list resultData [{}]", resultData);
+            log.debug("MenuController.list resultData [{}]", resultData);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", resultData);
@@ -85,13 +85,13 @@ public class MenuController {
     @RequestMapping(value = {"ins"})
     public String ins(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("MenuController.ins param [{}]", param);
+        log.debug("MenuController.ins param [{}]", param);
 
         try {
 
             int cntCd = this.menuService.insData(param);
 
-            logger.debug("MenuController.ins [{}]", cntCd);
+            log.debug("MenuController.ins [{}]", cntCd);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", cntCd);
@@ -109,13 +109,13 @@ public class MenuController {
     @RequestMapping(value = {"upd"})
     public String upd(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("MenuController.selCdList param [{}]", param);
+        log.debug("MenuController.selCdList param [{}]", param);
 
         try {
 
             int cntCd = this.menuService.updData(param);
 
-            logger.debug("MenuController.upd [{}]", cntCd);
+            log.debug("MenuController.upd [{}]", cntCd);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", cntCd);
@@ -133,13 +133,13 @@ public class MenuController {
     @RequestMapping(value = {"del"})
     public String del(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("MenuController.del param [{}]", param);
+        log.debug("MenuController.del param [{}]", param);
 
         try {
 
             int cntCd = this.menuService.delData(param);
 
-            logger.debug("MenuController.del [{}]", cntCd);
+            log.debug("MenuController.del [{}]", cntCd);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", cntCd);

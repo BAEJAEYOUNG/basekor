@@ -6,6 +6,7 @@
 
 package sb.mvc.base.biz.system.mngr;
 
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 import java.util.Map;
 
+@Slf4j
 @Controller
 @RequestMapping(value = {"/system/mngr"})
 public class MngrController {
@@ -36,13 +38,13 @@ public class MngrController {
     @RequestMapping(value= {"selKey"})
     public String sel(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("MngrController.sel param [{}]", param);
+        log.debug("MngrController.sel param [{}]", param);
 
         try {
 
             String resultData = (String)this.mngrService.selValue("selKey", param);
 
-            logger.debug("MngrController.sel resultData {}", resultData);
+            log.debug("MngrController.sel resultData {}", resultData);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", resultData);
@@ -61,13 +63,13 @@ public class MngrController {
     @RequestMapping(value= {"list"})
     public String list(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("MngrController.list param [{}]", param);
+        log.debug("MngrController.list param [{}]", param);
 
         try {
 
             List<Map<String, Object>> resultData = this.mngrService.selDataList(param);
 
-            logger.debug("MngrController.list resultData [{}]", resultData);
+            log.debug("MngrController.list resultData [{}]", resultData);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", resultData);
@@ -85,13 +87,13 @@ public class MngrController {
     @RequestMapping(value= {"ins"})
     public String ins(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("MngrController.ins param [{}]", param);
+        log.debug("MngrController.ins param [{}]", param);
 
         try {
 
             int cntCd = this.mngrService.insData(param);
 
-            logger.debug("MngrController.ins [{}]", cntCd);
+            log.debug("MngrController.ins [{}]", cntCd);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", cntCd);
@@ -109,13 +111,13 @@ public class MngrController {
     @RequestMapping(value= {"upd"})
     public String upd(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("MngrController.selCdList param [{}]", param);
+        log.debug("MngrController.selCdList param [{}]", param);
 
         try {
 
             int cntCd = this.mngrService.updData(param);
 
-            logger.debug("MngrController.upd [{}]", cntCd);
+            log.debug("MngrController.upd [{}]", cntCd);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", cntCd);
@@ -133,13 +135,13 @@ public class MngrController {
     @RequestMapping(value= {"del"})
     public String del(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("MngrController.del param [{}]", param);
+        log.debug("MngrController.del param [{}]", param);
 
         try {
 
             int cntCd = this.mngrService.delData(param);
 
-            logger.debug("MngrController.del [{}]", cntCd);
+            log.debug("MngrController.del [{}]", cntCd);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", cntCd);

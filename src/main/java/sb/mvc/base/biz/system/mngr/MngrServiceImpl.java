@@ -6,6 +6,7 @@
 
 package sb.mvc.base.biz.system.mngr;
 
+import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -14,14 +15,9 @@ import sb.mvc.base.biz.base.BizBaseServiceImpl;
 
 import java.util.Map;
 
+@AllArgsConstructor
 @Service("mngrService")
 public class MngrServiceImpl extends BizBaseServiceImpl<Map<String, Object>> implements MngrService {
-
-    protected final Logger logger = LoggerFactory.getLogger(MngrServiceImpl.class);
-
-    public MngrServiceImpl(MngrDao mngrDao) {
-        this.mngrDao = mngrDao;
-    }
 
     private MngrDao mngrDao;
 

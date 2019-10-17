@@ -6,6 +6,7 @@
 
 package sb.mvc.base.biz.system.menu;
 
+import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -14,14 +15,9 @@ import sb.mvc.base.biz.base.BizBaseServiceImpl;
 
 import java.util.Map;
 
+@AllArgsConstructor
 @Service("menuService")
 public class MenuServiceImpl extends BizBaseServiceImpl<Map<String, Object>> implements MenuService {
-
-    protected final Logger logger = LoggerFactory.getLogger(MenuServiceImpl.class);
-
-    public MenuServiceImpl(MenuDao menuDao) {
-        this.menuDao = menuDao;
-    }
 
     private MenuDao menuDao;
 

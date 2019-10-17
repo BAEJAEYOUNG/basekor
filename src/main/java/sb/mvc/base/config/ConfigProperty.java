@@ -14,7 +14,6 @@ import org.springframework.web.context.support.ServletContextAttributeExporter;
 import java.util.HashMap;
 import java.util.Map;
 
-
 @Configuration
 public class ConfigProperty {
 

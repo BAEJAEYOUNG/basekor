@@ -9,6 +9,7 @@
  */
 package sb.mvc.base.biz.system.grpcd;
 
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -24,11 +25,10 @@ import java.util.Map;
  *
  * @author Administrator
  */
+@Slf4j
 @Controller
 @RequestMapping("system/grpCd")
 public class GrpCdController extends BizBaseController {
-
-    protected final Logger logger = LoggerFactory.getLogger(GrpCdController.class);
 
     public GrpCdController(GrpCdService grpCdService) {
         this.grpCdService = grpCdService;
@@ -39,13 +39,13 @@ public class GrpCdController extends BizBaseController {
     @RequestMapping(value= {"list"})
     public String list(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("GrpCdController.list param [{}]", param);
+        log.debug("GrpCdController.list param [{}]", param);
 
         try {
 
             List<Map<String, Object>> resultData = this.grpCdService.selDataList(param);
 
-            logger.debug("GrpCdController.list resultData [{}]", resultData);
+            log.debug("GrpCdController.list resultData [{}]", resultData);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", resultData);
@@ -64,13 +64,13 @@ public class GrpCdController extends BizBaseController {
     @RequestMapping(value= {"sel"})
     public String sel(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("GrpCdController.sel param [{}]", param);
+        log.debug("GrpCdController.sel param [{}]", param);
 
         try {
 
             Map<String, Object> resultData = this.grpCdService.selData(param);
 
-            logger.debug("GrpCdController.sel resultData {}", resultData);
+            log.debug("GrpCdController.sel resultData {}", resultData);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", resultData);
@@ -89,13 +89,13 @@ public class GrpCdController extends BizBaseController {
     @RequestMapping(value= {"ins"})
     public String ins(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("GrpCdController.ins param [{}]", param);
+        log.debug("GrpCdController.ins param [{}]", param);
 
         try {
 
             int cntGrp = this.grpCdService.insData(param);
 
-            logger.debug("GrpCdController.ins [{}]", cntGrp);
+            log.debug("GrpCdController.ins [{}]", cntGrp);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", cntGrp);
@@ -113,13 +113,13 @@ public class GrpCdController extends BizBaseController {
     @RequestMapping(value= {"upd"})
     public String upd(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("GrpCdController.selCdList param [{}]", param);
+        log.debug("GrpCdController.selCdList param [{}]", param);
 
         try {
 
             int cntGrp = this.grpCdService.updData(param);
 
-            logger.debug("GrpCdController.upd [{}]", cntGrp);
+            log.debug("GrpCdController.upd [{}]", cntGrp);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", cntGrp);
@@ -137,7 +137,7 @@ public class GrpCdController extends BizBaseController {
     @RequestMapping(value= {"del"})
     public String del(@RequestParam Map<String, Object> param, Model model) {
 
-        logger.debug("GrpCdController.del param [{}]", param);
+        log.debug("GrpCdController.del param [{}]", param);
 
         try {
 
@@ -145,7 +145,7 @@ public class GrpCdController extends BizBaseController {
             // 해당 그룹 하위 코드 모두 삭제
             int cntCd = this.grpCdService.delData("delCdInGrpCd", param);
 
-            logger.debug("GrpCdController.del [{}]", "grp:" + cntGrp + ",cd:" + cntCd);
+            log.debug("GrpCdController.del [{}]", "grp:" + cntGrp + ",cd:" + cntCd);
 
             model.addAttribute("resultCd", "00");
             model.addAttribute("resultData", cntGrp + "," + cntCd);
