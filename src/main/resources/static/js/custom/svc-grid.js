@@ -393,7 +393,7 @@ $.fn.jqgridRowspan = function( colIndexs ) {
         }
         current = value;
     } );
-    $( 'tbody tr', this ).each( function( row, rowObject ) {
+    $('tbody tr', this).each(function (row) {
         var tmpIDx = 0;
         $( 'td', this ).each( function( col, colObject ) {
             if( col == colIndexs && row > 0 ) {// 0번째 row는 숨겨진 row다 이것 때문에 width가 깨지는 현상 발생

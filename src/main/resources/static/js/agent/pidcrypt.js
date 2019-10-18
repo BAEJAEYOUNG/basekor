@@ -147,9 +147,8 @@ function pidCrypt(){
     return this.errors;
   };
   this.isError = function(){
-    if(this.errors.length>0)
-      return true;
-    return false
+    if (this.errors.length > 0) return true;
+    else return false;
   };
   this.appendInfo = function(str){
     this.infos += str;

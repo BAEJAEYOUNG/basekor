@@ -245,7 +245,7 @@
         <div class="title-panel">
             <h3 class="style-title">코드 정보</h3>
             <div class="button-bar">
-                <button type="button" class="small button green" data-auth="W" data-auth onclick="doNew2()">신규</button>
+                <button type="button" class="small button green" data-auth="W" onclick="doNew2()">신규</button>
                 <button type="button" class="small button blue" data-auth="W" onclick="doSave2()">저장</button>
                 <button type="button" class="small button red" data-auth="D" onclick="doDelete2()">삭제</button>
             </div>

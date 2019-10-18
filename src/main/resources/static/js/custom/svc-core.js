@@ -604,6 +604,7 @@ svc.form.applyElementFormat = function( panelId, refElem, sFormat ) {
             refElem.blur( function() {
                 refElem.val( refElem.val().formatDecimal( 2 ) );
             } );
+            break;
         case "money":
         case "number":
             refElem.css( { "text-align": "right" } );
@@ -765,7 +766,6 @@ svc.form.applyElementFormat = function( panelId, refElem, sFormat ) {
             };
             refElem.css( { 'text-align': 'center' } );
             refElem.timepicker( timepickerProp );
-
             break;
         case "ym":
             refElem.keyup( function() {
@@ -1234,11 +1234,11 @@ String.prototype.formatTelNo = function( separator ) {
         rtnStr = rtnStr.left( 12 );
     }
     if( rtnStr.length >= 9 ) {
-        rtnStr = rtnStr.replace( /(^02.{0}|^0.{2}|[0-9]{3})([0-9]{1,})([0-9]{4})/, "$1" + separator + "$2" + separator + "$3" );
+        rtnStr = rtnStr.replace(/(^02.{0}|^0.{2}|[0-9]{3})([0-9]+)([0-9]{4})/, "$1" + separator + "$2" + separator + "$3");
     } else if( rtnStr.length > 5 ) {
-        rtnStr = rtnStr.replace( /(^02.{0}|^0.{2}|[0-9]{3})([0-9]{3,4})([0-9]{0,})/, "$1" + separator + "$2" + separator + "$3" );
+        rtnStr = rtnStr.replace(/(^02.{0}|^0.{2}|[0-9]{3})([0-9]{3,4})([0-9]*)/, "$1" + separator + "$2" + separator + "$3");
     } else if( rtnStr.length > 3 ) {
-        rtnStr = rtnStr.replace( /(^02.{0}|^0.{2}|[0-9]{3})([0-9]{0,})/, "$1" + separator + "$2" );
+        rtnStr = rtnStr.replace(/(^02.{0}|^0.{2}|[0-9]{3})([0-9]*)/, "$1" + separator + "$2");
     }
     return rtnStr.rtrim( separator );
 };
@@ -2233,6 +2233,8 @@ Date.prototype.before = function( years, months, dates, hours, minutes, seconds,
 
     // -- mode 값[I:insert, U:update] 에 따라 바뀌는 display 세팅  --
     $.fn.applyModeStyle = function( mode ) {
+
+        if (!mode) mode = $(this).find('input[name=mode]').val();
 
         $( this ).find( 'input, select, textarea, button' ).each( function() {
 

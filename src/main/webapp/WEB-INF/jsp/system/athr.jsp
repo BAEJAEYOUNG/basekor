@@ -496,7 +496,7 @@
             <h3 class="style-title">권한-관리자 목록</h3>
             <div class="button-bar">
                 <button type="button" class="small button green" data-auth="W" onclick="doNew2()">등록</button>
-                <button type="button" class="small button red" data-auth="D" onclick="doDelete2()">삭제ㄴ</button>
+                <button type="button" class="small button red" data-auth="D" onclick="doDelete2()">삭제</button>
             </div>
         </div>
         <!-- //title-panel -->
@@ -527,13 +527,13 @@
 
 </div>
 
-<div id="dialogAthrMngr" style="display:none;" class="dialog">
+<div id="dialogAthrMngr" class="dialog none">
 
     <!-- 버튼 시작 -->
     <div class="button-bar">
-        <button type="button" class="small button" onclick="doQueryDialog1()" class="style-btn">조회</button>
-        <button type="button" class="small button blue" onclick="doSaveDialog1()" class="style-btn">저장</button>
-        <button type="button" class="small button red" onclick="$('#dialogAthrMngr').dialog('close')" class="style-btn">닫기</button>
+        <button type="button" class="small button" onclick="doQueryDialog1()">조회</button>
+        <button type="button" class="small button blue" onclick="doSaveDialog1()">저장</button>
+        <button type="button" class="small button red" onclick="$('#dialogAthrMngr').dialog('close')">닫기</button>
     </div>
     <!-- 버튼 끝 -->
 
@@ -545,12 +545,12 @@
 
 </div>
 
-<div id="dialogAthrMenu" style="display:none;" class="dialog">
+<div id="dialogAthrMenu" class="dialog none">
 
     <!-- 버튼 시작 -->
     <div class="button-bar">
-        <button type="button" class="small button" onclick="doQueryDialog2()" class="style-btn">조회</button>
-        <button type="button" class="small button blue" onclick="doSaveDialog2()" class="style-btn">저장</button>
+        <button type="button" class="small button" onclick="doQueryDialog2()">조회</button>
+        <button type="button" class="small button blue" onclick="doSaveDialog2()">저장</button>
         <button type="button" class="small button red" onclick="$('#dialogAthrMenu').dialog('close')">닫기</button>
     </div>
     <!-- 버튼 끝 -->
