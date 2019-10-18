@@ -37,7 +37,7 @@
     border-top-width: 1px;
 }
 .panel-body-noborder {
-    border-width: 0px;
+    border-width: 0;
 }
 .panel-body-nobottom {
     border-bottom-width: 0;
@@ -79,7 +79,7 @@
     border-radius: 3px 3px 3px 3px;
 }
 .panel-loading {
-    padding: 11px 0px 10px 30px;
+    padding: 11px 0 10px 30px;
 }
 .panel-noscroll {
     overflow: hidden;
@@ -96,13 +96,13 @@
     background: url('images/loading.gif') no-repeat 10px 10px;
 }
 .panel-tool-close {
-    background: url('images/panel_tools.png') no-repeat -16px 0px;
+    background: url('images/panel_tools.png') no-repeat -16px 0;
 }
 .panel-tool-min {
-    background: url('images/panel_tools.png') no-repeat 0px 0px;
+    background: url('images/panel_tools.png') no-repeat 0 0;
 }
 .panel-tool-max {
-    background: url('images/panel_tools.png') no-repeat 0px -16px;
+    background: url('images/panel_tools.png') no-repeat 0 -16px;
 }
 .panel-tool-restore {
     background: url('images/panel_tools.png') no-repeat -16px -16px;
@@ -239,7 +239,7 @@
     min-width: 16px;
     left: 21px;
     top: auto;
-    bottom: 0px;
+    bottom: 0;
     text-align: right;
     white-space: nowrap;
     word-wrap: normal;
@@ -368,12 +368,12 @@
 }
 .window .window-header {
     background: transparent;
-    padding: 0px 0px 6px 0px;
+    padding: 0 0 6px 0;
 }
 .window .window-body {
     border-width: 1px;
     border-style: solid;
-    border-top-width: 0px;
+    border-top-width: 0;
 }
 .window .window-body-noheader {
     border-top-width: 1px;
@@ -461,7 +461,7 @@
     padding: 5px 5px 6px 5px;
 }
 .window-thinborder .window-body {
-    border-width: 0px;
+    border-width: 0;
 }
 .window-thinborder .window-footer {
     border-left: transparent;
@@ -589,7 +589,7 @@
     border-top-color: #555;
 }
 .window-thinborder .dialog-button {
-    top: 0px;
+    top: 0;
     padding: 5px 8px 8px 8px;
     border-left: transparent;
     border-right: transparent;
@@ -1133,7 +1133,7 @@
 }
 .layout-expand {
     position: absolute;
-    padding: 0px;
+    padding: 0;
     font-size: 1px;
     cursor: pointer;
     z-index: 1;
@@ -1145,7 +1145,7 @@
     overflow: hidden;
 }
 .layout-expand .panel-header {
-    border-bottom-width: 0px;
+    border-bottom-width: 0;
 }
 .layout-expand .panel-body {
     position: relative;
@@ -1318,8 +1318,8 @@
 .tabs {
     list-style-type: none;
     height: 26px;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     padding-left: 4px;
     width: 50000px;
     border-style: solid;
@@ -1412,8 +1412,8 @@
     padding-right: 8px;
 }
 .tabs-panels {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     border-width: 1px;
     border-style: solid;
     border-top-width: 0;
@@ -1519,10 +1519,10 @@
 }
 .tabs-header-noborder,
 .tabs-panels-noborder {
-    border: 0px;
+    border: 0;
 }
 .tabs-header-plain {
-    border: 0px;
+    border: 0;
     background: transparent;
 }
 .tabs-pill {
@@ -1888,7 +1888,7 @@
 .datagrid-sort-asc .datagrid-sort-icon {
     display: inline;
     padding: 0 13px 0 0;
-    background: url('images/datagrid_icons.png') no-repeat 0px center;
+    background: url('images/datagrid_icons.png') no-repeat 0 center;
 }
 .datagrid-row-collapse {
     background: url('images/datagrid_icons.png') no-repeat -48px center;
@@ -2129,7 +2129,7 @@
     font-size: 14px;
 }
 .pagination-page-list {
-    margin: 0px 6px;
+    margin: 0 6px;
     padding: 1px 2px;
     width: auto;
     height: auto;
@@ -2208,7 +2208,7 @@
 .calendar-title span {
     position: relative;
     display: inline-block;
-    top: 0px;
+    top: 0;
     padding: 0 3px;
     height: 28px;
     line-height: 28px;
@@ -2243,7 +2243,7 @@
 }
 .calendar-prevyear {
     left: 3px;
-    background: url('images/calendar_arrows.png') no-repeat 0px 0;
+    background: url('images/calendar_arrows.png') no-repeat 0 0;
 }
 .calendar-nextyear {
     right: 3px;
@@ -2776,7 +2776,7 @@
     font-size: 1px;
 }
 .menu-sep {
-    margin: 3px 0px 3px 25px;
+    margin: 3px 0 3px 25px;
     font-size: 1px;
 }
 .menu-noline .menu-line {
@@ -2896,7 +2896,7 @@
 .m-btn .l-btn-icon-top .m-btn-downarrow,
 .m-btn .l-btn-icon-bottom .m-btn-downarrow {
     top: auto;
-    bottom: 0px;
+    bottom: 0;
     left: 50%;
     margin-left: -8px;
 }
@@ -3106,16 +3106,16 @@
     overflow: hidden;
 }
 .tree-expanded {
-    background: url('images/tree_icons.png') no-repeat -18px 0px;
+    background: url('images/tree_icons.png') no-repeat -18px 0;
 }
 .tree-expanded-hover {
-    background: url('images/tree_icons.png') no-repeat -50px 0px;
+    background: url('images/tree_icons.png') no-repeat -50px 0;
 }
 .tree-collapsed {
-    background: url('images/tree_icons.png') no-repeat 0px 0px;
+    background: url('images/tree_icons.png') no-repeat 0 0;
 }
 .tree-collapsed-hover {
-    background: url('images/tree_icons.png') no-repeat -32px 0px;
+    background: url('images/tree_icons.png') no-repeat -32px 0;
 }
 .tree-lines .tree-expanded,
 .tree-lines .tree-root-first .tree-expanded {

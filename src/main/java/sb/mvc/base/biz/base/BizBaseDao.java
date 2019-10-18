@@ -15,12 +15,4 @@ import sb.mvc.base.core.base.BaseDao;
  */
 @Repository
 public abstract class BizBaseDao<T> extends BaseDao<T> {
-
-    public int cntDataList(T param) {
-        return getSqlSession().selectOne(this.getStatementId("%s.cnt%sList"), param);
-    }
-
-    public int cntDataList(String statementId, T param) {
-        return getSqlSession().selectOne(super.getStatementId("%s.%s", statementId), param);
-    }
 }

@@ -7,8 +7,6 @@
 
 package sb.mvc.base.biz.base;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import sb.mvc.base.core.base.BaseController;
 
@@ -18,7 +16,4 @@ import sb.mvc.base.core.base.BaseController;
  */
 @Controller
 public abstract class BizBaseController extends BaseController {
-
-    protected final Logger logger = LoggerFactory.getLogger(BizBaseController.class);
-
 }

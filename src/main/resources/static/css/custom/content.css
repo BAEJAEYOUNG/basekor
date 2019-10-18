@@ -110,7 +110,7 @@ body {
     height  : 25px;
 }
 
-.search-panel divv dl dt, .search-panel div dl dd {
+.search-panel div dl dt, .search-panel div dl dd {
     display   : table-cell;
     min-width : 80px;
 }
@@ -225,7 +225,7 @@ body {
 
 .title-panel .button-bar {
     position : absolute;
-    top      : 0px;
+    top: 0;
     right    : 0;
 }
 
@@ -254,7 +254,7 @@ body {
     height  : 25px;
 }
 
-.edit-panel divv dl dt, .edit-panel div dl dd {
+.edit-panel div dl dt, .edit-panel div dl dd {
     display   : table-cell;
     min-width : 80px;
 }

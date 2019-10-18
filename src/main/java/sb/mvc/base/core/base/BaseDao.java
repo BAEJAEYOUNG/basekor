@@ -49,6 +49,36 @@ public abstract class BaseDao<T> extends SqlSessionDaoSupport {
         return String.format(format, this.getNameSpace(), statementId);
     }
 
+    public int cntDataList(T param) {
+
+        int i = 0;
+
+        try {
+            i = getSqlSession().selectOne(this.getStatementId("%s.cnt%sList"), param);
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+            throw new RuntimeException(String.format("%s 데이터 조회 오류", this.getStatementId("%s.ins%s")));
+        }
+
+        return i;
+
+    }
+
+    public int cntDataList(String statementId, T param) {
+
+        int i = 0;
+
+        try {
+            i = getSqlSession().selectOne(this.getStatementId("%s.%s", statementId), param);
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+            throw new RuntimeException(String.format("%s 데이터 조회 오류", this.getStatementId("%s.ins%s")));
+        }
+
+        return i;
+
+    }
+
     public <E> List<E> selDataList(T param) {
 
         List<E> list = null;
