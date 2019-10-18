@@ -62,7 +62,7 @@ select, input, textarea {
 
 body .ui-jqgrid .ui-jqgrid-htable th div {
     font-size   : 13px;
-    font-weight : 500;
+    font-weight: 600;
 }
 
 body .ui-jqgrid tr.jqgrow td {
@@ -88,4 +88,8 @@ span.jconfirm-title {
 span.ui-dialog-title {
     font-size   : 15px;
     font-weight : 700;
+}
+
+.font21 {
+    font-size: 21px;
 }

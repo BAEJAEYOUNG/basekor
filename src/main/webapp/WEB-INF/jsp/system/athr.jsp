@@ -96,10 +96,10 @@
             colModel3.push( { label: '메뉴명'          , name: 'menuNm'    , width: 100  , editable: true , edittype: 'text'     , format: 'string', editrules: { required: true } } );
             colModel3.push( { label: '메뉴유형'        , name: 'menuTp'    , width: 80   , editable: true , edittype: "select"   , editrules: { required: true }, formatter: "select", editoptions: { value: menuType } } );
             colModel3.push( { label: '실행명령'        , name: 'execCmd'   , width: 300  , editable: true , edittype: 'text'     , format: 'string' } );
-            colModel3.push( { label: '읽기권한'        , name: 'authR'     , width: 40   , editable: true , edittype: 'checkbox' , editoptions: { value: 'Y:N' }, align: 'center' } );
-            colModel3.push( { label: '변경권한'        , name: 'authW'     , width: 40   , editable: true , edittype: 'checkbox' , editoptions: { value: 'Y:N' }, align: 'center' } );
-            colModel3.push( { label: '삭제권한'        , name: 'authD'     , width: 40   , editable: true , edittype: 'checkbox' , editoptions: { value: 'Y:N' }, align: 'center' } );
-            colModel3.push( { label: '인쇄권한'        , name: 'authP'     , width: 40   , editable: true , edittype: 'checkbox' , editoptions: { value: 'Y:N' }, align: 'center' } );
+            colModel3.push({label: '읽기', name: 'authR', width: 40, editable: true, edittype: 'checkbox', editoptions: {value: 'Y:N'}, align: 'center'});
+            colModel3.push({label: '변경', name: 'authW', width: 40, editable: true, edittype: 'checkbox', editoptions: {value: 'Y:N'}, align: 'center'});
+            colModel3.push({label: '삭제', name: 'authD', width: 40, editable: true, edittype: 'checkbox', editoptions: {value: 'Y:N'}, align: 'center'});
+            colModel3.push({label: '인쇄', name: 'authP', width: 40, editable: true, edittype: 'checkbox', editoptions: {value: 'Y:N'}, align: 'center'});
             colModel3.push( { label: '메뉴레벨'        , name: 'menuLv'    , width: 60   , editable: true , format: 'number', editrules: { number: true, required: true } } );
             colModel3.push( { label: '정렬순번'        , name: 'sortSn'    , width: 60   , editable: true , format: 'number', editrules: { number: true, required: true } } );
             colModel3.push( { label: '사용여부'        , name: 'useYn'     , width: 60   , editable: true , edittype: 'checkbox', editoptions: { value: 'Y:N' }, align: 'center' } );
@@ -551,7 +551,7 @@
     <div class="button-bar">
         <button type="button" class="small button" onclick="doQueryDialog2()" class="style-btn">조회</button>
         <button type="button" class="small button blue" onclick="doSaveDialog2()" class="style-btn">저장</button>
-        <button type="button" class="small button red" onclick="$('#dialogAthrMenu').dialog('close')" class="style-btn">닫기</button>
+        <button type="button" class="small button red" onclick="$('#dialogAthrMenu').dialog('close')">닫기</button>
     </div>
     <!-- 버튼 끝 -->
 

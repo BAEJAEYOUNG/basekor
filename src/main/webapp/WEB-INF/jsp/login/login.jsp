@@ -66,7 +66,7 @@
                             bReturn = true;
                         }
                     }
-                } );
+                });
             }
             if(!bReturn) {
                 svc.ui.alert('아이디 또는 비밀번호가 일치하지 않습니다.');
@@ -150,18 +150,18 @@
 <div id="wrapFormBg3"></div>
 <div id="logo"><img src="../../image/login/ksid.png" alt="ksid로고"></div>
 <div id="formLogin">
-    <div id="cardLogin" class="wrap-login">
-        <h2>지문 스마트 카드 로그인</h2>
-        <div class="smartcard">
-            <div id="smartcardMsg">
-                1. 지문 스마트카드 전원을 키고 지문인증을 합니다 .
-                <br>
-                2. 지문 스마트카드를 리더기에 장착합니다 .
-                <br>
-                3. 화면에 보이는 스마트카드를 클릭하여 로그인 합니다.
-            </div>
-        </div>
-    </div>
+    <!--     <div id="cardLogin" class="wrap-login"> -->
+    <!--         <h2>지문 스마트 카드 로그인</h2> -->
+    <!--         <div class="smartcard"> -->
+    <!--             <div id="smartcardMsg"> -->
+    <!--                 1. 지문 스마트카드 전원을 키고 지문인증을 합니다 . -->
+    <!--                 <br> -->
+    <!--                 2. 지문 스마트카드를 리더기에 장착합니다 . -->
+    <!--                 <br> -->
+    <!--                 3. 화면에 보이는 스마트카드를 클릭하여 로그인 합니다. -->
+    <!--             </div> -->
+    <!--         </div> -->
+    <!--     </div> -->
     <div id="idLogin" class="wrap-login">
         <h2>아이디/비밀번호 로그인</h2>
         <div id="idLoginBg"></div>
@@ -190,7 +190,7 @@
                 </table>
 
                 <div class="button-panel">
-                    <button type="submit" class="large green button" title='로그인'>로그인</button>
+                    <button type="submit" class="large green button font21" title='로그인'>로그인</button>
                 </div>
 
             </form>
