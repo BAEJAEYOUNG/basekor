@@ -15,7 +15,7 @@
 .gnb > li {
     position    : relative;
     display     : inline-block;
-    width: 120px;
+    width       : 120px;
     margin      : 0;
     padding     : 0 20px;
     height      : 35px;
@@ -30,42 +30,45 @@
 }
 
 .gnb > li:hover {
-    cursor: pointer;
+    cursor : pointer;
 }
 
 .gnb > li:hover > a {
-    color : #1A73E8;
+    color : #1a73e8;
 
 
 }
 
 .gnb ul.sub-menu {
-    position: absolute;
-    border  : 1px solid #E4E4E4;
+    position         : absolute;
+    border           : 1px solid #e4e4e4;
     background-color : #e7e7e7;
-    border-radius: 5px;
-    box-shadow         : 1px 1px 3px #ddd;
-    width: 120px;
-    top: 99%;
-    left: 20px;
-    display : none;
-    z-index    : 2147483647;
+    border-radius    : 5px;
+    box-shadow       : 1px 1px 3px #ddd;
+    width            : 120px;
+    top              : 99%;
+    left             : 20px;
+    display          : none;
+    z-index          : 2147483647;
 }
+
 .gnb ul.sub-menu li {
-    height: 25px;
-    vertical-align: middle;
+    height         : 25px;
+    vertical-align : middle;
 }
+
 .gnb ul.sub-menu li:hover a {
-    color: #00bbee;
+    color            : #00bbee;
     background-color : #ffffcc;
 }
+
 .gnb ul.sub-menu li a {
-    display : block;
+    display     : block;
     line-height : 25px;
-    font-size : 14px;
-    color : #444;
+    font-size   : 14px;
+    color       : #444;
     font-weight : bold;
-    padding:0 3px;
+    padding     : 0 3px;
 }
 
 /*.gnb ul.sub-menu li {*/

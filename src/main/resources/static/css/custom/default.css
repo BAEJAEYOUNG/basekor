@@ -109,7 +109,7 @@ caption {
 select, input, textarea {
     font-size : 12px;
     /*font-family : Arial, '맑은 고딕', 'Malgun Gothic', '돋움', 'Dotum', 'verdana';*/
-    color       : #444;
+    color     : #444;
 }
 
 select {
@@ -170,7 +170,7 @@ hr, caption {
 }
 
 .none {
-    display: none;
+    display : none;
 }
 
 .bold {
@@ -186,13 +186,14 @@ hr, caption {
 /* float 을 주게되면 두가지 현상이 일어난다. float을 준 부모의 높이가 사라진다. float을 준 그다음 요소가 자동으로 float이 먹혀서 옆에 붙게된다. */
 /* 부모의 높이를 다시 살리는 방법이다. */
 .clear {
-    zoom: 1;
-    clear: both;
-}
-.clear:after {
-    content: '';
-    display : block;
+    zoom  : 1;
     clear : both;
+}
+
+.clear:after {
+    content : '';
+    display : block;
+    clear   : both;
 }
 
 /*
@@ -200,19 +201,20 @@ hr, caption {
 <body> 바로아래 <a href="#" class="skip">본문 바로가기</a>
 */
 .skip {
-    position : absolute;
-    left : 0;
-    top : -100px;
-    z-index : 1000;
-    width : 100%;
-    height : 60px;
+    position    : absolute;
+    left        : 0;
+    top         : -100px;
+    z-index     : 1000;
+    width       : 100%;
+    height      : 60px;
     line-height : 60px;
-    text-align : center;
-    font-size : 20px;
-    color : #fff;
-    background : #666;
-    transition: all 0.5s;
+    text-align  : center;
+    font-size   : 20px;
+    color       : #fff;
+    background  : #666;
+    transition  : all 0.5s;
 }
+
 .skip:focus {
     top : 0;
 }

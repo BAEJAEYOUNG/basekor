@@ -10,7 +10,7 @@
 }
 
 .dialog .button-bar {
-    margin: 0 0 7px;
+    margin     : 0 0 7px;
     text-align : right;
 }
 
@@ -25,7 +25,7 @@
 
 .ui-datepicker {
     /*font-size : 12px;*/
-    width     : 200px;
+    width : 200px;
 }
 
 img.ui-datepicker-trigger {
@@ -64,24 +64,25 @@ body .ui-jqgrid .ui-jqgrid-htable th div {
     /*font-weight : 500;*/
 }
 
-div[role=dialog]{
-    border: 2px solid black;
-    box-shadow: 6px 6px 10px rgba(0,0,0,0.8);
+div[role=dialog] {
+    border     : 2px solid black;
+    box-shadow : 6px 6px 10px rgba(0, 0, 0, 0.8);
 }
 
 .ui-dialog .ui-dialog-content {
-    padding: 7px;
+    padding : 7px;
 }
+
 .ui-jqgrid-pager {
     width : 100%;
 }
 
 body .ui-jqgrid .ui-jqgrid-bdiv div div {
-    display:none;
+    display : none;
 }
 
 table.ui-jqgrid-btable {
-    height: 1px;
+    height : 1px;
 }
 
 body .ui-jqgrid .ui-jqgrid-labels th {
@@ -130,11 +131,11 @@ body .ui-jqgrid tr.jqgrow td {
 }
 
 body .ui-jqgrid tr.jqgrow td:first-child {
-    border-left-width: 0;
+    border-left-width : 0;
 }
 
 body .ui-jqgrid tr.jqgrow td.jqgrid-rownum {
-    border-left: 0;
+    border-left : 0;
 }
 
 body .footrow {
@@ -144,7 +145,7 @@ body .footrow {
 body .ui-jqgrid tr.footrow-ltr td {
     text-align         : left;
     border-right-width : 1px;
-    border-right-color : #C5C5C5;
+    border-right-color : #c5c5c5;
     border-right-style : solid;
 }
 
@@ -155,10 +156,10 @@ body .ui-jqgrid tr.footrow td {
     height              : 21px;
     padding             : 0 2px 0 2px;
     border-bottom-width : 1px;
-    border-bottom-color : #C5C5C5;
+    border-bottom-color : #c5c5c5;
     border-bottom-style : solid;
-    border-top-width: 0;
-    border-top-color    : #C5C5C5;
+    border-top-width    : 0;
+    border-top-color    : #c5c5c5;
     border-top-style    : solid;
 }
 
@@ -171,7 +172,7 @@ body .jqgrid-alt-class {
 }
 
 body .ui-jqgrid .ui-pg-input {
-    height: 15px;
+    height : 15px;
 }
 
 /**
@@ -215,8 +216,8 @@ body .select2-container--default .select2-selection--single .select2-selection__
     width            : 18px;
     height           : 22px;
     position         : absolute;
-    top: 0;
-    right: 0;
+    top              : 0;
+    right            : 0;
     border           : 1px solid #aaa;
     border-radius    : 0 4px 4px 0;
     background-clip  : padding-box;
@@ -234,29 +235,32 @@ body .select2-container--default .select2-selection--single .select2-selection__
 }
 
 .jconfirm-content {
-    font-size : 16px;
-    line-height: 20px;
+    font-size   : 16px;
+    line-height : 20px;
 }
 
 .button.small {
-    padding: 2px 5px;
-    min-width: 65px !important;
+    padding   : 2px 5px;
+    min-width : 65px !important;
 }
 
 /* 빈 그리드에 h scrill 보이게 처리 */
-table.ui-jqgrid-btable { height: 1px; }
+table.ui-jqgrid-btable {
+    height : 1px;
+}
 
 .ui-jqgrid .ui-jqgrid-view input {
-    font-size: 12px;
+    font-size : 12px;
 }
 
 ul.tabs li.tabs-selected a:first-child {
-    border-color: #999;
-    border-bottom: 1px solid transparent;
+    border-color  : #999;
+    border-bottom : 1px solid transparent;
 }
+
 ul.tabs li.tabs-selected a:first-child span:first-child {
-    color: #222;
-    font-weight: 500;
+    color       : #222;
+    font-weight : 500;
 }
 
 button[auth] {

@@ -52,7 +52,7 @@ select, input, textarea {
 .style-title {
     font-size   : 15px;
     font-weight : 700;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    text-shadow : 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .style-title span {
@@ -62,7 +62,7 @@ select, input, textarea {
 
 body .ui-jqgrid .ui-jqgrid-htable th div {
     font-size   : 13px;
-    font-weight: 600;
+    font-weight : 600;
 }
 
 body .ui-jqgrid tr.jqgrow td {
@@ -91,5 +91,5 @@ span.ui-dialog-title {
 }
 
 .font21 {
-    font-size: 21px;
+    font-size : 21px;
 }
