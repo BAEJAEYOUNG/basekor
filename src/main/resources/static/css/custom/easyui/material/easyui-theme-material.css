@@ -1546,13 +1546,13 @@
     margin-left: -1px;
 }
 .tabs-scroller-left {
-    background: #f5f5f5 url('images/tabs_icons.png') no-repeat 1px center;
+    background: #f5f5f5 url('../../images/tabs_icons.png') no-repeat 1px center;
 }
 .tabs-scroller-right {
-    background: #f5f5f5 url('images/tabs_icons.png') no-repeat -15px center;
+    background: #f5f5f5 url('../../images/tabs_icons.png') no-repeat -15px center;
 }
 .tabs li a.tabs-close {
-    background: url('images/tabs_icons.png') no-repeat -34px center;
+    background: url('../../images/tabs_icons.png') no-repeat -34px center;
 }
 .tabs li .tabs-inner:hover {
     background: #eee;

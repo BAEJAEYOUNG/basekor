@@ -1,4 +1,4 @@
-<%@ page import="java.util.HashMap" %><%--
+<%--
   ~ Developed by JAEYOUNG BAE on 19. 4. 23 오후 4:14.
   ~ Last modified 19. 4. 23 오후 4:14.
   ~ Copyright (c) 2019. All rights reserved. 
@@ -15,7 +15,7 @@
 
     <%@ include file="/WEB-INF/jsp/inc/inc_header_main.jsp" %>
 
-    <link rel="stylesheet" href="${contextPath}/css/custom/easyui-theme-material.css">
+    <link rel="stylesheet" href="${contextPath}/css/custom/easyui/material/easyui-theme-material.css">
     <link rel="stylesheet" href="${contextPath}/css/custom/button.css">
     <link rel="stylesheet" href="${contextPath}/css/jquery/sm-core-css.css">
 <%--    <link rel="stylesheet" href="${contextPath}/css/jquery/sm-blue/sm-blue.css">--%>
@@ -30,6 +30,7 @@
     <script type="text/javascript" src="${contextPath}/js/custom/svc-gnb.js"></script>
 
     <script type="text/javascript">
+
 
         svc.sessionId = "${sessionUser.mngrId}";
 

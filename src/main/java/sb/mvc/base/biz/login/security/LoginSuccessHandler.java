@@ -6,6 +6,7 @@
 
 package sb.mvc.base.biz.login.security;
 
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +22,10 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+@Slf4j
 public class LoginSuccessHandler extends AbstractLoginSuccessHandler {
 
-    protected static final Logger logger = LoggerFactory.getLogger(LoginSuccessHandler.class);
+    protected static final Logger log = LoggerFactory.getLogger(LoginSuccessHandler.class);
 
     @Autowired
     private LoginService loginService;
@@ -32,12 +34,12 @@ public class LoginSuccessHandler extends AbstractLoginSuccessHandler {
     public void process(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
             throws IOException, ServletException {
 
-        logger.debug("LoginSuccessHandler.process Authentication [{}]", authentication);
-        //logger.debug("LoginSuccessHandler.process Authentication getDetails [{}]", authentication.getDetails());
-        //logger.debug("LoginSuccessHandler.process Authentication getAuthorities [{}]", authentication.getAuthorities());
+        log.debug("LoginSuccessHandler.process Authentication [{}]", authentication);
+        //log.debug("LoginSuccessHandler.process Authentication getDetails [{}]", authentication.getDetails());
+        //log.debug("LoginSuccessHandler.process Authentication getAuthorities [{}]", authentication.getAuthorities());
         WebAuthenticationDetails details = (WebAuthenticationDetails)authentication.getDetails();
-        logger.debug("LoginSuccessHandler sessionId {}", details.getSessionId());
-        logger.debug("LoginSuccessHandler address {}", details.getRemoteAddress());
+        log.debug("LoginSuccessHandler sessionId {}", details.getSessionId());
+        log.debug("LoginSuccessHandler address {}", details.getRemoteAddress());
 
         Map<String, Object> param = new HashMap<String, Object>();
         param.put("mngrId", authentication.getName());
@@ -46,12 +48,12 @@ public class LoginSuccessHandler extends AbstractLoginSuccessHandler {
         param.put("loginSt", "S");
 
         Map<String, Object> sessionUser = this.loginService.selData("selSessionInfo", param);
-        logger.debug("LoginSuccessHandler > sessionUser [{}]", sessionUser);
+        log.debug("LoginSuccessHandler > sessionUser [{}]", sessionUser);
         request.getSession().setAttribute("sessionUser", sessionUser);
 
         //insert user login history
         loginService.insData("insLoginHis", param);
-        logger.debug("LoginSuccessHandler.process param [{}]", param);
+        log.debug("LoginSuccessHandler.process param [{}]", param);
 
 /*
         Map<String, Object> localeUser = this.loginService.selData("selUserInfo", param);
@@ -59,8 +61,8 @@ public class LoginSuccessHandler extends AbstractLoginSuccessHandler {
         if(StringUtils.isNotEmpty((CharSequence) localeUser.get("locale"))) {
             localeStr = StringUtils.replace((String)localeUser.get("locale"), "_", "-");
             Locale locale = Locale.forLanguageTag(localeStr);
-            //logger.debug("get locale [{}]", locale);
-            //logger.debug("get SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME [{}]", SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME);
+            //log.debug("get locale [{}]", locale);
+            //log.debug("get SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME [{}]", SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME);
             request.getSession().setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, locale);
             response.setLocale(locale);
         }

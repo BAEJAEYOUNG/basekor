@@ -1,0 +1,871 @@
+2019:10:21 13:03:49.055 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : Starting BaseApplication on DESKTOP-LR9L7L1 with PID 16400 (C:\project\ws_ij\basekor\target\classes started by msi in C:\project\ws_ij\basekor) 
+2019:10:21 13:03:49.057 DEBUG --- [restartedMain] sb.mvc.base.BaseApplication : Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE 
+2019:10:21 13:03:49.057 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : The following profiles are active: loc,mysql 
+2019:10:21 13:03:49.087 INFO  --- [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2019:10:21 13:03:49.087 INFO  --- [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2019:10:21 13:03:49.710 DEBUG --- [restartedMain] o.m.s.b.a.MybatisAutoConfiguration : Searching for mappers annotated with @Mapper 
+2019:10:21 13:03:49.711 DEBUG --- [restartedMain] o.m.s.b.a.MybatisAutoConfiguration : Using auto-configuration base package 'sb.mvc.base' 
+2019:10:21 13:03:49.715 DEBUG --- [restartedMain] o.apache.ibatis.logging.LogFactory : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter. 
+2019:10:21 13:03:49.735 WARN  --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner : No MyBatis mapper was found in '[sb.mvc.base]' package. Please check your configuration. 
+2019:10:21 13:03:49.765 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode. 
+2019:10:21 13:03:49.792 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22ms. Found 0 repository interfaces. 
+2019:10:21 13:03:50.028 INFO  --- [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$52d74fde] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019:10:21 13:03:50.285 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port(s): 80 (http) 
+2019:10:21 13:03:50.295 INFO  --- [restartedMain] o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-80"] 
+2019:10:21 13:03:50.302 INFO  --- [restartedMain] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2019:10:21 13:03:50.302 INFO  --- [restartedMain] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.19] 
+2019:10:21 13:03:50.512 INFO  --- [restartedMain] o.apache.jasper.servlet.TldScanner : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time. 
+2019:10:21 13:03:50.516 INFO  --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2019:10:21 13:03:50.516 INFO  --- [restartedMain] o.s.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 1428 ms 
+2019:10:21 13:03:50.574 INFO  --- [restartedMain] s.m.b.c.LocMariaDBSqlSessionConfig : datasource : jdbc:mariadb://localhost:3306/base, base_user, 1111 
+2019:10:21 13:03:50.734 INFO  --- [restartedMain] o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...] 
+2019:10:21 13:03:50.795 INFO  --- [restartedMain] org.hibernate.Version : HHH000412: Hibernate Core {5.3.10.Final} 
+2019:10:21 13:03:50.796 INFO  --- [restartedMain] org.hibernate.cfg.Environment : HHH000206: hibernate.properties not found 
+2019:10:21 13:03:50.911 INFO  --- [restartedMain] o.h.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.0.4.Final} 
+2019:10:21 13:03:51.054 INFO  --- [restartedMain] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.MariaDB53Dialect 
+2019:10:21 13:03:51.185 INFO  --- [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2019:10:21 13:03:51.185 INFO  --- [restartedMain] s.m.b.c.LocMariaDBSqlSessionConfig : applicationContext.getResource(configProperty.getMybatisConfigLocation()) [class path resource [mybatis-mysql-config.xml]] 
+2019:10:21 13:03:51.296 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed configuration file: 'class path resource [mybatis-mysql-config.xml]' 
+2019:10:21 13:03:51.326 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\login\Login.xml]' 
+2019:10:21 13:03:51.336 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\main\Main.xml]' 
+2019:10:21 13:03:51.344 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Athr.xml]' 
+2019:10:21 13:03:51.346 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Cd.xml]' 
+2019:10:21 13:03:51.356 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\GrpCd.xml]' 
+2019:10:21 13:03:51.356 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Menu.xml]' 
+2019:10:21 13:03:51.366 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Mngr.xml]' 
+2019:10:21 13:03:51.374 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 13:03:51.387 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 13:03:51.397 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 13:03:51.407 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 13:03:51.417 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 13:03:51.425 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 13:03:51.435 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 13:03:51.482 DEBUG --- [restartedMain] sb.mvc.base.core.util.MessageUtil : ###################################    Messges locale [ko_KR] 
+2019:10:21 13:03:51.568 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/favicon.ico'], [] 
+2019:10:21 13:03:51.568 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/resources/**'], [] 
+2019:10:21 13:03:51.568 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/webjars/**'], [] 
+2019:10:21 13:03:51.568 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/html/**'], [] 
+2019:10:21 13:03:51.568 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/css/**'], [] 
+2019:10:21 13:03:51.568 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/agent/**'], [] 
+2019:10:21 13:03:51.568 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/js/**'], [] 
+2019:10:21 13:03:51.568 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/image/**'], [] 
+2019:10:21 13:03:51.568 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/error/**'], [] 
+2019:10:21 13:03:51.568 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/system/cd/comboList/**'], [] 
+2019:10:21 13:03:51.599 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@75c1f9b, org.springframework.security.web.context.SecurityContextPersistenceFilter@1f00e891, org.springframework.security.web.header.HeaderWriterFilter@302becbc, org.springframework.security.web.authentication.logout.LogoutFilter@476bcca, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@70aaa87b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@23bbcb9d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@f2c8dbe, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7af300be, org.springframework.security.web.session.SessionManagementFilter@7001899c, org.springframework.security.web.access.ExceptionTranslationFilter@79ca88a5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2b54b08f] 
+2019:10:21 13:03:51.698 INFO  --- [restartedMain] o.s.s.c.ThreadPoolTaskExecutor : Initializing ExecutorService 'applicationTaskExecutor' 
+2019:10:21 13:03:51.729 WARN  --- [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2019:10:21 13:03:51.798 INFO  --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping : Adding welcome page template: index 
+2019:10:21 13:03:51.798 DEBUG --- [restartedMain] o.m.s.b.a.MybatisAutoConfiguration : No org.mybatis.spring.mapper.MapperFactoryBean found. 
+2019:10:21 13:03:51.927 INFO  --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729 
+2019:10:21 13:03:51.959 INFO  --- [restartedMain] o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-80"] 
+2019:10:21 13:03:51.978 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port(s): 80 (http) with context path '' 
+2019:10:21 13:03:51.980 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : Started BaseApplication in 3.293 seconds (JVM running for 4.037) 
+2019:10:21 13:03:51.981 INFO  --- [restartedMain] sb.mvc.base.ApplicationProperties : ### profileName : LOCAL 
+2019:10:21 13:03:51.981 INFO  --- [restartedMain] sb.mvc.base.ApplicationProperties : ### profileDBType : MYSQL 
+2019:10:21 13:03:56.080 INFO  --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2019:10:21 13:03:56.081 INFO  --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet' 
+2019:10:21 13:03:56.085 INFO  --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet : Completed initialization in 4 ms 
+2019:10:21 13:03:56.566 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.566 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.566 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.566 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.566 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.566 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.773 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:56.773 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:56.773 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:56.773 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:56.773 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:56.773 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:56.776 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:56.776 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:56.776 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:56.776 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:56.776 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:56.776 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:56.779 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.779 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.779 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.779 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.779 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.779 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.782 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:56.782 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:56.783 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:56.783 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:56.783 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:56.784 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:56.784 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:56.784 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:56.786 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:56.786 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:56.786 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:56.786 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:56.788 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.791 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:56.791 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:56.827 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.835 DEBUG --- [http-nio-80-exec-9] s.m.base.biz.login.LoginController : LoginController.view param [{}] 
+2019:10:21 13:03:56.835 DEBUG --- [http-nio-80-exec-9] s.m.base.biz.login.LoginController : =====> LoginController.view ajaxHeader [null] 
+2019:10:21 13:03:56.835 DEBUG --- [http-nio-80-exec-9] s.m.base.biz.login.LoginController : =====> LoginController.view isAjaxCall [false] 
+2019:10:21 13:03:56.838 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:56.972 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:56.981 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.984 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:56.985 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.985 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:56.985 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.985 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.986 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.986 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.988 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.988 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:56.989 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:56.989 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:56.989 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:56.989 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:56.989 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:56.989 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:56.989 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:56.992 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:56.992 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:56.993 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.993 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.993 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.993 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:56.993 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.994 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:56.995 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.996 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:56.997 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:56.998 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:57.001 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:57.001 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:57.001 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:57.002 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:57.002 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:57.004 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:57.004 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:57.004 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:57.004 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:57.004 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:57.004 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:57.005 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:57.005 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:57.005 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:57.008 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:57.008 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:57.008 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:57.009 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:57.010 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:57.010 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:57.010 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:57.010 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:57.012 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:57.012 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:57.012 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:57.013 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:57.014 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:57.014 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:57.014 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:57.015 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:57.017 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:57.018 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:57.020 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:57.021 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:57.021 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:57.024 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:57.024 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:57.080 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:57.080 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:03:57.087 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:57.087 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:03:57.088 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:03:57.088 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.489 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.504 DEBUG --- [http-nio-80-exec-10] s.m.base.biz.login.LoginController : LoginController.selLoginCnt param [{lgnmode=login, mngrId=admin, mngrPwd={noop}1111}] 
+2019:10:21 13:04:00.504 DEBUG --- [http-nio-80-exec-10] sb.mvc.base.core.base.BaseDao : ----> sql mapper id : NS_Login.selLoginCnt 
+2019:10:21 13:04:00.504 DEBUG --- [http-nio-80-exec-10] org.mybatis.spring.SqlSessionUtils : Creating a new SqlSession 
+2019:10:21 13:04:00.504 DEBUG --- [http-nio-80-exec-10] org.mybatis.spring.SqlSessionUtils : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@144c3dd1] was not registered for synchronization because synchronization is not active 
+2019:10:21 13:04:00.504 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept invocation[org.apache.ibatis.plugin.Invocation@73205489] 
+2019:10:21 13:04:00.519 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept requestAttributes [SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@6f75d89]] 
+2019:10:21 13:04:00.519 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept language [ko] 
+2019:10:21 13:04:00.519 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept sessionUser [null] 
+2019:10:21 13:04:00.519 DEBUG --- [http-nio-80-exec-10] o.m.s.t.SpringManagedTransaction : JDBC Connection [org.mariadb.jdbc.MariaDbConnection@5ceb8486] will not be managed by Spring 
+2019:10:21 13:04:00.535 DEBUG --- [http-nio-80-exec-10] org.mybatis.spring.SqlSessionUtils : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@144c3dd1] 
+2019:10:21 13:04:00.535 DEBUG --- [http-nio-80-exec-10] s.m.base.biz.login.LoginController : LoginController.selLoginCnt resultData 1 
+2019:10:21 13:04:00.535 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.568 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.651 DEBUG --- [http-nio-80-exec-8] s.m.base.biz.login.LoginServiceImpl : LoginServiceImpl.loadUserByUsername mngrId [admin] 
+2019:10:21 13:04:00.651 DEBUG --- [http-nio-80-exec-8] sb.mvc.base.core.base.BaseDao : ----> sql mapper id : NS_Login.selLogin 
+2019:10:21 13:04:00.651 DEBUG --- [http-nio-80-exec-8] org.mybatis.spring.SqlSessionUtils : Creating a new SqlSession 
+2019:10:21 13:04:00.652 DEBUG --- [http-nio-80-exec-8] org.mybatis.spring.SqlSessionUtils : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@229e5e70] was not registered for synchronization because synchronization is not active 
+2019:10:21 13:04:00.652 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept invocation[org.apache.ibatis.plugin.Invocation@3477d718] 
+2019:10:21 13:04:00.652 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept requestAttributes [org.apache.catalina.connector.RequestFacade@541e4aee] 
+2019:10:21 13:04:00.652 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept language [ko] 
+2019:10:21 13:04:00.652 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept sessionUser [null] 
+2019:10:21 13:04:00.653 DEBUG --- [http-nio-80-exec-8] o.m.s.t.SpringManagedTransaction : JDBC Connection [org.mariadb.jdbc.MariaDbConnection@4d5d9fc] will not be managed by Spring 
+2019:10:21 13:04:00.657 DEBUG --- [http-nio-80-exec-8] org.mybatis.spring.SqlSessionUtils : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@229e5e70] 
+2019:10:21 13:04:00.658 DEBUG --- [http-nio-80-exec-8] s.m.base.biz.login.LoginServiceImpl : LoginServiceImpl.loadUserByUsername data [{mngrId=admin, mngrPwd={noop}1111, athrCd=agc000}] 
+2019:10:21 13:04:00.661 DEBUG --- [http-nio-80-exec-8] s.m.base.biz.login.LoginServiceImpl : LoginServiceImpl.loadUserByUsername withUsername [admin] 
+2019:10:21 13:04:00.662 DEBUG --- [http-nio-80-exec-8] s.m.base.biz.login.LoginServiceImpl : LoginServiceImpl.loadUserByUsername authorities [[ROLE_agc000]] 
+2019:10:21 13:04:00.662 DEBUG --- [http-nio-80-exec-8] s.m.base.biz.login.LoginServiceImpl : LoginServiceImpl.loadUserByUsername user [org.springframework.security.core.userdetails.User@586034f: Username: admin; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Granted Authorities: ROLE_agc000] 
+2019:10:21 13:04:00.664 DEBUG --- [http-nio-80-exec-8] s.m.b.b.l.s.LoginSuccessHandler : LoginSuccessHandler.process Authentication [org.springframework.security.authentication.UsernamePasswordAuthenticationToken@9ec60b83: Principal: org.springframework.security.core.userdetails.User@586034f: Username: admin; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Granted Authorities: ROLE_agc000; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@380f4: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: 4B956DC5CDB1F60F1BF07F1A6F780022; Granted Authorities: ROLE_agc000] 
+2019:10:21 13:04:00.664 DEBUG --- [http-nio-80-exec-8] s.m.b.b.l.s.LoginSuccessHandler : LoginSuccessHandler sessionId 4B956DC5CDB1F60F1BF07F1A6F780022 
+2019:10:21 13:04:00.664 DEBUG --- [http-nio-80-exec-8] s.m.b.b.l.s.LoginSuccessHandler : LoginSuccessHandler address 0:0:0:0:0:0:0:1 
+2019:10:21 13:04:00.664 DEBUG --- [http-nio-80-exec-8] sb.mvc.base.core.base.BaseDao : ----> sql mapper id : NS_Login.selSessionInfo 
+2019:10:21 13:04:00.664 DEBUG --- [http-nio-80-exec-8] org.mybatis.spring.SqlSessionUtils : Creating a new SqlSession 
+2019:10:21 13:04:00.664 DEBUG --- [http-nio-80-exec-8] org.mybatis.spring.SqlSessionUtils : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7f7865d4] was not registered for synchronization because synchronization is not active 
+2019:10:21 13:04:00.665 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept invocation[org.apache.ibatis.plugin.Invocation@be115dd] 
+2019:10:21 13:04:00.665 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept requestAttributes [org.apache.catalina.connector.RequestFacade@541e4aee] 
+2019:10:21 13:04:00.665 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept language [ko] 
+2019:10:21 13:04:00.665 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept sessionUser [null] 
+2019:10:21 13:04:00.667 DEBUG --- [http-nio-80-exec-8] o.m.s.t.SpringManagedTransaction : JDBC Connection [org.mariadb.jdbc.MariaDbConnection@4c5325a4] will not be managed by Spring 
+2019:10:21 13:04:00.668 DEBUG --- [http-nio-80-exec-8] org.mybatis.spring.SqlSessionUtils : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7f7865d4] 
+2019:10:21 13:04:00.668 DEBUG --- [http-nio-80-exec-8] s.m.b.b.l.s.LoginSuccessHandler : LoginSuccessHandler > sessionUser [{mngrId=admin, mngrNm=admin, email=jybae@emobileid.co.kr, hpNo=01087228630, athrCd=agc000}] 
+2019:10:21 13:04:00.669 DEBUG --- [http-nio-80-exec-8] sb.mvc.base.core.base.BaseDao : BaseDao.insData statementId [insLoginHis] param [{mngrId=admin, language=ko, sessionId=4B956DC5CDB1F60F1BF07F1A6F780022, connIp=0:0:0:0:0:0:0:1, loginSt=S}] 
+2019:10:21 13:04:00.669 DEBUG --- [http-nio-80-exec-8] sb.mvc.base.core.base.BaseDao : ----> sql mapper id : NS_Login.insLoginHis 
+2019:10:21 13:04:00.669 DEBUG --- [http-nio-80-exec-8] org.mybatis.spring.SqlSessionUtils : Creating a new SqlSession 
+2019:10:21 13:04:00.669 DEBUG --- [http-nio-80-exec-8] org.mybatis.spring.SqlSessionUtils : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6bdd6b10] was not registered for synchronization because synchronization is not active 
+2019:10:21 13:04:00.669 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.i.MybatisUpdateParameters : MybatisUpdateParameters.intercept invocation[org.apache.ibatis.plugin.Invocation@57b7e57a] 
+2019:10:21 13:04:00.669 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.i.MybatisUpdateParameters : MybatisUpdateParameters.intercept requestAttributes [org.apache.catalina.connector.RequestFacade@541e4aee] 
+2019:10:21 13:04:00.669 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.i.MybatisUpdateParameters : MybatisUpdateParameters.intercept language [ko] 
+2019:10:21 13:04:00.669 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.i.MybatisUpdateParameters : MybatisUpdateParameters.intercept sessionUser [{mngrId=admin, mngrNm=admin, email=jybae@emobileid.co.kr, hpNo=01087228630, athrCd=agc000}] 
+2019:10:21 13:04:00.673 DEBUG --- [http-nio-80-exec-8] o.m.s.t.SpringManagedTransaction : JDBC Connection [org.mariadb.jdbc.MariaDbConnection@547b4dac] will not be managed by Spring 
+2019:10:21 13:04:00.682 DEBUG --- [http-nio-80-exec-8] org.mybatis.spring.SqlSessionUtils : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6bdd6b10] 
+2019:10:21 13:04:00.682 DEBUG --- [http-nio-80-exec-8] s.m.b.b.l.s.LoginSuccessHandler : LoginSuccessHandler.process param [{ssnMngrId=admin, regDttm=20191021040400, chgDttm=20191021040400, mngrId=admin, language=ko, regId=admin, sessionId=4B956DC5CDB1F60F1BF07F1A6F780022, connIp=0:0:0:0:0:0:0:1, loginSt=S, ssnAthrCd=agc000, chgId=admin}] 
+2019:10:21 13:04:00.682 DEBUG --- [http-nio-80-exec-8] s.m.b.b.l.s.LoginSuccessHandler : Using default Url: /main 
+2019:10:21 13:04:00.686 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.687 DEBUG --- [http-nio-80-exec-3] sb.mvc.base.biz.main.MainController : ###### MainController.root param [{}] 
+2019:10:21 13:04:00.687 INFO  --- [http-nio-80-exec-3] sb.mvc.base.biz.main.MainController : sessionUser, {mngrId=admin, mngrNm=admin, email=jybae@emobileid.co.kr, hpNo=01087228630, athrCd=agc000} 
+2019:10:21 13:04:00.687 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.796 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.806 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.807 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.807 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.808 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.808 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.809 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.809 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.809 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.809 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.809 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.810 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.810 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.811 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.811 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.811 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.811 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.812 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.812 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.814 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.815 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.814 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.814 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.814 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.815 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.817 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.817 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.818 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.818 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.818 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.818 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.818 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.819 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.819 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.819 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.820 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.820 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.820 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.822 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.822 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.822 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.822 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.823 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.824 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.824 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.825 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.825 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.826 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.826 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.827 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.828 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.828 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.828 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.828 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.828 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.829 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.830 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.830 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.831 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.831 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.831 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.832 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.834 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.834 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.835 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.835 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.837 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.837 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.839 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.839 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.850 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.851 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.851 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.888 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.889 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.889 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:00.903 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:00.904 DEBUG --- [http-nio-80-exec-10] sb.mvc.base.biz.main.MainController : MainController.list param [{}] 
+2019:10:21 13:04:00.904 DEBUG --- [http-nio-80-exec-10] sb.mvc.base.biz.main.MainController : MainController.list param [{mngrId=admin}] 
+2019:10:21 13:04:00.907 DEBUG --- [http-nio-80-exec-10] sb.mvc.base.core.base.BaseDao : ----> sql mapper id : NS_Main.selMainMenuList 
+2019:10:21 13:04:00.907 DEBUG --- [http-nio-80-exec-10] org.mybatis.spring.SqlSessionUtils : Creating a new SqlSession 
+2019:10:21 13:04:00.907 DEBUG --- [http-nio-80-exec-10] org.mybatis.spring.SqlSessionUtils : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@159b050c] was not registered for synchronization because synchronization is not active 
+2019:10:21 13:04:00.907 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept invocation[org.apache.ibatis.plugin.Invocation@1725e5c] 
+2019:10:21 13:04:00.907 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept requestAttributes [SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@3d73d2b2]] 
+2019:10:21 13:04:00.907 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept language [ko] 
+2019:10:21 13:04:00.907 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept sessionUser [{mngrId=admin, mngrNm=admin, email=jybae@emobileid.co.kr, hpNo=01087228630, athrCd=agc000}] 
+2019:10:21 13:04:00.908 DEBUG --- [http-nio-80-exec-10] o.m.s.t.SpringManagedTransaction : JDBC Connection [org.mariadb.jdbc.MariaDbConnection@1d30ef37] will not be managed by Spring 
+2019:10:21 13:04:00.912 DEBUG --- [http-nio-80-exec-10] org.mybatis.spring.SqlSessionUtils : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@159b050c] 
+2019:10:21 13:04:00.912 DEBUG --- [http-nio-80-exec-10] sb.mvc.base.biz.main.MainController : MainController.list resultData [[{menuId=0001, menuNm=시스템, menuTp=M, execCmd=, menuLv=1, sortSn=100, psMenuId=, authR=Y, authW=Y, authD=Y, authP=Y, psMenuNm=null}, {menuId=0002, menuNm=관리자, menuTp=M, execCmd=/system/mngr, menuLv=2, sortSn=10, psMenuId=0001, authR=Y, authW=Y, authD=Y, authP=Y, psMenuNm=시스템}, {menuId=0003, menuNm=메뉴, menuTp=M, execCmd=/system/menu, menuLv=2, sortSn=30, psMenuId=0001, authR=Y, authW=Y, authD=Y, authP=Y, psMenuNm=시스템}, {menuId=0004, menuNm=권한, menuTp=M, execCmd=/system/athr, menuLv=2, sortSn=40, psMenuId=0001, authR=Y, authW=Y, authD=Y, authP=Y, psMenuNm=시스템}, {menuId=0005, menuNm=코드, menuTp=M, execCmd=/system/cd, menuLv=2, sortSn=50, psMenuId=0001, authR=Y, authW=Y, authD=Y, authP=Y, psMenuNm=시스템}]] 
+2019:10:21 13:04:00.912 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:00.917 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.381 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.382 DEBUG --- [http-nio-80-exec-6] s.m.base.biz.system.cd.CdController : CdController.view param [{}] 
+2019:10:21 13:04:04.382 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.494 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.500 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.500 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.500 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.502 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.502 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.502 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.504 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.504 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.504 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.504 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.505 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.505 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.505 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.505 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.505 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.505 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.506 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.506 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.508 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.509 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.509 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.509 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.509 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.509 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.511 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.511 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.511 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.511 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.511 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.511 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.512 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.512 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.513 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.513 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.514 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.514 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.514 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.515 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.515 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.515 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.516 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.516 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.518 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.518 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.518 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.518 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.519 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.519 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.519 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.520 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.520 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.520 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.520 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.520 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.520 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.521 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.522 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.523 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.523 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.523 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.523 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.523 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.525 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.525 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.525 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.525 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.525 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.525 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.526 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.526 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.526 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.527 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.527 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.528 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.528 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.528 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.530 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.531 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.578 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.580 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.581 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.598 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.601 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.601 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.638 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.639 DEBUG --- [http-nio-80-exec-1] s.m.base.biz.system.cd.CdController : CdController.comboList param [{grpCd=GRP_CD_TP}] 
+2019:10:21 13:04:04.641 DEBUG --- [http-nio-80-exec-1] sb.mvc.base.core.base.BaseDao : ----> sql mapper id : NS_Cd.selComboList 
+2019:10:21 13:04:04.641 DEBUG --- [http-nio-80-exec-1] org.mybatis.spring.SqlSessionUtils : Creating a new SqlSession 
+2019:10:21 13:04:04.641 DEBUG --- [http-nio-80-exec-1] org.mybatis.spring.SqlSessionUtils : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@55ef2afd] was not registered for synchronization because synchronization is not active 
+2019:10:21 13:04:04.641 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept invocation[org.apache.ibatis.plugin.Invocation@7bdd150d] 
+2019:10:21 13:04:04.641 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept requestAttributes [FirewalledRequest[ org.apache.catalina.connector.RequestFacade@220ea947]] 
+2019:10:21 13:04:04.641 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept language [ko] 
+2019:10:21 13:04:04.642 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept sessionUser [{mngrId=admin, mngrNm=admin, email=jybae@emobileid.co.kr, hpNo=01087228630, athrCd=agc000}] 
+2019:10:21 13:04:04.643 DEBUG --- [http-nio-80-exec-1] o.m.s.t.SpringManagedTransaction : JDBC Connection [org.mariadb.jdbc.MariaDbConnection@2df63dd3] will not be managed by Spring 
+2019:10:21 13:04:04.645 DEBUG --- [http-nio-80-exec-1] org.mybatis.spring.SqlSessionUtils : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@55ef2afd] 
+2019:10:21 13:04:04.645 DEBUG --- [http-nio-80-exec-1] s.m.base.biz.system.cd.CdController : CdController.comboList resultData [[{cd=S, cdNm=System}, {cd=N, cdNm=Normal}]] 
+2019:10:21 13:04:04.645 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.646 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.649 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.650 DEBUG --- [http-nio-80-exec-10] s.m.base.biz.system.cd.CdController : CdController.comboList param [{grpCd=USE_YN}] 
+2019:10:21 13:04:04.650 DEBUG --- [http-nio-80-exec-10] sb.mvc.base.core.base.BaseDao : ----> sql mapper id : NS_Cd.selComboList 
+2019:10:21 13:04:04.650 DEBUG --- [http-nio-80-exec-10] org.mybatis.spring.SqlSessionUtils : Creating a new SqlSession 
+2019:10:21 13:04:04.650 DEBUG --- [http-nio-80-exec-10] org.mybatis.spring.SqlSessionUtils : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@785e5cc0] was not registered for synchronization because synchronization is not active 
+2019:10:21 13:04:04.650 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept invocation[org.apache.ibatis.plugin.Invocation@5f5ca988] 
+2019:10:21 13:04:04.650 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept requestAttributes [FirewalledRequest[ org.apache.catalina.connector.RequestFacade@220ea947]] 
+2019:10:21 13:04:04.650 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept language [ko] 
+2019:10:21 13:04:04.650 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept sessionUser [{mngrId=admin, mngrNm=admin, email=jybae@emobileid.co.kr, hpNo=01087228630, athrCd=agc000}] 
+2019:10:21 13:04:04.651 DEBUG --- [http-nio-80-exec-10] o.m.s.t.SpringManagedTransaction : JDBC Connection [org.mariadb.jdbc.MariaDbConnection@189eb338] will not be managed by Spring 
+2019:10:21 13:04:04.653 DEBUG --- [http-nio-80-exec-10] org.mybatis.spring.SqlSessionUtils : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@785e5cc0] 
+2019:10:21 13:04:04.653 DEBUG --- [http-nio-80-exec-10] s.m.base.biz.system.cd.CdController : CdController.comboList resultData [[{cd=Y, cdNm=Use}, {cd=N, cdNm=Not Use}]] 
+2019:10:21 13:04:04.653 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.653 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.673 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.674 DEBUG --- [http-nio-80-exec-3] s.m.base.biz.system.cd.CdController : CdController.comboList param [{grpCd=CD_TP}] 
+2019:10:21 13:04:04.674 DEBUG --- [http-nio-80-exec-3] sb.mvc.base.core.base.BaseDao : ----> sql mapper id : NS_Cd.selComboList 
+2019:10:21 13:04:04.674 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils : Creating a new SqlSession 
+2019:10:21 13:04:04.674 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1053a496] was not registered for synchronization because synchronization is not active 
+2019:10:21 13:04:04.674 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept invocation[org.apache.ibatis.plugin.Invocation@61c6b41e] 
+2019:10:21 13:04:04.674 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept requestAttributes [FirewalledRequest[ org.apache.catalina.connector.RequestFacade@220ea947]] 
+2019:10:21 13:04:04.674 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept language [ko] 
+2019:10:21 13:04:04.674 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept sessionUser [{mngrId=admin, mngrNm=admin, email=jybae@emobileid.co.kr, hpNo=01087228630, athrCd=agc000}] 
+2019:10:21 13:04:04.676 DEBUG --- [http-nio-80-exec-3] o.m.s.t.SpringManagedTransaction : JDBC Connection [org.mariadb.jdbc.MariaDbConnection@46a8ad99] will not be managed by Spring 
+2019:10:21 13:04:04.677 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1053a496] 
+2019:10:21 13:04:04.678 DEBUG --- [http-nio-80-exec-3] s.m.base.biz.system.cd.CdController : CdController.comboList resultData [[{cd=S, cdNm=System}, {cd=N, cdNm=Normal}]] 
+2019:10:21 13:04:04.678 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.678 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.682 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.682 DEBUG --- [http-nio-80-exec-8] s.m.base.biz.system.cd.CdController : CdController.comboList param [{grpCd=USE_YN}] 
+2019:10:21 13:04:04.682 DEBUG --- [http-nio-80-exec-8] sb.mvc.base.core.base.BaseDao : ----> sql mapper id : NS_Cd.selComboList 
+2019:10:21 13:04:04.682 DEBUG --- [http-nio-80-exec-8] org.mybatis.spring.SqlSessionUtils : Creating a new SqlSession 
+2019:10:21 13:04:04.682 DEBUG --- [http-nio-80-exec-8] org.mybatis.spring.SqlSessionUtils : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@482bd4ca] was not registered for synchronization because synchronization is not active 
+2019:10:21 13:04:04.682 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept invocation[org.apache.ibatis.plugin.Invocation@19974af6] 
+2019:10:21 13:04:04.682 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept requestAttributes [FirewalledRequest[ org.apache.catalina.connector.RequestFacade@220ea947]] 
+2019:10:21 13:04:04.682 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept language [ko] 
+2019:10:21 13:04:04.682 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept sessionUser [{mngrId=admin, mngrNm=admin, email=jybae@emobileid.co.kr, hpNo=01087228630, athrCd=agc000}] 
+2019:10:21 13:04:04.684 DEBUG --- [http-nio-80-exec-8] o.m.s.t.SpringManagedTransaction : JDBC Connection [org.mariadb.jdbc.MariaDbConnection@42531413] will not be managed by Spring 
+2019:10:21 13:04:04.686 DEBUG --- [http-nio-80-exec-8] org.mybatis.spring.SqlSessionUtils : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@482bd4ca] 
+2019:10:21 13:04:04.686 DEBUG --- [http-nio-80-exec-8] s.m.base.biz.system.cd.CdController : CdController.comboList resultData [[{cd=Y, cdNm=Use}, {cd=N, cdNm=Not Use}]] 
+2019:10:21 13:04:04.686 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.687 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:04.698 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:04.698 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.grpcd.GrpCdController : GrpCdController.list param [{grpCd=}] 
+2019:10:21 13:04:04.700 DEBUG --- [http-nio-80-exec-2] sb.mvc.base.core.base.BaseDao : ----> sql mapper id : NS_GrpCd.selGrpCdList 
+2019:10:21 13:04:04.701 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils : Creating a new SqlSession 
+2019:10:21 13:04:04.701 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53b9b888] was not registered for synchronization because synchronization is not active 
+2019:10:21 13:04:04.701 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept invocation[org.apache.ibatis.plugin.Invocation@3b96aaec] 
+2019:10:21 13:04:04.701 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept requestAttributes [SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@269eabe7]] 
+2019:10:21 13:04:04.701 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept language [ko] 
+2019:10:21 13:04:04.701 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept sessionUser [{mngrId=admin, mngrNm=admin, email=jybae@emobileid.co.kr, hpNo=01087228630, athrCd=agc000}] 
+2019:10:21 13:04:04.702 DEBUG --- [http-nio-80-exec-2] o.m.s.t.SpringManagedTransaction : JDBC Connection [org.mariadb.jdbc.MariaDbConnection@5397ec1d] will not be managed by Spring 
+2019:10:21 13:04:04.707 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53b9b888] 
+2019:10:21 13:04:04.707 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.grpcd.GrpCdController : GrpCdController.list resultData [[{grpCd=CD_TP, grpCdTp=N, grpCdNm=Code Type, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20171211093100, chgId=admin, chgDttm=20180418055742, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=COUNTRY_CD, grpCdTp=N, grpCdNm=Country Code, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20180516020611, chgId=admin, chgDttm=20180516020611, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=DEL_YN, grpCdTp=N, grpCdNm=Del YN, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20171211093100, chgId=admin, chgDttm=20180418055841, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=FILE_TP, grpCdTp=N, grpCdNm=File Type, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20180419010030, chgId=admin, chgDttm=20180419010040, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=FILE_UPLOAD_DIR, grpCdTp=N, grpCdNm=File Upload Directory, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20181004113112, chgId=admin, chgDttm=20181207170830, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=GENDER, grpCdTp=N, grpCdNm=Gender, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20180703075730, chgId=admin, chgDttm=20180703075730, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=GRP_CD_TP, grpCdTp=N, grpCdNm=Group Code Type, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20171211093100, chgId=admin, chgDttm=20180418055828, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=LANG_CD, grpCdTp=N, grpCdNm=Language Code, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20180516020611, chgId=admin, chgDttm=20180516020611, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=LOGIN_ST, grpCdTp=N, grpCdNm=Login Status, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20180516020611, chgId=admin, chgDttm=20180516020611, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=MENU_TP, grpCdTp=N, grpCdNm=Menu Type, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20171211110555, chgId=admin, chgDttm=20180418055833, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=PROC_ST, grpCdTp=N, grpCdNm=Process State, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20180419015642, chgId=admin, chgDttm=20180419015642, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=PWD_INIT_YN, grpCdTp=N, grpCdNm=Password Init Y/N, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20180516020611, chgId=admin, chgDttm=20180516020611, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=USE_YN, grpCdTp=N, grpCdNm=Use YN, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20171211093100, chgId=admin, chgDttm=20180418055841, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}]] 
+2019:10:21 13:04:04.708 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:04.709 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:07.216 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:07.218 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:07.218 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:07.220 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:07.220 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:07.220 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:07.220 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:07.221 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:07.221 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:07.221 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:07.222 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:07.223 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:07.223 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:07.223 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:07.223 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:07.224 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:07.224 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:07.224 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:07.224 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:07.224 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:07.225 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:07.225 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:07.225 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:07.227 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:07.228 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:07.228 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:07.229 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:07.229 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:07.229 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:07.229 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:07.229 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:07.229 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:07.230 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:07.230 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:07.231 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:07.231 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:07.231 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:07.231 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:07.232 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:07.232 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:07.233 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:07.233 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:07.233 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:07.233 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:07.233 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:07.233 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:07.233 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:07.233 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:07.233 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:07.234 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:07.236 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:07.236 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:07.236 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:07.236 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:07.236 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:07.238 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:07.238 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:07.238 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:07.238 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:07.239 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:07.239 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:07.239 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:07.239 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:07.255 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:07.271 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:07.271 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:07.277 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:07.279 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:07.280 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:27.918 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:27.920 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:27.921 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:04:27.922 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:04:27.927 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:04:27.930 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.091 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.092 DEBUG --- [http-nio-80-exec-10] sb.mvc.base.biz.main.MainController : ###### MainController.root param [{}] 
+2019:10:21 13:06:16.092 INFO  --- [http-nio-80-exec-10] sb.mvc.base.biz.main.MainController : sessionUser, {mngrId=admin, mngrNm=admin, email=jybae@emobileid.co.kr, hpNo=01087228630, athrCd=agc000} 
+2019:10:21 13:06:16.093 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.199 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.211 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.212 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.214 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.214 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.216 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.216 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.218 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.218 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.219 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.221 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.221 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.221 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.221 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.221 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.222 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.221 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.222 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.222 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.224 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.225 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.225 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.225 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.225 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.227 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.228 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.228 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.228 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.228 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.228 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.228 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.230 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.230 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.230 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.231 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.231 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.233 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.235 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.236 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.236 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.237 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.237 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.237 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.237 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.236 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.237 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.238 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.238 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.238 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.241 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.241 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.242 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.241 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.242 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.244 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.244 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.244 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.245 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.245 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.246 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.246 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.247 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.247 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.248 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.248 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.251 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.251 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.392 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.394 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.394 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.438 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.440 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.441 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.456 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.458 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.458 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.474 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.475 DEBUG --- [http-nio-80-exec-5] sb.mvc.base.biz.main.MainController : MainController.list param [{}] 
+2019:10:21 13:06:16.475 DEBUG --- [http-nio-80-exec-5] sb.mvc.base.biz.main.MainController : MainController.list param [{mngrId=admin}] 
+2019:10:21 13:06:16.475 DEBUG --- [http-nio-80-exec-5] sb.mvc.base.core.base.BaseDao : ----> sql mapper id : NS_Main.selMainMenuList 
+2019:10:21 13:06:16.475 DEBUG --- [http-nio-80-exec-5] org.mybatis.spring.SqlSessionUtils : Creating a new SqlSession 
+2019:10:21 13:06:16.476 DEBUG --- [http-nio-80-exec-5] org.mybatis.spring.SqlSessionUtils : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7a2631c5] was not registered for synchronization because synchronization is not active 
+2019:10:21 13:06:16.476 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept invocation[org.apache.ibatis.plugin.Invocation@2e9ac375] 
+2019:10:21 13:06:16.476 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept requestAttributes [SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@522d7911]] 
+2019:10:21 13:06:16.476 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept language [ko] 
+2019:10:21 13:06:16.476 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept sessionUser [{mngrId=admin, mngrNm=admin, email=jybae@emobileid.co.kr, hpNo=01087228630, athrCd=agc000}] 
+2019:10:21 13:06:16.478 DEBUG --- [http-nio-80-exec-5] o.m.s.t.SpringManagedTransaction : JDBC Connection [org.mariadb.jdbc.MariaDbConnection@19c17195] will not be managed by Spring 
+2019:10:21 13:06:16.480 DEBUG --- [http-nio-80-exec-5] org.mybatis.spring.SqlSessionUtils : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7a2631c5] 
+2019:10:21 13:06:16.480 DEBUG --- [http-nio-80-exec-5] sb.mvc.base.biz.main.MainController : MainController.list resultData [[{menuId=0001, menuNm=시스템, menuTp=M, execCmd=, menuLv=1, sortSn=100, psMenuId=, authR=Y, authW=Y, authD=Y, authP=Y, psMenuNm=null}, {menuId=0002, menuNm=관리자, menuTp=M, execCmd=/system/mngr, menuLv=2, sortSn=10, psMenuId=0001, authR=Y, authW=Y, authD=Y, authP=Y, psMenuNm=시스템}, {menuId=0003, menuNm=메뉴, menuTp=M, execCmd=/system/menu, menuLv=2, sortSn=30, psMenuId=0001, authR=Y, authW=Y, authD=Y, authP=Y, psMenuNm=시스템}, {menuId=0004, menuNm=권한, menuTp=M, execCmd=/system/athr, menuLv=2, sortSn=40, psMenuId=0001, authR=Y, authW=Y, authD=Y, authP=Y, psMenuNm=시스템}, {menuId=0005, menuNm=코드, menuTp=M, execCmd=/system/cd, menuLv=2, sortSn=50, psMenuId=0001, authR=Y, authW=Y, authD=Y, authP=Y, psMenuNm=시스템}]] 
+2019:10:21 13:06:16.480 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.481 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:16.492 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:16.493 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:16.494 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.685 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.686 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.687 DEBUG --- [http-nio-80-exec-2] s.m.base.biz.system.cd.CdController : CdController.view param [{}] 
+2019:10:21 13:06:21.687 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.688 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.688 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.696 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.705 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.706 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.708 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.708 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.709 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.709 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.710 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.710 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.711 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.711 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.711 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.711 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.711 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.711 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.711 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.712 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.712 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.713 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.713 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.715 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.715 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.716 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.716 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.716 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.716 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.717 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.717 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.718 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.718 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.719 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.719 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.719 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.719 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.721 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.721 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.722 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.722 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.722 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.722 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.723 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.723 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.723 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.724 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.724 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.725 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.726 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.726 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.726 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.726 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.727 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.727 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.727 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.727 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.727 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.727 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.728 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.728 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.731 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.731 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.731 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.731 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.731 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.732 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.733 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.733 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.733 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.733 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.734 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.734 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.734 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.734 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.735 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.735 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.735 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.735 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.738 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.740 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.740 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.776 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.778 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.778 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.822 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.824 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.824 DEBUG --- [http-nio-80-exec-4] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.833 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.835 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.835 DEBUG --- [http-nio-80-exec-6] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.864 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.865 DEBUG --- [http-nio-80-exec-9] s.m.base.biz.system.cd.CdController : CdController.comboList param [{grpCd=GRP_CD_TP}] 
+2019:10:21 13:06:21.865 DEBUG --- [http-nio-80-exec-9] sb.mvc.base.core.base.BaseDao : ----> sql mapper id : NS_Cd.selComboList 
+2019:10:21 13:06:21.865 DEBUG --- [http-nio-80-exec-9] org.mybatis.spring.SqlSessionUtils : Creating a new SqlSession 
+2019:10:21 13:06:21.865 DEBUG --- [http-nio-80-exec-9] org.mybatis.spring.SqlSessionUtils : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20299c18] was not registered for synchronization because synchronization is not active 
+2019:10:21 13:06:21.865 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept invocation[org.apache.ibatis.plugin.Invocation@5d88f3e1] 
+2019:10:21 13:06:21.865 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept requestAttributes [FirewalledRequest[ org.apache.catalina.connector.RequestFacade@541e4aee]] 
+2019:10:21 13:06:21.865 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept language [ko] 
+2019:10:21 13:06:21.865 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept sessionUser [{mngrId=admin, mngrNm=admin, email=jybae@emobileid.co.kr, hpNo=01087228630, athrCd=agc000}] 
+2019:10:21 13:06:21.866 DEBUG --- [http-nio-80-exec-9] o.m.s.t.SpringManagedTransaction : JDBC Connection [org.mariadb.jdbc.MariaDbConnection@77c6245b] will not be managed by Spring 
+2019:10:21 13:06:21.867 DEBUG --- [http-nio-80-exec-9] org.mybatis.spring.SqlSessionUtils : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20299c18] 
+2019:10:21 13:06:21.867 DEBUG --- [http-nio-80-exec-9] s.m.base.biz.system.cd.CdController : CdController.comboList resultData [[{cd=S, cdNm=System}, {cd=N, cdNm=Normal}]] 
+2019:10:21 13:06:21.867 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.868 DEBUG --- [http-nio-80-exec-9] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.872 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.872 DEBUG --- [http-nio-80-exec-1] s.m.base.biz.system.cd.CdController : CdController.comboList param [{grpCd=USE_YN}] 
+2019:10:21 13:06:21.872 DEBUG --- [http-nio-80-exec-1] sb.mvc.base.core.base.BaseDao : ----> sql mapper id : NS_Cd.selComboList 
+2019:10:21 13:06:21.873 DEBUG --- [http-nio-80-exec-1] org.mybatis.spring.SqlSessionUtils : Creating a new SqlSession 
+2019:10:21 13:06:21.873 DEBUG --- [http-nio-80-exec-1] org.mybatis.spring.SqlSessionUtils : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50cb37fe] was not registered for synchronization because synchronization is not active 
+2019:10:21 13:06:21.873 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept invocation[org.apache.ibatis.plugin.Invocation@611414a3] 
+2019:10:21 13:06:21.873 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept requestAttributes [FirewalledRequest[ org.apache.catalina.connector.RequestFacade@541e4aee]] 
+2019:10:21 13:06:21.873 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept language [ko] 
+2019:10:21 13:06:21.873 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept sessionUser [{mngrId=admin, mngrNm=admin, email=jybae@emobileid.co.kr, hpNo=01087228630, athrCd=agc000}] 
+2019:10:21 13:06:21.874 DEBUG --- [http-nio-80-exec-1] o.m.s.t.SpringManagedTransaction : JDBC Connection [org.mariadb.jdbc.MariaDbConnection@1c5d529a] will not be managed by Spring 
+2019:10:21 13:06:21.875 DEBUG --- [http-nio-80-exec-1] org.mybatis.spring.SqlSessionUtils : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50cb37fe] 
+2019:10:21 13:06:21.875 DEBUG --- [http-nio-80-exec-1] s.m.base.biz.system.cd.CdController : CdController.comboList resultData [[{cd=Y, cdNm=Use}, {cd=N, cdNm=Not Use}]] 
+2019:10:21 13:06:21.876 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.876 DEBUG --- [http-nio-80-exec-1] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.906 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.906 DEBUG --- [http-nio-80-exec-8] s.m.base.biz.system.cd.CdController : CdController.comboList param [{grpCd=CD_TP}] 
+2019:10:21 13:06:21.906 DEBUG --- [http-nio-80-exec-8] sb.mvc.base.core.base.BaseDao : ----> sql mapper id : NS_Cd.selComboList 
+2019:10:21 13:06:21.906 DEBUG --- [http-nio-80-exec-8] org.mybatis.spring.SqlSessionUtils : Creating a new SqlSession 
+2019:10:21 13:06:21.906 DEBUG --- [http-nio-80-exec-8] org.mybatis.spring.SqlSessionUtils : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@18d33826] was not registered for synchronization because synchronization is not active 
+2019:10:21 13:06:21.906 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept invocation[org.apache.ibatis.plugin.Invocation@143f27bb] 
+2019:10:21 13:06:21.906 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept requestAttributes [FirewalledRequest[ org.apache.catalina.connector.RequestFacade@541e4aee]] 
+2019:10:21 13:06:21.906 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept language [ko] 
+2019:10:21 13:06:21.906 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept sessionUser [{mngrId=admin, mngrNm=admin, email=jybae@emobileid.co.kr, hpNo=01087228630, athrCd=agc000}] 
+2019:10:21 13:06:21.908 DEBUG --- [http-nio-80-exec-8] o.m.s.t.SpringManagedTransaction : JDBC Connection [org.mariadb.jdbc.MariaDbConnection@60b7fae3] will not be managed by Spring 
+2019:10:21 13:06:21.909 DEBUG --- [http-nio-80-exec-8] org.mybatis.spring.SqlSessionUtils : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@18d33826] 
+2019:10:21 13:06:21.909 DEBUG --- [http-nio-80-exec-8] s.m.base.biz.system.cd.CdController : CdController.comboList resultData [[{cd=S, cdNm=System}, {cd=N, cdNm=Normal}]] 
+2019:10:21 13:06:21.909 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.909 DEBUG --- [http-nio-80-exec-8] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.914 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.914 DEBUG --- [http-nio-80-exec-5] s.m.base.biz.system.cd.CdController : CdController.comboList param [{grpCd=USE_YN}] 
+2019:10:21 13:06:21.914 DEBUG --- [http-nio-80-exec-5] sb.mvc.base.core.base.BaseDao : ----> sql mapper id : NS_Cd.selComboList 
+2019:10:21 13:06:21.914 DEBUG --- [http-nio-80-exec-5] org.mybatis.spring.SqlSessionUtils : Creating a new SqlSession 
+2019:10:21 13:06:21.914 DEBUG --- [http-nio-80-exec-5] org.mybatis.spring.SqlSessionUtils : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@452556ad] was not registered for synchronization because synchronization is not active 
+2019:10:21 13:06:21.914 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept invocation[org.apache.ibatis.plugin.Invocation@369467d9] 
+2019:10:21 13:06:21.914 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept requestAttributes [FirewalledRequest[ org.apache.catalina.connector.RequestFacade@541e4aee]] 
+2019:10:21 13:06:21.914 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept language [ko] 
+2019:10:21 13:06:21.914 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept sessionUser [{mngrId=admin, mngrNm=admin, email=jybae@emobileid.co.kr, hpNo=01087228630, athrCd=agc000}] 
+2019:10:21 13:06:21.916 DEBUG --- [http-nio-80-exec-5] o.m.s.t.SpringManagedTransaction : JDBC Connection [org.mariadb.jdbc.MariaDbConnection@1c2d5029] will not be managed by Spring 
+2019:10:21 13:06:21.917 DEBUG --- [http-nio-80-exec-5] org.mybatis.spring.SqlSessionUtils : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@452556ad] 
+2019:10:21 13:06:21.917 DEBUG --- [http-nio-80-exec-5] s.m.base.biz.system.cd.CdController : CdController.comboList resultData [[{cd=Y, cdNm=Use}, {cd=N, cdNm=Not Use}]] 
+2019:10:21 13:06:21.917 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.917 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:21.932 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:21.933 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.grpcd.GrpCdController : GrpCdController.list param [{grpCd=}] 
+2019:10:21 13:06:21.933 DEBUG --- [http-nio-80-exec-7] sb.mvc.base.core.base.BaseDao : ----> sql mapper id : NS_GrpCd.selGrpCdList 
+2019:10:21 13:06:21.933 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.SqlSessionUtils : Creating a new SqlSession 
+2019:10:21 13:06:21.933 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.SqlSessionUtils : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5f55a2ff] was not registered for synchronization because synchronization is not active 
+2019:10:21 13:06:21.933 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept invocation[org.apache.ibatis.plugin.Invocation@3ee3890b] 
+2019:10:21 13:06:21.933 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept requestAttributes [SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@117da084]] 
+2019:10:21 13:06:21.933 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept language [ko] 
+2019:10:21 13:06:21.933 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept sessionUser [{mngrId=admin, mngrNm=admin, email=jybae@emobileid.co.kr, hpNo=01087228630, athrCd=agc000}] 
+2019:10:21 13:06:21.934 DEBUG --- [http-nio-80-exec-7] o.m.s.t.SpringManagedTransaction : JDBC Connection [org.mariadb.jdbc.MariaDbConnection@5aae8bf0] will not be managed by Spring 
+2019:10:21 13:06:21.937 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.SqlSessionUtils : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5f55a2ff] 
+2019:10:21 13:06:21.937 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.grpcd.GrpCdController : GrpCdController.list resultData [[{grpCd=CD_TP, grpCdTp=N, grpCdNm=Code Type, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20171211093100, chgId=admin, chgDttm=20180418055742, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=COUNTRY_CD, grpCdTp=N, grpCdNm=Country Code, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20180516020611, chgId=admin, chgDttm=20180516020611, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=DEL_YN, grpCdTp=N, grpCdNm=Del YN, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20171211093100, chgId=admin, chgDttm=20180418055841, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=FILE_TP, grpCdTp=N, grpCdNm=File Type, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20180419010030, chgId=admin, chgDttm=20180419010040, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=FILE_UPLOAD_DIR, grpCdTp=N, grpCdNm=File Upload Directory, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20181004113112, chgId=admin, chgDttm=20181207170830, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=GENDER, grpCdTp=N, grpCdNm=Gender, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20180703075730, chgId=admin, chgDttm=20180703075730, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=GRP_CD_TP, grpCdTp=N, grpCdNm=Group Code Type, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20171211093100, chgId=admin, chgDttm=20180418055828, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=LANG_CD, grpCdTp=N, grpCdNm=Language Code, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20180516020611, chgId=admin, chgDttm=20180516020611, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=LOGIN_ST, grpCdTp=N, grpCdNm=Login Status, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20180516020611, chgId=admin, chgDttm=20180516020611, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=MENU_TP, grpCdTp=N, grpCdNm=Menu Type, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20171211110555, chgId=admin, chgDttm=20180418055833, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=PROC_ST, grpCdTp=N, grpCdNm=Process State, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20180419015642, chgId=admin, chgDttm=20180419015642, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=PWD_INIT_YN, grpCdTp=N, grpCdNm=Password Init Y/N, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20180516020611, chgId=admin, chgDttm=20180516020611, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}, {grpCd=USE_YN, grpCdTp=N, grpCdNm=Use YN, sortSn=null, rm=, useYn=Y, regId=admin, regDttm=20171211093100, chgId=admin, chgDttm=20180418055841, grpCdTpNm=Normal, useYnNm=Use, regNm=admin, chgNm=admin}]] 
+2019:10:21 13:06:21.937 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:21.938 DEBUG --- [http-nio-80-exec-7] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:30.388 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:30.390 DEBUG --- [http-nio-80-exec-2] s.m.base.biz.system.cd.CdController : CdController.list param [{grpCd=CD_TP}] 
+2019:10:21 13:06:30.390 DEBUG --- [http-nio-80-exec-2] sb.mvc.base.core.base.BaseDao : ----> sql mapper id : NS_Cd.selCdList 
+2019:10:21 13:06:30.390 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils : Creating a new SqlSession 
+2019:10:21 13:06:30.390 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78e86cc4] was not registered for synchronization because synchronization is not active 
+2019:10:21 13:06:30.390 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept invocation[org.apache.ibatis.plugin.Invocation@2de1bed4] 
+2019:10:21 13:06:30.390 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept requestAttributes [SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@7415e4a4]] 
+2019:10:21 13:06:30.390 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept language [ko] 
+2019:10:21 13:06:30.390 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept sessionUser [{mngrId=admin, mngrNm=admin, email=jybae@emobileid.co.kr, hpNo=01087228630, athrCd=agc000}] 
+2019:10:21 13:06:30.392 DEBUG --- [http-nio-80-exec-2] o.m.s.t.SpringManagedTransaction : JDBC Connection [org.mariadb.jdbc.MariaDbConnection@38f09819] will not be managed by Spring 
+2019:10:21 13:06:30.393 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78e86cc4] 
+2019:10:21 13:06:30.393 DEBUG --- [http-nio-80-exec-2] s.m.base.biz.system.cd.CdController : CdController.list resultData [[{grpCd=CD_TP, cd=S, psCd=null, cdNm=System, cdTp=N, sortSn=10, rm=, useYn=Y, cdTpNm=Normal, useYnNm=Use}, {grpCd=CD_TP, cd=N, psCd=null, cdNm=Normal, cdTp=N, sortSn=20, rm=, useYn=Y, cdTpNm=Normal, useYnNm=Use}]] 
+2019:10:21 13:06:30.393 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:30.394 DEBUG --- [http-nio-80-exec-2] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:31.000 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:31.001 DEBUG --- [http-nio-80-exec-3] s.m.base.biz.system.cd.CdController : CdController.list param [{grpCd=DEL_YN}] 
+2019:10:21 13:06:31.001 DEBUG --- [http-nio-80-exec-3] sb.mvc.base.core.base.BaseDao : ----> sql mapper id : NS_Cd.selCdList 
+2019:10:21 13:06:31.001 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils : Creating a new SqlSession 
+2019:10:21 13:06:31.001 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@415f5ccf] was not registered for synchronization because synchronization is not active 
+2019:10:21 13:06:31.001 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept invocation[org.apache.ibatis.plugin.Invocation@28927830] 
+2019:10:21 13:06:31.001 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept requestAttributes [SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@34583e83]] 
+2019:10:21 13:06:31.001 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept language [ko] 
+2019:10:21 13:06:31.001 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept sessionUser [{mngrId=admin, mngrNm=admin, email=jybae@emobileid.co.kr, hpNo=01087228630, athrCd=agc000}] 
+2019:10:21 13:06:31.003 DEBUG --- [http-nio-80-exec-3] o.m.s.t.SpringManagedTransaction : JDBC Connection [org.mariadb.jdbc.MariaDbConnection@5932ff44] will not be managed by Spring 
+2019:10:21 13:06:31.005 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@415f5ccf] 
+2019:10:21 13:06:31.005 DEBUG --- [http-nio-80-exec-3] s.m.base.biz.system.cd.CdController : CdController.list resultData [[{grpCd=DEL_YN, cd=Y, psCd=null, cdNm=Delete, cdTp=N, sortSn=10, rm=, useYn=Y, cdTpNm=Normal, useYnNm=Use}, {grpCd=DEL_YN, cd=N, psCd=null, cdNm=Not Delete, cdTp=N, sortSn=20, rm=, useYn=Y, cdTpNm=Normal, useYnNm=Use}]] 
+2019:10:21 13:06:31.005 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:31.006 DEBUG --- [http-nio-80-exec-3] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 13:06:31.562 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.preHandle() ================= 
+2019:10:21 13:06:31.564 DEBUG --- [http-nio-80-exec-10] s.m.base.biz.system.cd.CdController : CdController.list param [{grpCd=FILE_TP}] 
+2019:10:21 13:06:31.564 DEBUG --- [http-nio-80-exec-10] sb.mvc.base.core.base.BaseDao : ----> sql mapper id : NS_Cd.selCdList 
+2019:10:21 13:06:31.564 DEBUG --- [http-nio-80-exec-10] org.mybatis.spring.SqlSessionUtils : Creating a new SqlSession 
+2019:10:21 13:06:31.564 DEBUG --- [http-nio-80-exec-10] org.mybatis.spring.SqlSessionUtils : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@21611124] was not registered for synchronization because synchronization is not active 
+2019:10:21 13:06:31.564 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept invocation[org.apache.ibatis.plugin.Invocation@7a274e1a] 
+2019:10:21 13:06:31.564 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept requestAttributes [SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@47f6b45e]] 
+2019:10:21 13:06:31.564 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept language [ko] 
+2019:10:21 13:06:31.564 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.i.MybatisQueryParameters : MybatisQueryParameters.intercept sessionUser [{mngrId=admin, mngrNm=admin, email=jybae@emobileid.co.kr, hpNo=01087228630, athrCd=agc000}] 
+2019:10:21 13:06:31.567 DEBUG --- [http-nio-80-exec-10] o.m.s.t.SpringManagedTransaction : JDBC Connection [org.mariadb.jdbc.MariaDbConnection@336bff62] will not be managed by Spring 
+2019:10:21 13:06:31.569 DEBUG --- [http-nio-80-exec-10] org.mybatis.spring.SqlSessionUtils : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@21611124] 
+2019:10:21 13:06:31.569 DEBUG --- [http-nio-80-exec-10] s.m.base.biz.system.cd.CdController : CdController.list resultData [[{grpCd=FILE_TP, cd=L, psCd=null, cdNm=Log File, cdTp=N, sortSn=10, rm=, useYn=Y, cdTpNm=Normal, useYnNm=Use}, {grpCd=FILE_TP, cd=I, psCd=null, cdNm=Image File, cdTp=N, sortSn=20, rm=, useYn=Y, cdTpNm=Normal, useYnNm=Use}]] 
+2019:10:21 13:06:31.569 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
+2019:10:21 13:06:31.570 DEBUG --- [http-nio-80-exec-10] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 

@@ -19,12 +19,12 @@ public abstract class BaseController {
     protected static final Logger logger = LoggerFactory.getLogger(BaseController.class);
 
     @PostConstruct
-    public void initialize() throws Exception {
+    public void initialize() {
 
     }
 
     @PreDestroy
-    public void destroy() throws Exception {
+    public void destroy() {
 
     }
 }
