@@ -5,19 +5,19 @@
  */
 
 
-svc.page = function () {
+svc.page                     = function() {
     this.params = {};
 };
-svc.page.prototype.addParams = function(pageId, params) {
-    this.params[pageId] = params;
+svc.page.prototype.addParams = function( pageId, params ) {
+    this.params[ pageId ] = params;
 };
-svc.page.prototype.delParams = function(pageId) {
-    delete this.params[pageId];
+svc.page.prototype.delParams = function( pageId ) {
+    delete this.params[ pageId ];
 };
-svc.page.prototype.getParams = function(pageId) {
+svc.page.prototype.getParams = function( pageId ) {
     var rtnParams = {};
-    if( this.params.hasOwnProperty(pageId) ) {
-        rtnParams = this.params[pageId];
+    if( this.params.hasOwnProperty( pageId ) ) {
+        rtnParams = this.params[ pageId ];
     }
     return rtnParams;
 };

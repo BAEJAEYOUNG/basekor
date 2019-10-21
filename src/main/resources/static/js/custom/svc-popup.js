@@ -4,37 +4,37 @@
  * Copyright (c) 2019. All rights reserved.
  */
 
-svc.popup = function( aoProp ) {
+svc.popup                      = function( aoProp ) {
 
-   console.log('svc.popup > aoProp', aoProp);
+    console.log( "svc.popup > aoProp", aoProp );
 
-    if( aoProp.hasOwnProperty("choice") ) {
-        $("#dialog-common button[name=btn-popup-choice]").show();
+    if( aoProp.hasOwnProperty( "choice" ) ) {
+        $( "#dialog-common button[name=btn-popup-choice]" ).show();
     } else {
-        $("#dialog-common button[name=btn-popup-choice]").hide();
+        $( "#dialog-common button[name=btn-popup-choice]" ).hide();
     }
     this.prop = {
-        title : "팝업선택",
-        gridTitle : "팝업선택 리스트",
-        width : 600,
-        height : 500
+        title    : "팝업선택",
+        gridTitle: "팝업선택 리스트",
+        width    : 600,
+        height   : 500
     };
     this.grid = null;
-    $.extend(true, this.prop, aoProp);
+    $.extend( true, this.prop, aoProp );
     this.pager = null;
     this.init();
 };
 // -- init --
-svc.popup.prototype.init = function() {
-    $("#dialog-common-top").html($("#" + this.prop.popupId).html());
-    $("#dialog-common-grid-div").html('<table id="dialog-common-grid"></table>');
+svc.popup.prototype.init       = function() {
+    $( "#dialog-common-top" ).html( $( "#" + this.prop.popupId ).html() );
+    $( "#dialog-common-grid-div" ).html( "<table id=\"dialog-common-grid\"></table>" );
 };
 // -- data bind --
-svc.popup.prototype.searchBind = function(data) {
-    $("#dialog-common-top").bindPanel(data);
+svc.popup.prototype.searchBind = function( data ) {
+    $( "#dialog-common-top" ).bindPanel( data );
 };
 // -- popup open --
-svc.popup.prototype.open = function() {
+svc.popup.prototype.open       = function() {
     var _ref = this;
     this.setPopup();
 };
@@ -43,12 +43,12 @@ svc.popup.prototype.open = function() {
 //###############################################################################
 // -- setting popup --
 svc.popup.prototype.setPopup = function() {
-    var _ref = this;
-    var _prop = {};
-    _prop.colModel = _ref.prop.colModel;
-    _prop.onSelectRow = function(rowId, status, e) {
-        if( _ref.prop.hasOwnProperty("click") ) {
-            _ref.grid.setClickProp(rowId);
+    var _ref          = this;
+    var _prop         = {};
+    _prop.colModel    = _ref.prop.colModel;
+    _prop.onSelectRow = function( rowId, status, e ) {
+        if( _ref.prop.hasOwnProperty( "click" ) ) {
+            _ref.grid.setClickProp( rowId );
         }
     };
 };
