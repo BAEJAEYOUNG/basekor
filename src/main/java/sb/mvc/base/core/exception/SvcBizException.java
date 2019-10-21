@@ -8,12 +8,12 @@ package sb.mvc.base.core.exception;
 
 public class SvcBizException extends SvcBaseException {
 
-    public SvcBizException(String messageCode, Object... messageParams) {
-        super(messageCode, messageParams);
+    public SvcBizException( String messageCode, Object... messageParams ) {
+        super( messageCode, messageParams );
     }
 
-    public SvcBizException(Exception e, String messageCode, Object... messageParams) {
-        super(e, messageCode, messageParams);
+    public SvcBizException( Exception e, String messageCode, Object... messageParams ) {
+        super( e, messageCode, messageParams );
     }
 
 }

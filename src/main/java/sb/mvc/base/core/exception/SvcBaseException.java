@@ -10,17 +10,17 @@ public class SvcBaseException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;
 
-    private String messageCode;
+    private String   messageCode;
     private Object[] messageParams;
 
-    public SvcBaseException(String messageCode, Object... messageParams) {
+    public SvcBaseException( String messageCode, Object... messageParams ) {
         super();
         this.messageCode = messageCode;
         this.messageParams = messageParams;
     }
 
-    public SvcBaseException(Exception e, String messageCode, Object... messageParams) {
-        super(e);
+    public SvcBaseException( Exception e, String messageCode, Object... messageParams ) {
+        super( e );
         this.messageCode = messageCode;
         this.messageParams = messageParams;
     }
@@ -29,7 +29,7 @@ public class SvcBaseException extends RuntimeException {
         return messageCode;
     }
 
-    public void setMessageCode(String messageCode) {
+    public void setMessageCode( String messageCode ) {
         this.messageCode = messageCode;
     }
 
@@ -37,7 +37,7 @@ public class SvcBaseException extends RuntimeException {
         return messageParams;
     }
 
-    public void setMessageParams(Object[] messageParams) {
+    public void setMessageParams( Object[] messageParams ) {
         this.messageParams = messageParams;
     }
 

@@ -21,7 +21,7 @@ public class BaseControllerAdvice {
     private ServletContext context;
 
     @Autowired
-    public BaseControllerAdvice(ServletContext context) {
+    public BaseControllerAdvice( ServletContext context ) {
         this.context = context;
     }
 
@@ -30,7 +30,7 @@ public class BaseControllerAdvice {
     }
 
     @ModelAttribute
-    public void addAttributes(Model model) {
-        model.addAttribute("contextPath", getContextPath());
+    public void addAttributes( Model model ) {
+        model.addAttribute( "contextPath", getContextPath() );
     }
 }

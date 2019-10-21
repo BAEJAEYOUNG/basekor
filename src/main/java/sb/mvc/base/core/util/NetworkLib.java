@@ -18,21 +18,21 @@ public class NetworkLib {
 
     // IP & Hostname Get
     public static String ipAndHostnameGet() throws UnknownHostException {
-        String ipString = "";
+        String      ipString = "";
         InetAddress ip;
 
         ip = InetAddress.getLocalHost();
         ipString = ip.toString();
 
-        return(ipString);
+        return ( ipString );
     }
 
     public static String getHostIpAddr() {
-        String ipString = "";
-        InetAddress Address = null;
+        String      ipString = "";
+        InetAddress Address  = null;
         try {
             Address = InetAddress.getLocalHost();
-        } catch (UnknownHostException e) {
+        } catch( UnknownHostException e ) {
             e.printStackTrace();
         }
         ipString = Address.getHostAddress();
@@ -47,20 +47,18 @@ public class NetworkLib {
 
         try {
             Enumeration<NetworkInterface> niEnum = NetworkInterface.getNetworkInterfaces();
-            while (niEnum.hasMoreElements()) {
-                NetworkInterface ni = niEnum.nextElement();
-                Enumeration <InetAddress> addrEnum = ni.getInetAddresses();
-                while (addrEnum.hasMoreElements()) {
+            while( niEnum.hasMoreElements() ) {
+                NetworkInterface         ni       = niEnum.nextElement();
+                Enumeration<InetAddress> addrEnum = ni.getInetAddresses();
+                while( addrEnum.hasMoreElements() ) {
                     InetAddress inetAddress = addrEnum.nextElement();
-                    if (!inetAddress.isLoopbackAddress() &&
-                        !inetAddress.isLinkLocalAddress() &&
-                        inetAddress.isSiteLocalAddress() ) {
+                    if( !inetAddress.isLoopbackAddress() && !inetAddress.isLinkLocalAddress() && inetAddress.isSiteLocalAddress() ) {
                         hostAddr = inetAddress.getHostAddress();
                         break;
                     }
                 }
             }
-        } catch (SocketException e) {
+        } catch( SocketException e ) {
             e.printStackTrace();
         }
 
@@ -73,20 +71,18 @@ public class NetworkLib {
         List<String> hostAddrList = new ArrayList<String>();
         try {
             Enumeration<NetworkInterface> niEnum = NetworkInterface.getNetworkInterfaces();
-            while (niEnum.hasMoreElements()) {
-                NetworkInterface ni = niEnum.nextElement();
-                Enumeration <InetAddress> addrEnum = ni.getInetAddresses();
-                while (addrEnum.hasMoreElements()) {
+            while( niEnum.hasMoreElements() ) {
+                NetworkInterface         ni       = niEnum.nextElement();
+                Enumeration<InetAddress> addrEnum = ni.getInetAddresses();
+                while( addrEnum.hasMoreElements() ) {
                     InetAddress inetAddress = addrEnum.nextElement();
-                    if (!inetAddress.isLoopbackAddress() &&
-                        !inetAddress.isLinkLocalAddress() &&
-                        inetAddress.isSiteLocalAddress() ) {
+                    if( !inetAddress.isLoopbackAddress() && !inetAddress.isLinkLocalAddress() && inetAddress.isSiteLocalAddress() ) {
                         String hostAddr = inetAddress.getHostAddress();
-                        hostAddrList.add(hostAddr);
+                        hostAddrList.add( hostAddr );
                     }
                 }
             }
-        } catch (SocketException e) {
+        } catch( SocketException e ) {
             e.printStackTrace();
         }
 

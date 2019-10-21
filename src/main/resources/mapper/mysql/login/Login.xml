@@ -12,22 +12,21 @@
     <!--  -->
     <select id="selLogin" parameterType="map" resultType="camelMap">
         /* NS_Login.selLogin */
-        SELECT A.MNGR_ID
-             , A.MNGR_PWD
-             , B.ATHR_CD
-          FROM TB_MNGR A
-               LEFT OUTER JOIN TB_ATHR_MNGR B
-                            ON B.MNGR_ID = A.MNGR_ID
-         WHERE A.MNGR_ID = #{mngrId}
+		SELECT A.MNGR_ID
+		     , A.MNGR_PWD
+		     , B.ATHR_CD
+		  FROM TB_MNGR A
+		LEFT OUTER JOIN TB_ATHR_MNGR B
+		           ON B.MNGR_ID = A.MNGR_ID
+		 WHERE A.MNGR_ID        = #{mngrId}
     </select>
 
     <select id="selLoginCnt" parameterType="map" resultType="int">
         /* NS_Login.selLogin */
-        SELECT COUNT(1)
-          FROM TB_MNGR
-         WHERE MNGR_ID = #{mngrId}
-           AND MNGR_PWD = #{mngrPwd}
-
+		SELECT COUNT( 1 )
+		  FROM TB_MNGR
+		 WHERE MNGR_ID  = #{mngrId}
+		   AND MNGR_PWD = #{mngrPwd}
     </select>
 
     <!--  -->
@@ -86,13 +85,20 @@
 
     <update id="updInitPwd" parameterType="Map">
         /* NS_Login.updInitPwd */
-        UPDATE TB_MNGR
-           SET MNGR_PWD = #{mngrPwd}
-             , PWD_INIT_YN = 'N'        /* 비밀번호 초기화 여부[Y:초기화,N:초기화해제] */
-             , CHG_DTTM = DATE_FORMAT(now(),'%Y%m%d%H%i%s')
-             , CHG_ID = #{mngrId}
-         WHERE MNGR_ID = #{mngrId}
-           AND EMAIL = #{email}
+		UPDATE TB_MNGR
+		   SET MNGR_PWD    = #{mngrPwd}
+		     , PWD_INIT_YN = 'N' /* 비밀번호 초기화 여부[Y:초기화,N:초기화해제] */
+		     , CHG_DTTM    = DATE_FORMAT( now(), '%Y%m%d%H%i%s' )
+		     , CHG_ID      = #{mngrId}
+		 WHERE MNGR_ID     = #{mngrId}
+		   AND EMAIL       = #{email}
+		UPDATE TB_MNGR
+		   SET MNGR_PWD    = #{mngrPwd}
+		     , PWD_INIT_YN = 'N' /* 비밀번호 초기화 여부[Y:초기화,N:초기화해제] */
+		     , CHG_DTTM    = DATE_FORMAT( now(), '%Y%m%d%H%i%s' )
+		     , CHG_ID      = #{mngrId}
+		 WHERE MNGR_ID     = #{mngrId}
+		   AND EMAIL       = #{email}
     </update>
 
 

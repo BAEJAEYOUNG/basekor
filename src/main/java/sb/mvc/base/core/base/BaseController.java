@@ -16,7 +16,7 @@ import javax.annotation.PreDestroy;
 @Controller
 public abstract class BaseController {
 
-    protected static final Logger logger = LoggerFactory.getLogger(BaseController.class);
+    protected static final Logger logger = LoggerFactory.getLogger( BaseController.class );
 
     @PostConstruct
     public void initialize() {

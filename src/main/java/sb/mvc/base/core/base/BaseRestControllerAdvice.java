@@ -15,5 +15,5 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class BaseRestControllerAdvice {
 
-    protected static final Logger logger = LoggerFactory.getLogger(BaseRestControllerAdvice.class);
+    protected static final Logger logger = LoggerFactory.getLogger( BaseRestControllerAdvice.class );
 }

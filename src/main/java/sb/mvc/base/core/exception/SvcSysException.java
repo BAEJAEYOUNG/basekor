@@ -10,12 +10,12 @@ public class SvcSysException extends SvcBaseException {
 
     private static final long serialVersionUID = 1L;
 
-    public SvcSysException(String messageCode, Object... messageParams) {
-        super(messageCode, messageParams);
+    public SvcSysException( String messageCode, Object... messageParams ) {
+        super( messageCode, messageParams );
     }
 
-    public SvcSysException(Exception e, String messageCode, Object... messageParams) {
-        super(e, messageCode, messageParams);
+    public SvcSysException( Exception e, String messageCode, Object... messageParams ) {
+        super( e, messageCode, messageParams );
     }
 
 }

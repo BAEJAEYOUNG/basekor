@@ -10,15 +10,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class ApplicationProperties implements ApplicationRunner {
 
-    @Value("${spring.profiles.fullName}")
+    @Value( "${spring.profiles.fullName}" )
     private String profileName;
 
-    @Value("${spring.profiles.dbType}")
+    @Value( "${spring.profiles.dbType}" )
     private String profileDBType;
 
     @Override
-    public void run(ApplicationArguments args) throws Exception {
-        log.info("### profileName : {}", profileName);
-        log.info("### profileDBType : {}", profileDBType);
+    public void run( ApplicationArguments args ) throws Exception {
+        log.info( "### profileName : {}", profileName );
+        log.info( "### profileDBType : {}", profileDBType );
     }
 }

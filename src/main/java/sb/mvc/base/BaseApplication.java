@@ -8,9 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class BaseApplication {
 
-    public static void main(String[] args) {
+    public static void main( String[] args ) {
 
-        SpringApplication.run(BaseApplication.class, args);
+        SpringApplication.run( BaseApplication.class, args );
 
     }
 

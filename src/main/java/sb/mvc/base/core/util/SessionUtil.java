@@ -12,27 +12,25 @@ public class SessionUtil {
 
     /**
      * 세션 오브젝트
-     *
      * @param session
      * @return
      */
-    @SuppressWarnings("unchecked")
-    public static <T> T getSessionObject(HttpSession session) {
+    @SuppressWarnings( "unchecked" )
+    public static <T> T getSessionObject( HttpSession session ) {
 
-        Object sessionObject = session.getAttribute("sessionUser");
-        T object = (T)sessionObject;
+        Object sessionObject = session.getAttribute( "sessionUser" );
+        T      object        = (T)sessionObject;
 
         return object;
     }
 
     /**
      * 세션 체크
-     *
      * @param session
      * @return
      */
-    public static <T> boolean validateSession(HttpSession session) {
+    public static <T> boolean validateSession( HttpSession session ) {
 
-        return SessionUtil.<T>getSessionObject(session) != null;
+        return SessionUtil.<T> getSessionObject( session ) != null;
     }
 }

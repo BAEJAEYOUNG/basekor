@@ -14,7 +14,7 @@ import sb.mvc.base.biz.base.BizBaseServiceImpl;
 import java.util.Map;
 
 @AllArgsConstructor
-@Service("athrService")
+@Service( "athrService" )
 public class AthrServiceImpl extends BizBaseServiceImpl<Map<String, Object>> implements AthrService {
 
     private AthrDao athrDao;

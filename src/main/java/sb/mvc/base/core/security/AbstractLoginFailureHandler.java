@@ -17,14 +17,12 @@ import java.io.IOException;
 public abstract class AbstractLoginFailureHandler extends SimpleUrlAuthenticationFailureHandler {
 
     @Override
-    public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response,
-                                        AuthenticationException exception) throws IOException, ServletException {
+    public void onAuthenticationFailure( HttpServletRequest request, HttpServletResponse response, AuthenticationException exception ) throws IOException, ServletException {
 
-        this.process(request, response, exception);
+        this.process( request, response, exception );
 
-        super.onAuthenticationFailure(request, response, exception);
+        super.onAuthenticationFailure( request, response, exception );
     }
 
-    public abstract void process(HttpServletRequest request, HttpServletResponse response,
-                                 AuthenticationException exception) throws IOException, ServletException;
+    public abstract void process( HttpServletRequest request, HttpServletResponse response, AuthenticationException exception ) throws IOException, ServletException;
 }

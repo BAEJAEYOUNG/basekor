@@ -26,12 +26,12 @@ public class MessageUtil {
 
     @PostConstruct
     private void init() {
-        log.debug("###################################    Messges locale [{}]", Locale.getDefault());
-        accessor = new MessageSourceAccessor(messageSource, Locale.getDefault());
+        log.debug( "###################################    Messges locale [{}]", Locale.getDefault() );
+        accessor = new MessageSourceAccessor( messageSource, Locale.getDefault() );
     }
 
-    public String getMessage(String code) {
-        return accessor.getMessage(code);
+    public String getMessage( String code ) {
+        return accessor.getMessage( code );
     }
 
 }

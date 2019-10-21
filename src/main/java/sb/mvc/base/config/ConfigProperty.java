@@ -17,34 +17,34 @@ import java.util.Map;
 @Configuration
 public class ConfigProperty {
 
-    @Value("${project.name}")
+    @Value( "${project.name}" )
     private String projectName;
 
-    @Value("${mybatis.config-location}")
+    @Value( "${mybatis.config-location}" )
     private String mybatisConfigLocation;
 
-    @Value("${mybatis.mapper-locations}")
+    @Value( "${mybatis.mapper-locations}" )
     private String mybatisMapperLocation;
 
-    @Value("${inc-path}")
+    @Value( "${inc-path}" )
     private String incPath;
 
-    @Value("${server.servlet.context-path}")
+    @Value( "${server.servlet.context-path}" )
     private String contextPath;
 
-    @Value("${project.title}")
+    @Value( "${project.title}" )
     private String projectTitle;
 
-    @Value("${spring.datasource.url}")
+    @Value( "${spring.datasource.url}" )
     private String dbUrl;
 
-    @Value("${spring.datasource.driver-class-name}")
+    @Value( "${spring.datasource.driver-class-name}" )
     private String dbDriver;
 
-    @Value("${spring.datasource.username}")
+    @Value( "${spring.datasource.username}" )
     private String dbUser;
 
-    @Value("${spring.datasource.password}")
+    @Value( "${spring.datasource.password}" )
     private String dbPwd;
 
     public String getProjectName() {
@@ -90,10 +90,10 @@ public class ConfigProperty {
     @Bean
     public ServletContextAttributeExporter servletContextAttributeExporter() {
         ServletContextAttributeExporter servletContextAttributeExporter = new ServletContextAttributeExporter();
-        Map<String, Object> map = new HashMap<>();
-        map.put("incPath", incPath);
-        map.put("contextPath", contextPath);
-        servletContextAttributeExporter.setAttributes(map);
+        Map<String, Object>             map                             = new HashMap<>();
+        map.put( "incPath", incPath );
+        map.put( "contextPath", contextPath );
+        servletContextAttributeExporter.setAttributes( map );
         return new ServletContextAttributeExporter();
     }
 

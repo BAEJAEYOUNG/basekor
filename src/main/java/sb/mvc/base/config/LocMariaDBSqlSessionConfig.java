@@ -24,54 +24,53 @@ import java.sql.SQLException;
 
 @Slf4j
 @Configuration
-@Profile("loc")
+@Profile( "loc" )
 @EnableTransactionManagement
 public class LocMariaDBSqlSessionConfig {
 
     @Autowired
+    ConfigProperty configProperty;
+    @Autowired
     private ApplicationContext applicationContext;
 
-    @Autowired
-    ConfigProperty configProperty;
-
-//    @Bean(name="dataSource")
-//    @ConfigurationProperties(prefix="spring.datasource")
-//    public DataSource dataSource() {
-//        return DataSourceBuilder.create().build();
-//    }
+    //    @Bean(name="dataSource")
+    //    @ConfigurationProperties(prefix="spring.datasource")
+    //    public DataSource dataSource() {
+    //        return DataSourceBuilder.create().build();
+    //    }
 
     @Bean
     public DataSource dataSource() throws SQLException {
-        System.out.println("=========================> DevMariaDBSqlSessionConfig > dataSource()");
+        System.out.println( "=========================> DevMariaDBSqlSessionConfig > dataSource()" );
         SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
-        dataSource.setDriverClass(org.mariadb.jdbc.Driver.class);
-        dataSource.setUsername(configProperty.getDbUser());
-        dataSource.setUrl(configProperty.getDbUrl());
-        dataSource.setPassword(configProperty.getDbPwd());
-        log.info("datasource : {}, {}, {}", configProperty.getDbUrl(), configProperty.getDbUser(), configProperty.getDbPwd());
+        dataSource.setDriverClass( org.mariadb.jdbc.Driver.class );
+        dataSource.setUsername( configProperty.getDbUser() );
+        dataSource.setUrl( configProperty.getDbUrl() );
+        dataSource.setPassword( configProperty.getDbPwd() );
+        log.info( "datasource : {}, {}, {}", configProperty.getDbUrl(), configProperty.getDbUser(), configProperty.getDbPwd() );
         return dataSource;
     }
 
     @Bean
     public SqlSessionFactory sqlSessionFactory() throws Exception {
-        System.out.println("=========================> DevMariaDBSqlSessionConfig > sqlSessionFactory()");
+        System.out.println( "=========================> DevMariaDBSqlSessionConfig > sqlSessionFactory()" );
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
-        log.info("applicationContext.getResource(configProperty.getMybatisConfigLocation()) [{}]", applicationContext.getResource(configProperty.getMybatisConfigLocation()));
-        factoryBean.setConfigLocation(applicationContext.getResource(configProperty.getMybatisConfigLocation()));
-        factoryBean.setMapperLocations(applicationContext.getResources(configProperty.getMybatisMapperLocation()));
-        factoryBean.setDataSource(dataSource());
+        log.info( "applicationContext.getResource(configProperty.getMybatisConfigLocation()) [{}]", applicationContext.getResource( configProperty.getMybatisConfigLocation() ) );
+        factoryBean.setConfigLocation( applicationContext.getResource( configProperty.getMybatisConfigLocation() ) );
+        factoryBean.setMapperLocations( applicationContext.getResources( configProperty.getMybatisMapperLocation() ) );
+        factoryBean.setDataSource( dataSource() );
         return factoryBean.getObject();
     }
 
     @Bean()
     public SqlSessionTemplate sqlSessionTemplate() throws Exception {
-        System.out.println("=========================> sqlSessionTemplate()");
-        return new SqlSessionTemplate(sqlSessionFactory());
+        System.out.println( "=========================> sqlSessionTemplate()" );
+        return new SqlSessionTemplate( sqlSessionFactory() );
     }
 
     @Bean
     public DataSourceTransactionManager transactionManager() throws SQLException {
-        return new DataSourceTransactionManager(dataSource());
+        return new DataSourceTransactionManager( dataSource() );
     }
 
 }

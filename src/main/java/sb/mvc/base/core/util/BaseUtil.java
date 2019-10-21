@@ -21,183 +21,177 @@ import java.util.*;
 
 public class BaseUtil<T> {
 
-    public static String getCheckSum(String filePath) {
+    public static String getCheckSum( String filePath ) {
         String rtnStr = "";
         try {
-            FileInputStream fis = new FileInputStream(new File(filePath));
-            rtnStr = DigestUtils.md5Hex(fis).toUpperCase(); // return 32 length String
+            FileInputStream fis = new FileInputStream( new File( filePath ) );
+            rtnStr = DigestUtils.md5Hex( fis ).toUpperCase(); // return 32 length String
             fis.close();
-        } catch (Exception e) {
+        } catch( Exception e ) {
             e.printStackTrace();
         }
         return rtnStr;
     }
 
-    public static String toCamelCase(String s) {
+    public static String toCamelCase( String s ) {
 
-        if (-1 == s.indexOf('_') && Character.isLowerCase(s.charAt(0))) {
+        if( -1 == s.indexOf( '_' ) && Character.isLowerCase( s.charAt( 0 ) ) ) {
             return s;
         }
 
         StringBuffer sb = new StringBuffer();
 
-        for (String token : s.toLowerCase().split("_")) {
-            sb.append(StringUtils.capitalize(token));
+        for( String token : s.toLowerCase().split( "_" ) ) {
+            sb.append( StringUtils.capitalize( token ) );
         }
 
-        return StringUtils.uncapitalize(sb.toString());
+        return StringUtils.uncapitalize( sb.toString() );
     }
 
-    public static Map<String, String> toCamelCaseMap(Map<String, Object> map) {
+    public static Map<String, String> toCamelCaseMap( Map<String, Object> map ) {
 
         Map<String, String> result = new HashMap<String, String>();
 
-        for (String key : map.keySet()) {
-            result.put(BaseUtil.toCamelCase(key), (String)map.get(key));
+        for( String key : map.keySet() ) {
+            result.put( BaseUtil.toCamelCase( key ), (String)map.get( key ) );
         }
 
         return result;
     }
 
     /** JSONObject to Map **/
-    @SuppressWarnings("unchecked")
-    public static Map<String, Object> toMap(JSONObject object) throws JSONException {
+    @SuppressWarnings( "unchecked" )
+    public static Map<String, Object> toMap( JSONObject object ) throws JSONException {
 
         Map<String, Object> map = new HashMap<String, Object>();
 
         Iterator<String> keysItr = object.keys();
-        while (keysItr.hasNext()) {
-            String key = keysItr.next();
-            Object value = object.get(key);
+        while( keysItr.hasNext() ) {
+            String key   = keysItr.next();
+            Object value = object.get( key );
 
-            if (value instanceof JSONArray) {
-                value = toList((JSONArray) value);
+            if( value instanceof JSONArray ) {
+                value = toList( (JSONArray)value );
+            } else if( value instanceof JSONObject ) {
+                value = toMap( (JSONObject)value );
             }
-
-            else if (value instanceof JSONObject) {
-                value = toMap((JSONObject) value);
-            }
-            map.put(key, value);
+            map.put( key, value );
         }
         return map;
     }
 
-    public static List<Map<String, Object>> toList(JSONArray array) throws JSONException {
+    public static List<Map<String, Object>> toList( JSONArray array ) throws JSONException {
 
         List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 
-        for (int i = 0; i < array.size(); i++) {
-            list.add(toMap((JSONObject)array.get(i)));
+        for( int i = 0; i < array.size(); i++ ) {
+            list.add( toMap( (JSONObject)array.get( i ) ) );
         }
 
         return list;
     }
 
-    public static String setUrlGetParams(Map<String, Object> params) {
+    public static String setUrlGetParams( Map<String, Object> params ) {
 
         StringBuilder sb = new StringBuilder();
 
-        for (String key : params.keySet()) {
-            sb.append(key)
-            .append("=")
-            .append((String)params.get(key))
-            .append("&");
+        for( String key : params.keySet() ) {
+            sb.append( key ).append( "=" ).append( (String)params.get( key ) ).append( "&" );
         }
 
-        return sb.toString().substring(0, sb.toString().length()-1);
+        return sb.toString().substring( 0, sb.toString().length() - 1 );
 
     }
 
-    public static String rndString(int len) {
+    public static String rndString( int len ) {
         StringBuffer temp = new StringBuffer();
-        Random rnd = new Random();
-        for (int i = 0; i < len; i++) {
-            int rIndex = rnd.nextInt(3);
-            switch (rIndex) {
-            case 0:
-                // a-z
-                temp.append((char) (rnd.nextInt(26) + 97));
-                break;
-            case 1:
-                // A-Z
-                temp.append((char) (rnd.nextInt(26) + 65));
-                break;
-            case 2:
-                // 0-9
-                temp.append((rnd.nextInt(10)));
-                break;
+        Random       rnd  = new Random();
+        for( int i = 0; i < len; i++ ) {
+            int rIndex = rnd.nextInt( 3 );
+            switch( rIndex ) {
+                case 0:
+                    // a-z
+                    temp.append( (char)( rnd.nextInt( 26 ) + 97 ) );
+                    break;
+                case 1:
+                    // A-Z
+                    temp.append( (char)( rnd.nextInt( 26 ) + 65 ) );
+                    break;
+                case 2:
+                    // 0-9
+                    temp.append( ( rnd.nextInt( 10 ) ) );
+                    break;
             }
         }
         return temp.toString();
     }
 
-    public static void printMap(String asTitle, Map<?, ?> aoMap) {
+    public static void printMap( String asTitle, Map<?, ?> aoMap ) {
 
         StringBuilder loSb = new StringBuilder();
 
-        loSb.append("------------------------------------------------------------------");
-        loSb.append("\n " + asTitle + " \n");
-        loSb.append("------------------------------------------------------------------\n");
+        loSb.append( "------------------------------------------------------------------" );
+        loSb.append( "\n " + asTitle + " \n" );
+        loSb.append( "------------------------------------------------------------------\n" );
 
         Iterator<?> loItor = aoMap.keySet().iterator();
 
-        while (loItor.hasNext()) {
+        while( loItor.hasNext() ) {
             String lsKey = loItor.next().toString();
-            loSb.append(lsKey).append(" = ").append(aoMap.get(lsKey))
-                    .append("\n");
+            loSb.append( lsKey ).append( " = " ).append( aoMap.get( lsKey ) ).append( "\n" );
         }
-        loSb.append("------------------------------------------------------------------");
+        loSb.append( "------------------------------------------------------------------" );
 
-        System.out.println("\n\n");
-        System.out.println(loSb.toString());
-        System.out.println("\n\n");
+        System.out.println( "\n\n" );
+        System.out.println( loSb.toString() );
+        System.out.println( "\n\n" );
     }
 
-    public static void printListMap(List<Map<String, Object>> aoList) {
+    public static void printListMap( List<Map<String, Object>> aoList ) {
 
-        BaseUtil.printListMap("ListMap Print", aoList);
+        BaseUtil.printListMap( "ListMap Print", aoList );
     }
 
-    public static void printListMap(String asTitle, ArrayList<Map<String, Object>> params) {
+    public static void printListMap( String asTitle, ArrayList<Map<String, Object>> params ) {
 
-        BaseUtil.printListMap(asTitle, (List<Map<String, Object>>)params);
+        BaseUtil.printListMap( asTitle, (List<Map<String, Object>>)params );
     }
 
-    public static void printListMap(String asTitle, List<Map<String, Object>> aoList) {
+    public static void printListMap( String asTitle, List<Map<String, Object>> aoList ) {
 
         StringBuilder loSb = new StringBuilder();
 
-        loSb.append("------------------------------------------------------------------");
-        loSb.append("\n " + asTitle + " \n");
-        loSb.append("------------------------------------------------------------------\n");
+        loSb.append( "------------------------------------------------------------------" );
+        loSb.append( "\n " + asTitle + " \n" );
+        loSb.append( "------------------------------------------------------------------\n" );
 
-        for (int i = 0; i < aoList.size(); i++) {
-            BaseUtil.printMap(i + "번째 Map", aoList.get(i));
+        for( int i = 0; i < aoList.size(); i++ ) {
+            BaseUtil.printMap( i + "번째 Map", aoList.get( i ) );
         }
 
-        loSb.append("------------------------------------------------------------------");
+        loSb.append( "------------------------------------------------------------------" );
 
-        System.out.println("\n\n");
-        System.out.println(loSb.toString());
-        System.out.println("\n\n");
+        System.out.println( "\n\n" );
+        System.out.println( loSb.toString() );
+        System.out.println( "\n\n" );
     }
 
-    public static void printJSONArray(String asTitle, JSONArray aorJson) {
+    public static void printJSONArray( String asTitle, JSONArray aorJson ) {
 
         StringBuilder loSb = new StringBuilder();
 
-        loSb.append("------------------------------------------------------------------");
-        loSb.append("\n " + asTitle + " \n");
-        loSb.append("------------------------------------------------------------------\n");
+        loSb.append( "------------------------------------------------------------------" );
+        loSb.append( "\n " + asTitle + " \n" );
+        loSb.append( "------------------------------------------------------------------\n" );
 
-        for (int i = 0; i < aorJson.size(); i++) {
-            loSb.append(i + "번째 : ").append(aorJson.getString(i)).append("\n");
+        for( int i = 0; i < aorJson.size(); i++ ) {
+            loSb.append( i + "번째 : " ).append( aorJson.getString( i ) ).append( "\n" );
         }
 
-        loSb.append("------------------------------------------------------------------");
+        loSb.append( "------------------------------------------------------------------" );
 
-        System.out.println("\n\n");
-        System.out.println(loSb.toString());
-        System.out.println("\n\n");
+        System.out.println( "\n\n" );
+        System.out.println( loSb.toString() );
+        System.out.println( "\n\n" );
     }
 }

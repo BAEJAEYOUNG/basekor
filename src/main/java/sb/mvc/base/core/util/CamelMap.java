@@ -13,23 +13,22 @@ import org.slf4j.LoggerFactory;
 import java.sql.Clob;
 import java.sql.SQLException;
 
-@SuppressWarnings("rawtypes")
+@SuppressWarnings( "rawtypes" )
 public class CamelMap extends ListOrderedMap {
 
-    private static final long serialVersionUID = 1L;
+    protected static final Logger logger           = LoggerFactory.getLogger( CamelMap.class );
+    private static final   long   serialVersionUID = 1L;
 
-    protected static final Logger logger = LoggerFactory.getLogger(CamelMap.class);
-
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings( "unchecked" )
     @Override
-    public Object put(Object key, Object value) {
+    public Object put( Object key, Object value ) {
 
         //logger.debug("CamelMap.put key[{}] value[{}]", key, value);
 
-        if (value != null && value instanceof Clob) {
+        if( value != null && value instanceof Clob ) {
             try {
-                value = ((Clob)value).getSubString(1, (int)((Clob)value).length());
-            } catch (SQLException e) {
+                value = ( (Clob)value ).getSubString( 1, (int)( (Clob)value ).length() );
+            } catch( SQLException e ) {
                 value = "";
                 e.printStackTrace();
             }
@@ -37,6 +36,6 @@ public class CamelMap extends ListOrderedMap {
             //logger.debug("CamelMap.put CLOB key[{}] value[{}]", key, value);
         }
 
-        return super.put(BaseUtil.toCamelCase((String)key), value);
+        return super.put( BaseUtil.toCamelCase( (String)key ), value );
     }
 }

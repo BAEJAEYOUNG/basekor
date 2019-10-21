@@ -34,9 +34,9 @@ public class ViewInterceptor extends HandlerInterceptorAdapter {
      * @throws Exception
      */
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        log.debug("=============== ViewInterceptor.preHandle() =================");
-        return super.preHandle(request, response, handler);
+    public boolean preHandle( HttpServletRequest request, HttpServletResponse response, Object handler ) throws Exception {
+        log.debug( "=============== ViewInterceptor.preHandle() =================" );
+        return super.preHandle( request, response, handler );
     }
 
     /**
@@ -49,14 +49,14 @@ public class ViewInterceptor extends HandlerInterceptorAdapter {
      * @throws Exception
      */
     @Override
-    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        log.debug("=============== ViewInterceptor.postHandle() =================");
-        if(modelAndView != null) {
-            modelAndView.addObject("contextPath", request.getContextPath() );
-            modelAndView.addObject("incPath", configProperty.getIncPath());
-            modelAndView.addObject("projectTitle", configProperty.getProjectTitle());
+    public void postHandle( HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView ) throws Exception {
+        log.debug( "=============== ViewInterceptor.postHandle() =================" );
+        if( modelAndView != null ) {
+            modelAndView.addObject( "contextPath", request.getContextPath() );
+            modelAndView.addObject( "incPath", configProperty.getIncPath() );
+            modelAndView.addObject( "projectTitle", configProperty.getProjectTitle() );
         }
-        super.postHandle(request, response, handler, modelAndView);
+        super.postHandle( request, response, handler, modelAndView );
     }
 
     /**
@@ -68,8 +68,8 @@ public class ViewInterceptor extends HandlerInterceptorAdapter {
      * @throws Exception
      */
     @Override
-    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        log.debug("=============== ViewInterceptor.afterCompletion() =================");
-        super.afterCompletion(request, response, handler, ex);
+    public void afterCompletion( HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex ) throws Exception {
+        log.debug( "=============== ViewInterceptor.afterCompletion() =================" );
+        super.afterCompletion( request, response, handler, ex );
     }
 }

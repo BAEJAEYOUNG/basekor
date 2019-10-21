@@ -17,38 +17,38 @@ import java.util.Map;
 
 @Slf4j
 @Controller
-@RequestMapping(value = {"/system/menu"})
+@RequestMapping( value = { "/system/menu" } )
 public class MenuController {
-
-    public MenuController(MenuService menuService) {
-        this.menuService = menuService;
-    }
 
     private MenuService menuService;
 
-    @RequestMapping(value = {""})
+    public MenuController( MenuService menuService ) {
+        this.menuService = menuService;
+    }
+
+    @RequestMapping( value = { "" } )
     public String Menu() {
         return "/system/menu";
     }
 
-    @RequestMapping(value = {"selKey"})
-    public String sel(@RequestParam Map<String, Object> param, Model model) {
+    @RequestMapping( value = { "selKey" } )
+    public String sel( @RequestParam Map<String, Object> param, Model model ) {
 
-        log.debug("MenuController.sel param [{}]", param);
+        log.debug( "MenuController.sel param [{}]", param );
 
         try {
 
-            String resultData = (String) this.menuService.selValue("selKey", param);
+            String resultData = (String)this.menuService.selValue( "selKey", param );
 
-            log.debug("MenuController.sel resultData {}", resultData);
+            log.debug( "MenuController.sel resultData {}", resultData );
 
-            model.addAttribute("resultCd", "00");
-            model.addAttribute("resultData", resultData);
+            model.addAttribute( "resultCd", "00" );
+            model.addAttribute( "resultData", resultData );
 
-        } catch (Exception e) {
+        } catch( Exception e ) {
 
-            model.addAttribute("resultCd", "99");
-            model.addAttribute("resultData", e.getMessage());
+            model.addAttribute( "resultCd", "99" );
+            model.addAttribute( "resultData", e.getMessage() );
 
         }
 
@@ -56,96 +56,96 @@ public class MenuController {
         return "json";
     }
 
-    @RequestMapping(value = {"list"})
-    public String list(@RequestParam Map<String, Object> param, Model model) {
+    @RequestMapping( value = { "list" } )
+    public String list( @RequestParam Map<String, Object> param, Model model ) {
 
-        log.debug("MenuController.list param [{}]", param);
+        log.debug( "MenuController.list param [{}]", param );
 
         try {
 
-            List<Map<String, Object>> resultData = this.menuService.selDataList(param);
+            List<Map<String, Object>> resultData = this.menuService.selDataList( param );
 
-            log.debug("MenuController.list resultData [{}]", resultData);
+            log.debug( "MenuController.list resultData [{}]", resultData );
 
-            model.addAttribute("resultCd", "00");
-            model.addAttribute("resultData", resultData);
+            model.addAttribute( "resultCd", "00" );
+            model.addAttribute( "resultData", resultData );
 
-        } catch (Exception e) {
+        } catch( Exception e ) {
 
-            model.addAttribute("resultCd", "99");
-            model.addAttribute("resultData", e.getMessage());
+            model.addAttribute( "resultCd", "99" );
+            model.addAttribute( "resultData", e.getMessage() );
 
         }
 
         return "json";
     }
 
-    @RequestMapping(value = {"ins"})
-    public String ins(@RequestParam Map<String, Object> param, Model model) {
+    @RequestMapping( value = { "ins" } )
+    public String ins( @RequestParam Map<String, Object> param, Model model ) {
 
-        log.debug("MenuController.ins param [{}]", param);
+        log.debug( "MenuController.ins param [{}]", param );
 
         try {
 
-            int cntCd = this.menuService.insData(param);
+            int cntCd = this.menuService.insData( param );
 
-            log.debug("MenuController.ins [{}]", cntCd);
+            log.debug( "MenuController.ins [{}]", cntCd );
 
-            model.addAttribute("resultCd", "00");
-            model.addAttribute("resultData", cntCd);
+            model.addAttribute( "resultCd", "00" );
+            model.addAttribute( "resultData", cntCd );
 
-        } catch (Exception e) {
+        } catch( Exception e ) {
 
-            model.addAttribute("resultCd", "99");
-            model.addAttribute("resultData", e.getMessage());
+            model.addAttribute( "resultCd", "99" );
+            model.addAttribute( "resultData", e.getMessage() );
 
         }
 
         return "json";
     }
 
-    @RequestMapping(value = {"upd"})
-    public String upd(@RequestParam Map<String, Object> param, Model model) {
+    @RequestMapping( value = { "upd" } )
+    public String upd( @RequestParam Map<String, Object> param, Model model ) {
 
-        log.debug("MenuController.selCdList param [{}]", param);
+        log.debug( "MenuController.selCdList param [{}]", param );
 
         try {
 
-            int cntCd = this.menuService.updData(param);
+            int cntCd = this.menuService.updData( param );
 
-            log.debug("MenuController.upd [{}]", cntCd);
+            log.debug( "MenuController.upd [{}]", cntCd );
 
-            model.addAttribute("resultCd", "00");
-            model.addAttribute("resultData", cntCd);
+            model.addAttribute( "resultCd", "00" );
+            model.addAttribute( "resultData", cntCd );
 
-        } catch (Exception e) {
+        } catch( Exception e ) {
 
-            model.addAttribute("resultCd", "99");
-            model.addAttribute("resultData", e.getMessage());
+            model.addAttribute( "resultCd", "99" );
+            model.addAttribute( "resultData", e.getMessage() );
 
         }
 
         return "json";
     }
 
-    @RequestMapping(value = {"del"})
-    public String del(@RequestParam Map<String, Object> param, Model model) {
+    @RequestMapping( value = { "del" } )
+    public String del( @RequestParam Map<String, Object> param, Model model ) {
 
-        log.debug("MenuController.del param [{}]", param);
+        log.debug( "MenuController.del param [{}]", param );
 
         try {
 
-            int cntCd = this.menuService.delData(param);
+            int cntCd = this.menuService.delData( param );
 
-            log.debug("MenuController.del [{}]", cntCd);
+            log.debug( "MenuController.del [{}]", cntCd );
 
-            model.addAttribute("resultCd", "00");
-            model.addAttribute("resultData", cntCd);
+            model.addAttribute( "resultCd", "00" );
+            model.addAttribute( "resultData", cntCd );
 
-        } catch (Exception e) {
+        } catch( Exception e ) {
 
-            model.addAttribute("resultCd", "99");
-            model.addAttribute("resultData", e.getMessage());
+            model.addAttribute( "resultCd", "99" );
+            model.addAttribute( "resultData", e.getMessage() );
 
         }
 

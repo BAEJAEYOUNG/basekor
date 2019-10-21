@@ -9,9 +9,9 @@ package sb.mvc.base.core.util;
 
 public class ConstantDefine {
 
-    public final static int ROK   = 0;
-    public final static int RFAIL = -1;
-    public final static int RFAIL_AUTH = 1;
+    public final static int ROK           = 0;
+    public final static int RFAIL         = -1;
+    public final static int RFAIL_AUTH    = 1;
     public final static int RFAIL_TIMEOUT = 2;
 
     public final static int INS_DEL_MAX_CNT = 1;

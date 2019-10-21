@@ -20,38 +20,37 @@ import java.util.List;
 import java.util.Map;
 
 /**
- *
  * @author Administrator
  */
 @Slf4j
 @Controller
-@RequestMapping("system/grpCd")
+@RequestMapping( "system/grpCd" )
 public class GrpCdController extends BizBaseController {
-
-    public GrpCdController(GrpCdService grpCdService) {
-        this.grpCdService = grpCdService;
-    }
 
     private GrpCdService grpCdService;
 
-    @RequestMapping(value= {"list"})
-    public String list(@RequestParam Map<String, Object> param, Model model) {
+    public GrpCdController( GrpCdService grpCdService ) {
+        this.grpCdService = grpCdService;
+    }
 
-        log.debug("GrpCdController.list param [{}]", param);
+    @RequestMapping( value = { "list" } )
+    public String list( @RequestParam Map<String, Object> param, Model model ) {
+
+        log.debug( "GrpCdController.list param [{}]", param );
 
         try {
 
-            List<Map<String, Object>> resultData = this.grpCdService.selDataList(param);
+            List<Map<String, Object>> resultData = this.grpCdService.selDataList( param );
 
-            log.debug("GrpCdController.list resultData [{}]", resultData);
+            log.debug( "GrpCdController.list resultData [{}]", resultData );
 
-            model.addAttribute("resultCd", "00");
-            model.addAttribute("resultData", resultData);
+            model.addAttribute( "resultCd", "00" );
+            model.addAttribute( "resultData", resultData );
 
-        } catch (Exception e) {
+        } catch( Exception e ) {
 
-            model.addAttribute("resultCd", "99");
-            model.addAttribute("resultData", e.getMessage());
+            model.addAttribute( "resultCd", "99" );
+            model.addAttribute( "resultData", e.getMessage() );
 
         }
 
@@ -59,24 +58,24 @@ public class GrpCdController extends BizBaseController {
         return "json";
     }
 
-    @RequestMapping(value= {"sel"})
-    public String sel(@RequestParam Map<String, Object> param, Model model) {
+    @RequestMapping( value = { "sel" } )
+    public String sel( @RequestParam Map<String, Object> param, Model model ) {
 
-        log.debug("GrpCdController.sel param [{}]", param);
+        log.debug( "GrpCdController.sel param [{}]", param );
 
         try {
 
-            Map<String, Object> resultData = this.grpCdService.selData(param);
+            Map<String, Object> resultData = this.grpCdService.selData( param );
 
-            log.debug("GrpCdController.sel resultData {}", resultData);
+            log.debug( "GrpCdController.sel resultData {}", resultData );
 
-            model.addAttribute("resultCd", "00");
-            model.addAttribute("resultData", resultData);
+            model.addAttribute( "resultCd", "00" );
+            model.addAttribute( "resultData", resultData );
 
-        } catch (Exception e) {
+        } catch( Exception e ) {
 
-            model.addAttribute("resultCd", "99");
-            model.addAttribute("resultData", e.getMessage());
+            model.addAttribute( "resultCd", "99" );
+            model.addAttribute( "resultData", e.getMessage() );
 
         }
 
@@ -84,80 +83,79 @@ public class GrpCdController extends BizBaseController {
         return "json";
     }
 
-    @RequestMapping(value= {"ins"})
-    public String ins(@RequestParam Map<String, Object> param, Model model) {
+    @RequestMapping( value = { "ins" } )
+    public String ins( @RequestParam Map<String, Object> param, Model model ) {
 
-        log.debug("GrpCdController.ins param [{}]", param);
+        log.debug( "GrpCdController.ins param [{}]", param );
 
         try {
 
-            int cntGrp = this.grpCdService.insData(param);
+            int cntGrp = this.grpCdService.insData( param );
 
-            log.debug("GrpCdController.ins [{}]", cntGrp);
+            log.debug( "GrpCdController.ins [{}]", cntGrp );
 
-            model.addAttribute("resultCd", "00");
-            model.addAttribute("resultData", cntGrp);
+            model.addAttribute( "resultCd", "00" );
+            model.addAttribute( "resultData", cntGrp );
 
-        } catch (Exception e) {
+        } catch( Exception e ) {
 
-            model.addAttribute("resultCd", "99");
-            model.addAttribute("resultData", e.getMessage());
+            model.addAttribute( "resultCd", "99" );
+            model.addAttribute( "resultData", e.getMessage() );
 
         }
 
         return "json";
     }
 
-    @RequestMapping(value= {"upd"})
-    public String upd(@RequestParam Map<String, Object> param, Model model) {
+    @RequestMapping( value = { "upd" } )
+    public String upd( @RequestParam Map<String, Object> param, Model model ) {
 
-        log.debug("GrpCdController.selCdList param [{}]", param);
+        log.debug( "GrpCdController.selCdList param [{}]", param );
 
         try {
 
-            int cntGrp = this.grpCdService.updData(param);
+            int cntGrp = this.grpCdService.updData( param );
 
-            log.debug("GrpCdController.upd [{}]", cntGrp);
+            log.debug( "GrpCdController.upd [{}]", cntGrp );
 
-            model.addAttribute("resultCd", "00");
-            model.addAttribute("resultData", cntGrp);
+            model.addAttribute( "resultCd", "00" );
+            model.addAttribute( "resultData", cntGrp );
 
-        } catch (Exception e) {
+        } catch( Exception e ) {
 
-            model.addAttribute("resultCd", "99");
-            model.addAttribute("resultData", e.getMessage());
+            model.addAttribute( "resultCd", "99" );
+            model.addAttribute( "resultData", e.getMessage() );
 
         }
 
         return "json";
     }
 
-    @RequestMapping(value= {"del"})
-    public String del(@RequestParam Map<String, Object> param, Model model) {
+    @RequestMapping( value = { "del" } )
+    public String del( @RequestParam Map<String, Object> param, Model model ) {
 
-        log.debug("GrpCdController.del param [{}]", param);
+        log.debug( "GrpCdController.del param [{}]", param );
 
         try {
 
-            int cntGrp = this.grpCdService.delData(param);
+            int cntGrp = this.grpCdService.delData( param );
             // 해당 그룹 하위 코드 모두 삭제
-            int cntCd = this.grpCdService.delData("delCdInGrpCd", param);
+            int cntCd = this.grpCdService.delData( "delCdInGrpCd", param );
 
-            log.debug("GrpCdController.del [{}]", "grp:" + cntGrp + ",cd:" + cntCd);
+            log.debug( "GrpCdController.del [{}]", "grp:" + cntGrp + ",cd:" + cntCd );
 
-            model.addAttribute("resultCd", "00");
-            model.addAttribute("resultData", cntGrp + "," + cntCd);
+            model.addAttribute( "resultCd", "00" );
+            model.addAttribute( "resultData", cntGrp + "," + cntCd );
 
-        } catch (Exception e) {
+        } catch( Exception e ) {
 
-            model.addAttribute("resultCd", "99");
-            model.addAttribute("resultData", e.getMessage());
+            model.addAttribute( "resultCd", "99" );
+            model.addAttribute( "resultData", e.getMessage() );
 
         }
 
         return "json";
     }
-
 
 
 }

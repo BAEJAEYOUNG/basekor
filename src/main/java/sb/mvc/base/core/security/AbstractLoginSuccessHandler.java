@@ -17,14 +17,12 @@ import java.io.IOException;
 public abstract class AbstractLoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
     @Override
-    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
-                                        Authentication authentication) throws IOException, ServletException {
+    public void onAuthenticationSuccess( HttpServletRequest request, HttpServletResponse response, Authentication authentication ) throws IOException, ServletException {
 
-        this.process(request, response, authentication);
+        this.process( request, response, authentication );
 
-        super.onAuthenticationSuccess(request, response, authentication);
+        super.onAuthenticationSuccess( request, response, authentication );
     }
 
-    public abstract void process(HttpServletRequest request, HttpServletResponse response,
-                                 Authentication authentication) throws IOException, ServletException;
+    public abstract void process( HttpServletRequest request, HttpServletResponse response, Authentication authentication ) throws IOException, ServletException;
 }

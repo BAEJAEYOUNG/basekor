@@ -10,7 +10,6 @@ import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 
 /**
- *
  * @author Administrator
  */
 public class ApplicationContextProvider {
@@ -22,7 +21,7 @@ public class ApplicationContextProvider {
         return ctx;
     }
 
-    public void setApplicationContext(ApplicationContext ctx) throws BeansException {
+    public void setApplicationContext( ApplicationContext ctx ) throws BeansException {
 
         ApplicationContextProvider.ctx = ctx;
     }

@@ -18,17 +18,16 @@ import java.util.Map;
 
 public class CCSXlsxView extends AbstractXlsxView {
 
-    protected final Logger logger = LoggerFactory.getLogger(CCSXlsxView.class);
+    protected final Logger logger = LoggerFactory.getLogger( CCSXlsxView.class );
 
     @Override
-    protected void buildExcelDocument(Map<String, Object> model, Workbook workbook, HttpServletRequest request,
-            HttpServletResponse response) throws Exception {
+    protected void buildExcelDocument( Map<String, Object> model, Workbook workbook, HttpServletRequest request, HttpServletResponse response ) throws Exception {
 
-        logger.debug("CCSXlsxView.buildExcelDocument model [{}]", model);
+        logger.debug( "CCSXlsxView.buildExcelDocument model [{}]", model );
 
         // Set the headers
-        response.setHeader("Content-Type", "application/octet-stream");
-        response.setHeader("Content-Disposition", "attachment; filename=MyExcelSpreadsheet.xls");
+        response.setHeader( "Content-Type", "application/octet-stream" );
+        response.setHeader( "Content-Disposition", "attachment; filename=MyExcelSpreadsheet.xls" );
 
         // Here is where you will want to put the code to build the Excel spreadsheet
 
@@ -36,7 +35,7 @@ public class CCSXlsxView extends AbstractXlsxView {
 
         try {
             outStream = response.getOutputStream();
-            workbook.write(outStream);
+            workbook.write( outStream );
             outStream.flush();
         } finally {
             outStream.close();

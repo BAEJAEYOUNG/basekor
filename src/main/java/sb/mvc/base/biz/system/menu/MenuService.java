@@ -14,7 +14,6 @@ import sb.mvc.base.biz.base.BizBaseService;
 import java.util.Map;
 
 /**
- *
  * @author Administrator
  */
 public interface MenuService extends BizBaseService<Map<String, Object>> {

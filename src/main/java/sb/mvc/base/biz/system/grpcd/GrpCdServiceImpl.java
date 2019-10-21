@@ -14,7 +14,7 @@ import sb.mvc.base.biz.base.BizBaseServiceImpl;
 import java.util.Map;
 
 @AllArgsConstructor
-@Service("grpCdService")
+@Service( "grpCdService" )
 public class GrpCdServiceImpl extends BizBaseServiceImpl<Map<String, Object>> implements GrpCdService {
 
     private GrpCdDao grpCdDao;

@@ -19,17 +19,17 @@ import sb.mvc.base.biz.support.resolver.view.CCSXlsxView;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
-    @Bean(name = "json")
+    @Bean( name = "json" )
     public MappingJackson2JsonView jsonView() {
         return new MappingJackson2JsonView();
     }
 
-    @Bean(name="xls")
+    @Bean( name = "xls" )
     public CCSXlsView xlsView() {
         return new CCSXlsView();
     }
 
-    @Bean(name="xlsx")
+    @Bean( name = "xlsx" )
     public CCSXlsxView xlsxView() {
         return new CCSXlsxView();
     }
@@ -40,13 +40,13 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
     @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(viewAInterceptor());
+    public void addInterceptors( InterceptorRegistry registry ) {
+        registry.addInterceptor( viewAInterceptor() );
     }
 
     @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/login").setViewName("/login");
+    public void addViewControllers( ViewControllerRegistry registry ) {
+        registry.addViewController( "/login" ).setViewName( "/login" );
     }
 
 }

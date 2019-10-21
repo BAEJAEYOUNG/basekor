@@ -14,17 +14,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public abstract class AbstractLogoutSuccessHandler extends SimpleUrlLogoutSuccessHandler  {
+public abstract class AbstractLogoutSuccessHandler extends SimpleUrlLogoutSuccessHandler {
 
     @Override
-    public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
-            throws IOException, ServletException {
+    public void onLogoutSuccess( HttpServletRequest request, HttpServletResponse response, Authentication authentication ) throws IOException, ServletException {
 
-        this.process(request, response, authentication);
+        this.process( request, response, authentication );
 
-        super.onLogoutSuccess(request, response, authentication);
+        super.onLogoutSuccess( request, response, authentication );
     }
 
-    public abstract void process(HttpServletRequest request, HttpServletResponse response,
-                                 Authentication authentication) throws IOException, ServletException;
+    public abstract void process( HttpServletRequest request, HttpServletResponse response, Authentication authentication ) throws IOException, ServletException;
 }

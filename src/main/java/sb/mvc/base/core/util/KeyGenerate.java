@@ -11,41 +11,38 @@ import org.slf4j.LoggerFactory;
 
 
 public class KeyGenerate {
-    protected static final Logger logger = LoggerFactory.getLogger(KeyGenerate.class);
+    protected static final Logger logger = LoggerFactory.getLogger( KeyGenerate.class );
 
-    public static String userAuthCodeMake()
-    {
-//        KsidDateLib.GetLocalDateTime();
-        String gAuthCode = StringLib.getRandomNumberString(8);
+    public static String userAuthCodeMake() {
+        //        KsidDateLib.GetLocalDateTime();
+        String gAuthCode = StringLib.getRandomNumberString( 8 );
 
-        logger.debug("KsidDateLib.GetLocalDateTime() [{}]", DateLib.getLocalDateTime());
-        logger.debug("KsidStringLib.GetRandomNumberString() [{}]", gAuthCode);
+        logger.debug( "KsidDateLib.GetLocalDateTime() [{}]", DateLib.getLocalDateTime() );
+        logger.debug( "KsidStringLib.GetRandomNumberString() [{}]", gAuthCode );
 
-        return(gAuthCode);
+        return ( gAuthCode );
     }
 
-    public static String tidMake()
-    {
-        int iday = 0;
+    public static String tidMake() {
+        int  iday = 0;
         long dateTime;
 
-        iday = Integer.parseInt(DateLib.getLocalDay());
-        dateTime = Long.parseLong(DateLib.getLocalDateTimeTid());
+        iday = Integer.parseInt( DateLib.getLocalDay() );
+        dateTime = Long.parseLong( DateLib.getLocalDateTimeTid() );
 
-        logger.debug("TidMake hex [{}]", Long.toHexString(dateTime+iday).toUpperCase());
+        logger.debug( "TidMake hex [{}]", Long.toHexString( dateTime + iday ).toUpperCase() );
 
-        return(Long.toHexString(dateTime+iday).toUpperCase());
+        return ( Long.toHexString( dateTime + iday ).toUpperCase() );
     }
 
 
-    public static String deviceAuthCodeMake()
-    {
-//        KsidDateLib.GetLocalDateTime();
-        String gAuthCode = StringLib.getRandomNumberString(6);
+    public static String deviceAuthCodeMake() {
+        //        KsidDateLib.GetLocalDateTime();
+        String gAuthCode = StringLib.getRandomNumberString( 6 );
 
-        logger.debug("DeviceAuthCodeMake GetLocalDateTime() [{}]", DateLib.getLocalDateTime());
-        logger.debug("DeviceAuthCodeMake() [{}]", gAuthCode);
+        logger.debug( "DeviceAuthCodeMake GetLocalDateTime() [{}]", DateLib.getLocalDateTime() );
+        logger.debug( "DeviceAuthCodeMake() [{}]", gAuthCode );
 
-        return(gAuthCode);
+        return ( gAuthCode );
     }
 }

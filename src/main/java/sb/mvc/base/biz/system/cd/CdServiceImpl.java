@@ -14,7 +14,7 @@ import sb.mvc.base.biz.base.BizBaseServiceImpl;
 import java.util.Map;
 
 @AllArgsConstructor
-@Service("cdService")
+@Service( "cdService" )
 public class CdServiceImpl extends BizBaseServiceImpl<Map<String, Object>> implements CdService {
 
     private CdDao cdDao;

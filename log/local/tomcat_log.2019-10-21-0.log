@@ -2298,3 +2298,472 @@ Verify the connector's configuration, identify and stop any process that's liste
 2019:10:21 16:56:49.162 DEBUG --- [http-nio-80-exec-5] s.m.base.biz.system.cd.CdController : CdController.list resultData [[{grpCd=GENDER, cd=F, psCd=null, cdNm=Female, cdTp=N, sortSn=10, rm=, useYn=Y, cdTpNm=Normal, useYnNm=Use}, {grpCd=GENDER, cd=M, psCd=null, cdNm=Male, cdTp=N, sortSn=20, rm=, useYn=Y, cdTpNm=Normal, useYnNm=Use}]] 
 2019:10:21 16:56:49.162 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.postHandle() ================= 
 2019:10:21 16:56:49.163 DEBUG --- [http-nio-80-exec-5] s.m.b.b.s.intercept.ViewInterceptor : =============== ViewInterceptor.afterCompletion() ================= 
+2019:10:21 17:02:56.793 INFO  --- [Thread-10] o.s.s.c.ThreadPoolTaskExecutor : Shutting down ExecutorService 'applicationTaskExecutor' 
+2019:10:21 17:02:56.793 INFO  --- [Thread-10] o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default' 
+2019:10:21 17:02:57.196 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : Starting BaseApplication on DESKTOP-LR9L7L1 with PID 16320 (C:\project\ws_ij\basekor\target\classes started by msi in C:\project\ws_ij\basekor) 
+2019:10:21 17:02:57.197 DEBUG --- [restartedMain] sb.mvc.base.BaseApplication : Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE 
+2019:10:21 17:02:57.197 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : The following profiles are active: loc,mysql 
+2019:10:21 17:02:57.444 ERROR --- [restartedMain] o.s.boot.SpringApplication : Application run failed 
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:64)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:181)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:141)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:117)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:327)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at sb.mvc.base.BaseApplication.main(BaseApplication.java:13)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [sb.mvc.base.config.WebConfig] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@32d143e]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:507)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:404)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:389)
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:447)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1660)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:738)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:679)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:647)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1518)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1023)
+	at org.springframework.boot.autoconfigure.condition.BeanTypeRegistry.addBeanTypeForNonAliasDefinition(BeanTypeRegistry.java:195)
+	at org.springframework.boot.autoconfigure.condition.BeanTypeRegistry.addBeanTypeForNonAliasDefinition(BeanTypeRegistry.java:159)
+	at org.springframework.boot.autoconfigure.condition.BeanTypeRegistry.addBeanType(BeanTypeRegistry.java:152)
+	at org.springframework.boot.autoconfigure.condition.BeanTypeRegistry.updateTypesIfNecessary(BeanTypeRegistry.java:140)
+	at java.util.Iterator.forEachRemaining(Iterator.java:116)
+	at org.springframework.boot.autoconfigure.condition.BeanTypeRegistry.updateTypesIfNecessary(BeanTypeRegistry.java:135)
+	at org.springframework.boot.autoconfigure.condition.BeanTypeRegistry.getNamesForType(BeanTypeRegistry.java:97)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:298)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:289)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:278)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:189)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:160)
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
+	... 22 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: sb/mvc/base/biz/support/resolver/view/CCSXlsView
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:489)
+	... 44 common frames omitted
+Caused by: java.lang.ClassNotFoundException: sb.mvc.base.biz.support.resolver.view.CCSXlsView
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:148)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 48 common frames omitted
+2019:10:21 17:02:57.446 WARN  --- [restartedMain] o.s.boot.SpringApplication : Unable to close ApplicationContext 
+java.lang.IllegalStateException: Failed to introspect Class [sb.mvc.base.config.WebConfig] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@32d143e]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:507)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:404)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:389)
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:447)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1660)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:738)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:679)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:647)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1518)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:509)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:479)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:592)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1226)
+	at org.springframework.boot.SpringApplication.getExitCodeFromMappedException(SpringApplication.java:905)
+	at org.springframework.boot.SpringApplication.getExitCodeFromException(SpringApplication.java:891)
+	at org.springframework.boot.SpringApplication.handleExitCode(SpringApplication.java:877)
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:826)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at sb.mvc.base.BaseApplication.main(BaseApplication.java:13)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.NoClassDefFoundError: sb/mvc/base/biz/support/resolver/view/CCSXlsView
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:489)
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: sb.mvc.base.biz.support.resolver.view.CCSXlsView
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:148)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 30 common frames omitted
+2019:10:21 17:02:59.006 INFO  --- [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2019:10:21 17:02:59.007 INFO  --- [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2019:10:21 17:02:59.012 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : Starting BaseApplication on DESKTOP-LR9L7L1 with PID 16320 (C:\project\ws_ij\basekor\target\classes started by msi in C:\project\ws_ij\basekor) 
+2019:10:21 17:02:59.013 DEBUG --- [restartedMain] sb.mvc.base.BaseApplication : Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE 
+2019:10:21 17:02:59.013 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : The following profiles are active: loc,mysql 
+2019:10:21 17:02:59.284 DEBUG --- [restartedMain] o.m.s.b.a.MybatisAutoConfiguration : Searching for mappers annotated with @Mapper 
+2019:10:21 17:02:59.285 DEBUG --- [restartedMain] o.m.s.b.a.MybatisAutoConfiguration : Using auto-configuration base package 'sb.mvc.base' 
+2019:10:21 17:02:59.307 WARN  --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner : No MyBatis mapper was found in '[sb.mvc.base]' package. Please check your configuration. 
+2019:10:21 17:02:59.319 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode. 
+2019:10:21 17:02:59.336 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17ms. Found 0 repository interfaces. 
+2019:10:21 17:02:59.384 INFO  --- [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9b476468] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019:10:21 17:02:59.469 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port(s): 80 (http) 
+2019:10:21 17:02:59.470 INFO  --- [restartedMain] o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-80"] 
+2019:10:21 17:02:59.470 INFO  --- [restartedMain] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2019:10:21 17:02:59.470 INFO  --- [restartedMain] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.19] 
+2019:10:21 17:02:59.553 INFO  --- [restartedMain] o.apache.jasper.servlet.TldScanner : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time. 
+2019:10:21 17:02:59.554 INFO  --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2019:10:21 17:02:59.554 INFO  --- [restartedMain] o.s.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 540 ms 
+2019:10:21 17:02:59.580 INFO  --- [restartedMain] s.m.b.c.LocMariaDBSqlSessionConfig : datasource : jdbc:mariadb://localhost:3306/base, base_user, 1111 
+2019:10:21 17:02:59.615 INFO  --- [restartedMain] o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...] 
+2019:10:21 17:02:59.648 INFO  --- [restartedMain] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.MariaDB53Dialect 
+2019:10:21 17:02:59.656 INFO  --- [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2019:10:21 17:02:59.662 INFO  --- [restartedMain] s.m.b.c.LocMariaDBSqlSessionConfig : applicationContext.getResource(configProperty.getMybatisConfigLocation()) [class path resource [mybatis-mysql-config.xml]] 
+2019:10:21 17:02:59.669 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed configuration file: 'class path resource [mybatis-mysql-config.xml]' 
+2019:10:21 17:02:59.675 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\login\Login.xml]' 
+2019:10:21 17:02:59.678 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\main\Main.xml]' 
+2019:10:21 17:02:59.686 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Athr.xml]' 
+2019:10:21 17:02:59.700 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Cd.xml]' 
+2019:10:21 17:02:59.704 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\GrpCd.xml]' 
+2019:10:21 17:02:59.707 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Menu.xml]' 
+2019:10:21 17:02:59.710 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Mngr.xml]' 
+2019:10:21 17:02:59.711 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:02:59.719 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:02:59.726 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:02:59.732 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:02:59.739 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:02:59.744 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:02:59.750 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:02:59.780 DEBUG --- [restartedMain] sb.mvc.base.core.util.MessageUtil : ###################################    Messges locale [ko_KR] 
+2019:10:21 17:02:59.799 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/favicon.ico'], [] 
+2019:10:21 17:02:59.799 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/resources/**'], [] 
+2019:10:21 17:02:59.799 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/webjars/**'], [] 
+2019:10:21 17:02:59.799 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/html/**'], [] 
+2019:10:21 17:02:59.800 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/css/**'], [] 
+2019:10:21 17:02:59.800 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/agent/**'], [] 
+2019:10:21 17:02:59.800 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/js/**'], [] 
+2019:10:21 17:02:59.800 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/image/**'], [] 
+2019:10:21 17:02:59.800 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/error/**'], [] 
+2019:10:21 17:02:59.800 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/system/cd/comboList/**'], [] 
+2019:10:21 17:02:59.805 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ff3e3d9, org.springframework.security.web.context.SecurityContextPersistenceFilter@65dfa2da, org.springframework.security.web.header.HeaderWriterFilter@15437bcb, org.springframework.security.web.authentication.logout.LogoutFilter@f11b9f5, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@71b950e2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1666de26, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@18757202, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7652ae34, org.springframework.security.web.session.SessionManagementFilter@5a29ab42, org.springframework.security.web.access.ExceptionTranslationFilter@1dddc2ed, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1dfc9b34] 
+2019:10:21 17:02:59.842 INFO  --- [restartedMain] o.s.s.c.ThreadPoolTaskExecutor : Initializing ExecutorService 'applicationTaskExecutor' 
+2019:10:21 17:02:59.846 WARN  --- [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2019:10:21 17:02:59.878 INFO  --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping : Adding welcome page template: index 
+2019:10:21 17:02:59.880 DEBUG --- [restartedMain] o.m.s.b.a.MybatisAutoConfiguration : No org.mybatis.spring.mapper.MapperFactoryBean found. 
+2019:10:21 17:02:59.942 INFO  --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729 
+2019:10:21 17:02:59.954 INFO  --- [restartedMain] o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-80"] 
+2019:10:21 17:02:59.957 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port(s): 80 (http) with context path '' 
+2019:10:21 17:02:59.957 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : Started BaseApplication in 0.969 seconds (JVM running for 400.14) 
+2019:10:21 17:02:59.958 INFO  --- [restartedMain] sb.mvc.base.ApplicationProperties : ### profileName : LOCAL 
+2019:10:21 17:02:59.959 INFO  --- [restartedMain] sb.mvc.base.ApplicationProperties : ### profileDBType : MYSQL 
+2019:10:21 17:02:59.960 INFO  --- [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged 
+2019:10:21 17:05:53.793 INFO  --- [Thread-18] o.s.s.c.ThreadPoolTaskExecutor : Shutting down ExecutorService 'applicationTaskExecutor' 
+2019:10:21 17:05:53.794 INFO  --- [Thread-18] o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default' 
+2019:10:21 17:05:54.148 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : Starting BaseApplication on DESKTOP-LR9L7L1 with PID 16320 (C:\project\ws_ij\basekor\target\classes started by msi in C:\project\ws_ij\basekor) 
+2019:10:21 17:05:54.148 DEBUG --- [restartedMain] sb.mvc.base.BaseApplication : Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE 
+2019:10:21 17:05:54.148 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : The following profiles are active: loc,mysql 
+2019:10:21 17:05:54.175 WARN  --- [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [sb.mvc.base.BaseApplication]; nested exception is java.io.FileNotFoundException: class path resource [sb/mvc/base/core/base/BaseController.class] cannot be opened because it does not exist 
+2019:10:21 17:05:54.176 ERROR --- [restartedMain] o.s.boot.SpringApplication : Application run failed 
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [sb.mvc.base.BaseApplication]; nested exception is java.io.FileNotFoundException: class path resource [sb/mvc/base/core/base/BaseController.class] cannot be opened because it does not exist
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at sb.mvc.base.BaseApplication.main(BaseApplication.java:13)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.io.FileNotFoundException: class path resource [sb/mvc/base/core/base/BaseController.class] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:180)
+	at org.springframework.core.type.classreading.SimpleMetadataReader.<init>(SimpleMetadataReader.java:51)
+	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:103)
+	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.createMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:88)
+	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.getMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:75)
+	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:81)
+	at org.springframework.context.annotation.ConfigurationClassParser.asSourceClass(ConfigurationClassParser.java:682)
+	at org.springframework.context.annotation.ConfigurationClassParser$SourceClass.getSuperClass(ConfigurationClassParser.java:995)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:332)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:242)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:191)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:295)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:242)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:199)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167)
+	... 18 common frames omitted
+2019:10:21 17:05:55.762 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : Starting BaseApplication on DESKTOP-LR9L7L1 with PID 16320 (C:\project\ws_ij\basekor\target\classes started by msi in C:\project\ws_ij\basekor) 
+2019:10:21 17:05:55.762 DEBUG --- [restartedMain] sb.mvc.base.BaseApplication : Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE 
+2019:10:21 17:05:55.762 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : The following profiles are active: loc,mysql 
+2019:10:21 17:05:56.001 DEBUG --- [restartedMain] o.m.s.b.a.MybatisAutoConfiguration : Searching for mappers annotated with @Mapper 
+2019:10:21 17:05:56.001 DEBUG --- [restartedMain] o.m.s.b.a.MybatisAutoConfiguration : Using auto-configuration base package 'sb.mvc.base' 
+2019:10:21 17:05:56.020 WARN  --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner : No MyBatis mapper was found in '[sb.mvc.base]' package. Please check your configuration. 
+2019:10:21 17:05:56.031 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode. 
+2019:10:21 17:05:56.053 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22ms. Found 0 repository interfaces. 
+2019:10:21 17:05:56.099 INFO  --- [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9b476468] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019:10:21 17:05:56.199 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port(s): 80 (http) 
+2019:10:21 17:05:56.199 INFO  --- [restartedMain] o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-80"] 
+2019:10:21 17:05:56.200 INFO  --- [restartedMain] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2019:10:21 17:05:56.200 INFO  --- [restartedMain] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.19] 
+2019:10:21 17:05:56.280 INFO  --- [restartedMain] o.apache.jasper.servlet.TldScanner : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time. 
+2019:10:21 17:05:56.281 INFO  --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2019:10:21 17:05:56.281 INFO  --- [restartedMain] o.s.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 518 ms 
+2019:10:21 17:05:56.306 INFO  --- [restartedMain] s.m.b.c.LocMariaDBSqlSessionConfig : datasource : jdbc:mariadb://localhost:3306/base, base_user, 1111 
+2019:10:21 17:05:56.339 INFO  --- [restartedMain] o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...] 
+2019:10:21 17:05:56.374 INFO  --- [restartedMain] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.MariaDB53Dialect 
+2019:10:21 17:05:56.383 INFO  --- [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2019:10:21 17:05:56.392 INFO  --- [restartedMain] s.m.b.c.LocMariaDBSqlSessionConfig : applicationContext.getResource(configProperty.getMybatisConfigLocation()) [class path resource [mybatis-mysql-config.xml]] 
+2019:10:21 17:05:56.400 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed configuration file: 'class path resource [mybatis-mysql-config.xml]' 
+2019:10:21 17:05:56.405 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\login\Login.xml]' 
+2019:10:21 17:05:56.408 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\main\Main.xml]' 
+2019:10:21 17:05:56.414 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Athr.xml]' 
+2019:10:21 17:05:56.418 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Cd.xml]' 
+2019:10:21 17:05:56.422 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\GrpCd.xml]' 
+2019:10:21 17:05:56.426 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Menu.xml]' 
+2019:10:21 17:05:56.429 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Mngr.xml]' 
+2019:10:21 17:05:56.431 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:05:56.441 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:05:56.449 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:05:56.456 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:05:56.464 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:05:56.471 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:05:56.478 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:05:56.516 DEBUG --- [restartedMain] sb.mvc.base.core.util.MessageUtil : ###################################    Messges locale [ko_KR] 
+2019:10:21 17:05:56.540 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/favicon.ico'], [] 
+2019:10:21 17:05:56.540 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/resources/**'], [] 
+2019:10:21 17:05:56.540 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/webjars/**'], [] 
+2019:10:21 17:05:56.540 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/html/**'], [] 
+2019:10:21 17:05:56.540 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/css/**'], [] 
+2019:10:21 17:05:56.540 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/agent/**'], [] 
+2019:10:21 17:05:56.540 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/js/**'], [] 
+2019:10:21 17:05:56.540 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/image/**'], [] 
+2019:10:21 17:05:56.540 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/error/**'], [] 
+2019:10:21 17:05:56.540 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/system/cd/comboList/**'], [] 
+2019:10:21 17:05:56.546 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6c5c2649, org.springframework.security.web.context.SecurityContextPersistenceFilter@52b25d20, org.springframework.security.web.header.HeaderWriterFilter@6a9f34ae, org.springframework.security.web.authentication.logout.LogoutFilter@def9dd6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3fdb2bd4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@459df5d6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5634938f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4e4c5f50, org.springframework.security.web.session.SessionManagementFilter@59605c1b, org.springframework.security.web.access.ExceptionTranslationFilter@59e9da2a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@338125b5] 
+2019:10:21 17:05:56.591 INFO  --- [restartedMain] o.s.s.c.ThreadPoolTaskExecutor : Initializing ExecutorService 'applicationTaskExecutor' 
+2019:10:21 17:05:56.597 WARN  --- [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2019:10:21 17:05:56.642 INFO  --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping : Adding welcome page template: index 
+2019:10:21 17:05:56.644 DEBUG --- [restartedMain] o.m.s.b.a.MybatisAutoConfiguration : No org.mybatis.spring.mapper.MapperFactoryBean found. 
+2019:10:21 17:05:56.710 INFO  --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729 
+2019:10:21 17:05:56.724 INFO  --- [restartedMain] o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-80"] 
+2019:10:21 17:05:56.727 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port(s): 80 (http) with context path '' 
+2019:10:21 17:05:56.727 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : Started BaseApplication in 0.998 seconds (JVM running for 576.91) 
+2019:10:21 17:05:56.728 INFO  --- [restartedMain] sb.mvc.base.ApplicationProperties : ### profileName : LOCAL 
+2019:10:21 17:05:56.728 INFO  --- [restartedMain] sb.mvc.base.ApplicationProperties : ### profileDBType : MYSQL 
+2019:10:21 17:05:56.729 INFO  --- [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged 
+2019:10:21 17:26:44.731 INFO  --- [Thread-27] o.s.s.c.ThreadPoolTaskExecutor : Shutting down ExecutorService 'applicationTaskExecutor' 
+2019:10:21 17:26:44.732 INFO  --- [Thread-27] o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default' 
+2019:10:21 17:26:45.066 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : Starting BaseApplication on DESKTOP-LR9L7L1 with PID 16320 (C:\project\ws_ij\basekor\target\classes started by msi in C:\project\ws_ij\basekor) 
+2019:10:21 17:26:45.066 DEBUG --- [restartedMain] sb.mvc.base.BaseApplication : Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE 
+2019:10:21 17:26:45.066 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : The following profiles are active: loc,mysql 
+2019:10:21 17:26:45.292 DEBUG --- [restartedMain] o.m.s.b.a.MybatisAutoConfiguration : Searching for mappers annotated with @Mapper 
+2019:10:21 17:26:45.292 DEBUG --- [restartedMain] o.m.s.b.a.MybatisAutoConfiguration : Using auto-configuration base package 'sb.mvc.base' 
+2019:10:21 17:26:45.311 WARN  --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner : No MyBatis mapper was found in '[sb.mvc.base]' package. Please check your configuration. 
+2019:10:21 17:26:45.322 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode. 
+2019:10:21 17:26:45.340 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 0 repository interfaces. 
+2019:10:21 17:26:45.383 INFO  --- [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9b476468] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019:10:21 17:26:45.470 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port(s): 80 (http) 
+2019:10:21 17:26:45.471 INFO  --- [restartedMain] o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-80"] 
+2019:10:21 17:26:45.471 INFO  --- [restartedMain] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2019:10:21 17:26:45.471 INFO  --- [restartedMain] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.19] 
+2019:10:21 17:26:45.556 INFO  --- [restartedMain] o.apache.jasper.servlet.TldScanner : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time. 
+2019:10:21 17:26:45.557 INFO  --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2019:10:21 17:26:45.557 INFO  --- [restartedMain] o.s.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 490 ms 
+2019:10:21 17:26:45.582 INFO  --- [restartedMain] s.m.b.c.LocMariaDBSqlSessionConfig : datasource : jdbc:mariadb://localhost:3306/base, base_user, 1111 
+2019:10:21 17:26:45.614 INFO  --- [restartedMain] o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...] 
+2019:10:21 17:26:45.648 INFO  --- [restartedMain] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.MariaDB53Dialect 
+2019:10:21 17:26:45.656 INFO  --- [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2019:10:21 17:26:45.662 INFO  --- [restartedMain] s.m.b.c.LocMariaDBSqlSessionConfig : applicationContext.getResource(configProperty.getMybatisConfigLocation()) [class path resource [mybatis-mysql-config.xml]] 
+2019:10:21 17:26:45.668 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed configuration file: 'class path resource [mybatis-mysql-config.xml]' 
+2019:10:21 17:26:45.671 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\login\Login.xml]' 
+2019:10:21 17:26:45.674 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\main\Main.xml]' 
+2019:10:21 17:26:45.678 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Athr.xml]' 
+2019:10:21 17:26:45.682 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Cd.xml]' 
+2019:10:21 17:26:45.684 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\GrpCd.xml]' 
+2019:10:21 17:26:45.687 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Menu.xml]' 
+2019:10:21 17:26:45.689 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Mngr.xml]' 
+2019:10:21 17:26:45.690 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:26:45.698 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:26:45.705 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:26:45.711 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:26:45.717 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:26:45.722 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:26:45.728 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:26:45.758 DEBUG --- [restartedMain] sb.mvc.base.core.util.MessageUtil : ###################################    Messges locale [ko_KR] 
+2019:10:21 17:26:45.776 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/favicon.ico'], [] 
+2019:10:21 17:26:45.776 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/resources/**'], [] 
+2019:10:21 17:26:45.776 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/webjars/**'], [] 
+2019:10:21 17:26:45.776 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/html/**'], [] 
+2019:10:21 17:26:45.776 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/css/**'], [] 
+2019:10:21 17:26:45.776 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/agent/**'], [] 
+2019:10:21 17:26:45.776 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/js/**'], [] 
+2019:10:21 17:26:45.776 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/image/**'], [] 
+2019:10:21 17:26:45.776 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/error/**'], [] 
+2019:10:21 17:26:45.776 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/system/cd/comboList/**'], [] 
+2019:10:21 17:26:45.781 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3373f002, org.springframework.security.web.context.SecurityContextPersistenceFilter@4d4b9307, org.springframework.security.web.header.HeaderWriterFilter@588600a6, org.springframework.security.web.authentication.logout.LogoutFilter@5724c1db, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@563469eb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@397eed0e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@511559b7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@59da8fd, org.springframework.security.web.session.SessionManagementFilter@45586dfb, org.springframework.security.web.access.ExceptionTranslationFilter@58758696, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@47b085cf] 
+2019:10:21 17:26:45.820 INFO  --- [restartedMain] o.s.s.c.ThreadPoolTaskExecutor : Initializing ExecutorService 'applicationTaskExecutor' 
+2019:10:21 17:26:45.824 WARN  --- [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2019:10:21 17:26:45.856 INFO  --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping : Adding welcome page template: index 
+2019:10:21 17:26:45.858 DEBUG --- [restartedMain] o.m.s.b.a.MybatisAutoConfiguration : No org.mybatis.spring.mapper.MapperFactoryBean found. 
+2019:10:21 17:26:45.925 INFO  --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729 
+2019:10:21 17:26:45.938 INFO  --- [restartedMain] o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-80"] 
+2019:10:21 17:26:45.950 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port(s): 80 (http) with context path '' 
+2019:10:21 17:26:45.950 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : Started BaseApplication in 0.914 seconds (JVM running for 1826.133) 
+2019:10:21 17:26:45.951 INFO  --- [restartedMain] sb.mvc.base.ApplicationProperties : ### profileName : LOCAL 
+2019:10:21 17:26:45.951 INFO  --- [restartedMain] sb.mvc.base.ApplicationProperties : ### profileDBType : MYSQL 
+2019:10:21 17:26:45.952 INFO  --- [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged 
+2019:10:21 17:30:14.945 INFO  --- [Thread-35] o.s.s.c.ThreadPoolTaskExecutor : Shutting down ExecutorService 'applicationTaskExecutor' 
+2019:10:21 17:30:14.946 INFO  --- [Thread-35] o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default' 
+2019:10:21 17:30:15.219 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : Starting BaseApplication on DESKTOP-LR9L7L1 with PID 16320 (C:\project\ws_ij\basekor\target\classes started by msi in C:\project\ws_ij\basekor) 
+2019:10:21 17:30:15.219 DEBUG --- [restartedMain] sb.mvc.base.BaseApplication : Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE 
+2019:10:21 17:30:15.219 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : The following profiles are active: loc,mysql 
+2019:10:21 17:30:15.430 DEBUG --- [restartedMain] o.m.s.b.a.MybatisAutoConfiguration : Searching for mappers annotated with @Mapper 
+2019:10:21 17:30:15.430 DEBUG --- [restartedMain] o.m.s.b.a.MybatisAutoConfiguration : Using auto-configuration base package 'sb.mvc.base' 
+2019:10:21 17:30:15.446 WARN  --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner : No MyBatis mapper was found in '[sb.mvc.base]' package. Please check your configuration. 
+2019:10:21 17:30:15.453 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode. 
+2019:10:21 17:30:15.469 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces. 
+2019:10:21 17:30:15.505 INFO  --- [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9b476468] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019:10:21 17:30:15.586 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port(s): 80 (http) 
+2019:10:21 17:30:15.587 INFO  --- [restartedMain] o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-80"] 
+2019:10:21 17:30:15.587 INFO  --- [restartedMain] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2019:10:21 17:30:15.587 INFO  --- [restartedMain] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.19] 
+2019:10:21 17:30:15.660 INFO  --- [restartedMain] o.apache.jasper.servlet.TldScanner : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time. 
+2019:10:21 17:30:15.661 INFO  --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2019:10:21 17:30:15.661 INFO  --- [restartedMain] o.s.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 441 ms 
+2019:10:21 17:30:15.681 INFO  --- [restartedMain] s.m.b.c.LocMariaDBSqlSessionConfig : datasource : jdbc:mariadb://localhost:3306/base, base_user, 1111 
+2019:10:21 17:30:15.712 INFO  --- [restartedMain] o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...] 
+2019:10:21 17:30:15.744 INFO  --- [restartedMain] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.MariaDB53Dialect 
+2019:10:21 17:30:15.752 INFO  --- [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2019:10:21 17:30:15.759 INFO  --- [restartedMain] s.m.b.c.LocMariaDBSqlSessionConfig : applicationContext.getResource(configProperty.getMybatisConfigLocation()) [class path resource [mybatis-mysql-config.xml]] 
+2019:10:21 17:30:15.765 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed configuration file: 'class path resource [mybatis-mysql-config.xml]' 
+2019:10:21 17:30:15.768 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\login\Login.xml]' 
+2019:10:21 17:30:15.771 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\main\Main.xml]' 
+2019:10:21 17:30:15.775 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Athr.xml]' 
+2019:10:21 17:30:15.778 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Cd.xml]' 
+2019:10:21 17:30:15.781 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\GrpCd.xml]' 
+2019:10:21 17:30:15.784 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Menu.xml]' 
+2019:10:21 17:30:15.787 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Mngr.xml]' 
+2019:10:21 17:30:15.788 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:30:15.795 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:30:15.802 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:30:15.809 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:30:15.813 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:30:15.819 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:30:15.824 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:30:15.850 DEBUG --- [restartedMain] sb.mvc.base.core.util.MessageUtil : ###################################    Messges locale [ko_KR] 
+2019:10:21 17:30:15.868 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/favicon.ico'], [] 
+2019:10:21 17:30:15.868 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/resources/**'], [] 
+2019:10:21 17:30:15.868 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/webjars/**'], [] 
+2019:10:21 17:30:15.868 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/html/**'], [] 
+2019:10:21 17:30:15.868 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/css/**'], [] 
+2019:10:21 17:30:15.868 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/agent/**'], [] 
+2019:10:21 17:30:15.868 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/js/**'], [] 
+2019:10:21 17:30:15.868 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/image/**'], [] 
+2019:10:21 17:30:15.868 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/error/**'], [] 
+2019:10:21 17:30:15.868 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/system/cd/comboList/**'], [] 
+2019:10:21 17:30:15.873 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@46510be9, org.springframework.security.web.context.SecurityContextPersistenceFilter@e4e0628, org.springframework.security.web.header.HeaderWriterFilter@24c66ab3, org.springframework.security.web.authentication.logout.LogoutFilter@1e8d3363, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3578654b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5b2ee09b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4c2a9abf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@25ae4b4, org.springframework.security.web.session.SessionManagementFilter@3b5d350c, org.springframework.security.web.access.ExceptionTranslationFilter@75241228, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@8a49470] 
+2019:10:21 17:30:15.909 INFO  --- [restartedMain] o.s.s.c.ThreadPoolTaskExecutor : Initializing ExecutorService 'applicationTaskExecutor' 
+2019:10:21 17:30:15.913 WARN  --- [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2019:10:21 17:30:15.940 INFO  --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping : Adding welcome page template: index 
+2019:10:21 17:30:15.942 DEBUG --- [restartedMain] o.m.s.b.a.MybatisAutoConfiguration : No org.mybatis.spring.mapper.MapperFactoryBean found. 
+2019:10:21 17:30:16.012 INFO  --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729 
+2019:10:21 17:30:16.022 INFO  --- [restartedMain] o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-80"] 
+2019:10:21 17:30:16.026 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port(s): 80 (http) with context path '' 
+2019:10:21 17:30:16.026 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : Started BaseApplication in 0.836 seconds (JVM running for 2036.208) 
+2019:10:21 17:30:16.027 INFO  --- [restartedMain] sb.mvc.base.ApplicationProperties : ### profileName : LOCAL 
+2019:10:21 17:30:16.027 INFO  --- [restartedMain] sb.mvc.base.ApplicationProperties : ### profileDBType : MYSQL 
+2019:10:21 17:30:16.028 INFO  --- [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged 
+2019:10:21 17:30:47.313 INFO  --- [Thread-41] o.s.s.c.ThreadPoolTaskExecutor : Shutting down ExecutorService 'applicationTaskExecutor' 
+2019:10:21 17:30:47.314 INFO  --- [Thread-41] o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default' 
+2019:10:21 17:30:47.631 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : Starting BaseApplication on DESKTOP-LR9L7L1 with PID 16320 (C:\project\ws_ij\basekor\target\classes started by msi in C:\project\ws_ij\basekor) 
+2019:10:21 17:30:47.631 DEBUG --- [restartedMain] sb.mvc.base.BaseApplication : Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE 
+2019:10:21 17:30:47.631 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : The following profiles are active: loc,mysql 
+2019:10:21 17:30:47.964 DEBUG --- [restartedMain] o.m.s.b.a.MybatisAutoConfiguration : Searching for mappers annotated with @Mapper 
+2019:10:21 17:30:47.964 DEBUG --- [restartedMain] o.m.s.b.a.MybatisAutoConfiguration : Using auto-configuration base package 'sb.mvc.base' 
+2019:10:21 17:30:47.991 WARN  --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner : No MyBatis mapper was found in '[sb.mvc.base]' package. Please check your configuration. 
+2019:10:21 17:30:48.006 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode. 
+2019:10:21 17:30:48.031 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24ms. Found 0 repository interfaces. 
+2019:10:21 17:30:48.113 INFO  --- [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9b476468] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019:10:21 17:30:48.223 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port(s): 80 (http) 
+2019:10:21 17:30:48.224 INFO  --- [restartedMain] o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-80"] 
+2019:10:21 17:30:48.224 INFO  --- [restartedMain] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2019:10:21 17:30:48.224 INFO  --- [restartedMain] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.19] 
+2019:10:21 17:30:48.315 INFO  --- [restartedMain] o.apache.jasper.servlet.TldScanner : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time. 
+2019:10:21 17:30:48.316 INFO  --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2019:10:21 17:30:48.316 INFO  --- [restartedMain] o.s.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 683 ms 
+2019:10:21 17:30:48.341 INFO  --- [restartedMain] s.m.b.c.LocMariaDBSqlSessionConfig : datasource : jdbc:mariadb://localhost:3306/base, base_user, 1111 
+2019:10:21 17:30:48.391 INFO  --- [restartedMain] o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...] 
+2019:10:21 17:30:48.426 INFO  --- [restartedMain] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.MariaDB53Dialect 
+2019:10:21 17:30:48.436 INFO  --- [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2019:10:21 17:30:48.442 INFO  --- [restartedMain] s.m.b.c.LocMariaDBSqlSessionConfig : applicationContext.getResource(configProperty.getMybatisConfigLocation()) [class path resource [mybatis-mysql-config.xml]] 
+2019:10:21 17:30:48.449 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed configuration file: 'class path resource [mybatis-mysql-config.xml]' 
+2019:10:21 17:30:48.453 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\login\Login.xml]' 
+2019:10:21 17:30:48.455 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\main\Main.xml]' 
+2019:10:21 17:30:48.459 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Athr.xml]' 
+2019:10:21 17:30:48.462 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Cd.xml]' 
+2019:10:21 17:30:48.466 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\GrpCd.xml]' 
+2019:10:21 17:30:48.471 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Menu.xml]' 
+2019:10:21 17:30:48.474 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\project\ws_ij\basekor\target\classes\mapper\mysql\system\Mngr.xml]' 
+2019:10:21 17:30:48.476 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:30:48.488 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:30:48.495 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:30:48.504 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:30:48.513 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:30:48.519 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:30:48.524 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2019:10:21 17:30:48.556 DEBUG --- [restartedMain] sb.mvc.base.core.util.MessageUtil : ###################################    Messges locale [ko_KR] 
+2019:10:21 17:30:48.577 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/favicon.ico'], [] 
+2019:10:21 17:30:48.578 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/resources/**'], [] 
+2019:10:21 17:30:48.578 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/webjars/**'], [] 
+2019:10:21 17:30:48.578 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/html/**'], [] 
+2019:10:21 17:30:48.578 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/css/**'], [] 
+2019:10:21 17:30:48.578 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/agent/**'], [] 
+2019:10:21 17:30:48.578 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/js/**'], [] 
+2019:10:21 17:30:48.578 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/image/**'], [] 
+2019:10:21 17:30:48.578 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/error/**'], [] 
+2019:10:21 17:30:48.578 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/system/cd/comboList/**'], [] 
+2019:10:21 17:30:48.583 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@36475e54, org.springframework.security.web.context.SecurityContextPersistenceFilter@52d100b3, org.springframework.security.web.header.HeaderWriterFilter@11131955, org.springframework.security.web.authentication.logout.LogoutFilter@6fef3aa7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2ae2b017, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@763f8446, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7f6ff265, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5bf7b8b0, org.springframework.security.web.session.SessionManagementFilter@4c2b9778, org.springframework.security.web.access.ExceptionTranslationFilter@48ad8cfb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@720f756b] 
+2019:10:21 17:30:48.627 INFO  --- [restartedMain] o.s.s.c.ThreadPoolTaskExecutor : Initializing ExecutorService 'applicationTaskExecutor' 
+2019:10:21 17:30:48.632 WARN  --- [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2019:10:21 17:30:48.664 INFO  --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping : Adding welcome page template: index 
+2019:10:21 17:30:48.666 DEBUG --- [restartedMain] o.m.s.b.a.MybatisAutoConfiguration : No org.mybatis.spring.mapper.MapperFactoryBean found. 
+2019:10:21 17:30:48.764 INFO  --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729 
+2019:10:21 17:30:48.777 INFO  --- [restartedMain] o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-80"] 
+2019:10:21 17:30:48.790 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port(s): 80 (http) with context path '' 
+2019:10:21 17:30:48.791 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : Started BaseApplication in 1.196 seconds (JVM running for 2068.973) 
+2019:10:21 17:30:48.792 INFO  --- [restartedMain] sb.mvc.base.ApplicationProperties : ### profileName : LOCAL 
+2019:10:21 17:30:48.792 INFO  --- [restartedMain] sb.mvc.base.ApplicationProperties : ### profileDBType : MYSQL 
+2019:10:21 17:30:48.793 INFO  --- [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged 

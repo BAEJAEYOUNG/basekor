@@ -14,7 +14,7 @@ import sb.mvc.base.biz.base.BizBaseServiceImpl;
 import java.util.Map;
 
 @AllArgsConstructor
-@Service("menuService")
+@Service( "menuService" )
 public class MenuServiceImpl extends BizBaseServiceImpl<Map<String, Object>> implements MenuService {
 
     private MenuDao menuDao;

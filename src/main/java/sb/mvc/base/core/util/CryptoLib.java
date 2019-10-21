@@ -14,57 +14,57 @@ import java.security.NoSuchAlgorithmException;
 public class CryptoLib {
 
     // Base64 Encode
-    public static String base64EncoderConv(String encStr) {
+    public static String base64EncoderConv( String encStr ) {
 
-        return Base64.encodeBase64String(encStr.getBytes());
+        return Base64.encodeBase64String( encStr.getBytes() );
     }
 
 
     // Base64 Decode
-    public static String base64DecoderConv(String decStr) {
+    public static String base64DecoderConv( String decStr ) {
 
-        return new String(Base64.decodeBase64(decStr));
+        return new String( Base64.decodeBase64( decStr ) );
     }
 
-    public static String sha256GetEncrypt(String source, byte[] salt) {
+    public static String sha256GetEncrypt( String source, byte[] salt ) {
 
         String result = "";
 
         try {
-            byte[] a = source.getBytes();
+            byte[] a     = source.getBytes();
             byte[] bytes = new byte[a.length + salt.length];
 
-            System.arraycopy(salt, 0, bytes, a.length, salt.length);
+            System.arraycopy( salt, 0, bytes, a.length, salt.length );
 
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
-            md.update(bytes);
+            MessageDigest md = MessageDigest.getInstance( "SHA-256" );
+            md.update( bytes );
 
             byte[] byteData = md.digest();
 
             StringBuffer sb = new StringBuffer();
-            for (int i = 0; i < byteData.length; ++i) {
-                sb.append(Integer.toString((byteData[i] & 0xFF) + 256, 16).substring(1));
+            for( int i = 0; i < byteData.length; ++i ) {
+                sb.append( Integer.toString( ( byteData[i] & 0xFF ) + 256, 16 ).substring( 1 ) );
             }
 
             result = sb.toString();
-        } catch (NoSuchAlgorithmException e) {
+        } catch( NoSuchAlgorithmException e ) {
             e.printStackTrace();
         }
-        return (result);
+        return ( result );
     }
 
     // SHA-256 Salt Convert
-    public static String sha256Convert(String orgData, String shaPasswd) {
+    public static String sha256Convert( String orgData, String shaPasswd ) {
 
         byte[] saltBytes = new byte[8];
 
         saltBytes = orgData.getBytes();
 
         StringBuffer salt = new StringBuffer();
-        for (int i = 0; i < saltBytes.length; i++) {
-            salt.append(String.format("%02x", saltBytes[i]));
+        for( int i = 0; i < saltBytes.length; i++ ) {
+            salt.append( String.format( "%02x", saltBytes[i] ) );
         }
-        String encrypt = sha256GetEncrypt(shaPasswd, saltBytes);
-        return (encrypt);
+        String encrypt = sha256GetEncrypt( shaPasswd, saltBytes );
+        return ( encrypt );
     }
 }
