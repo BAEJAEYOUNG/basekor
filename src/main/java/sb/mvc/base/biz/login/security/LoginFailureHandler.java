@@ -61,7 +61,7 @@ public class LoginFailureHandler extends AbstractLoginFailureHandler {
         } else if( !mapUser.get("mngrPwd").equals(request.getParameter("mngrPwd")) ) {
             param.put("loginMsg", "Passwords do not match.");
         } else {
-            param.put("loginMsg", exception.getStackTrace().toString());
+            param.put( "loginMsg", exception.getCause().toString() );
         }
 
         loginService.insData("insLoginHis", param);

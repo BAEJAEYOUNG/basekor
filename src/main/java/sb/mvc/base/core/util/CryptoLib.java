@@ -8,6 +8,7 @@ package sb.mvc.base.core.util;
 
 import org.apache.commons.codec.binary.Base64;
 
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -15,15 +16,13 @@ public class CryptoLib {
 
     // Base64 Encode
     public static String base64EncoderConv( String encStr ) {
-
-        return Base64.encodeBase64String( encStr.getBytes() );
+        return Base64.encodeBase64String( encStr.getBytes( StandardCharsets.UTF_8 ) );
     }
 
 
     // Base64 Decode
     public static String base64DecoderConv( String decStr ) {
-
-        return new String( Base64.decodeBase64( decStr ) );
+        return new String( Base64.decodeBase64( decStr.getBytes( StandardCharsets.UTF_8 ) ), StandardCharsets.UTF_8 );
     }
 
     public static String sha256GetEncrypt( String source, byte[] salt ) {
@@ -31,7 +30,7 @@ public class CryptoLib {
         String result = "";
 
         try {
-            byte[] a     = source.getBytes();
+            byte[] a     = source.getBytes( StandardCharsets.UTF_8 );
             byte[] bytes = new byte[a.length + salt.length];
 
             System.arraycopy( salt, 0, bytes, a.length, salt.length );
@@ -56,9 +55,7 @@ public class CryptoLib {
     // SHA-256 Salt Convert
     public static String sha256Convert( String orgData, String shaPasswd ) {
 
-        byte[] saltBytes = new byte[8];
-
-        saltBytes = orgData.getBytes();
+        byte[] saltBytes = orgData.getBytes( StandardCharsets.UTF_8 );
 
         StringBuffer salt = new StringBuffer();
         for( int i = 0; i < saltBytes.length; i++ ) {

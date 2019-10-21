@@ -38,10 +38,8 @@ public class DateLib {
             format.setLenient( false );
             format.parse( dt );
         } catch( ParseException e ) {
-            errMsg = e.getMessage();
             return false;
         } catch( IllegalArgumentException e ) {
-            errMsg = e.getMessage();
             return false;
         }
 
@@ -556,13 +554,13 @@ public class DateLib {
 
         if( nYear1 > nYear2 ) {
             for( int i = nYear2; i < nYear1; i++ ) {
-                cal.set( i, 12, 0 );
+                cal.set( i, 11, 0 );
                 nDiffOfYear += cal.get( Calendar.DAY_OF_YEAR );
             }
             nTotalDate1 += nDiffOfYear;
         } else if( nYear1 < nYear2 ) {
             for( int i = nYear1; i < nYear2; i++ ) {
-                cal.set( i, 12, 0 );
+                cal.set( i, 11, 0 );
                 nDiffOfYear += cal.get( Calendar.DAY_OF_YEAR );
             }
             nTotalDate2 += nDiffOfYear;

@@ -47,14 +47,14 @@ public class StringLib {
     // String => String : Left Zero Padding
     public static String zeroPaddingLeft( String strData, int nSize ) {
 
-        int    nDataSize = strData.length();
-        String strOut    = "";
+        int           nDataSize = strData.length();
+        StringBuilder strOut    = new StringBuilder();
 
         for( int i = 0; i < ( nSize - nDataSize ); i++ )
-            strOut += "0";
-        strOut += strData;
+            strOut.append( "0" );
+        strOut.append( strData );
 
-        return strOut;
+        return strOut.toString();
     }
 
     // Int => String : Right Zero Padding

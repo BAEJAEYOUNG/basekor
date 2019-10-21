@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import sb.mvc.base.core.exception.SvcBizException;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,24 +47,22 @@ public abstract class BaseServiceImpl<T> implements BaseService<T> {
 
     @Override
     public <E> List<E> selDataList( T param ) {
-        List<E> list = new ArrayList<E>();
         try {
-            list = getDao().selDataList( param );
+            List<E> list = getDao().selDataList( param );
+            return list;
         } catch( Exception e ) {
             throw new SvcBizException( e, "ER-SVC-C0001", e.getMessage() );
         }
-        return list;
     }
 
     @Override
     public <E> List<E> selDataList( String statementId, T param ) {
-        List<E> list = new ArrayList<E>();
         try {
-            list = getDao().selDataList( statementId, param );
+            List<E> list = getDao().selDataList( statementId, param );
+            return list;
         } catch( Exception e ) {
             throw new SvcBizException( e, "ER-SVC-C0001", e.getMessage() );
         }
-        return list;
     }
 
     @Override

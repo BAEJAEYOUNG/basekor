@@ -38,7 +38,7 @@ public class CCSXlsxView extends AbstractXlsxView {
             workbook.write( outStream );
             outStream.flush();
         } finally {
-            outStream.close();
+            if( outStream != null ) outStream.close();
         }
     }
 }

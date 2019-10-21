@@ -8,6 +8,7 @@ package sb.mvc.base.core.util;
 
 import org.apache.commons.codec.binary.Base64;
 
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Timestamp;
@@ -48,7 +49,7 @@ public class PayUtil {
         try {
             MessageDigest md = MessageDigest.getInstance( "MD5" ); // MD5 형식으로 암호화
             md.reset();
-            md.update( strData.getBytes() );
+            md.update( strData.getBytes( StandardCharsets.UTF_8 ) );
 
             byte[] digest = md.digest();
 
@@ -66,9 +67,9 @@ public class PayUtil {
             }
 
             strOUTData = hashedpasswd.toString();
-            byte[] raw          = strOUTData.getBytes();
+            byte[] raw          = strOUTData.getBytes( StandardCharsets.UTF_8 );
             byte[] encodedBytes = Base64.encodeBase64( raw );
-            strOUTData = new String( encodedBytes );
+            strOUTData = new String( encodedBytes, StandardCharsets.UTF_8 );
         } catch( NoSuchAlgorithmException e ) {
             System.out.print( "암호화 에러" + e.toString() );
         }
@@ -82,7 +83,7 @@ public class PayUtil {
 
         try {
             MessageDigest sh = MessageDigest.getInstance( "SHA-256" );
-            sh.update( strData.getBytes() );
+            sh.update( strData.getBytes( StandardCharsets.UTF_8 ) );
             byte[]       byteData = sh.digest();
             StringBuffer sb       = new StringBuffer();
 
@@ -92,9 +93,9 @@ public class PayUtil {
             }
 
             SHA = sb.toString();
-            byte[] raw          = SHA.getBytes();
+            byte[] raw          = SHA.getBytes( StandardCharsets.UTF_8 );
             byte[] encodedBytes = Base64.encodeBase64( raw );
-            SHA = new String( encodedBytes );
+            SHA = new String( encodedBytes, StandardCharsets.UTF_8 );
         } catch( NoSuchAlgorithmException e ) {
             e.printStackTrace();
             SHA = null;
@@ -110,8 +111,8 @@ public class PayUtil {
         try {
             MessageDigest sh = MessageDigest.getInstance( "SHA-256" );
             sh.reset();
-            sh.update( salt.getBytes() );
-            byte[] byteData = sh.digest( strData.getBytes() );
+            sh.update( salt.getBytes( StandardCharsets.UTF_8 ) );
+            byte[] byteData = sh.digest( strData.getBytes( StandardCharsets.UTF_8 ) );
 
             // Hardening against the attacker's attack
             sh.reset();
@@ -124,9 +125,9 @@ public class PayUtil {
             }
 
             SHA = sb.toString();
-            byte[] raw          = SHA.getBytes();
+            byte[] raw          = SHA.getBytes( StandardCharsets.UTF_8 );
             byte[] encodedBytes = Base64.encodeBase64( raw );
-            SHA = new String( encodedBytes );
+            SHA = new String( encodedBytes, StandardCharsets.UTF_8 );
         } catch( NoSuchAlgorithmException e ) {
             e.printStackTrace();
             SHA = null;
