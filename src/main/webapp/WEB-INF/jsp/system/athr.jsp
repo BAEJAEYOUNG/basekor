@@ -26,15 +26,15 @@
 
         function init() {
 
-            var args = crud.getInitProp();
-            args.name = 'athr-crud';
-            args.keys = ['athrCd'];
-            args.panel.search.exist = false;
-            args.cmd.search.url = '/system/athr/list';
+            var args                 = crud.getInitProp();
+            args.name                = 'athr-crud';
+            args.keys                = [ 'athrCd' ];
+            args.panel.search.exist  = false;
+            args.cmd.search.url      = '/system/athr/list';
             args.cmd.save.insert.url = '/system/athr/ins';
             args.cmd.save.update.url = '/system/athr/upd';
-            args.cmd.delete.url = '/system/athr/del';
-            args.onSelectRowAfter = athrOnSelectRow;
+            args.cmd.delete.url      = '/system/athr/del';
+            args.onSelectRowAfter    = athrOnSelectRow;
 
             // grid1 - Athr Grid
             var colModel1 = [];
@@ -62,11 +62,11 @@
             colModel2.push({ label: '이메일'       , name: 'email'   , width: 250 });
             colModel2.push({ label: '휴대폰번호'   , name: 'hpNo'    , width: 150    , format: 'tel_no' });
 
-            var gridProp2 = {};
-            gridProp2.colModel = colModel2;
+            var gridProp2         = {};
+            gridProp2.colModel    = colModel2;
             gridProp2.multiselect = true;
-            gridProp2.height = 150;
-            gridProp2.pager = "#pager2";
+            gridProp2.height      = 150;
+            gridProp2.pager       = "#pager2";
 
             grid2 = new svc.grid( "grid2", gridProp2 );
             grid2.loadGrid();
@@ -79,9 +79,9 @@
                     menuType = "";
                     for( var i = 0; i < result.resultData.length; i++ ) {
                         if( i == result.resultData.length - 1 ) {
-                            menuType += result.resultData[i].cd + ":" + result.resultData[i].cdNm;
+                            menuType += result.resultData[ i ].cd + ":" + result.resultData[ i ].cdNm;
                         } else {
-                            menuType += result.resultData[i].cd + ":" + result.resultData[i].cdNm + ";";
+                            menuType += result.resultData[ i ].cd + ":" + result.resultData[ i ].cdNm + ";";
                         }
                     }
                 }
@@ -104,14 +104,14 @@
             colModel3.push( { label: '정렬순번'        , name: 'sortSn'    , width: 60   , editable: true , format: 'number', editrules: { number: true, required: true } } );
             colModel3.push( { label: '사용여부'        , name: 'useYn'     , width: 60   , editable: true , edittype: 'checkbox', editoptions: { value: 'Y:N' }, align: 'center' } );
 
-            var gridProp3 = {};
-            gridProp3.colModel = colModel3;
+            var gridProp3         = {};
+            gridProp3.colModel    = colModel3;
             gridProp3.shrinkToFit = false;
             gridProp3.multiselect = true;
-            gridProp3.cellsubmit = "clientArray";  // 클라이언트에서 처리
-            gridProp3.cellEdit = true;             // 셀의 값변경을 정함 트루하면 바껴짐
-            gridProp3.pager = "#pager3";
-            grid3 = new svc.grid( "grid3", gridProp3 );
+            gridProp3.cellsubmit  = "clientArray";  // 클라이언트에서 처리
+            gridProp3.cellEdit    = true;             // 셀의 값변경을 정함 트루하면 바껴짐
+            gridProp3.pager       = "#pager3";
+            grid3                 = new svc.grid( "grid3", gridProp3 );
             grid3.loadGrid();
 
 
@@ -122,11 +122,11 @@
             colModel4.push({ label: '이메일'             , name: 'email'       , width: 200 });
             colModel4.push({ label: '휴대폰번호'         , name: 'hpNo'        , width: 200 , format: 'tel_no' });
 
-            var gridProp4 = {};
-            gridProp4.colModel = colModel4;
+            var gridProp4         = {};
+            gridProp4.colModel    = colModel4;
             gridProp4.shrinkToFit = false;
             gridProp4.multiselect = true;
-            gridProp4.pager = "#pager4";
+            gridProp4.pager       = "#pager4";
 
             grid4 = new svc.grid( "grid4", gridProp4 );
             grid4.loadGrid();
@@ -145,11 +145,11 @@
             colModel5.push({ label: '정렬순번'       , name: 'sortSn'   , format: 'number', align: 'right' });
 
 
-            var gridProp5 = {};
-            gridProp5.colModel = colModel5;
+            var gridProp5         = {};
+            gridProp5.colModel    = colModel5;
             gridProp5.shrinkToFit = true;
             gridProp5.multiselect = true;
-            gridProp5.pager = "#pager5";
+            gridProp5.pager       = "#pager5";
 
             grid5 = new svc.grid( "grid5", gridProp5 );
             grid5.loadGrid();
@@ -238,9 +238,10 @@
 
         // 팝업창에서 권한 관리자 조회
         function doQueryDialog1() {
-            var params = {};
+            var params    = {};
             params.athrCd = crud.grid.obj.clickedRowData.athrCd;
-            svc.net.ajaxJqGrid( grid4, "/system/athr/selAthrMngrPopupList", params, function( result ) {} );
+            svc.net.ajaxJqGrid( grid4, "/system/athr/selAthrMngrPopupList", params, function( result ) {
+            } );
         }
 
         // 팝업창에서 관리자 선택 저장
@@ -254,10 +255,10 @@
             var athrMngrList = [];
 
             for( var i = 0; i < selectedIds.length; i++ ) {
-                var selectedData = $( "#grid4" ).getRowData( selectedIds[i] );
-                var paramMap = {};
-                paramMap.athrCd = crud.grid.obj.clickedRowData.athrCd;
-                paramMap.mngrId = selectedData.mngrId;
+                var selectedData = $( "#grid4" ).getRowData( selectedIds[ i ] );
+                var paramMap     = {};
+                paramMap.athrCd  = crud.grid.obj.clickedRowData.athrCd;
+                paramMap.mngrId  = selectedData.mngrId;
                 athrMngrList.push( paramMap );
             }
 
@@ -282,10 +283,10 @@
             }
             var athrMngrList = [];
             for( var i = 0; i < selectedIds.length; i++ ) {
-                var selectedData = $( "#grid2" ).getRowData( selectedIds[i] );
-                var paramMap = {};
-                paramMap.athrCd = crud.grid.obj.clickedRowData.athrCd;
-                paramMap.mngrId = selectedData.mngrId;
+                var selectedData = $( "#grid2" ).getRowData( selectedIds[ i ] );
+                var paramMap     = {};
+                paramMap.athrCd  = crud.grid.obj.clickedRowData.athrCd;
+                paramMap.mngrId  = selectedData.mngrId;
                 athrMngrList.push( paramMap );
             }
             svc.ui.confirm( '선택하신 관리자를 권한[{0}]에서 삭제하시겠습니까?'.replaceAll( "{0}", crud.grid.obj.clickedRowData.athrNm ), function() {
@@ -325,66 +326,66 @@
 
         // 권한-메뉴 다이얼로그 선택 저장
         function doSave3() {
-            var selectedIds = $("#grid3").getGridParam('selarrrow');
-            if (selectedIds.length == "0") {
-                svc.ui.alert('저장할 데이타를 먼저 추가해주세요.');
+            var selectedIds = $( "#grid3" ).getGridParam( 'selarrrow' );
+            if( selectedIds.length == "0" ) {
+                svc.ui.alert( '저장할 데이타를 먼저 추가해주세요.' );
                 return;
             }
             //에디트 0,0으로 grid를 속인다.
-            $("#grid3").editCell(0, 0, true);
+            $( "#grid3" ).editCell( 0, 0, true );
             //validateRow 체크
-            if (!grid2.validateRow()) {
+            if( !grid2.validateRow() ) {
                 return;
             }
-            for (i = 0; i < selectedIds.length; i++) {
-                $("#grid3").jqGrid('saveRow', selectedIds[i], true);
+            for( i = 0; i < selectedIds.length; i++ ) {
+                $( "#grid3" ).jqGrid( 'saveRow', selectedIds[ i ], true );
             }
             var athrMenuList = [];
-            for (var i = 0; i < selectedIds.length; i++) {
-                var selectedData = $("#grid3").getRowData(selectedIds[i]);
-                athrMenuList.push(selectedData);
+            for( var i = 0; i < selectedIds.length; i++ ) {
+                var selectedData = $( "#grid3" ).getRowData( selectedIds[ i ] );
+                athrMenuList.push( selectedData );
             }
-            svc.ui.confirm('해당 메뉴를 저장하시겠습니까?', function() {
-                svc.net.ajaxList("/system/athr/updAthrMenuList", athrMenuList, function(result) {
-                    if (result.resultCd == "00") {
+            svc.ui.confirm( '해당 메뉴를 저장하시겠습니까?', function() {
+                svc.net.ajaxList( "/system/athr/updAthrMenuList", athrMenuList, function( result ) {
+                    if( result.resultCd == "00" ) {
                         doSearch3();
                     }
-                });
-            });
+                } );
+            } );
         }
 
         function doDelete3() {
-            var selectedIds = $("#grid3").getGridParam("selarrrow");
-            if (selectedIds.length == 0) {
-                svc.ui.alert('선택한 메뉴가 없습니다. 권한에 삭제할 메뉴를 선택하세요');
+            var selectedIds = $( "#grid3" ).getGridParam( "selarrrow" );
+            if( selectedIds.length == 0 ) {
+                svc.ui.alert( '선택한 메뉴가 없습니다. 권한에 삭제할 메뉴를 선택하세요' );
                 return;
             }
             var athrMenuList = [];
-            for (var i = 0; i < selectedIds.length; i++) {
-                var selectedData = $("#grid3").getRowData(selectedIds[i]);
-                var paramMap = {};
-                paramMap.athrCd = crud.grid.obj.clickedRowData.athrCd;
-                paramMap.menuId = selectedData.menuId;
-                athrMenuList.push(paramMap);
+            for( var i = 0; i < selectedIds.length; i++ ) {
+                var selectedData = $( "#grid3" ).getRowData( selectedIds[ i ] );
+                var paramMap     = {};
+                paramMap.athrCd  = crud.grid.obj.clickedRowData.athrCd;
+                paramMap.menuId  = selectedData.menuId;
+                athrMenuList.push( paramMap );
             }
-            svc.ui.confirm('선택하신 메뉴를 권한[{0}]에서 삭제하시겠습니까?'.replaceAll("{0}",crud.grid.obj.clickedRowData.athrNm), function() {
-                svc.net.ajaxList("/system/athr/delAthrMenuList", athrMenuList, function(result) {
-                    if (result.resultCd == "00") {
+            svc.ui.confirm( '선택하신 메뉴를 권한[{0}]에서 삭제하시겠습니까?'.replaceAll( "{0}", crud.grid.obj.clickedRowData.athrNm ), function() {
+                svc.net.ajaxList( "/system/athr/delAthrMenuList", athrMenuList, function( result ) {
+                    if( result.resultCd == "00" ) {
                         doSearch3();
                         doQueryDialog2();
                     }
-                });
-            });
+                } );
+            } );
         }
 
         function doQueryDialog2() {
 
-            var params = {};
+            var params    = {};
             params.athrCd = crud.grid.obj.clickedRowData.athrCd;
 
-            svc.net.ajaxJqGrid(grid5, "/system/athr/selAthrMenuPopupList", params, function(result) {
+            svc.net.ajaxJqGrid( grid5, "/system/athr/selAthrMenuPopupList", params, function( result ) {
 
-            });
+            } );
         }
 
         /*****************************************************
@@ -393,39 +394,39 @@
          *****************************************************/
         function doSaveDialog2() {
 
-            var selectedIds = $("#grid5").getGridParam("selarrrow");
+            var selectedIds = $( "#grid5" ).getGridParam( "selarrrow" );
 
-            if (selectedIds.length == 0) {
+            if( selectedIds.length == 0 ) {
 
-                svc.ui.alert('선택한 메뉴가 없습니다. 권한에 등록할 메뉴를 선택하세요');
+                svc.ui.alert( '선택한 메뉴가 없습니다. 권한에 등록할 메뉴를 선택하세요' );
                 return;
 
             }
 
             var athrMenuList = [];
 
-            for (var i = 0; i < selectedIds.length; i++) {
+            for( var i = 0; i < selectedIds.length; i++ ) {
 
-                var selectedData = $("#grid5").getRowData(selectedIds[i]);
+                var selectedData = $( "#grid5" ).getRowData( selectedIds[ i ] );
 
                 var paramMap = {};
 
                 paramMap.athrCd = crud.grid.obj.clickedRowData.athrCd;
                 paramMap.menuId = selectedData.menuId;
 
-                athrMenuList.push(paramMap);
+                athrMenuList.push( paramMap );
 
             }
 
-            svc.ui.confirm('선택하신 메뉴를 권한[{0}]에 등록하시겠습니까?'.replaceAll("{0}", crud.grid.obj.clickedRowData.athrNm), function() {
-                svc.net.ajaxList("/system/athr/insAthrMenuList", athrMenuList, function(result) {
-                    if (result.resultCd == "00") {
+            svc.ui.confirm( '선택하신 메뉴를 권한[{0}]에 등록하시겠습니까?'.replaceAll( "{0}", crud.grid.obj.clickedRowData.athrNm ), function() {
+                svc.net.ajaxList( "/system/athr/insAthrMenuList", athrMenuList, function( result ) {
+                    if( result.resultCd == "00" ) {
                         doSearch3();
                         doQueryDialog2();
-                        $('#dialogAthrMenu').dialog('close');
+                        $( '#dialogAthrMenu' ).dialog( 'close' );
                     }
-                });
-            });
+                } );
+            } );
 
         }
 
@@ -452,17 +453,17 @@
         <%--  // title-panel  --%>
 
         <div id="edit-panel" class="edit-panel">
-            <input type="hidden" name="mode" value="I"/>
+            <input type="hidden" name="mode" value="I" />
             <div>
                 <dl>
                     <dt>권한코드</dt>
-                    <dd><input type="text" name="athrCd" data-title='권한코드' class="form-input-text width120" data-mode-style="enable" data-command="doSave()" data-required/></dd>
+                    <dd><input type="text" name="athrCd" data-title='권한코드' class="form-input-text width120" data-mode-style="enable" data-command="doSave()" data-required /></dd>
                     <dt>권한명</dt>
-                    <dd><input type="text" name="athrNm" data-title='권한명' class="form-input-text width120" data-command="doSave()" data-required/></dd>
+                    <dd><input type="text" name="athrNm" data-title='권한명' class="form-input-text width120" data-command="doSave()" data-required /></dd>
                 </dl>
                 <dl>
                     <dt>정렬순번</dt>
-                    <dd><input type="text" name="sortSn" data-title='정렬순번' class="form-input-text width120" value="10" data-format="number" data-command="doSave()" data-required/></dd>
+                    <dd><input type="text" name="sortSn" data-title='정렬순번' class="form-input-text width120" value="10" data-format="number" data-command="doSave()" data-required /></dd>
                     <dt>사용여부</dt>
                     <dd><select name="useYn" data-title='사용여부' class="width120" data-grpcd="USE_YN" data-required></select></dd>
                 </dl>
@@ -470,7 +471,7 @@
                     <dt>비고</dt>
                     <dd>
                         <div data-colspan="2-4">
-                            <input type="text" name="rm" data-title='비고' class="form-input-text" data-command="doSave()"/>
+                            <input type="text" name="rm" data-title='비고' class="form-input-text" data-command="doSave()" />
                         </div>
                     </dd>
                 </dl>

@@ -32,31 +32,35 @@
     <script type="text/javascript">
 
 
+
         svc.sessionId = "${sessionUser.mngrId}";
 
-        var page = new svc.page();
+        var page       = new svc.page();
         page.menuArray = [];
-        var menu = new svc.gnb(1);
+        var menu       = new svc.gnb( 1 );
 
         function init() {
 
             fnLoadGnb();    // 메인메뉴 Load
 
-            $("#tabs").tabs({
+            $( "#tabs" ).tabs( {
                 plain: true
-            });
-            $(".tabs-panels").css({"border":0});
+            } );
+            $( ".tabs-panels" ).css( { "border": 0 } );
 
         }
 
         function localResize() {
 
-            $("#tabs").find('div').css('width', '100%');
+            $( "#tabs" ).find( 'div' ).css( 'width', '100%' );
 
-            var frameWidth = $(window).width();
-            var frameHeight = $(window).height() - 114;
+            var frameWidth  = $( window ).width();
+            var frameHeight = $( window ).height() - 114;
 
-            $('#tabs iframe').css({"width":frameWidth + "px","height":frameHeight + "px"});
+            $( '#tabs iframe' ).css( {
+                "width" : frameWidth + "px",
+                "height": frameHeight + "px"
+            } );
 
         }
 
@@ -69,39 +73,48 @@
         function fnLoadGnb() {
 
             // 사용자 메뉴정보를 가져오는 중입니다. block 메시지 표시
-            $.blockUI({
+            $.blockUI( {
                 message: '사용자 메뉴정보를 가져오는 중입니다.<br />잠시만 기다려 주세요...'
-                , css: { "font-weight": "700", "height": "80px", "color": "#000", "opacity": "1", "font-size": "10pt", "line-height": "1.8", "padding-top": "8px"}
-            });
+                ,
+                css    : {
+                    "font-weight": "700",
+                    "height"     : "80px",
+                    "color"      : "#000",
+                    "opacity"    : "1",
+                    "font-size"  : "10pt",
+                    "line-height": "1.8",
+                    "padding-top": "8px"
+                }
+            } );
 
             // console.log('svc', svc);
-            menu.load("/main/mainMenuList");
+            menu.load( "/main/mainMenuList" );
 
             // 사용자 메뉴정보를 가져오는 중입니다. block 메시지 감춤
-            setTimeout('$.unblockUI()', 1000);
+            setTimeout( '$.unblockUI()', 1000 );
 
         }
 
-        function fnGnbClick(menuId, bRefresh) {
-            var menuObj = menu.selMenu(menuId);
+        function fnGnbClick( menuId, bRefresh ) {
+            var menuObj = menu.selMenu( menuId );
             // console.log('menuObj', menuObj);
             if( menuObj.execCmd.trim() != "" ) {
-                if(bRefresh) {
-                    $('#tabFrm' + menuId).attr('src', menuObj.execCmd);
+                if( bRefresh ) {
+                    $( '#tabFrm' + menuId ).attr( 'src', menuObj.execCmd );
                 } else {
-                    if ($('#tabs').tabs('exists', menuObj.menuNm)){
-                        $('#tabs').tabs('select', menuObj.menuNm);
-                        if(bRefresh) {
-                            $('#tabFrm' + menuObj.menuId).attr('src', menuObj.execCmd);
+                    if( $( '#tabs' ).tabs( 'exists', menuObj.menuNm ) ) {
+                        $( '#tabs' ).tabs( 'select', menuObj.menuNm );
+                        if( bRefresh ) {
+                            $( '#tabFrm' + menuObj.menuId ).attr( 'src', menuObj.execCmd );
                         }
                     } else {
                         // menuObj.execCmd = "/html/blank.html"
-                        var content = '<iframe id="tabFrm' + menuObj.menuId + '" class="frameBox" src="'+menuObj.execCmd+'" style="width:100%;height:100%;"></iframe>';
-                        $('#tabs').tabs('add',{
-                            title: menuObj.menuNm,
-                            content:content,
-                            closable:true
-                        });
+                        var content = '<iframe id="tabFrm' + menuObj.menuId + '" class="frameBox" src="' + menuObj.execCmd + '" style="width:100%;height:100%;"></iframe>';
+                        $( '#tabs' ).tabs( 'add', {
+                            title   : menuObj.menuNm,
+                            content : content,
+                            closable: true
+                        } );
                         localResize();
                     }
                 }
