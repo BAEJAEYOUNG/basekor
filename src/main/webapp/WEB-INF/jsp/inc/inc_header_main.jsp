@@ -16,10 +16,10 @@
 <link rel="stylesheet" href="${contextPath}/css/custom/bugfix.css">
 <link rel="stylesheet" href="${contextPath}/css/custom/font.css">
 
-<c:set var="lang" value="${pageContext.response.locale.language}"/>
-<c:set var="lang2" value="${pageContext.response.locale.language}"/>
+<c:set var="lang" value="${pageContext.response.locale.language}" />
+<c:set var="lang2" value="${pageContext.response.locale.language}" />
 <c:if test="${lang2 eq 'ko'}">
-    <c:set var="lang2" value="kr"/>
+    <c:set var="lang2" value="kr" />
 </c:if>
 
 <script type="text/javascript" src="${contextPath}/webjars/jquery/jquery.min.js"></script>

@@ -20,15 +20,15 @@
 
         function init() {
 
-            var args = crud.getInitProp();
-            args.name = 'grp-crud';
-            args.keys = ['grpCd'];
-            args.panel.edit.id = 'grp-edit-panel';
-            args.cmd.search.url = '/system/grpCd/list';
+            var args                 = crud.getInitProp();
+            args.name                = 'grp-crud';
+            args.keys                = [ 'grpCd' ];
+            args.panel.edit.id       = 'grp-edit-panel';
+            args.cmd.search.url      = '/system/grpCd/list';
             args.cmd.save.insert.url = '/system/grpCd/ins';
             args.cmd.save.update.url = '/system/grpCd/upd';
-            args.cmd.delete.url = '/system/grpCd/del';
-            args.onSelectRowAfter = doSearch2;
+            args.cmd.delete.url      = '/system/grpCd/del';
+            args.onSelectRowAfter    = doSearch2;
 
             // grid1 - Group Code Grid
             var colModel1 = [];
@@ -48,17 +48,17 @@
 
             crud.init( args );
 
-            var args2 = crud.getInitProp();
-            args2.name = 'cd-crud';
-            args2.keys = ['cd'];
-            args2.panel.search.exist = false;
-            args2.panel.edit.id = 'cd-edit-panel';
-            args2.cmd.search.url = '/system/cd/list';
+            var args2                 = crud.getInitProp();
+            args2.name                = 'cd-crud';
+            args2.keys                = [ 'cd' ];
+            args2.panel.search.exist  = false;
+            args2.panel.edit.id       = 'cd-edit-panel';
+            args2.cmd.search.url      = '/system/cd/list';
             args2.cmd.save.insert.url = '/system/cd/ins';
             args2.cmd.save.update.url = '/system/cd/upd';
-            args2.cmd.delete.url = '/system/cd/del';
-            args2.grid.id = 'grid2';
-            args2.grid.prop.pager = '#pager2';
+            args2.cmd.delete.url      = '/system/cd/del';
+            args2.grid.id             = 'grid2';
+            args2.grid.prop.pager     = '#pager2';
 
             var colModel2 = [];
             colModel2.push({ label: '그룹코드' , name: 'grpCd'   , hidden: true });
@@ -126,37 +126,37 @@
 
         function doSearch2() {
             crud2.cmd.search.params = {
-                grpCd : crud.grid.obj.clickedRowData.grpCd
+                grpCd: crud.grid.obj.clickedRowData.grpCd
             };
-            crud2.search(function() {
+            crud2.search( function() {
                 doNew2();
-            });
+            } );
         }
 
         function doNew2() {
-            if(crud.grid.obj.clickedRowData == null) {
-                svc.ui.alert("코드정보를 등록하려면 먼저 왼쪽 그룹코드를 선택하세요");
+            if( crud.grid.obj.clickedRowData == null ) {
+                svc.ui.alert( "코드정보를 등록하려면 먼저 왼쪽 그룹코드를 선택하세요" );
                 return;
             }
             crud2.grid.obj.reload();
             var params = {
                 grpCd : crud.grid.obj.clickedRowData.grpCd,
-                sortSn : ( $("#grid2").jqGrid('getDataIDs').length + 1 ) * 10
+                sortSn: ( $( "#grid2" ).jqGrid( 'getDataIDs' ).length + 1 ) * 10
             };
             crud2.panel.edit.init( params );
-            $('#cd-edit-panel input[name=cd]').timeFocus(300);
+            $( '#cd-edit-panel input[name=cd]' ).timeFocus( 300 );
         }
 
         function doSave2() {
-            crud2.save(function() {
+            crud2.save( function() {
                 doSearch2();
-            });
+            } );
         }
 
         function doDelete2() {
-            crud2.delete(function() {
+            crud2.delete( function() {
                 doSearch2();
-            });
+            } );
         }
 
     </script>
@@ -194,19 +194,19 @@
         <%--  // title-panel  --%>
 
         <div id="grp-edit-panel" class="edit-panel">
-            <input type="hidden" name="mode" value="I"/>
+            <input type="hidden" name="mode" value="I" />
             <div>
                 <dl>
                     <dt>그룹코드</dt>
-                    <dd><input type="text" name="grpCd" data-title='그룹코드' class="form-input-text width120" data-mode-style="enable" data-command="doSave()" data-required/></dd>
+                    <dd><input type="text" name="grpCd" data-title='그룹코드' class="form-input-text width120" data-mode-style="enable" data-command="doSave()" data-required /></dd>
                     <dd></dd>
                     <dd></dd>
                 </dl>
                 <dl>
                     <dt>그룹코드명</dt>
-                    <dd><input type="text" name="grpCdNm" data-title='그룹코드명' class="form-input-text width120" data-command="doSave()" data-required/></dd>
+                    <dd><input type="text" name="grpCdNm" data-title='그룹코드명' class="form-input-text width120" data-command="doSave()" data-required /></dd>
                     <dt>그룹코드유형</dt>
-                    <dd><select name="grpCdTp" data-title='그룹코드유형' class="width120" data-grpcd="GRP_CD_TP"  data-selected-value="N"  data-required></select></dd>
+                    <dd><select name="grpCdTp" data-title='그룹코드유형' class="width120" data-grpcd="GRP_CD_TP" data-selected-value="N" data-required></select></dd>
                 </dl>
                 <dl>
                     <dt>사용여부</dt>
@@ -218,7 +218,7 @@
                     <dt>비고</dt>
                     <dd>
                         <div data-colspan="2-4">
-                            <input type="text" name="rm" data-title='비고' class="form-input-text" data-command="doSave()"/>
+                            <input type="text" name="rm" data-title='비고' class="form-input-text" data-command="doSave()" />
                         </div>
                     </dd>
                     <dd></dd>
@@ -253,23 +253,23 @@
         <%--  // title-panel  --%>
 
         <div id="cd-edit-panel" class="edit-panel">
-            <input type="hidden" name="mode" value="I"/>
+            <input type="hidden" name="mode" value="I" />
             <div>
                 <dl>
                     <dt>그룹코드</dt>
-                    <dd><input type="text" name="grpCd" data-title='그룹코드' class="form-input-text width120" disabled data-required/></dd>
+                    <dd><input type="text" name="grpCd" data-title='그룹코드' class="form-input-text width120" disabled data-required /></dd>
                     <dt>코드</dt>
-                    <dd><input type="text" name="cd" data-title='코드' class="form-input-text width120" data-mode-style="enable" data-command="doSave2()" data-required/></dd>
+                    <dd><input type="text" name="cd" data-title='코드' class="form-input-text width120" data-mode-style="enable" data-command="doSave2()" data-required /></dd>
                 </dl>
                 <dl>
                     <dt>코드명</dt>
-                    <dd><input type="text" name="cdNm" data-title='코드명' class="form-input-text width120" data-command="doSave2()" data-required/></dd>
+                    <dd><input type="text" name="cdNm" data-title='코드명' class="form-input-text width120" data-command="doSave2()" data-required /></dd>
                     <dt>코드유형</dt>
                     <dd><select name="grpCdTp" data-title='코드유형' class="width120" data-grpcd="CD_TP" data-selected-value="N" data-required></select></dd>
                 </dl>
                 <dl>
                     <dt>정렬순번</dt>
-                    <dd><input type="text" name="sortSn" data-title='정렬순번' class="form-input-text width120" value="10" data-format="number" data-command="doSave2()" data-required/></dd>
+                    <dd><input type="text" name="sortSn" data-title='정렬순번' class="form-input-text width120" value="10" data-format="number" data-command="doSave2()" data-required /></dd>
                     <dt>사용여부</dt>
                     <dd><select name="useYn" data-title='사용여부' class="width120" data-grpcd="USE_YN" data-required></select></dd>
                 </dl>
@@ -277,7 +277,7 @@
                     <dt>비고</dt>
                     <dd>
                         <div data-colspan="2-4">
-                            <input type="text" name="rm" data-title='비고' class="form-input-text" data-command="doSave2()"/>
+                            <input type="text" name="rm" data-title='비고' class="form-input-text" data-command="doSave2()" />
                         </div>
                     </dd>
                     <dd></dd>

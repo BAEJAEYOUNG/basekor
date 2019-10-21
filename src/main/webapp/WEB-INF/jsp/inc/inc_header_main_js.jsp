@@ -8,29 +8,29 @@
 
 <script type="text/javascript">
 
-    $(function () {
+    $( function() {
 
-        $(":text, :password, textarea").each(function() {
-            $(this).attr("autocomplete", "off").attr("spellcheck", false);
-        });
+        $( ":text, :password, textarea" ).each( function() {
+            $( this ).attr( "autocomplete", "off" ).attr( "spellcheck", false );
+        } );
 
-        if (typeof(init) == 'function') {
+        if( typeof ( init ) == 'function' ) {
             init();
         }
 
-        $("div[id$='-panel'],table[id$='-panel'],form[id$='-panel']").each(function () {
-            $(this).applyFieldOption();
-        });
+        $( "div[id$='-panel'],table[id$='-panel'],form[id$='-panel']" ).each( function() {
+            $( this ).applyFieldOption();
+        } );
 
-        $(window).resize(function () {
-            if ( typeof(localResize) == 'function') {
+        $( window ).resize( function() {
+            if( typeof ( localResize ) == 'function' ) {
                 localResize();
             }
-        });
+        } );
 
-        $(window).resize();
+        $( window ).resize();
 
-    });
+    } );
 
 
 </script>

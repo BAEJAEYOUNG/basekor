@@ -8,37 +8,37 @@
 
 <script type="text/javascript">
 
-    $(function () {
+    $( function() {
 
         // console.log( "================  inc_header_page_js" );
 
-        var menuPage = parent.menu.selMenuLocation(location.pathname);
-        $(".location-wrap").html('<p class="location"><span class="btn_home"></span>&nbsp;> <span>'+menuPage.psMenuNm+'</span> > <span>'+menuPage.menuNm+'</span></p>');
+        var menuPage = parent.menu.selMenuLocation( location.pathname );
+        $( ".location-wrap" ).html( '<p class="location"><span class="btn_home"></span>&nbsp;> <span>' + menuPage.psMenuNm + '</span> > <span>' + menuPage.menuNm + '</span></p>' );
 
-        $(":text, :password, textarea").each(function() {
-            $(this).attr("autocomplete", "off").attr("spellcheck", false);
-        });
+        $( ":text, :password, textarea" ).each( function() {
+            $( this ).attr( "autocomplete", "off" ).attr( "spellcheck", false );
+        } );
 
-        if (typeof(init) == 'function') {
+        if( typeof ( init ) == 'function' ) {
             init();
         }
 
-        $("div[id$='-panel'],table[id$='-panel']").each(function () {
-            $(this).applyFieldOption();
-        });
+        $( "div[id$='-panel'],table[id$='-panel']" ).each( function() {
+            $( this ).applyFieldOption();
+        } );
 
-        $(window).resize(function () {
-            if (typeof(localResize) == 'function') {
-                $('.ui-jqgrid-pager').css('width','100%');
+        $( window ).resize( function() {
+            if( typeof ( localResize ) == 'function' ) {
+                $( '.ui-jqgrid-pager' ).css( 'width', '100%' );
                 localResize();
             }
-        });
+        } );
 
-        $(document).css("body", "{'overflow-y':'scroll'}");
+        $( document ).css( "body", "{'overflow-y':'scroll'}" );
 
-        $(window).resize();
+        $( window ).resize();
 
-    });
+    } );
 
     function authSetButton() {
         // if(oMenu != null) {

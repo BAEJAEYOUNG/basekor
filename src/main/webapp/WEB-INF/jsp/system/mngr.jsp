@@ -22,13 +22,13 @@
 
             // console.log( "init !!!" );
 
-            var args = crud.getInitProp();
-            args.name = 'crud';
-            args.keys = ['mngrId'];
-            args.cmd.search.url = '/system/mngr/list';
+            var args                 = crud.getInitProp();
+            args.name                = 'crud';
+            args.keys                = [ 'mngrId' ];
+            args.cmd.search.url      = '/system/mngr/list';
             args.cmd.save.insert.url = '/system/mngr/ins';
             args.cmd.save.update.url = '/system/mngr/upd';
-            args.cmd.delete.url = '/system/mngr/del';
+            args.cmd.delete.url      = '/system/mngr/del';
 
             var colModel = [];
             colModel.push({ label: '비밀번호초기화여부' , name: 'pwdInitYn'   , hidden: true });
@@ -142,21 +142,21 @@
     <%--  // title-panel  --%>
 
     <div id="edit-panel" class="edit-panel">
-        <input type="hidden" name="mode" value="I"/>
+        <input type="hidden" name="mode" value="I" />
         <div>
             <dl>
                 <dt>관리자아이디</dt>
-                <dd><input type="text" id="epMngrId" name="mngrId" data-title='관리자아이디' class="width120" data-mode-style="enable" data-required/></dd>
+                <dd><input type="text" id="epMngrId" name="mngrId" data-title='관리자아이디' class="width120" data-mode-style="enable" data-required /></dd>
                 <dt>관리자비밀번호</dt>
-                <dd><input type="text" id="epMngrPwd" name="mngrPwd" data-title='관리자비밀번호' class="width120" data-required/></dd>
+                <dd><input type="text" id="epMngrPwd" name="mngrPwd" data-title='관리자비밀번호' class="width120" data-required /></dd>
                 <dt>관리자명</dt>
-                <dd><input type="text" id="epMngrNm" name="mngrNm" data-title='관리자명' class="width120" data-command="doSave()" data-required/></dd>
+                <dd><input type="text" id="epMngrNm" name="mngrNm" data-title='관리자명' class="width120" data-command="doSave()" data-required /></dd>
             </dl>
             <dl>
                 <dt>휴대폰번호</dt>
-                <dd><input type="text" id="epHpNo" name="hpNo" data-title='휴대폰번호' class="width120" data-format="tel_no" data-command="doSave()"/></dd>
+                <dd><input type="text" id="epHpNo" name="hpNo" data-title='휴대폰번호' class="width120" data-format="tel_no" data-command="doSave()" /></dd>
                 <dt>이메일</dt>
-                <dd><input type="text" id="epEmail" name="email" data-title='이메일' class="width160" data-command="doSave()"/></dd>
+                <dd><input type="text" id="epEmail" name="email" data-title='이메일' class="width160" data-command="doSave()" /></dd>
             </dl>
             <dl>
                 <dt>비밀번호초기화여부</dt>

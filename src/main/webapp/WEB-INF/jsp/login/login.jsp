@@ -15,7 +15,7 @@
     <title>${projectTitle}</title>
     <script type="text/javascript" src="${contextPath}/js/agent/ksid.webagent.api.js"></script>
     <%@ include file="/WEB-INF/jsp/inc/inc_header_main.jsp" %>
-    <link rel="stylesheet" href="${contextPath}/css/page/login.css"/>
+    <link rel="stylesheet" href="${contextPath}/css/page/login.css" />
     <style>
 
     </style>
@@ -34,7 +34,7 @@
         }
 
         // KSID WebAgent API 객체 생성
-        var AGT_API = new KSID_WEBAGENT_API();
+        var AGT_API      = new KSID_WEBAGENT_API();
         var strUpdateUrl = "${contextPath}/agent/KSIDWebAgentInstall.exe";
         AGT_API.setMethod( "POST" );             // 통신 방식 설정(GET/POST, Default=POST)
         AGT_API.setUpdateUrl( strUpdateUrl );    // Update URL 설정
@@ -55,21 +55,21 @@
         function doSubmit() {
             var bReturn = false;
             if( $( "#login-panel" ).validateForm() ) {
-                var params = $('#login-panel').flushPanel();
-                console.log('params', params);
-                svc.net.sjaxCall('/login/selLoginCnt', params, function(result) {
-                    console.log('result', result);
-                    console.log("(result.resultCd == '00')", (result.resultCd == '00'));
-                    console.log('(result.resultData > 0)', (result.resultData > 0));
-                    if(result.resultCd == '00') {
-                        if(result.resultData > 0) {
+                var params = $( '#login-panel' ).flushPanel();
+                console.log( 'params', params );
+                svc.net.sjaxCall( '/login/selLoginCnt', params, function( result ) {
+                    console.log( 'result', result );
+                    console.log( "(result.resultCd == '00')", ( result.resultCd == '00' ) );
+                    console.log( '(result.resultData > 0)', ( result.resultData > 0 ) );
+                    if( result.resultCd == '00' ) {
+                        if( result.resultData > 0 ) {
                             bReturn = true;
                         }
                     }
-                });
+                } );
             }
-            if(!bReturn) {
-                svc.ui.alert('아이디 또는 비밀번호가 일치하지 않습니다.');
+            if( !bReturn ) {
+                svc.ui.alert( '아이디 또는 비밀번호가 일치하지 않습니다.' );
             }
             return bReturn;
         }
@@ -117,25 +117,25 @@
 
                     var params = {};
 
-                    params.uniqueId = arrResData[0];
-                    params.randomValue = arrResData[1];
-                    params.hashValue = arrResData[2];
+                    params.uniqueId    = arrResData[ 0 ];
+                    params.randomValue = arrResData[ 1 ];
+                    params.hashValue   = arrResData[ 2 ];
 
                     console.log( 'params', params );
                     //                 ksid.debug.printObj('params', params);
 
-                    ksid.net.ajax("${pageContext.request.contextPath}/client/verifyWeb", params, function(result) {
-                        if(result.result == '10') {
-                            svc.ui.alert('Hash validation Success');
+                    ksid.net.ajax( "${pageContext.request.contextPath}/client/verifyWeb", params, function( result ) {
+                        if( result.result == '10' ) {
+                            svc.ui.alert( 'Hash validation Success' );
                             loginCard();
                         } else if( result.result == '12' ) {
-                            svc.ui.alert('Hash validation mismatch');
+                            svc.ui.alert( 'Hash validation mismatch' );
                         } else if( result.result == '11' ) {
-                            svc.ui.alert('SmartCard not exists');
+                            svc.ui.alert( 'SmartCard not exists' );
                         } else {
-                            svc.ui.alert('Login Fail - ' + result.driverName);
+                            svc.ui.alert( 'Login Fail - ' + result.driverName );
                         }
-                    });
+                    } );
 
                 } );
             } );
@@ -169,8 +169,8 @@
 
             <form id="login-panel" name="login-panel" method="post" action="${contextPath}/login/security" onsubmit="return doSubmit()">
 
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                <input type="hidden" name="lgnmode" value="login"/>
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                <input type="hidden" name="lgnmode" value="login" />
 
                 <table class="tb-login">
                     <colgroup>

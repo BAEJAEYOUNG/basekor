@@ -19,14 +19,14 @@
 
         function init() {
 
-            var args = crud.getInitProp();
-            args.name = 'crud';
-            args.keys = ['menuId'];
-            args.cmd.key.url = '/system/menu/selKey';
-            args.cmd.search.url = '/system/menu/list';
+            var args                 = crud.getInitProp();
+            args.name                = 'crud';
+            args.keys                = [ 'menuId' ];
+            args.cmd.key.url         = '/system/menu/selKey';
+            args.cmd.search.url      = '/system/menu/list';
             args.cmd.save.insert.url = '/system/menu/ins';
             args.cmd.save.update.url = '/system/menu/upd';
-            args.cmd.delete.url = '/system/menu/del';
+            args.cmd.delete.url      = '/system/menu/del';
 
             var colModel = [];
             colModel.push({ label: '소속메뉴아이디' , name: 'psMenuId' , hidden: true });
@@ -85,9 +85,9 @@
         }
 
         function doSave() {
-            var params = $('#edit-panel').flushPanel();
+            var params = $( '#edit-panel' ).flushPanel();
             crud.save( function() {
-                if(params.mode == 'I') {
+                if( params.mode == 'I' ) {
                     crud.panel.edit.init( {
                         menuTp  : params.menuTp,
                         menuLv  : params.menuLv,
@@ -148,20 +148,20 @@
     <%--  // title-panel  --%>
 
     <div id="edit-panel" class="edit-panel">
-        <input type="hidden" name="mode" value="I"/>
+        <input type="hidden" name="mode" value="I" />
         <div>
             <dl>
                 <dt>소속메뉴아이디</dt>
-                <dd><input type="text" name="psMenuId" data-title='소속메뉴아이디' class="form-input-text width120"/></dd>
+                <dd><input type="text" name="psMenuId" data-title='소속메뉴아이디' class="form-input-text width120" /></dd>
                 <dt>메뉴아이디</dt>
-                <dd><input type="text" name="menuId" data-title='메뉴아이디' class="form-input-text width120" disabled data-required/></dd>
+                <dd><input type="text" name="menuId" data-title='메뉴아이디' class="form-input-text width120" disabled data-required /></dd>
                 <dt>메뉴명</dt>
-                <dd><input type="text" name="menuNm" data-title='메뉴명' class="form-input-text width120" data-command="doSave()" data-required/></dd>
+                <dd><input type="text" name="menuNm" data-title='메뉴명' class="form-input-text width120" data-command="doSave()" data-required /></dd>
             </dl>
             <dl>
                 <dt>실행명령</dt>
                 <dd>
-                    <div data-colspan="2-4"><input type="text" name="execCmd" data-title='실행명령' class="form-input-text" data-command="doSave()"/></div>
+                    <div data-colspan="2-4"><input type="text" name="execCmd" data-title='실행명령' class="form-input-text" data-command="doSave()" /></div>
                 </dd>
                 <dd></dd>
                 <dd></dd>
@@ -170,11 +170,11 @@
             </dl>
             <dl>
                 <dt>메뉴레벨</dt>
-                <dd><input type="text" name="menuLv" data-title='메뉴레벨' class="form-input-text width120" value="1" data-format="number" data-command="doSave()" data-required/></dd>
+                <dd><input type="text" name="menuLv" data-title='메뉴레벨' class="form-input-text width120" value="1" data-format="number" data-command="doSave()" data-required /></dd>
                 <dt>사용여부</dt>
                 <dd><select name="useYn" data-title='사용여부' class="width120" data-grpcd="USE_YN" data-required></select></dd>
                 <dt>정렬순번</dt>
-                <dd><input type="text" name="sortSn" data-title='정렬순번' class="form-input-text width120" value="10" data-format="number" data-command="doSave()" data-required/></dd>
+                <dd><input type="text" name="sortSn" data-title='정렬순번' class="form-input-text width120" value="10" data-format="number" data-command="doSave()" data-required /></dd>
             </dl>
         </div>
     </div>
