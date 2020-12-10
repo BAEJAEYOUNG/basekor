@@ -1,0 +1,70 @@
+2020:10:20 15:01:34.231 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : Starting BaseApplication on DESKTOP-MPD8FG6 with PID 9308 (C:\ws\workspace\basekor\target\classes started by bjylj in C:\ws\workspace\basekor) 
+2020:10:20 15:01:34.233 DEBUG --- [restartedMain] sb.mvc.base.BaseApplication : Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE 
+2020:10:20 15:01:34.233 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : The following profiles are active: loc,mysql 
+2020:10:20 15:01:34.269 INFO  --- [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2020:10:20 15:01:34.270 INFO  --- [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2020:10:20 15:01:35.016 DEBUG --- [restartedMain] o.m.s.b.a.MybatisAutoConfiguration : Searching for mappers annotated with @Mapper 
+2020:10:20 15:01:35.017 DEBUG --- [restartedMain] o.m.s.b.a.MybatisAutoConfiguration : Using auto-configuration base package 'sb.mvc.base' 
+2020:10:20 15:01:35.022 DEBUG --- [restartedMain] o.apache.ibatis.logging.LogFactory : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter. 
+2020:10:20 15:01:35.031 WARN  --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner : No MyBatis mapper was found in '[sb.mvc.base]' package. Please check your configuration. 
+2020:10:20 15:01:35.083 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode. 
+2020:10:20 15:01:35.114 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26ms. Found 0 repository interfaces. 
+2020:10:20 15:01:35.439 INFO  --- [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1dc04ff7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2020:10:20 15:01:35.729 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port(s): 80 (http) 
+2020:10:20 15:01:35.742 INFO  --- [restartedMain] o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-80"] 
+2020:10:20 15:01:35.749 INFO  --- [restartedMain] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2020:10:20 15:01:35.750 INFO  --- [restartedMain] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.19] 
+2020:10:20 15:01:35.964 INFO  --- [restartedMain] o.apache.jasper.servlet.TldScanner : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time. 
+2020:10:20 15:01:35.970 INFO  --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2020:10:20 15:01:35.970 INFO  --- [restartedMain] o.s.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 1700 ms 
+2020:10:20 15:01:36.090 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : hikari-cp - Starting... 
+2020:10:20 15:01:36.600 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : hikari-cp - Start completed. 
+2020:10:20 15:01:36.600 INFO  --- [restartedMain] s.m.base.config.LocSqlSessionConfig : datasource : HikariDataSource (hikari-cp) 
+2020:10:20 15:01:36.726 INFO  --- [restartedMain] o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...] 
+2020:10:20 15:01:36.827 INFO  --- [restartedMain] org.hibernate.Version : HHH000412: Hibernate Core {5.3.10.Final} 
+2020:10:20 15:01:36.829 INFO  --- [restartedMain] org.hibernate.cfg.Environment : HHH000206: hibernate.properties not found 
+2020:10:20 15:01:37.000 INFO  --- [restartedMain] o.h.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.0.4.Final} 
+2020:10:20 15:01:37.170 INFO  --- [restartedMain] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect 
+2020:10:20 15:01:37.364 INFO  --- [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2020:10:20 15:01:37.523 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed configuration file: 'class path resource [mybatis-mysql-config.xml]' 
+2020:10:20 15:01:37.569 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\ws\workspace\basekor\target\classes\mapper\mysql\login\Login.xml]' 
+2020:10:20 15:01:37.575 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\ws\workspace\basekor\target\classes\mapper\mysql\main\Main.xml]' 
+2020:10:20 15:01:37.582 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\ws\workspace\basekor\target\classes\mapper\mysql\system\Athr.xml]' 
+2020:10:20 15:01:37.598 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\ws\workspace\basekor\target\classes\mapper\mysql\system\Cd.xml]' 
+2020:10:20 15:01:37.598 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\ws\workspace\basekor\target\classes\mapper\mysql\system\GrpCd.xml]' 
+2020:10:20 15:01:37.613 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\ws\workspace\basekor\target\classes\mapper\mysql\system\Menu.xml]' 
+2020:10:20 15:01:37.624 DEBUG --- [restartedMain] o.m.spring.SqlSessionFactoryBean : Parsed mapper file: 'file [C:\ws\workspace\basekor\target\classes\mapper\mysql\system\Mngr.xml]' 
+2020:10:20 15:01:37.634 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2020:10:20 15:01:37.672 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2020:10:20 15:01:37.691 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2020:10:20 15:01:37.735 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2020:10:20 15:01:37.750 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2020:10:20 15:01:37.765 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2020:10:20 15:01:37.777 INFO  --- [restartedMain] o.s.aop.framework.CglibAopProxy : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead! 
+2020:10:20 15:01:37.923 DEBUG --- [restartedMain] sb.mvc.base.core.util.MessageUtil : ###################################    Messges locale [ko_KR] 
+2020:10:20 15:01:38.080 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/favicon.ico'], [] 
+2020:10:20 15:01:38.081 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/resources/**'], [] 
+2020:10:20 15:01:38.081 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/webjars/**'], [] 
+2020:10:20 15:01:38.081 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/html/**'], [] 
+2020:10:20 15:01:38.081 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/css/**'], [] 
+2020:10:20 15:01:38.081 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/agent/**'], [] 
+2020:10:20 15:01:38.081 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/js/**'], [] 
+2020:10:20 15:01:38.081 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/image/**'], [] 
+2020:10:20 15:01:38.082 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/error/**'], [] 
+2020:10:20 15:01:38.082 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: Ant [pattern='/system/cd/comboList/**'], [] 
+2020:10:20 15:01:38.133 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@254f7c7b, org.springframework.security.web.context.SecurityContextPersistenceFilter@6a02d49e, org.springframework.security.web.header.HeaderWriterFilter@7a3c0a12, org.springframework.security.web.authentication.logout.LogoutFilter@4883a874, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6555f3eb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3bba63e9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4fa22dae, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@24a956f3, org.springframework.security.web.session.SessionManagementFilter@6af83a58, org.springframework.security.web.access.ExceptionTranslationFilter@3b4b9153, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7b48898b] 
+2020:10:20 15:01:38.357 INFO  --- [restartedMain] o.s.s.c.ThreadPoolTaskExecutor : Initializing ExecutorService 'applicationTaskExecutor' 
+2020:10:20 15:01:38.399 WARN  --- [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2020:10:20 15:01:38.488 INFO  --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping : Adding welcome page template: index 
+2020:10:20 15:01:38.499 DEBUG --- [restartedMain] o.m.s.b.a.MybatisAutoConfiguration : No org.mybatis.spring.mapper.MapperFactoryBean found. 
+2020:10:20 15:01:38.712 INFO  --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729 
+2020:10:20 15:01:38.750 INFO  --- [restartedMain] o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-80"] 
+2020:10:20 15:01:38.766 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port(s): 80 (http) with context path '' 
+2020:10:20 15:01:38.766 INFO  --- [restartedMain] sb.mvc.base.BaseApplication : Started BaseApplication in 4.883 seconds (JVM running for 5.762) 
+2020:10:20 15:01:38.782 INFO  --- [restartedMain] sb.mvc.base.ApplicationProperties : ### profileName : LOCAL 
+2020:10:20 15:01:38.782 INFO  --- [restartedMain] sb.mvc.base.ApplicationProperties : ### profileDBType : MYSQL 
+2020:10:20 15:01:52.598 INFO  --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2020:10:20 15:01:52.599 INFO  --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet' 
+2020:10:20 15:01:52.610 INFO  --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet : Completed initialization in 11 ms 

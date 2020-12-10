@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Developed by JAEYOUNG BAE on 19. 5. 28 오후 1:41.
+  ~ Last modified 19. 4. 23 오후 2:39.
+  ~ Copyright (c) 2019. All rights reserved.
+  -->
+
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!-- setting -->
+    <settings>
+        <setting name="defaultStatementTimeout" value="60"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="useGeneratedKeys" value="false"/>
+        <setting name="jdbcTypeForNull" value="VARCHAR"/>
+        <setting name="callSettersOnNulls" value="true"/>           <!-- null값이 있는 key 도 return 시키기위해 -->
+        <setting name="defaultExecutorType" value="REUSE"/>
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+
+    <typeAliases>
+        <typeAlias alias="CamelMap" type="sb.mvc.base.core.util.CamelMap" />
+    </typeAliases>
+
+    <plugins>
+        <plugin interceptor="sb.mvc.base.biz.support.intercept.MybatisQueryParameters" />
+        <plugin interceptor="sb.mvc.base.biz.support.intercept.MybatisUpdateParameters" />
+    </plugins>
+
+</configuration>

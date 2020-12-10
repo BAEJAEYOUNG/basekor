@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Developed by JAEYOUNG BAE on 19. 5. 8 오후 4:16.
+  ~ Last modified 19. 5. 3 오후 12:56.
+  ~ Copyright (c) 2019. All rights reserved.
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="NS_Mngr">
+
+    <select id="selMngrList" parameterType="Map" resultType="CamelMap">
+        /* NS_Mngr.selAllMngrList */
+        SELECT A.MNGR_ID                  /* 관리자아이디 */
+             , A.MNGR_NM                  /* 관리자명 */
+             , A.EMAIL                    /* 이메일 */
+             , A.HP_NO                    /* 휴대폰번호 */
+             , REPLACE(A.MNGR_PWD, '{noop}', '')  AS MNGR_PWD                /* 관리자비밀번호 */
+             , A.LANG_CD                  /* 언어코드 */
+             , A.COUNTRY_CD               /* 국가코드 */
+             , A.LOCALE                   /* 로케일 */
+             , A.PWD_INIT_YN              /* 비밀번호초기화여부[Y:초기화, N:초기화해제] */
+             , A.PWD_INIT_DTTM            /* 비밀번호초기화일시 */
+             , A.PWD_CHG_DTTM             /* 비밀번호변경일시 */
+             , A.RM                       /* 비고 */
+             , A.REG_DTTM                 /* 등록일시 */
+             , A.REG_ID                   /* 등록자 */
+             , A.CHG_DTTM                 /* 수정일시 */
+             , A.CHG_ID                   /* 수정자 */
+             , C1.CD_NM AS PWD_INIT_YN_NM /* 비밀번호초기화여부 */
+        FROM TB_MNGR A                    /* T관리자 */
+             LEFT OUTER JOIN TB_CD C1
+                             ON C1.GRP_CD = 'PWD_INIT_YN'
+                                 AND C1.CD = A.PWD_INIT_YN
+        WHERE (
+                    A.MNGR_ID LIKE CONCAT('%', #{mngrId}, '%')
+                 OR A.MNGR_NM LIKE CONCAT('%', #{mngrId}, '%')
+              )
+      ORDER BY A.MNGR_NM
+    </select>
+
+    <!-- Insert Mngr List -->
+    <insert id="insMngr" parameterType="Map">
+        /* NS_Mngr.insMngr */
+        INSERT INTO TB_MNGR (                  /* T관리자 */
+              MNGR_ID                  /* 관리자아이디 */
+            , MNGR_NM                  /* 관리자명 */
+            , EMAIL                    /* 이메일 */
+            , HP_NO                    /* 휴대폰번호 */
+            , MNGR_PWD                 /* 관리자비밀번호 */
+            , LANG_CD                  /* 언어코드 */
+            , COUNTRY_CD               /* 국가코드 */
+            , LOCALE                   /* 로케일 */
+            , PWD_INIT_YN              /* 비밀번호초기화여부[Y:초기화, N:초기화해제] */
+            , PWD_INIT_DTTM            /* 비밀번호초기화일시 */
+            , RM                       /* 비고 */
+            , REG_DTTM                 /* 등록일시 */
+            , REG_ID                   /* 등록자 */
+            , CHG_DTTM                 /* 수정일시 */
+            , CHG_ID                   /* 수정자 */
+        ) VALUES (
+              #{mngrId}                /* 관리자아이디 */
+            , #{mngrNm}                /* 관리자명 */
+            , #{email}                 /* 이메일 */
+            , #{hpNo}                  /* 휴대폰번호 */
+            , CONCAT('{noop}', #{mngrPwd})               /* 관리자비밀번호 */
+            , #{langCd}                /* 언어코드 */
+            , #{countryCd}             /* 국가코드 */
+            , #{locale}                /* 로케일 */
+            , #{pwdInitYn}             /* 비밀번호초기화여부[Y:초기화, N:초기화해제] */
+            , #{pwdInitDttm}           /* 비밀번호초기화일시 */
+            , #{rm}                    /* 비고 */
+            , #{regDttm}               /* 등록일시 */
+            , #{regId}                 /* 등록자 */
+            , #{chgDttm}               /* 수정일시 */
+            , #{chgId}                 /* 수정자 */
+        )
+
+    </insert>
+
+    <!-- Update Mngr List -->
+    <update id="updMngr" parameterType="Map">
+        /* NS_Mngr.updMngr */
+        UPDATE TB_MNGR                  /* T관리자 */
+           SET MNGR_NM                = #{mngrNm}                  /* 관리자명 */
+             , EMAIL                  = #{email}                   /* 이메일 */
+             , HP_NO                  = #{hpNo}                    /* 휴대폰번호 */
+             , MNGR_PWD               = CONCAT('{noop}', #{mngrPwd})                 /* 관리자비밀번호 */
+             , LANG_CD                = #{langCd}                  /* 언어코드 */
+             , COUNTRY_CD             = #{countryCd}               /* 국가코드 */
+             , LOCALE                 = #{locale}                  /* 로케일 */
+             , PWD_INIT_YN            = #{pwdInitYn}               /* 비밀번호초기화여부[Y:초기화, N:초기화해제] */
+             , PWD_INIT_DTTM          = #{pwdInitDttm}             /* 비밀번호초기화일시 */
+             , RM                     = #{rm}                      /* 비고 */
+             , CHG_DTTM               = #{chgDttm}                 /* 수정일시 */
+             , CHG_ID                 = #{chgId}                   /* 수정자 */
+         WHERE MNGR_ID = #{mngrId}
+    </update>
+
+    <!-- Delete Mngr List -->
+    <delete id="delMngr" parameterType="Map">
+        /* NS_Mngr.delMngr */
+        DELETE FROM TB_MNGR                  /* T관리자 */
+         WHERE MNGR_ID = #{mngrId}
+    </delete>
+
+</mapper>

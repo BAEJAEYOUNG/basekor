@@ -1,0 +1,763 @@
+/*
+ * Developed by JAEYOUNG BAE on 19. 4. 17 오후 1:21.
+ * Last modified 19. 4. 17 오후 1:21.
+ * Copyright (c) 2019. All rights reserved.
+ */
+
+html {
+    overflow-y : scroll;
+    overflow-x : hidden;
+}
+
+body {
+    margin : 0;
+}
+
+.contents-wrap {
+    padding    : 0 17px 0 10px;
+    font-size  : 12px;
+    position   : relative;
+    height     : 100%;
+    box-sizing : border-box;
+    min-width  : 900px;
+    border     : 1px solid transparent;
+}
+
+.contents-wrap .wrap-21-tp01 {
+    background-color : transparent;
+    width            : calc(50% - 10px);
+    min-width        : 400px;
+    min-height       : 200px;
+    height           : calc(100% - 90px);
+    float            : left;
+    overflow         : hidden;
+    margin-right     : 10px;
+}
+
+.contents-wrap .wrap-22-tp01 {
+    background-color : transparent;
+    width            : 50%;
+    min-width        : 430px;
+    min-height       : 200px;
+    height           : calc(100% - 90px);
+    float            : left;
+    overflow         : hidden;
+}
+
+.contents-wrap .wrap-21-tp02 {
+    background-color : transparent;
+    width            : calc(600px - 10px);
+    min-width        : 400px;
+    min-height       : 200px;
+    height           : calc(100% - 40px);
+    float            : left;
+    overflow         : hidden;
+    margin-right     : 10px;
+}
+
+.contents-wrap .wrap-22-tp02 {
+    background-color : transparent;
+    width            : calc(100% - 600px);
+    min-width        : 430px;
+    min-height       : 200px;
+    height           : calc(100% - 40px);
+    float            : left;
+    overflow         : hidden;
+}
+
+.location-wrap {
+    min-width : 628px;
+    /*padding     : 10px 260px 0 0;*/
+    position  : relative;
+    /*font-family : Helvetica, Arial, sans-serif;*/
+    margin    : 10px 0 10px 0;
+}
+
+.location-wrap .location {
+    /*padding : 10px 0 7px 0;*/
+}
+
+.location-wrap .location .btn_home {
+    background : url(../../image/custom/ico_home.png) left 3px no-repeat;
+    display    : inline-block;
+    width      : 16px;
+    height     : 14px;
+}
+
+.search-panel {
+    width              : 100%;
+    margin-bottom      : 10px;
+    padding            : 5px 10px;
+    border             : 2px solid #aaa;
+    background-color   : #eee;
+    border-radius      : 5px;
+    box-shadow         : 1px 1px 3px gray;
+    -webkit-box-sizing : border-box;
+    -moz-box-sizing    : border-box;
+    box-sizing         : border-box;
+    position           : relative;
+}
+
+.search-panel div {
+    display         : table;
+    border-collapse : fixed;
+    border-spacing  : 2px 2px;
+    border-color    : #eef;
+}
+
+.search-panel div dl {
+    display : table-row;
+    height  : 25px;
+}
+
+.search-panel div dl dt, .search-panel div dl dd {
+    display   : table-cell;
+    min-width : 80px;
+}
+
+.search-panel div dl dt {
+    background    : #f9f9ff;
+    border-radius : 3px;
+    height        : 24px;
+    padding       : 3px;
+    font-size     : 13px;
+}
+
+.search-panel div dl dt label {
+    display    : inline-block;
+    margin-top : 2px;
+}
+
+.search-panel div dl dt span {
+    display : inline-block;
+}
+
+.search-panel div dl dd {
+    min-width : 120px;
+    padding   : 1px 15px 0 3px;
+}
+
+.search-panel div dl dt::before {
+    content    : "";
+    width      : 3px;
+    height     : 3px;
+    background : #999;
+    display    : inline-block;
+    margin     : 0 3px 4px;
+}
+
+.search-panel div dl dt.title_on::before {
+    content    : "";
+    width      : 3px;
+    height     : 3px;
+    background : #e42;
+    display    : inline-block;
+    margin     : 0 3px 4px;
+}
+
+.search-panel div dl dt::after {
+    content : "";
+    width   : 5px;
+    display : inline-block;
+}
+
+.search-panel div dl dd::before {
+    content : "";
+    display : inline-block;
+    width   : 3px;
+}
+
+.search-panel table tr th {
+    text-align            : right;
+    padding-right         : 3px;
+    vertical-align        : middle;
+    background-color      : #f9f9f9;
+    -webkit-border-radius : 5px;
+    -moz-border-radius    : 5px;
+    border-radius         : 5px;
+    overflow              : hidden;
+    white-space           : nowrap;
+    text-overflow         : ellipsis;
+    width                 : 100px;
+}
+
+.search-panel th::before {
+    background : #999;
+    content    : "";
+    display    : inline-block;
+    width      : 3px;
+    height     : 3px;
+    margin     : 0 3px 4px 0;
+}
+
+.search-panel th.title_on::before {
+    background : #e42;
+    content    : "";
+    display    : inline-block;
+    width      : 3px;
+    height     : 3px;
+    margin     : 0 3px 4px 0;
+}
+
+.search-panel table tr td {
+    vertical-align : middle;
+    text-align     : left;
+    padding        : 3px 3px 2px 5px;
+}
+
+.search-panel .button-bar {
+    position : absolute;
+    top      : -30px;
+    right    : 0;
+}
+
+.search-panel:after {
+    content : "";
+    display : block;
+    clear   : both;
+}
+
+.title-panel {
+    position      : relative;
+    height        : 22px;
+    margin-bottom : 10px;
+}
+
+.title-panel .button-bar {
+    position : absolute;
+    top      : 0;
+    right    : 0;
+}
+
+.edit-panel {
+    width              : 100%;
+    margin-bottom      : 10px;
+    border             : 2px solid #5d8bc2;
+    border-radius      : 5px;
+    box-shadow         : 1px 1px 5px gray;
+    background-color   : #eef;
+    -webkit-box-sizing : border-box;
+    -moz-box-sizing    : border-box;
+    box-sizing         : border-box;
+    padding            : 5px 10px;
+}
+
+.edit-panel div {
+    display         : table;
+    border-collapse : fixed;
+    border-spacing  : 2px 2px;
+    border-color    : #eef;
+}
+
+.edit-panel div dl {
+    display : table-row;
+    height  : 25px;
+}
+
+.edit-panel div dl dt, .edit-panel div dl dd {
+    display   : table-cell;
+    min-width : 80px;
+}
+
+.edit-panel div dl dt {
+    background    : #f9f9ff;
+    border-radius : 3px;
+    height        : 24px;
+    padding       : 3px;
+    font-size     : 13px;
+    min-width     : 80px;
+}
+
+.edit-panel div dl dt label {
+    display    : inline-block;
+    margin-top : 2px;
+}
+
+.edit-panel div dl dt span {
+    display : inline-block;
+}
+
+.edit-panel div dl dd {
+    min-width : 80px;
+    padding   : 1px 15px 0 3px;
+}
+
+.edit-panel div dl dt::before {
+    content    : "";
+    width      : 3px;
+    height     : 3px;
+    background : #999;
+    display    : inline-block;
+    margin     : 0 3px 4px;
+}
+
+.edit-panel div dl dt.title_on::before {
+    content    : "";
+    width      : 3px;
+    height     : 3px;
+    background : #e42;
+    display    : inline-block;
+    margin     : 0 3px 4px;
+}
+
+.edit-panel div dl dt::after {
+    content : "";
+    width   : 5px;
+    display : inline-block;
+}
+
+.edit-panel div dl dd::before {
+    content : "";
+    display : inline-block;
+    width   : 3px;
+}
+
+.edit-panel table {
+    border-spacing : 3px;
+}
+
+.edit-panel table tr {
+    height : 20px;
+}
+
+.edit-panel table tr th {
+    text-align            : left;
+    padding               : 0 5px 0 5px;
+    vertical-align        : middle;
+    background-color      : #f9f9ff;
+    -webkit-border-radius : 5px;
+    -moz-border-radius    : 5px;
+    border-radius         : 5px;
+    overflow              : hidden;
+    white-space           : nowrap;
+    text-overflow         : ellipsis;
+    width                 : 100px;
+    font-weight           : 700;
+
+}
+
+.edit-panel th::before {
+    background : #999;
+    content    : "";
+    display    : inline-block;
+    width      : 3px;
+    height     : 3px;
+    margin     : 0 3px 4px 0;
+}
+
+.edit-panel th.title_on::before {
+    background : #e42;
+    content    : "";
+    display    : inline-block;
+    width      : 3px;
+    height     : 3px;
+    margin     : 0 3px 4px 0;
+}
+
+.edit-panel table tr td {
+    vertical-align : middle;
+    text-align     : left;
+    padding        : 3px 3px 2px 5px;
+}
+
+.edit-panel table tr td span {
+    color : #777;
+}
+
+.edit-panel:after {
+    content : "";
+    display : block;
+    clear   : both;
+}
+
+.style-title {
+    font-size    : 14px;
+    /*margin       : 8px 0 0 0;*/
+    /*border-left  : 5px solid #4f81bd;*/
+    padding-left : 1px;
+    /*font-family  : Helvetica, Arial, sans-serif;*/
+
+}
+
+.style-title::before {
+    content          : '';
+    display          : inline-block;
+    width            : 5px;
+    height           : 12px;
+    background-color : #4f81bd;
+    margin           : 5px 5px 0 0;
+
+}
+
+
+.grid-pager {
+    width : 100%;
+}
+
+input {
+    display       : inline-block;
+    /*height        : 22px;*/
+    border        : 1px solid #999;
+    border-radius : 4px;
+    transition    : all 0.4s;
+    padding       : 0 3px;
+}
+
+input[type=text], input[type=password] {
+    height : 22px;
+}
+
+input:focus {
+    border-color : #66afe9;
+    box-shadow   : 0 0 8px rgba(102, 175, 233, 0.6);
+    outline      : none;
+}
+
+.form-input-text {
+    display       : inline-block;
+    height        : 22px;
+    border        : 1px solid #999;
+    border-radius : 4px;
+    transition    : all 0.4s;
+    padding       : 0 3px;
+}
+
+.form-input-text:focus {
+    border-color : #66afe9;
+    box-shadow   : 0 0 8px rgba(102, 175, 233, 0.6);
+    outline      : none;
+}
+
+/* 사이즈 정의*/
+.width30 {
+    width : 30px !important;
+}
+
+.width35 {
+    width : 35px !important;
+}
+
+.width40 {
+    width : 40px !important;
+}
+
+.width45 {
+    width : 45px !important;
+}
+
+.width50 {
+    width : 50px !important;
+}
+
+.width55 {
+    width : 55px !important;
+}
+
+.width60 {
+    width : 60px !important;
+}
+
+.width70 {
+    width : 70px !important;
+}
+
+.width80 {
+    width : 80px !important;
+}
+
+.width90 {
+    width : 90px !important;
+}
+
+.width100 {
+    width : 100px !important;
+}
+
+.width105 {
+    width : 105px !important;
+}
+
+.width110 {
+    width : 110px !important;
+}
+
+.width115 {
+    width : 115px !important;
+}
+
+.width120 {
+    width : 120px !important;
+}
+
+.width122 {
+    width : 122px !important;
+}
+
+.width130 {
+    width : 130px !important;
+}
+
+.width133 {
+    width : 133px !important;
+}
+
+.width140 {
+    width : 140px !important;
+}
+
+.width144 {
+    width : 144px !important;
+}
+
+.width145 {
+    width : 145px !important;
+}
+
+.width150 {
+    width : 150px !important;
+}
+
+.width160 {
+    width : 160px !important;
+}
+
+.width162 {
+    width : 162px !important;
+}
+
+.width170 {
+    width : 170px !important;
+}
+
+.width180 {
+    width : 180px !important;
+}
+
+.width187 {
+    width : 187px !important;
+}
+
+.width193 {
+    width : 193px !important;
+}
+
+.width190 {
+    width : 190px !important;
+}
+
+.width200 {
+    width : 200px !important;
+}
+
+.width210 {
+    width : 210px !important;
+}
+
+.width214 {
+    width : 214px !important;
+}
+
+.width220 {
+    width : 220px !important;
+}
+
+.width230 {
+    width : 230px !important;
+}
+
+.width240 {
+    width : 240px !important;
+}
+
+.width250 {
+    width : 250px !important;
+}
+
+.width260 {
+    width : 260px !important;
+}
+
+.width270 {
+    width : 270px !important;
+}
+
+.width300 {
+    width : 300px !important;
+}
+
+.width310 {
+    width : 310px !important;
+}
+
+.width350 {
+    width : 350px !important;
+}
+
+.width360 {
+    width : 360px !important;
+}
+
+.width370 {
+    width : 370px !important;
+}
+
+.width383 {
+    width : 383px !important;
+}
+
+.width380 {
+    width : 380px !important;
+}
+
+.width390 {
+    width : 390px !important;
+}
+
+.width400 {
+    width : 400px !important;
+}
+
+.width430 {
+    width : 430px !important;
+}
+
+.width464 {
+    width : 464px !important;
+}
+
+.width450 {
+    width : 450px !important;
+}
+
+.width480 {
+    width : 480px !important;
+}
+
+.width500 {
+    width : 500px !important;
+}
+
+.width550 {
+    width : 550px !important;
+}
+
+.width590 {
+    width : 590px !important;
+}
+
+.width600 {
+    width : 600px !important;
+}
+
+.width667 {
+    width : 667px !important;
+}
+
+.width700 {
+    width : 700px !important;
+}
+
+.width767 {
+    width : 767px !important;
+}
+
+.width783 {
+    width : 783px !important;
+}
+
+.width800 {
+    width : 800px !important;
+}
+
+.width800 {
+    width : 800px !important;
+}
+
+.width830 {
+    width : 830px !important;
+}
+
+.height40 {
+    height : 40px !important;
+}
+
+.height50 {
+    height : 50px !important;
+}
+
+.height60 {
+    height : 60px !important;
+}
+
+.height70 {
+    height : 70px !important;
+}
+
+.height80 {
+    height : 80px !important;
+}
+
+.height90 {
+    height : 80px !important;
+}
+
+.height100 {
+    height : 100px !important;
+}
+
+.height110 {
+    height : 110px !important;
+}
+
+.height150 {
+    height : 150px !important;
+}
+
+.height200 {
+    height : 200px !important;
+}
+
+.height250 {
+    height : 250px !important;
+}
+
+.height300 {
+    height : 300px !important;
+}
+
+.height350 {
+    height : 350px !important;
+}
+
+.height400 {
+    height : 400px !important;
+}
+
+/* 간격 정의*/
+.mgt10 {
+    margin-top : 10px;
+}
+
+.mgt15 {
+    margin-top : 15px;
+}
+
+.mgt20 {
+    margin-top : 20px;
+}
+
+.mgt25 {
+    margin-top : 25px;
+}
+
+.mgt30 {
+    margin-top : 30px;
+}
+
+.mgb10 {
+    margin-bottom : 10px;
+}
+
+.relative {
+    position : relative;
+}

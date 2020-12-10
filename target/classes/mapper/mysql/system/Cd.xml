@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Developed by JAEYOUNG BAE on 19. 5. 3 오전 9:34.
+  ~ Last modified 19. 4. 1 오후 1:21.
+  ~ Copyright (c) 2019. All rights reserved.
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="NS_Cd">
+
+    <!-- Select TB_CD List -->
+    <select id="selCdList" parameterType="Map" resultType="CamelMap">
+        /* NS_Cd.selCdList */
+        SELECT A.GRP_CD                   /* 그룹코드 */
+             , A.CD                       /* 코드 */
+             , A.PS_CD                    /* 소속코드 */
+             , A.CD_NM                    /* 코드명 */
+             , A.CD_TP                    /* 코드유형[N:일반,S:시스템] */
+             , A.SORT_SN                  /* 정렬순번 */
+             , A.RM                       /* 비고 */
+             , A.USE_YN                   /* 사용여부 */
+             , C1.CD_NM AS CD_TP_NM     /* 코드유형[N:일반,S:시스템] */
+             , C2.CD_NM AS USE_YN_NM     /* 사용여부 */
+          FROM TB_CD  A                  /* 코드 */
+               LEFT OUTER JOIN TB_CD C1
+                         ON C1.GRP_CD = 'CD_TP'
+                        AND C1.CD = A.CD_TP
+               LEFT OUTER JOIN TB_CD C2
+                         ON C2.GRP_CD = 'USE_YN'
+                        AND C2.CD = A.USE_YN
+         WHERE A.GRP_CD       = #{grpCd}
+      ORDER BY A.SORT_SN ASC
+    </select>
+
+    <!-- Select Cd -->
+    <select id="selCd" parameterType="Map" resultType="CamelMap">
+        /* NS_Cd.selCd */
+        SELECT GRP_CD                   /* 그룹코드 */
+             , CD                       /* 코드 */
+             , PS_CD                    /* 소속코드 */
+             , CD_NM                    /* 코드명 */
+             , CD_TP                    /* 코드유형[N:일반,S:시스템] */
+             , CD_LV                    /* 코드레벨 */
+             , SORT_SN                  /* 정렬순번 */
+             , RM                       /* 비고 */
+             , USE_YN                   /* 사용여부 */
+             , REG_ID                   /* 등록자 */
+             , REG_DTTM                 /* 등록일시 */
+             , CHG_ID                   /* 최종수정자 */
+             , CHG_DT                   /* 최종수정일시 */
+          FROM TB_CD                    /* 코드 */
+         WHERE GRP_CD       = #{grpCd}
+           AND CD = #{cd}
+    </select>
+
+    <!-- Insert Cd -->
+    <insert id="insCd" parameterType="Map">
+        /* NS_Cd.insCd */
+        INSERT INTO TB_CD (                    /* 코드 */
+              GRP_CD                   /* 그룹코드 */
+            , CD                       /* 코드 */
+            , CD_NM                    /* 코드명 */
+            , CD_TP                    /* 코드유형[N:일반,S:시스템] */
+            , SORT_SN                  /* 정렬순번 */
+            , RM                       /* 비고 */
+            , USE_YN                   /* 사용여부 */
+            , REG_ID                   /* 등록자 */
+            , REG_DTTM                 /* 등록일시 */
+            , CHG_ID                   /* 최종수정자 */
+            , CHG_DTTM                 /* 최종수정일시 */
+        ) VALUES (
+              #{grpCd}                 /* 그룹코드 */
+            , #{cd}                    /* 코드 */
+            , #{cdNm}                  /* 코드명 */
+            , #{cdTp}                  /* 코드유형[N:일반,S:시스템] */
+            , #{sortSn}                /* 정렬순번 */
+            , #{rm}                    /* 비고 */
+            , #{useYn}                 /* 사용여부 */
+            , #{regId}                 /* 등록자 */
+            , #{regDttm}               /* 등록일시 */
+            , #{chgId}                 /* 최종수정자 */
+            , #{chgDttm}               /* 최종수정일시 */
+        )
+    </insert>
+
+    <!-- Update Cd -->
+    <update id="updCd" parameterType="Map">
+        /* NS_Cd.updCd */
+        UPDATE TB_CD                    /* 코드 */
+           SET CD_NM                  = #{cdNm}                    /* 코드명 */
+             , CD_TP                  = #{cdTp}                    /* 코드유형[N:일반,S:시스템] */
+             , SORT_SN                = #{sortSn}                  /* 정렬순번 */
+             , RM                     = #{rm}                      /* 비고 */
+             , USE_YN                 = #{useYn}                   /* 사용여부 */
+             , CHG_ID                 = #{chgId}                   /* 최종수정자 */
+             , CHG_DTTM               = #{chgDttm}                 /* 최종수정일시 */
+         WHERE GRP_CD                 = #{grpCd}                   /* 그룹코드 */
+           AND CD                     = #{cd}                      /* 코드 */
+    </update>
+
+    <!-- Delete Cd -->
+    <delete id="delCd" parameterType="Map">
+        /* NS_Cd.delCd */
+        DELETE FROM TB_CD                    /* 코드 */
+         WHERE GRP_CD                 = #{grpCd}                   /* 그룹코드 */
+           AND CD                     = #{cd}                      /* 코드 */
+    </delete>
+
+    <select id="selComboList" parameterType="Map" resultType="CamelMap">
+        /* NS_Cd.selComboList */
+         SELECT B.CD
+              , B.CD_NM
+           FROM TB_CD_GRP A
+                INNER JOIN TB_CD B
+                        ON B.GRP_CD = A.GRP_CD
+                       AND B.USE_YN = 'Y'
+          WHERE A.GRP_CD = #{grpCd}
+            AND A.USE_YN = 'Y'
+         ORDER BY B.SORT_SN
+    </select>
+
+</mapper>

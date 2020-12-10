@@ -1,0 +1,134 @@
+/*!**/
+/* * Developed by JAEYOUNG BAE on 19. 4. 16 오전 11:46.*/
+/* * Last modified 19. 4. 16 오전 11:46.*/
+/* * Copyright (c) 2019. All rights reserved.*/
+/* *!*/
+
+/*!***/
+/* * --------------------------------------------------*/
+/* * ui.jqgrid.css*/
+/* * --------------------------------------------------*/
+/* *!*/
+/*body .ui-jqgrid {*/
+/*    width: -moz-calc(100% - 1px) !important;        !* Firefox *!*/
+/*    width: -webkit-calc(100% - 1px) !important;     !* Chrome, Safari *!*/
+/*    width: calc(100% - 1px) !important;             !* IE9+ and future browsers *!*/
+/*}*/
+
+/*body .ui-jqgrid .ui-jqgrid-view {*/
+/*    width: 100% !important;*/
+/*    border-top: 1px solid #4f81bd;*/
+/*}*/
+
+/*body .ui-jqgrid .ui-jqgrid-hdiv {*/
+/*    width: 100% !important;*/
+/*}*/
+
+/*body .ui-jqgrid .ui-jqgrid-bdiv {*/
+/*    width: 100% !important;*/
+/*}*/
+
+
+/*body .ui-jqgrid .ui-jqgrid-bdiv div div {*/
+/*    display:none;*/
+/*}*/
+
+/*!*body .ui-jqgrid .ui-jqgrid-btable {*/
+/*    width: 100% !important;*/
+/*}*!*/
+
+/*body .ui-state-default, body .ui-widget-content .ui-state-default*/
+/*, body .ui-widget-header .ui-state-default {*/
+/*    !*border: 1px solid #c6c6c6;*!*/
+/*    background: #e1edfb;*/
+/*    font-weight: bold;*/
+/*    font-size: 12px !important;*/
+/*    color: #232323;*/
+/*}*/
+
+/*!*body .ui-jqgrid .ui-jqgrid-htable th {*/
+/*    height: 22px;*/
+/*    padding: 5px 2px 5px 2px;*/
+/*}*/
+/**!*/
+/*body .ui-jqgrid .ui-jqgrid-labels th {*/
+/*    padding-top: 2px;*/
+/*    padding-bottom: 2px;*/
+/*}*/
+
+/*body .ui-jqgrid .ui-jqgrid-htable th div {*/
+/*    height: 20px;*/
+/*    line-height: 18px;*/
+/*}*/
+
+/*body .ui-widget-content.jqgrow.ui-row-ltr.ui-state-highlight.ui-state-hover {*/
+/*    background: #4f81bd;*/
+/*    color: #ffffff;*/
+/*}*/
+
+/*body .ui-widget-content.jqgrow.ui-row-ltr.ui-state-hover {*/
+/*    background: #f6f7f7;*/
+/*    border: 0px;*/
+/*}*/
+
+/*body .ui-widget-content.jqgrow.ui-row-ltr.ui-state-highlight {*/
+/*    background: #4f81bd;*/
+/*    color: #ffffff;*/
+/*    border: 0px;*/
+/*}*/
+
+/*body .ui-widget-content.jqgrow.ui-row-ltr.ui-state-highlight.ui-state-hover {*/
+/*    background: #4f81bd;*/
+/*    border: 0px;*/
+/*}*/
+
+/*body .ui-jqgrid tr.jqgrow td {*/
+/*    cursor: default;*/
+/*    font-weight: normal;*/
+/*    overflow: hidden;*/
+/*    white-space: pre;*/
+/*    height: 22px;*/
+/*    padding: 2px 4px 2px 4px;*/
+/*    border-left-width: 1px;*/
+/*    border-left-color: #cdcdcd;*/
+/*    border-left-style: solid;*/
+/*    border-right-width: 1px;*/
+/*    border-right-color: #cdcdcd;*/
+/*    border-right-style: solid;*/
+/*    border-bottom-width: 1px;*/
+/*    border-bottom-color: #cdcdcd;*/
+/*    border-bottom-style: solid;*/
+/*}*/
+
+/*body .ui-jqgrid tr.jqgrow td:first-child {*/
+/*    border-left-width: 0px;*/
+/*}*/
+
+/*body .ui-jqgrid tr.jqgrow td.jqgrid-rownum {*/
+/*    border-left: 0px;*/
+/*}*/
+/*body .footrow {*/
+/*    background: #ffe48d;*/
+/*}*/
+/*body .ui-jqgrid tr.footrow-ltr td {*/
+/*    text-align: left;*/
+/*    border-right-width: 1px;*/
+/*    border-right-color: #C5C5C5;*/
+/*    border-right-style: solid;*/
+/*}*/
+/*body .ui-jqgrid tr.footrow td {*/
+/*    font-weight: bold;*/
+/*    overflow: hidden;*/
+/*    white-space: nowrap;*/
+/*    height: 21px;*/
+/*    padding: 0 2px 0 2px;*/
+/*    border-bottom-width: 1px;*/
+/*    border-bottom-color: #C5C5C5;*/
+/*    border-bottom-style: solid;*/
+/*    border-top-width: 0px;*/
+/*    border-top-color: #C5C5C5;*/
+/*    border-top-style: solid;*/
+/*}*/
+/*body .ui-jqgrid tr.jqgfirstrow td {*/
+/*    border-color:#fff;*/
+/*}*/

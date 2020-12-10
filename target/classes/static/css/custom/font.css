@@ -1,0 +1,95 @@
+/*
+ * Developed by JAEYOUNG BAE on 19. 5. 23 오전 11:27.
+ * Last modified 19. 5. 23 오전 11:25.
+ * Copyright (c) 2019. All rights reserved.
+ */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    font-family : 'Noto Sans KR', sans-serif;
+    font-size   : 12px;
+    font-weight : 300;
+    color       : #222;
+}
+
+.edit-panel table tr td span {
+    color : #222;
+}
+
+body .select2-container--default .select2-selection--single .select2-selection__rendered {
+    color : #222;
+}
+
+select, input, textarea {
+    font-size   : 12px;
+    font-weight : 300;
+}
+
+.contents-wrap {
+    font-size   : 12px;
+    font-weight : 300;
+}
+
+.edit-panel table tr th, .search-panel table tr th {
+    font-size   : 12px;
+    font-weight : 400;
+}
+
+.edit-panel label, .search-panel label {
+    font-weight : 400;
+}
+
+.style-title {
+    font-size   : 15px;
+    font-weight : 700;
+    text-shadow : 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.style-title span {
+    font-size   : 100%;
+    font-weight : 700;
+}
+
+body .ui-jqgrid .ui-jqgrid-htable th div {
+    font-size   : 13px;
+    font-weight : 600;
+}
+
+body .ui-jqgrid tr.jqgrow td {
+    font-size   : 12px;
+    font-weight : 300;
+}
+
+.jconfirm-content div {
+    font-size   : 14px;
+    font-weight : 400;
+}
+
+.jconfirm-content strong {
+    font-size   : 15px;
+    font-weight : 500;
+}
+
+span.jconfirm-title {
+    font-size   : 17px;
+    font-weight : 700;
+}
+
+span.ui-dialog-title {
+    font-size   : 15px;
+    font-weight : 700;
+}
+
+.font21 {
+    font-size : 21px;
+}

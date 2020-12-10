@@ -1,0 +1,65 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">
+
+<title>브라우저에서 m3u8 확장자를 가진 영상을 재생하기</title>
+
+</head>
+
+
+
+<body>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+<video id="video"></video>
+
+<script>
+
+if(Hls.isSupported()) {
+
+    var video = document.getElementById('video');
+
+    var hls = new Hls();
+
+    hls.loadSource('http://59.8.86.15:1935/live/52.stream/playlist.m3u8'); // 동영상경로
+
+    hls.attachMedia(video);
+
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+
+        video.play();
+
+    });
+
+}
+
+// hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
+
+// When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element throught the `src` property.
+
+// This is using the built-in support of the plain video element, without using hls.js.
+
+    else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+
+    video.src = 'http://59.8.86.15:1935/live/52.stream/playlist.m3u8'; // 동영상경로
+
+    video.addEventListener('canplay',function() {
+
+        video.play();
+
+    });
+
+}
+
+</script>
+
+
+
+</html>

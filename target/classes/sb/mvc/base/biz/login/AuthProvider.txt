@@ -1,0 +1,52 @@
+/*
+ * Developed by JAEYOUNG BAE on 19. 4. 23 오후 4:57.
+ * Last modified 19. 4. 23 오후 4:57.
+ * Copyright (c) 2019. All rights reserved.
+ */
+
+package me.bjy.biz.login;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.stereotype.Component;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@Component
+public class AuthProvider implements AuthenticationProvider {
+
+    @Autowired
+    private LoginService loginService;
+
+    @Override
+    public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+        String id = authentication.getName();
+        String password = authentication.getCredentials().toString();
+
+        Map<String, Object> params = new HashMap<>();
+        params.put("id", id);
+
+        Map<String, Object> user = null;
+        try {
+            user = loginService.selData(params);
+        } catch (Exception e) {}
+
+        if(null == user || !((String)user.get("mngrPwd")).equals(password)) {
+            return null;
+        }
+
+
+
+
+        return null;
+    }
+
+    @Override
+    public boolean supports(Class<?> aClass) {
+        return false;
+    }
+
+}
