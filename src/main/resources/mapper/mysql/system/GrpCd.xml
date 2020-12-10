@@ -37,8 +37,8 @@
                             ON Y.MNGR_ID = A.REG_ID
                LEFT OUTER JOIN TB_MNGR Z
                             ON Z.MNGR_ID = A.CHG_ID
-         WHERE A.GRP_CD    LIKE CONCAT(CONCAT('%', IFNULL(#{grpCdNm}, '')), '%')
-            OR A.GRP_CD_NM    LIKE CONCAT(CONCAT('%', IFNULL(#{grpCdNm}, '')), '%')
+         WHERE A.GRP_CD    LIKE CONCAT(CONCAT('%', IFNULL(#{grpCd}, '')), '%')
+            OR A.GRP_CD_NM    LIKE CONCAT(CONCAT('%', IFNULL(#{grpCd}, '')), '%')
       ORDER BY A.GRP_CD ASC
     </select>
 

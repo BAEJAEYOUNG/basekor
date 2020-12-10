@@ -20,4 +20,6 @@ import java.util.Map;
 @Service
 public interface AthrService extends BizBaseService<Map<String, Object>> {
 
+    int delDataAll(Map<String, Object> param);
+
 }

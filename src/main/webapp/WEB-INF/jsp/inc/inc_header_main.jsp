@@ -28,10 +28,9 @@
 <script type="text/javascript" src="${contextPath}/webjars/jquery-blockui/jquery.blockUI.js"></script>
 <script type="text/javascript" src="${contextPath}/js/lib/jquery-confirm.min.js"></script>
 
-<script type="text/javascript" src="${contextPath}/js/custom/svc.js"></script>
-<%@ include file="/WEB-INF/jsp/inc/inc_svc_setting_jsp.jsp" %>
-<script type="text/javascript" src="${contextPath}/js/custom/svc-core.js"></script>
-
 <%@ include file="/WEB-INF/jsp/inc/inc_header_main_js.jsp" %>
+<script type="text/javascript" src="${contextPath}/js/core/Core.000.MdiPage.js"></script>
+<script type="text/javascript" src="${contextPath}/js/biz/Biz.Gnb.js"></script>
+<%@ include file="/WEB-INF/jsp/inc/inc_svc_setting_jsp.jsp" %>
 
 

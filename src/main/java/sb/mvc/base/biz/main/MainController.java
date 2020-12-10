@@ -20,6 +20,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping(value = {"/main"})
+@SuppressWarnings("unchecked")
 public class MainController extends BizBaseController {
 
     protected static final Logger logger = LoggerFactory.getLogger(MainController.class);
@@ -38,7 +39,7 @@ public class MainController extends BizBaseController {
     @RequestMapping(value={""})
     public String root(@RequestParam Map<String, Object> param, Model model) {
         logger.debug("###### MainController.root param [{}]", param);
-        Map<String, Object> sessionUser = (Map<String, Object>) this.session.getAttribute("sessionUser");
+		Map<String, Object> sessionUser = (Map<String, Object>) this.session.getAttribute("sessionUser");
         logger.info("sessionUser, {}", sessionUser);
         model.addAttribute("sessionUser", sessionUser);
         return "main/main";

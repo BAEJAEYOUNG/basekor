@@ -19,6 +19,8 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.support.RequestContextUtils;
 
+import sb.mvc.base.biz.base.BaseDto;
+
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
@@ -37,46 +39,67 @@ public class MybatisQueryParameters implements Interceptor {
 
         Object oldParameter = invocation.getArgs()[1];
 
-        Map<String, Object> newParameter = null;
+        boolean bMap = true;
+        Map<String, Object> newParameterMap = null;
+        BaseDto newParameterDto = null;
 
         if( oldParameter instanceof Map ) {
-            newParameter = (Map<String, Object>)oldParameter;
+            newParameterMap = (Map<String, Object>)oldParameter;
+        } else if(oldParameter instanceof BaseDto) {
+            bMap = false;
+            newParameterDto = (BaseDto)oldParameter;
         } else {
-            newParameter = new HashMap<String, Object>();
+            newParameterMap = new HashMap<String, Object>();
 
             if( oldParameter != null ) {
-                newParameter.put( "default", oldParameter );
+                newParameterMap.put( "default", oldParameter );
             }
         }
 
         ServletRequestAttributes requestAttributes = (ServletRequestAttributes)RequestContextHolder.getRequestAttributes();
         logger.debug( "MybatisQueryParameters.intercept requestAttributes [{}]", requestAttributes );
 
-        if( ObjectUtils.allNotNull( requestAttributes ) ) {
+        if( ObjectUtils.allNotNull( requestAttributes ) &&  bMap ) {
             String language = RequestContextUtils.getLocale( requestAttributes.getRequest() ).getLanguage();
             logger.debug( "MybatisQueryParameters.intercept language [{}]", language );
-            newParameter.put( "language", language );
-
+            newParameterMap.put( "language", language );
             HttpSession session = requestAttributes.getRequest().getSession();
-
             Map<String, Object> sessionUser = (Map<String, Object>)session.getAttribute( "sessionUser" );
             logger.debug( "MybatisQueryParameters.intercept sessionUser [{}]", sessionUser );
-
             if( ObjectUtils.allNotNull( sessionUser ) ) {
-                newParameter.put( "ssnMngrId", sessionUser.get( "mngrId" ) );
-                newParameter.put( "ssnAthrCd", sessionUser.get( "athrCd" ) );
-
-                if( !newParameter.containsKey( "regId" ) || StringUtils.isEmpty( newParameter.get( "regId" ) ) ) {
-                    newParameter.put( "regId", sessionUser.get( "mngrId" ) );
+                newParameterMap.put( "ssnMngrId", sessionUser.get( "mngrId" ) );
+                newParameterMap.put( "ssnAthrCd", sessionUser.get( "athrCd" ) );
+                if( !newParameterMap.containsKey( "regId" ) || StringUtils.isEmpty( newParameterMap.get( "regId" ) ) ) {
+                    newParameterMap.put( "regId", sessionUser.get( "mngrId" ) );
                 }
-                if( !newParameter.containsKey( "chgId" ) || StringUtils.isEmpty( newParameter.get( "chgId" ) ) ) {
-                    newParameter.put( "chgId", sessionUser.get( "mngrId" ) );
+                if( !newParameterMap.containsKey( "chgId" ) || StringUtils.isEmpty( newParameterMap.get( "chgId" ) ) ) {
+                    newParameterMap.put( "chgId", sessionUser.get( "mngrId" ) );
                 }
             }
-
+        } else if( ObjectUtils.allNotNull( requestAttributes ) &&  !bMap ) {
+             String language = RequestContextUtils.getLocale( requestAttributes.getRequest() ).getLanguage();
+             logger.debug( "MybatisQueryParameters.intercept language [{}]", language );
+             newParameterDto.setLanguage(language);
+             HttpSession session = requestAttributes.getRequest().getSession();
+             Map<String, Object> sessionUser = (Map<String, Object>)session.getAttribute( "sessionUser" );
+             logger.debug( "MybatisQueryParameters.intercept sessionUser [{}]", sessionUser );
+             if( ObjectUtils.allNotNull( sessionUser ) ) {
+                 newParameterDto.setSsnMngrId((String)sessionUser.get( "mngrId" ));
+                 newParameterDto.setSsnAthrCd((String)sessionUser.get( "athrCd" ));
+                 if( StringUtils.isEmpty( newParameterDto.getRegId() ) ) {
+                     newParameterDto.setRegId((String)sessionUser.get( "mngrId" ));
+                 }
+                 if( StringUtils.isEmpty( newParameterDto.getChgId() ) ) {
+                     newParameterDto.setChgId((String)sessionUser.get( "mngrId" ));
+                 }
+             }
         }
 
-        invocation.getArgs()[1] = newParameter;
+        if(bMap) {
+            invocation.getArgs()[1] = newParameterMap;
+        } else {
+            invocation.getArgs()[1] = newParameterDto;
+        }
 
         return invocation.proceed();
     }

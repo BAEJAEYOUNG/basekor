@@ -2,19 +2,19 @@
 <configuration>
     <include resource="log/console.xml" />
     <include resource="log/file.xml" />
-    <root level="info">
-        <springProfile name="loc">
+
+    <springProfile name="loc">
+        <logger name="jdbc" level="OFF"/>
+        <logger name="jdbc.sqlonly" level="DEBUG"/>
+        <logger name="jdbc.sqltiming" level="OFF"/>
+        <logger name="jdbc.audit" level="OFF"/>
+        <logger name="jdbc.resultset" level="OFF"/>
+        <logger name="jdbc.resultsettable" level="DEBUG"/>
+        <logger name="jdbc.connection" level="OFF"/>
+        <root level="info">
             <appender-ref ref="STDOUT"/>
             <appender-ref ref="dailyRollingFileAppender"/>
-        </springProfile>
-        <springProfile name="dev">
-            <appender-ref ref="dailyRollingFileAppender"/>
-        </springProfile>
-        <springProfile name="tst">
-            <appender-ref ref="STDOUT"/>
-        </springProfile>
-        <springProfile name="ope">
-            <appender-ref ref="dailyRollingFileAppender"/>
-        </springProfile>
-    </root>
+        </root>
+    </springProfile>
+
 </configuration>

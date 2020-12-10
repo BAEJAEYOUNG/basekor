@@ -13,13 +13,14 @@
 <html lang="ko">
 <head>
     <title>${projectTitle}</title>
-    <script type="text/javascript" src="${contextPath}/js/agent/ksid.webagent.api.js"></script>
+<%--     <script type="text/javascript" src="${contextPath}/js/agent/ksid.webagent.api.js"></script> --%>
     <%@ include file="/WEB-INF/jsp/inc/inc_header_main.jsp" %>
     <link rel="stylesheet" href="${contextPath}/css/page/login.css" />
     <style>
 
     </style>
     <script type="text/javascript">
+
         if( parent && typeof ( parent.goLogin ) == 'function' ) {
             parent.goLogin();
         } else if( opener && typeof ( opener.goLogin ) == 'function' ) {
@@ -33,24 +34,20 @@
             self.close();
         }
 
-        // KSID WebAgent API 객체 생성
-        var AGT_API      = new KSID_WEBAGENT_API();
-        var strUpdateUrl = "${contextPath}/agent/KSIDWebAgentInstall.exe";
-        AGT_API.setMethod( "POST" );             // 통신 방식 설정(GET/POST, Default=POST)
-        AGT_API.setUpdateUrl( strUpdateUrl );    // Update URL 설정
-        AGT_API.setVersion( "2017.05.09.0001" ); // 버전 설정
-        console.log( 'AGT_API', AGT_API );
+        var controller = new $.Controller({
+            bShowWatch: true,
+            start: function() {
+                console.log('controller start !!!');
+            }
 
-        function init() {
+        });
 
-            <c:if test="${not empty errorMsg}">
-            svc.ui.alert( "${errorMsg}" );
-            </c:if>
-
-            $( '#cardLogin .smartcard' ).click( function() {
-                doCardLogin();
-            } );
-        }
+        $(function(){
+            controller.addView([
+                new $.View({id:'idpw-login-panel', name:'idpw-login-panel'})
+            ]);
+            controller.init();
+        });
 
         function doSubmit() {
             var bReturn = false;
@@ -74,72 +71,72 @@
             return bReturn;
         }
 
-        function doCardLogin() {
-            AGT_API.ksidwebagt_check( function( response ) {
-                console.log( 'doCardLogin() > response', response );
-                // 1. status 가 'S':Success 가 아닌 'F':Fail 이라면 Agent 설치 확인 후 Agent 설치파일을 연결하여 설치를 유도한다.
-                if( response.getStatus() != 'S' ) {
-                    svc.ui.confirm( "The fingerprint smart card authentication agent is not installed.<br />All you need to do is install the agent to authenticate.<br />Do you want to install the agent?", function() {
-                        location.href = strUpdateUrl;
-                    }, function() {
-                        svc.ui.alert( "You have canceled the agent installation." );
+//         function doCardLogin() {
+//             AGT_API.ksidwebagt_check( function( response ) {
+//                 console.log( 'doCardLogin() > response', response );
+//                 // 1. status 가 'S':Success 가 아닌 'F':Fail 이라면 Agent 설치 확인 후 Agent 설치파일을 연결하여 설치를 유도한다.
+//                 if( response.getStatus() != 'S' ) {
+//                     svc.ui.confirm( "The fingerprint smart card authentication agent is not installed.<br />All you need to do is install the agent to authenticate.<br />Do you want to install the agent?", function() {
+//                         location.href = strUpdateUrl;
+//                     }, function() {
+//                         svc.ui.alert( "You have canceled the agent installation." );
 
-                    } );
-                }
+//                     } );
+//                 }
 
-                // 2. Agent 설치가 된 상태라면 Agent 가 실행되어 있는지 확인 후 실행되어 있지 않다면 Agent를 샐행한다.
-                // R: Run , S: Stop
-                if( response.getResult() != 'R' ) {
-                    AGT_API.ksidwebagt_start( function( response ) {
-                        console.log( 'start response', response );
-                    } );
-                    svc.ui.alert( "The fingerprint smart card authentication agent is not running.<br />Please run the agent from the bottom flicker bar." );
-                    return;
-                }
+//                 // 2. Agent 설치가 된 상태라면 Agent 가 실행되어 있는지 확인 후 실행되어 있지 않다면 Agent를 샐행한다.
+//                 // R: Run , S: Stop
+//                 if( response.getResult() != 'R' ) {
+//                     AGT_API.ksidwebagt_start( function( response ) {
+//                         console.log( 'start response', response );
+//                     } );
+//                     svc.ui.alert( "The fingerprint smart card authentication agent is not running.<br />Please run the agent from the bottom flicker bar." );
+//                     return;
+//                 }
 
-                console.log( '여기까지 실행되었다면 Agent 가 실행된 상태이다.' );
+//                 console.log( '여기까지 실행되었다면 Agent 가 실행된 상태이다.' );
 
-                // 지문카드 에이전트의 인증 함수를 호출하여 리더기와 통신하여 해당 사용자의 카드 정보와 인증정보를 가져온다.
-                // uniqueId : 카드 unique id, randomValue : 인증에 사용되는 카드에서 발급된 임의 값, hashValue : 인증에 사용되는 hash 값
-                AGT_API.ksidwebagt_deviceIdVerify( function( response ) {
+//                 // 지문카드 에이전트의 인증 함수를 호출하여 리더기와 통신하여 해당 사용자의 카드 정보와 인증정보를 가져온다.
+//                 // uniqueId : 카드 unique id, randomValue : 인증에 사용되는 카드에서 발급된 임의 값, hashValue : 인증에 사용되는 hash 값
+//                 AGT_API.ksidwebagt_deviceIdVerify( function( response ) {
 
-                    console.log( 'callback > response', response );
+//                     console.log( 'callback > response', response );
 
-                    // 결과가 실패라면 ...
-                    if( response.getStatus() != 'S' ) {
-                        console.log( 'AGT_API.ksidwebagt_deviceIdVerify > response', response );
-                        svc.ui.alert( response._errorCode + '-' + response._errorText );
-                        return;
-                    }
+//                     // 결과가 실패라면 ...
+//                     if( response.getStatus() != 'S' ) {
+//                         console.log( 'AGT_API.ksidwebagt_deviceIdVerify > response', response );
+//                         svc.ui.alert( response._errorCode + '-' + response._errorText );
+//                         return;
+//                     }
 
-                    // uniqueId|randomValue|hashValue 로 넘어온 데이터를 params(파라메터)에 담는다.
-                    var arrResData = response.getResult().split( "|" );
+//                     // uniqueId|randomValue|hashValue 로 넘어온 데이터를 params(파라메터)에 담는다.
+//                     var arrResData = response.getResult().split( "|" );
 
-                    var params = {};
+//                     var params = {};
 
-                    params.uniqueId    = arrResData[ 0 ];
-                    params.randomValue = arrResData[ 1 ];
-                    params.hashValue   = arrResData[ 2 ];
+//                     params.uniqueId    = arrResData[ 0 ];
+//                     params.randomValue = arrResData[ 1 ];
+//                     params.hashValue   = arrResData[ 2 ];
 
-                    console.log( 'params', params );
-                    //                 ksid.debug.printObj('params', params);
+//                     console.log( 'params', params );
+//                     //                 ksid.debug.printObj('params', params);
 
-                    ksid.net.ajax( "${pageContext.request.contextPath}/client/verifyWeb", params, function( result ) {
-                        if( result.result == '10' ) {
-                            svc.ui.alert( 'Hash validation Success' );
-                            loginCard();
-                        } else if( result.result == '12' ) {
-                            svc.ui.alert( 'Hash validation mismatch' );
-                        } else if( result.result == '11' ) {
-                            svc.ui.alert( 'SmartCard not exists' );
-                        } else {
-                            svc.ui.alert( 'Login Fail - ' + result.driverName );
-                        }
-                    } );
+//                     ksid.net.ajax( "${pageContext.request.contextPath}/client/verifyWeb", params, function( result ) {
+//                         if( result.result == '10' ) {
+//                             svc.ui.alert( 'Hash validation Success' );
+//                             loginCard();
+//                         } else if( result.result == '12' ) {
+//                             svc.ui.alert( 'Hash validation mismatch' );
+//                         } else if( result.result == '11' ) {
+//                             svc.ui.alert( 'SmartCard not exists' );
+//                         } else {
+//                             svc.ui.alert( 'Login Fail - ' + result.driverName );
+//                         }
+//                     } );
 
-                } );
-            } );
-        }
+//                 } );
+//             } );
+//         }
 
     </script>
 </head>

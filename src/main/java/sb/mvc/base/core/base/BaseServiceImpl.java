@@ -287,6 +287,7 @@ public abstract class BaseServiceImpl<T> implements BaseService<T> {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public Map<DmlType, Integer> saveDataList( Map<DmlType, String> statementId, List<T> params ) {
         Map<DmlType, Integer> result = new HashMap<DmlType, Integer>();
         result.put( DmlType.I, 0 );
@@ -295,7 +296,7 @@ public abstract class BaseServiceImpl<T> implements BaseService<T> {
         try {
             for( T param : params ) {
                 if( param instanceof Map && ( (Map<String, Object>)param ).containsKey( "dmlType" ) ) {
-                    String dmlType = (String)( (Map<String, Object>)param ).get( "dmlType" );
+					String dmlType = (String)( (Map<String, Object>)param ).get( "dmlType" );
 
                     switch( DmlType.valueOf( dmlType ) ) {
                         case I:

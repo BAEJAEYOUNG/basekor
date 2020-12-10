@@ -99,12 +99,12 @@ public class AthrController extends BizBaseController {
 
         try {
 
-            int cntGrp = this.athrService.insData( param );
+            int cntAthr = this.athrService.insData( param );
 
-            log.debug( "AthrController.ins [{}]", cntGrp );
+            log.debug( "AthrController.ins [{}]", cntAthr );
 
             model.addAttribute( "resultCd", "00" );
-            model.addAttribute( "resultData", cntGrp );
+            model.addAttribute( "resultData", cntAthr );
 
         } catch( Exception e ) {
 
@@ -123,12 +123,12 @@ public class AthrController extends BizBaseController {
 
         try {
 
-            int cntGrp = this.athrService.updData( param );
+            int cntAthr = this.athrService.updData( param );
 
-            log.debug( "AthrController.upd [{}]", cntGrp );
+            log.debug( "AthrController.upd [{}]", cntAthr );
 
             model.addAttribute( "resultCd", "00" );
-            model.addAttribute( "resultData", cntGrp );
+            model.addAttribute( "resultData", cntAthr );
 
         } catch( Exception e ) {
 
@@ -147,12 +147,12 @@ public class AthrController extends BizBaseController {
 
         try {
 
-            int cntMenu = this.athrService.delData( param );
+            int cntAthr = this.athrService.delDataAll( param );
 
-            log.debug( "AthrController.del [{}]", cntMenu );
+            log.debug( "AthrController.del [{}]", cntAthr );
 
             model.addAttribute( "resultCd", "00" );
-            model.addAttribute( "resultData", cntMenu );
+            model.addAttribute( "resultData", cntAthr );
 
         } catch( Exception e ) {
 

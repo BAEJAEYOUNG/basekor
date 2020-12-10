@@ -48,13 +48,13 @@ public class StringLib {
     public static String zeroPaddingLeft( String strData, int nSize ) {
 
         int           nDataSize = strData.length();
-        StringBuilder strOut    = new StringBuilder();
+        StringBuilder sb    = new StringBuilder();
 
         for( int i = 0; i < ( nSize - nDataSize ); i++ )
-            strOut.append( "0" );
-        strOut.append( strData );
+            sb.append( "0" );
+        sb.append( strData );
 
-        return strOut.toString();
+        return sb.toString();
     }
 
     // Int => String : Right Zero Padding

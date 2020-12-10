@@ -15,7 +15,7 @@
              , A.MNGR_NM                  /* 관리자명 */
              , A.EMAIL                    /* 이메일 */
              , A.HP_NO                    /* 휴대폰번호 */
-             , A.MNGR_PWD                 /* 관리자비밀번호 */
+             , REPLACE(A.MNGR_PWD, '{noop}', '')  AS MNGR_PWD                /* 관리자비밀번호 */
              , A.LANG_CD                  /* 언어코드 */
              , A.COUNTRY_CD               /* 국가코드 */
              , A.LOCALE                   /* 로케일 */
@@ -32,8 +32,10 @@
              LEFT OUTER JOIN TB_CD C1
                              ON C1.GRP_CD = 'PWD_INIT_YN'
                                  AND C1.CD = A.PWD_INIT_YN
-        WHERE A.MNGR_ID LIKE '%' || #{mngrId} || '%'
-           OR A.MNGR_NM LIKE '%' || #{mngrId} || '%'
+        WHERE (
+                    A.MNGR_ID LIKE CONCAT('%', #{mngrId}, '%')
+                 OR A.MNGR_NM LIKE CONCAT('%', #{mngrId}, '%')
+              )
       ORDER BY A.MNGR_NM
     </select>
 
@@ -61,7 +63,7 @@
             , #{mngrNm}                /* 관리자명 */
             , #{email}                 /* 이메일 */
             , #{hpNo}                  /* 휴대폰번호 */
-            , #{mngrPwd}               /* 관리자비밀번호 */
+            , CONCAT('{noop}', #{mngrPwd})               /* 관리자비밀번호 */
             , #{langCd}                /* 언어코드 */
             , #{countryCd}             /* 국가코드 */
             , #{locale}                /* 로케일 */
@@ -83,7 +85,7 @@
            SET MNGR_NM                = #{mngrNm}                  /* 관리자명 */
              , EMAIL                  = #{email}                   /* 이메일 */
              , HP_NO                  = #{hpNo}                    /* 휴대폰번호 */
-             , MNGR_PWD               = #{mngrPwd}                 /* 관리자비밀번호 */
+             , MNGR_PWD               = CONCAT('{noop}', #{mngrPwd})                 /* 관리자비밀번호 */
              , LANG_CD                = #{langCd}                  /* 언어코드 */
              , COUNTRY_CD             = #{countryCd}               /* 국가코드 */
              , LOCALE                 = #{locale}                  /* 로케일 */

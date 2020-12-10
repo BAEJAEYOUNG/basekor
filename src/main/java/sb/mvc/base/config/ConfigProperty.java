@@ -35,16 +35,16 @@ public class ConfigProperty {
     @Value( "${project.title}" )
     private String projectTitle;
 
-    @Value( "${spring.datasource.url}" )
+    @Value( "${spring.datasource.hikari.jdbc-url}" )
     private String dbUrl;
 
-    @Value( "${spring.datasource.driver-class-name}" )
+    @Value( "${spring.datasource.hikari.driver-class-name}" )
     private String dbDriver;
 
-    @Value( "${spring.datasource.username}" )
+    @Value( "${spring.datasource.hikari.username}" )
     private String dbUser;
 
-    @Value( "${spring.datasource.password}" )
+    @Value( "${spring.datasource.hikari.password}" )
     private String dbPwd;
 
     public String getProjectName() {

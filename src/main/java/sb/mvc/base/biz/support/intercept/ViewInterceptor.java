@@ -6,7 +6,6 @@
 
 package sb.mvc.base.biz.support.intercept;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
@@ -16,7 +15,6 @@ import sb.mvc.base.config.ConfigProperty;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@Slf4j
 @Component
 public class ViewInterceptor extends HandlerInterceptorAdapter {
 
@@ -35,7 +33,7 @@ public class ViewInterceptor extends HandlerInterceptorAdapter {
      */
     @Override
     public boolean preHandle( HttpServletRequest request, HttpServletResponse response, Object handler ) throws Exception {
-        log.debug( "=============== ViewInterceptor.preHandle() =================" );
+//        log.debug( "=============== ViewInterceptor.preHandle() =================" );
         return super.preHandle( request, response, handler );
     }
 
@@ -50,7 +48,7 @@ public class ViewInterceptor extends HandlerInterceptorAdapter {
      */
     @Override
     public void postHandle( HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView ) throws Exception {
-        log.debug( "=============== ViewInterceptor.postHandle() =================" );
+//        log.debug( "=============== ViewInterceptor.postHandle() =================" );
         if( modelAndView != null ) {
             modelAndView.addObject( "contextPath", request.getContextPath() );
             modelAndView.addObject( "incPath", configProperty.getIncPath() );
@@ -69,7 +67,7 @@ public class ViewInterceptor extends HandlerInterceptorAdapter {
      */
     @Override
     public void afterCompletion( HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex ) throws Exception {
-        log.debug( "=============== ViewInterceptor.afterCompletion() =================" );
+//        log.debug( "=============== ViewInterceptor.afterCompletion() =================" );
         super.afterCompletion( request, response, handler, ex );
     }
 }

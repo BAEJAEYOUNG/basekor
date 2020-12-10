@@ -171,6 +171,13 @@
     </insert>
 
     <!-- Delete athr mngr -->
+    <delete id="delAthrMngrInAthr" parameterType="Map">
+        /* NS_Athr.delAthrMngrList */
+        DELETE FROM TB_ATHR_MNGR            /* 권한 */
+         WHERE ATHR_CD = #{athrCd}
+    </delete>
+
+    <!-- Delete athr mngr -->
     <delete id="delAthrMngrList" parameterType="Map">
         /* NS_Athr.delAthrMngrList */
         DELETE FROM TB_ATHR_MNGR            /* 권한 */
@@ -277,6 +284,13 @@
        FROM TB_MENU
       WHERE MENU_ID = #{menuId}
     </insert>
+
+    <!-- Delete Athr menu -->
+    <delete id="delAthrMenuInAthr" parameterType="Map">
+        /* NS_Athr.delAthr */
+        DELETE FROM TB_ATHR_MENU        /* 권한-메뉴 */
+         WHERE ATHR_CD = #{athrCd}
+    </delete>
 
     <!-- Delete Athr menu -->
     <delete id="delAthrMenuList" parameterType="Map">

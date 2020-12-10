@@ -36,12 +36,7 @@
 <script type="text/javascript" src="${contextPath}/js/lib/MonthPicker.js"></script>
 <script type="text/javascript" src="${contextPath}/js/lib/jquery-easy-number-animate.min.js"></script>
 <script type="text/javascript" src="${contextPath}/webjars/jqgrid/js/i18n/grid.locale-${lang2}.js"></script>
-<%--<script type="text/javascript" src="${contextPath}/webjars/jqgrid/js/minified/jquery.jqGrid.min.js"></script>--%>
 <script type="text/javascript" src="${contextPath}/js/lib/jquery.jqGrid.min.js"></script>
 
-<script type="text/javascript" src="${contextPath}/js/custom/svc.js"></script>
 <%@ include file="/WEB-INF/jsp/inc/inc_svc_setting_jsp.jsp" %>
-<script type="text/javascript" src="${contextPath}/js/custom/svc-core.js"></script>
-<script type="text/javascript" src="${contextPath}/js/custom/svc-grid.js"></script>
-<script type="text/javascript" src="${contextPath}/js/custom/svc-popup.js"></script>
 <%@ include file="/WEB-INF/jsp/inc/inc_header_page_js.jsp" %>

@@ -8,7 +8,9 @@ package sb.mvc.base.core.exception;
 
 public class SvcBizException extends SvcBaseException {
 
-    public SvcBizException( String messageCode, Object... messageParams ) {
+	private static final long serialVersionUID = 1L;
+
+	public SvcBizException( String messageCode, Object... messageParams ) {
         super( messageCode, messageParams );
     }
 

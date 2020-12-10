@@ -36,9 +36,10 @@
               LEFT OUTER JOIN TB_MENU B  /* 소속메뉴 */
                            ON B.MENU_ID = A.PS_MENU_ID
         WHERE 0 = 0
+          AND A.MENU_NM LIKE CONCAT('%', #{menuId}, '%')
       ORDER BY A.PS_SORT_SN
              , A.MENU_LV
-             , A.SORT_SN;
+             , A.SORT_SN
     </select>
 
     <!-- Insert Menu List -->

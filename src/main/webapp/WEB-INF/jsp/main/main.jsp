@@ -1,7 +1,7 @@
 <%--
   ~ Developed by JAEYOUNG BAE on 19. 4. 23 오후 4:14.
   ~ Last modified 19. 4. 23 오후 4:14.
-  ~ Copyright (c) 2019. All rights reserved. 
+  ~ Copyright (c) 2019. All rights reserved.
   --%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -25,30 +25,40 @@
     <link rel="stylesheet" href="${contextPath}/css/page/main.css">
 
     <script type="text/javascript" src="/webjars/jquery-easyui/js/jquery.easyui.min.js"></script>
-    <script type="text/javascript" src="${contextPath}/js/custom/svc-page.js"></script>
     <script type="text/javascript" src="${contextPath}/js/lib/jquery.smartmenus.js"></script>
-    <script type="text/javascript" src="${contextPath}/js/custom/svc-gnb.js"></script>
+
 
     <script type="text/javascript">
 
+        var controller = new $.Controller({
+            page: new $.MdiPage(),
+            menu: new $.Gnb(1),
+            start: function() {
+                console.log('start ~~~');
+                this.init();
+            },
+            initGnb: function() {
+               this.loadGnb();
+               $( "#tabs" ).tabs( {
+                   plain: true
+               } );
+               $( ".tabs-panels" ).css( { "border": 0 } );
+            },
+            loadGnb: function() {
+                // 사용자 메뉴정보를 가져오는 중입니다. block 메시지 표시
+                $.Utils.blockUI('사용자 메뉴정보를 가져오는 중입니다.<br />잠시만 기다려 주세요...');
 
+                // console.log('svc', svc);
+                this.menu.load( "/main/mainMenuList" );
 
-        svc.sessionId = "${sessionUser.mngrId}";
+                // 사용자 메뉴정보를 가져오는 중입니다. block 메시지 감춤
+                setTimeout( function() {
+                    $.Utils.unblockUI();
+                }, 1000 );
+            }
+        });
 
-        var page       = new svc.page();
-        page.menuArray = [];
-        var menu       = new svc.gnb( 1 );
-
-        function init() {
-
-            fnLoadGnb();    // 메인메뉴 Load
-
-            $( "#tabs" ).tabs( {
-                plain: true
-            } );
-            $( ".tabs-panels" ).css( { "border": 0 } );
-
-        }
+        controller.initGnb();
 
         function localResize() {
 
@@ -69,35 +79,9 @@
             top.location.href = "/main";
         }
 
-        // 메인메뉴 Load
-        function fnLoadGnb() {
-
-            // 사용자 메뉴정보를 가져오는 중입니다. block 메시지 표시
-            $.blockUI( {
-                message: '사용자 메뉴정보를 가져오는 중입니다.<br />잠시만 기다려 주세요...'
-                ,
-                css    : {
-                    "font-weight": "700",
-                    "height"     : "80px",
-                    "color"      : "#000",
-                    "opacity"    : "1",
-                    "font-size"  : "10pt",
-                    "line-height": "1.8",
-                    "padding-top": "8px"
-                }
-            } );
-
-            // console.log('svc', svc);
-            menu.load( "/main/mainMenuList" );
-
-            // 사용자 메뉴정보를 가져오는 중입니다. block 메시지 감춤
-            setTimeout( '$.unblockUI()', 1000 );
-
-        }
-
         function fnGnbClick( menuId, bRefresh ) {
-            var menuObj = menu.selMenu( menuId );
-            // console.log('menuObj', menuObj);
+            var menuObj = controller.menu.selMenu( menuId );
+//             console.log('menuObj', menuObj);
             if( menuObj.execCmd.trim() != "" ) {
                 if( bRefresh ) {
                     $( '#tabFrm' + menuId ).attr( 'src', menuObj.execCmd );

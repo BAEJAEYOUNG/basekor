@@ -12,19 +12,13 @@
 
         // console.log( "================  inc_header_page_js" );
 
-        var menuPage = parent.menu.selMenuLocation( location.pathname );
+
+
+        var menuPage = parent.controller.menu.selMenuLocation( location.pathname );
         $( ".location-wrap" ).html( '<p class="location"><span class="btn_home"></span>&nbsp;> <span>' + menuPage.psMenuNm + '</span> > <span>' + menuPage.menuNm + '</span></p>' );
 
         $( ":text, :password, textarea" ).each( function() {
             $( this ).attr( "autocomplete", "off" ).attr( "spellcheck", false );
-        } );
-
-        if( typeof ( init ) == 'function' ) {
-            init();
-        }
-
-        $( "div[id$='-panel'],table[id$='-panel']" ).each( function() {
-            $( this ).applyFieldOption();
         } );
 
         $( window ).resize( function() {
