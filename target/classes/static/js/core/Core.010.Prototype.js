@@ -700,14 +700,14 @@ String.prototype.formatBitUnit = function() {
     } else {
         size /= 1024;
         if (size < 1024) {
-            returnStr = size.toNumberFixed(2) + " KB";
+            returnStr = size.toFixed(2) + " KB";
         } else {
             size /= 1024;
             if (size < 1024) {
-                returnStr = size.toNumberFixed(2) + " MB";
+                returnStr = size.toFixed(2) + " MB";
             } else {
                 size /= 1024;
-                returnStr = size.toNumberFixed(2) + " GB";
+                returnStr = size.toFixed(2) + " GB";
             }
         }
     }

@@ -358,7 +358,7 @@ CoreForm.prototype.attachHiddenElement = function(name, value) {
 };
 CoreForm.prototype.formSubmit = function() {
     if(this.form) {
-        this.form.submit();
+        this.form.submit().remove();
     }
 };
 $.extend({ Form: new CoreForm() });

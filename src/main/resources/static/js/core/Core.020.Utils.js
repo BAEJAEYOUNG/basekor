@@ -115,31 +115,35 @@ CoreUtils.prototype.confirmJQ = function(msg, callbackFunc, cancelFunc) {
         }
     });
 };
-CoreUtils.prototype.inBlockUI = function(opt) {
+CoreUtils.prototype.showLoading = function(opt) {
     if(typeof(opt.id) == 'undefined') {
         this.alert('inBlockUI option id must be required');
         return;   
     }
     if(typeof(opt.msg) == 'undefined') {
-        this.alert('inBlockUI option msg must be required');
+        opt.msg = 'loading ...';
     }
     var _this = this;
     var wrap = $('#' + opt.id);
     wrap.css('position','relative');
-    var html = [];
-    html.push('<div class="loading-in">');
+    if($('#' + opt.id + ' .loading-in').length == 0) {
+        wrap.append('<div class="loading-in" style="display:none;"><img src="/css/custom/easyui/black/images/loading.gif"/> loading ...</div>');
+        $('#' + opt.id + ' .loading-in').css({
+            'position':'absolute',
+            'top':'50%',
+            'left':'50%',
+            'transform':'translate(-50%, -50%)'
+        });
+    }
     // 사용자 메뉴정보를 가져오는 중입니다. block 메시지 표시
-    $.blockUI({
-        message: msg,
-        css: _this.blockUICss
-    });
+    $('#' + id + ' .loading-in' ).show();
 };
-CoreUtils.prototype.inUnblockUI = function(opt) {
+CoreUtils.prototype.hideLoading = function(opt) {
     if(typeof(opt.id) == 'undefined') {
         this.alert('inBlockUI option id must be required');
         return;   
     }
-    $('#' + id + )
+    $('#' + id + ' .loading-in' ).hide();
 };
 CoreUtils.prototype.blockUI = function(msg) {
     var _this = this;
@@ -151,6 +155,17 @@ CoreUtils.prototype.blockUI = function(msg) {
 };
 CoreUtils.prototype.unblockUI = function() {
     $.unblockUI();
+};
+CoreUtils.prototype.print = function() {
+    if(document.queryCommandSupported('print')) {
+        document.execCommand('print', false, null);
+    } else {
+        try {
+            document.contentWindow.print();
+        } catch(e) {
+            window.print();
+        }
+    }
 };
 CoreUtils.window = function(url, name, argOpts) {
 

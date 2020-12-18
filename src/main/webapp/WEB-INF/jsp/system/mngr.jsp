@@ -13,7 +13,6 @@
 <head>
     <title></title>
     <%@ include file="/WEB-INF/jsp/inc/inc_header_page.jsp" %>
-    <script type="text/javascript" src="/html/js/HuskyEZCreator.js" charset="utf-8"></script>
     <script type="text/javascript" src="${contextPath}/js/view/system/mngr.js"></script>
 </head>
 <body>

@@ -1,9 +1,11 @@
 /** 공통으로 관리자 외에는 수정하지 않는다. - Biz 에서 확장하여 사용한다. **/
 
-var CoreNet = function() {
-    this.ajaxCnt = 0;   // 현재 ajax 통신 수
-};
+var CoreNet = function() {};
 CoreNet.prototype.ajax = function(options, successFunc) {
+
+    var _this = this;
+
+    this.ajaxCnt++;
 
     var ajaxOptions = {};
     ajaxOptions.url = null;
@@ -14,20 +16,26 @@ CoreNet.prototype.ajax = function(options, successFunc) {
         xmlHttpRequest.setRequestHeader("AJAX", "true"); // ajax 호출을  header에 기록
     };
     ajaxOptions.success = function(result) {
+        if(typeof(options.showLoading) != 'undefined') $.Utils.hideLoading({id:options.showLoading});
         if (typeof(successFunc) == "function") {
             successFunc(result);
         }
     };
     ajaxOptions.error = function(x, e) {
+        if(typeof(options.showLoading) != 'undefined') $.Utils.hideLoading({id:options.showLoading});
         this.alertErrorStatus(x.status, e);
     };
 
     $.extend(true, ajaxOptions, options);
 
+    if(ajaxOptions.hasOwnProperty('showLoading')) delete ajaxOptions.showLoading;
+
     if (ajaxOptions.url == null) {
         $.Utils.alert("CoreNet.prototype.ajax call does not have url in options.");
         return;
     }
+
+    if(typeof(options.showLoading) != 'undefined') $.Utils.showLoading({id:options.showLoading});
 
     $.ajax(ajaxOptions);
 

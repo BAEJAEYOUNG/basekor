@@ -205,6 +205,7 @@
              , A.REG_DTTM                 /* 등록일시 */
              , A.CHG_ID                   /* 최종수정자 */
              , A.CHG_DTTM                 /* 최종수정일시 */
+             , A.PS_MENU_NM			      /* 상위메뉴명 */
           FROM VW_ATHR_MENU A
          WHERE A.ATHR_CD = #{athrCd}
       ORDER BY A.PS_SORT_SN

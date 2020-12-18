@@ -1,5 +1,5 @@
 var CoreMdiPage = function() {
-	this.para
+	this.params = {};
 };
 CoreMdiPage.prototype.addParams = function(pageId, params) {
     this.params[pageId] = params;
